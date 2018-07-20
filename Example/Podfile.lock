@@ -1,0 +1,18 @@
+PODS:
+  - Flapjack (0.1.0):
+    - Flapjack/CoreData (= 0.1.0)
+  - Flapjack/CoreData (0.1.0)
+
+DEPENDENCIES:
+  - Flapjack (from `../`)
+
+EXTERNAL SOURCES:
+  Flapjack:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Flapjack: 97f13e25e197fd357baca5a5e07526e1adafce68
+
+PODFILE CHECKSUM: 122ebabe9a874a61bb22c6430b33887573fff627
+
+COCOAPODS: 1.5.3

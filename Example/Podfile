@@ -1,0 +1,12 @@
+use_frameworks!
+
+target 'FlapjackExample' do
+  platform :ios, "10.3"
+  pod 'Flapjack', path: '../'
+
+  target 'Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
