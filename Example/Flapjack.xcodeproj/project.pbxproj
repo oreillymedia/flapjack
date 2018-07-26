@@ -9,14 +9,16 @@
 /* Begin PBXBuildFile section */
 		084AB8F7E7A4C62F97028DA6 /* Pods_FlapjackExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FE34547D6DF543422488E8 /* Pods_FlapjackExample.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
+		607FACD81AFB9204008FA782 /* ManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ManualViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		6D5B763222BCD6E28E1516F1 /* Pods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A17A3F994FBA24398312F75 /* Pods_Tests.framework */; };
-		97D130D23748A3CFF9367076 /* Pods_Flapjack_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B7E7CFD1B77086D2734F0DE /* Pods_Flapjack_Example.framework */; };
-		E6D8E62BB5BCAFBAD3D98A84 /* Pods_Flapjack_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEB061458F19C2DC08F0DABB /* Pods_Flapjack_Tests.framework */; };
+		C381ABA421018A4100354E19 /* FlapjackExample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C381ABA221018A4100354E19 /* FlapjackExample.xcdatamodeld */; };
+		C381ABA721018AAA00354E19 /* Pancake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C381ABA521018AAA00354E19 /* Pancake.swift */; };
+		C3855568210A597300D44CBD /* AutomaticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3855567210A597300D44CBD /* AutomaticViewController.swift */; };
+		C385556A210A5B4900D44CBD /* PancakeMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3855569210A5B4900D44CBD /* PancakeMaker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +45,7 @@
 		607FACD01AFB9204008FA782 /* FlapjackExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlapjackExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		607FACD71AFB9204008FA782 /* ManualViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -52,6 +54,10 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		9A17A3F994FBA24398312F75 /* Pods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8375F4C868F6DF002C9307C /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
+		C381ABA321018A4100354E19 /* FlapjackExample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlapjackExample.xcdatamodel; sourceTree = "<group>"; };
+		C381ABA521018AAA00354E19 /* Pancake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pancake.swift; sourceTree = "<group>"; };
+		C3855567210A597300D44CBD /* AutomaticViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutomaticViewController.swift; sourceTree = "<group>"; };
+		C3855569210A5B4900D44CBD /* PancakeMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PancakeMaker.swift; sourceTree = "<group>"; };
 		C58DADFDDCBC3BD9A918B001 /* Flapjack.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Flapjack.podspec; path = ../Flapjack.podspec; sourceTree = "<group>"; };
 		ED69AD89A6E262C82C898ED5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		EEB061458F19C2DC08F0DABB /* Pods_Flapjack_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flapjack_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,7 +68,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97D130D23748A3CFF9367076 /* Pods_Flapjack_Example.framework in Frameworks */,
 				084AB8F7E7A4C62F97028DA6 /* Pods_FlapjackExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,7 +76,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6D8E62BB5BCAFBAD3D98A84 /* Pods_Flapjack_Tests.framework in Frameworks */,
 				6D5B763222BCD6E28E1516F1 /* Pods_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,12 +133,15 @@
 		607FACD21AFB9204008FA782 /* Example for Flapjack */ = {
 			isa = PBXGroup;
 			children = (
+				C381ABA121018A2E00354E19 /* Core Data */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				607FACD71AFB9204008FA782 /* ManualViewController.swift */,
+				C3855567210A597300D44CBD /* AutomaticViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				C3855569210A5B4900D44CBD /* PancakeMaker.swift */,
 			);
 			name = "Example for Flapjack";
 			path = Flapjack;
@@ -173,6 +180,15 @@
 				5A531AD5A9F1FDB857FF3D52 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		C381ABA121018A2E00354E19 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				C381ABA521018AAA00354E19 /* Pancake.swift */,
+				C381ABA221018A4100354E19 /* FlapjackExample.xcdatamodeld */,
+			);
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,7 +239,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
@@ -338,7 +354,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				C381ABA421018A4100354E19 /* FlapjackExample.xcdatamodeld in Sources */,
+				C381ABA721018AAA00354E19 /* Pancake.swift in Sources */,
+				C385556A210A5B4900D44CBD /* PancakeMaker.swift in Sources */,
+				607FACD81AFB9204008FA782 /* ManualViewController.swift in Sources */,
+				C3855568210A597300D44CBD /* AutomaticViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,12 +413,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -446,12 +468,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -581,6 +605,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C381ABA221018A4100354E19 /* FlapjackExample.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C381ABA321018A4100354E19 /* FlapjackExample.xcdatamodel */,
+			);
+			currentVersion = C381ABA321018A4100354E19 /* FlapjackExample.xcdatamodel */;
+			path = FlapjackExample.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 607FACC81AFB9204008FA782 /* Project object */;
 }

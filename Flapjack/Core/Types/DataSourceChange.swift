@@ -31,3 +31,19 @@ public enum DataSourceChange: CustomStringConvertible, Hashable {
         return description.hashValue
     }
 }
+
+
+public extension Set where Element == DataSourceChange {
+    var components: (inserts: [IndexPath], deletes: [IndexPath], moves: [(from: IndexPath, to: IndexPath)], updates: [IndexPath]) {
+        var tuple: (inserts: [IndexPath], deletes: [IndexPath], moves: [(from: IndexPath, to: IndexPath)], updates: [IndexPath]) = ([], [], [], [])
+        forEach { element in
+            switch element {
+            case .insert(let path): tuple.inserts.append(path)
+            case .delete(let path): tuple.deletes.append(path)
+            case .move(let fromPath, let toPath): tuple.moves.append((fromPath, toPath))
+            case .update(let path): tuple.updates.append(path)
+            }
+        }
+        return tuple
+    }
+}

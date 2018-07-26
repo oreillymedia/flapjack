@@ -1,18 +1,21 @@
 PODS:
-  - Flapjack (0.1.0):
-    - Flapjack/CoreData (= 0.1.0)
-  - Flapjack/CoreData (0.1.0)
+  - Flapjack/Core (0.1.0)
+  - Flapjack/CoreData (0.1.0):
+    - Flapjack/Core
+  - Flapjack/UIKit (0.1.0):
+    - Flapjack/Core
 
 DEPENDENCIES:
-  - Flapjack (from `../`)
+  - Flapjack/CoreData (from `../`)
+  - Flapjack/UIKit (from `../`)
 
 EXTERNAL SOURCES:
   Flapjack:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Flapjack: 97f13e25e197fd357baca5a5e07526e1adafce68
+  Flapjack: 4d68da9e87686b842f2807f82474e58140ab8de1
 
-PODFILE CHECKSUM: 122ebabe9a874a61bb22c6430b33887573fff627
+PODFILE CHECKSUM: e5a7a5d2932140dd7be0b51cf0d6ea3a273e8d3b
 
 COCOAPODS: 1.5.3

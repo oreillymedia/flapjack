@@ -1,0 +1,6 @@
+Gemfile* linguist-vendored
+README.md linguist-vendored
+.ruby-version linguist-vendored
+Example/* linguist-vendored
+Podfile* linguist-vendored
+Flapjack.podspec linguist-vendored

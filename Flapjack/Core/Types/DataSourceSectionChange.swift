@@ -29,3 +29,17 @@ public enum DataSourceSectionChange: CustomStringConvertible, Hashable {
         return description.hashValue
     }
 }
+
+
+public extension Set where Element == DataSourceSectionChange {
+    var components: (inserts: IndexSet, deletes: IndexSet) {
+        var tuple: (inserts: IndexSet, deletes: IndexSet) = ([], [])
+        forEach { element in
+            switch element {
+            case .insert: tuple.inserts.insert(element.section)
+            case .delete: tuple.deletes.insert(element.section)
+            }
+        }
+        return tuple
+    }
+}
