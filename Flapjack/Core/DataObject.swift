@@ -12,16 +12,18 @@ import CoreData
 // Sadly we have to bring in Core Data and define `NSFetchRequestResult` as a super-protocol.
 //   Fortunately it adds no methods and is just a typedef for NSObjectProtocol, but hey.
 public protocol DataObject: NSFetchRequestResult {
+    associatedtype PrimaryKeyType: PrimaryKey
+    
     static var representedName: String { get }
     static var primaryKeyPath: String { get }
     static var defaultSorters: [SortDescriptor] { get }
-    var primaryKey: DataContext.PrimaryKey? { get }
+    var primaryKey: PrimaryKeyType? { get }
     var context: DataContext? { get }
 }
 
 public extension DataObject where Self: NSManagedObject {
-    public var primaryKey: DataContext.PrimaryKey? {
-        return self.value(forKey: type(of: self).primaryKeyPath) as? DataContext.PrimaryKey
+    public var primaryKey: PrimaryKeyType? {
+        return self.value(forKey: type(of: self).primaryKeyPath) as? PrimaryKeyType
     }
     
     var context: DataContext? {

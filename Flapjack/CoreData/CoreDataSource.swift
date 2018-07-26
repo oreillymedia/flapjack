@@ -1,6 +1,6 @@
 //
 //  CoreDataSource.swift
-//  Flapjack
+//  Flapjack+CoreData
 //
 //  Created by Ben Kreeger on 2/15/18.
 //  Copyright © 2018 O'Reilly Media, Inc. All rights reserved.
@@ -118,7 +118,7 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
         return controller.fetchedObjects?.filter(matching) ?? []
     }
     
-    public subscript(uniqueId: DataContext.PrimaryKey) -> T? {
+    public subscript(uniqueId: T.PrimaryKeyType) -> T? {
         return firstObject { $0.primaryKey == uniqueId }
     }
     

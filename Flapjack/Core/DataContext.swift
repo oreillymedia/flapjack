@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import CoreData
 
 // MARK: - DataContext
 
@@ -18,55 +17,38 @@ public protocol DataContext {
     func perform(_ operation: @escaping (_ context: DataContext) -> Void)
     func performSync(_ operation: @escaping (_ context: DataContext) -> Void)
     func processPendingChanges()
-    func refresh(_ object: DataObject)
+    func refresh<T: DataObject>(_ object: T)
     @discardableResult func persist() -> DataContextError?
     @discardableResult func persistOrRollback() -> Bool
     @discardableResult func forcePersist() -> DataContextError?
     
     // MARK: Collection fetch operations
     
-    func objects<T: DataObject>(ofType type: T.Type) -> [T]
-    func objects<T: DataObject>(ofType type: T.Type, predicate: NSPredicate?) -> [T]
-    func objects<T: DataObject>(ofType type: T.Type, predicate: NSPredicate?, prefetch: [String]?) -> [T]
     func objects<T: DataObject>(ofType type: T.Type, predicate: NSPredicate?, prefetch: [String]?, sortBy sorters: [SortDescriptor], limit: Int?) -> [T]
-    func objects<T: DataObject>(ofType type: T.Type, attributes: Attributes) -> [T]
-    func objects<T: DataObject>(ofType type: T.Type, attributes: Attributes, prefetch: [String]?) -> [T]
     func objects<T: DataObject>(ofType type: T.Type, attributes: Attributes, prefetch: [String]?, sortBy sorters: [SortDescriptor], limit: Int?) -> [T]
-    func objects<T: DataObject>(ofType type: T.Type, objectIDs: [DataObjectID]) -> [T]
-    func objects<T: DataObject>(ofType type: T.Type, objectIDs: [DataObjectID], prefetch: [String]?) -> [T]
     func objects<T: DataObject>(ofType type: T.Type, objectIDs: [DataObjectID], prefetch: [String]?, sortBy sorters: [SortDescriptor], limit: Int?) -> [T]
-    func objects<T: DataObject>(ofType type: T.Type, primaryKeys: [PrimaryKey]) -> [T]
-    func objects<T: DataObject>(ofType type: T.Type, primaryKeys: [PrimaryKey], prefetch: [String]?) -> [T]
     func objects<T: DataObject>(ofType type: T.Type, primaryKeys: [PrimaryKey], prefetch: [String]?, sortBy sorters: [SortDescriptor], limit: Int?) -> [T]
     func numberOfObjects<T: DataObject>(ofType type: T.Type, predicate: NSPredicate?) -> Int
     
+    
     // MARK: Single fetch operations
     
-    func object<T: DataObject>(ofType type: T.Type, predicate: NSPredicate?) -> T?
     func object<T: DataObject>(ofType type: T.Type, predicate: NSPredicate?, prefetch: [String]?, sortBy sorters: [SortDescriptor]) -> T?
-    func object<T: DataObject>(ofType type: T.Type, attributes: Attributes) -> T?
     func object<T: DataObject>(ofType type: T.Type, attributes: Attributes, prefetch: [String]?, sortBy sorters: [SortDescriptor]) -> T?
     func object<T: DataObject>(ofType type: T.Type, objectID: DataObjectID) -> T?
-    func object<T: DataObject>(ofType type: T.Type, primaryKey: PrimaryKey?) -> T?
     func refetch<T: DataObject>(_ dataObject: T) -> T?
+    
     
     // MARK: Creation operations
     
     func create<T: DataObject>(_ type: T.Type) -> T
-    func create<T: DataObject>(_ type: T.Type, attributes: Attributes) -> T?
-    func findOrCreate<T: DataObject>(_ type: T.Type, attributes: Attributes) -> (object: T, isNew: Bool)?
-    func findOrCreate<T: DataObject>(_ type: T.Type, primaryKey: PrimaryKey?) -> (object: T, isNew: Bool)?
+    func create<T: DataObject>(_ type: T.Type, attributes: Attributes) -> T
+    
     
     // MARK: Destruction operations
     
     func destroy<T: DataObject>(_ object: T?)
     func destroy<T: DataObject>(_ objects: [T])
-    
-    // MARK: Fetch request helpers
-    
-    func fetchRequest<T: DataObject>(for type: T.Type) -> NSFetchRequest<T>
-    func fetchRequest<T: DataObject>(for type: T.Type, predicate: NSPredicate?) -> NSFetchRequest<T>
-    func fetchRequest<T: DataObject>(for type: T.Type, predicate: NSPredicate?, prefetch: [String], sortBy sorters: [SortDescriptor], limit: Int?) -> NSFetchRequest<T>
 }
 
 
@@ -151,36 +133,7 @@ extension DataContext {
     
     public func findOrCreate<T: DataObject>(_ type: T.Type, attributes: DataContext.Attributes) -> (object: T, isNew: Bool)? {
         if let found = object(ofType: type, attributes: attributes) { return (found, false) }
-        if let created = create(type, attributes: attributes) { return (created, true) }
-        return nil
-    }
-    
-    
-    // MARK: Fetch request helpers
-    
-    public func fetchRequest<T: DataObject>(for type: T.Type) -> NSFetchRequest<T> {
-        return NSFetchRequest<T>(entityName: type.representedName)
-    }
-    
-    public func fetchRequest<T: DataObject>(for type: T.Type, predicate: NSPredicate?) -> NSFetchRequest<T> {
-        let request = fetchRequest(for: type)
-        request.predicate = predicate
-        return request
-    }
-    
-    public func fetchRequest<T: DataObject>(for type: T.Type, predicate: NSPredicate?, prefetch: [String], sortBy sorters: [SortDescriptor], limit: Int?) -> NSFetchRequest<T> {
-        let request = fetchRequest(for: type, predicate: predicate)
-        if sorters.count > 0 {
-            request.sortDescriptors = sorters.asNSSortDescriptors
-        } else {
-            request.sortDescriptors = type.defaultSorters.asNSSortDescriptors
-        }
-        request.relationshipKeyPathsForPrefetching = prefetch
-        request.fetchBatchSize = 50
-        if let limit = limit, limit > 0 {
-            request.fetchLimit = limit
-        }
-        return request
+        return (create(type, attributes: attributes), true)
     }
 }
 

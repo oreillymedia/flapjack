@@ -36,6 +36,7 @@ public class Pancake: NSManagedObject {
 
 
 extension Pancake: DataObject {
+    public typealias PrimaryKeyType = String
     public static var representedName: String { return "Pancake" }
     public static var primaryKeyPath: String { return #keyPath(identifier) }
     public static var defaultSorters: [SortDescriptor] {

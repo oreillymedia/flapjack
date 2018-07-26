@@ -1,6 +1,6 @@
 //
 //  BaseSingleDataSource.swift
-//  Flapjack
+//  Flapjack+CoreData
 //
 //  Created by Ben Kreeger on 2/15/18.
 //  Copyright © 2018 O'Reilly Media, Inc. All rights reserved.
@@ -28,7 +28,7 @@ public class CoreSingleDataSource<T: NSManagedObject & DataObject>: NSObject, Si
         super.init()
     }
     
-    public convenience init(dataAccess: DataAccess, uniqueID: DataContext.PrimaryKey, prefetch: [String]) {
+    public convenience init(dataAccess: DataAccess, uniqueID: T.PrimaryKeyType, prefetch: [String]) {
         self.init(dataAccess: dataAccess, attributes: [T.primaryKeyPath: uniqueID], prefetch: prefetch)
     }
     

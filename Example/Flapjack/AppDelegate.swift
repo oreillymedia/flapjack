@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
         
-        let dataSourceFactory: DataSourceFactory = BaseDataSourceFactory(dataAccess: dataAccess)
+        let dataSourceFactory = CoreDataSourceFactory(dataAccess: dataAccess)
         let maker = PancakeMaker(dataAccess: dataAccess)
         
         let manualVC = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "ManualViewController") as! ManualViewController

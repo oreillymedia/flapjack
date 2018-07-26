@@ -1,6 +1,6 @@
 //
-//  BaseDataSourceFactory.swift
-//  Flapjack
+//  CoreDataSourceFactory.swift
+//  Flapjack+CoreData
 //
 //  Created by Ben Kreeger on 2/15/18.
 //  Copyright © 2018 O'Reilly Media, Inc. All rights reserved.
@@ -8,7 +8,10 @@
 
 import Foundation
 
-public class BaseDataSourceFactory: DataSourceFactory {
+
+// MARK: - CoreDataSourceFactory
+
+public class CoreDataSourceFactory {
     private let dataAccess: DataAccess
     
     
@@ -19,7 +22,7 @@ public class BaseDataSourceFactory: DataSourceFactory {
     }
     
     
-    // MARK: DataSourceFactory
+    // MARK: Public functions
     
     public func vendAllObjectsDataSource<T: DataObject>() -> CoreDataSource<T> {
         return CoreDataSource<T>(dataAccess: dataAccess)
@@ -29,7 +32,7 @@ public class BaseDataSourceFactory: DataSourceFactory {
         return CoreDataSource<T>(dataAccess: dataAccess, attributes: attributes, sectionProperty: sectionProperty, limit: limit)
     }
     
-    public func vendObjectDataSource<T: DataObject>(uniqueID: DataContext.PrimaryKey) -> CoreSingleDataSource<T> {
+    public func vendObjectDataSource<T: DataObject>(uniqueID: T.PrimaryKeyType) -> CoreSingleDataSource<T> {
         return CoreSingleDataSource<T>(dataAccess: dataAccess, uniqueID: uniqueID, prefetch: [])
     }
     

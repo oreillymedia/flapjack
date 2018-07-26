@@ -9,12 +9,19 @@
 import Foundation
 
 public enum DataAccessError: LocalizedError, CustomStringConvertible {
-    case preparationError(Error)
+    case preparationError(Error?)
     
     public var description: String {
         switch self {
+        case .preparationError:
+            return "DataAccessError.preparationError: \(localizedDescription)"
+        }
+    }
+    
+    public var localizedDescription: String {
+        switch self {
         case .preparationError(let error):
-            return "DataAccessError.preparationError: \(error.localizedDescription)"
+            return (error as NSError?)?.localizedDescription ?? "unknown error"
         }
     }
 }

@@ -8,7 +8,6 @@
 
 import Foundation
 
-// public typealias OnChangeClosure<T: DataObject & Hashable> = ([T], ChangeSet<T>) -> Void
 public typealias OnChangeClosure = (Set<DataSourceChange>, Set<DataSourceSectionChange>) -> Void
 
 public protocol DataSource {
@@ -28,5 +27,5 @@ public protocol DataSource {
     func firstObject(_ matching: (T) -> Bool) -> T?
     func objectsWhere(_ matching: (T) -> Bool) -> [T]
     
-    subscript(uniqueId: DataContext.PrimaryKey) -> T? { get }
+    subscript(uniqueId: T.PrimaryKeyType) -> T? { get }
 }

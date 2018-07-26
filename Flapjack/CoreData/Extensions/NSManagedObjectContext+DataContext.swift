@@ -1,6 +1,6 @@
 //
 //  NSManagedObjectContext+DataContext.swift
-//  Flapjack
+//  Flapjack+CoreData
 //
 //  Created by Ben Kreeger on 11/4/17.
 //  Copyright © 2017 O'Reilly Media, Inc. All rights reserved.
@@ -18,7 +18,7 @@ extension NSManagedObjectContext: DataContext {
         self.performAndWait { operation(self) }
     }
     
-    public func refresh(_ object: DataObject) {
+    public func refresh<T: DataObject>(_ object: T) {
         guard let object = object as? NSManagedObject else { return }
         refresh(object, mergeChanges: false)
     }
@@ -102,7 +102,7 @@ extension NSManagedObjectContext: DataContext {
     }
     
     public func refetch<T: DataObject>(_ dataObject: T) -> T? {
-        guard let dataObject = dataObject as? (NSManagedObject & DataObject) else { return nil }
+        guard let dataObject = dataObject as? NSManagedObject else { return nil }
         if let found = registeredObject(for: dataObject.objectID), !found.isDeleted, let cast = found as? T {
             return cast
         }
@@ -123,10 +123,10 @@ extension NSManagedObjectContext: DataContext {
         return NSEntityDescription.insertNewObject(forEntityName: type.representedName, into: self) as! T
     }
     
-    public func create<T: DataObject>(_ type: T.Type, attributes: DataContext.Attributes) -> T? {
-        let created = create(type) as? NSManagedObject
-        attributes.forEach { created?.setValue($1, forKey: $0) }
-        return created as? T
+    public func create<T: DataObject>(_ type: T.Type, attributes: DataContext.Attributes) -> T {
+        let created = create(type)
+        attributes.forEach { (created as! NSManagedObject).setValue($1, forKey: $0) }
+        return created
     }
     
     
@@ -139,6 +139,34 @@ extension NSManagedObjectContext: DataContext {
     
     public func destroy<T: DataObject>(_ objects: [T]) {
         objects.forEach { self.destroy($0) }
+    }
+    
+    
+    // MARK: Fetch request helpers
+    
+    public func fetchRequest<T: DataObject>(for type: T.Type) -> NSFetchRequest<T> {
+        return NSFetchRequest<T>(entityName: type.representedName)
+    }
+    
+    public func fetchRequest<T: DataObject>(for type: T.Type, predicate: NSPredicate?) -> NSFetchRequest<T> {
+        let request = fetchRequest(for: type)
+        request.predicate = predicate
+        return request
+    }
+    
+    public func fetchRequest<T: DataObject>(for type: T.Type, predicate: NSPredicate?, prefetch: [String], sortBy sorters: [SortDescriptor], limit: Int?) -> NSFetchRequest<T> {
+        let request = fetchRequest(for: type, predicate: predicate)
+        if sorters.count > 0 {
+            request.sortDescriptors = sorters.asNSSortDescriptors
+        } else {
+            request.sortDescriptors = type.defaultSorters.asNSSortDescriptors
+        }
+        request.relationshipKeyPathsForPrefetching = prefetch
+        request.fetchBatchSize = 50
+        if let limit = limit, limit > 0 {
+            request.fetchLimit = limit
+        }
+        return request
     }
     
     

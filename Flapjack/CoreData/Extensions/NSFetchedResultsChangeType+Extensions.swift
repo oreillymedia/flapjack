@@ -1,6 +1,6 @@
 //
 //  NSFetchedResultsChangeType+Extensions.swift
-//  Flapjack
+//  Flapjack+CoreData
 //
 //  Created by Ben Kreeger on 5/17/18.
 //  Copyright © 2018 O'Reilly Media, Inc. All rights reserved.

@@ -31,10 +31,7 @@ class PancakeMaker {
             
             DispatchQueue.main.async {
                 guard let `self` = self else { return }
-                var foregroundPancake: Pancake?
-                if error == nil, let objectID = pancake?.objectID {
-                    foregroundPancake = self.dataAccess.mainContext.object(ofType: Pancake.self, objectID: objectID)
-                }
+                let foregroundPancake = self.dataAccess.mainContext.object(ofType: Pancake.self, objectID: pancake.objectID)
                 completion(foregroundPancake, error)
             }
         }

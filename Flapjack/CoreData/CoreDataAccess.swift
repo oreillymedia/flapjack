@@ -1,6 +1,6 @@
 //
 //  CoreDataAccess.swift
-//  Flapjack
+//  Flapjack+CoreData
 //
 //  Created by Ben Kreeger on 10/14/17.
 //  Copyright © 2017 O'Reilly Media, Inc. All rights reserved.
@@ -12,7 +12,7 @@ import CoreData
 
 // MARK: - CoreDataAccess
 
-public class CoreDataAccess: DataAccess {
+public final class CoreDataAccess: DataAccess {
     public enum StoreType {
         case sql(filename: String)
         case memory
