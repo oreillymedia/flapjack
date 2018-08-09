@@ -1,0 +1,147 @@
+# Reference:
+# https://github.com/realm/SwiftLint/blob/master/Rules.md
+
+disabled_rules:
+  # Disable rules that are in the default set
+  - file_length  # Maybe? What's the length for this?
+  - function_body_length  # Maybe? What's the length for this?
+  - large_tuple  # Maybe? What's the length for this, 2?
+  - line_length  # Maybe? What's the length for this?
+  - no_fallthrough_only
+  - notification_center_detachment
+  - type_body_length  # Maybe? What's the length for this?
+  - vertical_whitespace  # Can I make this "no more than 2?"
+  # The following are disabled by default anyway
+  - closure_body_length
+  - closure_end_indentation
+  - discouraged_object_literal
+  - discouraged_optional_boolean
+  - discouraged_optional_collection
+  - explicit_acl
+  - explicit_enum_raw_value
+  - explicit_top_level_acl
+  - explicit_type_interface
+  - force_unwrapping
+  - implicit_return
+  - implicitly_unwrapped_optional
+  - let_var_whitespace
+  - literal_expression_end_indentation
+  - missing_docs
+  - multiline_function_chains  # I'd like to enable this someday
+  - multiline_parameters  # I'd like to enable this someday
+  - multiline_arguments  # I'd like to enable this someday
+  - nimble_operator
+  - no_extension_access_modifier
+  - no_grouping_extension
+  - number_separator
+  - object_literal  # I'd like to enable this someday
+  - override_in_extension
+  - pattern_matching_keywords  # I'd like to enable this someday
+  - prefixed_toplevel_constant
+  - private_action  # I'd like to enable this someday
+  - private_outlet  # I'd like to enable this someday
+  - quick_discouraged_call
+  - quick_discouraged_focused_test
+  - quick_discouraged_pending_test
+  - single_test_class  # I'd like to enable this someday
+  - sorted_imports
+  - strict_fileprivate
+  - switch_case_on_newline
+  - todo  # I'd like to enable this someday
+  - trailing_closure
+  - unavailable_function  # I'd like to enable this someday
+  - untyped_error_in_catch
+  - xctfail_message  # I'd like to enable this someday
+opt_in_rules: 
+  # Enable rules not in the default set
+  - anyobject_protocol
+  - array_init
+  - attributes
+  - closure_spacing
+  - conditional_returns_on_newline
+  - contains_over_first_not_nil
+  - convenience_type
+  - empty_count
+  - empty_string
+  - empty_xctest_method
+  - explicit_init
+  - extension_access_modifier  # Maybe?
+  - fallthrough
+  - fatal_error_message
+  - file_header  # Maybe?
+  - file_name  # Maybe?
+  - first_where
+  - function_default_parameter_at_end
+  - joined_default_parameter
+  - lower_acl_than_parent
+  - modifier_order
+  - overridden_super_call
+  - prohibited_super_call
+  - redundant_nil_coalescing
+  - required_enum_case  # Maybe?
+  - sorted_first_last
+  - unneeded_parentheses_in_closure_argument
+  - vertical_parameter_alignment_on_call
+  - yoda_condition
+  # The following are default rules that are already enabled
+  - block_based_kvo
+  - class_delegate_protocol
+  - closing_brace
+  - closure_parameter_position
+  - colon
+  - comma
+  - compiler_protocol_init
+  - control_statement
+  - cyclomatic_complexity
+  - discarded_notification_center_observer
+  - dynamic_inline
+  - empty_enum_arguments
+  - empty_parameters
+  - empty_parentheses_with_trailing_closure
+  - for_where
+  - force_cast
+  - force_try
+  - function_parameter_count
+  - generic_type_name
+  - identifier_name
+  - implicit_getter
+  - is_disjoint
+  - leading_whitespace
+  - legacy_cggeometry_functions
+  - legacy_constant
+  - legacy_constructor
+  - legacy_nsgeometry_functions
+  - mark
+  - multiple_closures_with_trailing_closure  # Maybe?
+  - nesting
+  - opening_brace
+  - operator_usage_whitespace
+  - operator_whitespace
+  - private_over_fileprivate
+  - private_unit_test
+  - protocol_property_accessors_order
+  - redundant_discardable_let
+  - redundant_optional_initialization
+  - redundant_set_access_control
+  - redundant_string_enum_value
+  - redundant_type_annotation  # Maybe?
+  - redundant_void_return
+  - return_arrow_whitespace
+  - shorthand_operator
+  - statement_position
+  - superfluous_disable_command
+  - switch_case_alignment
+  - syntactic_sugar
+  - trailing_comma
+  - trailing_newline
+  - trailing_semicolon
+  - trailing_whitespace
+  - type_name
+  - unneeded_break_in_switch
+  - unused_closure_parameter
+  - unused_enumerated
+  - unused_optional_binding
+  - valid_ibinspectable
+  - vertical_parameter_alignment
+  - void_return
+  - weak_delegate

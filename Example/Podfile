@@ -3,6 +3,7 @@ use_frameworks!
 target 'FlapjackExample' do
   platform :ios, "10.3"
 
+  pod 'SwiftLint', '0.27.0'
   pod 'Flapjack/CoreData', path: '../'
   pod 'Flapjack/UIKit', path: '../'
 

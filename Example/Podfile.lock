@@ -4,10 +4,16 @@ PODS:
     - Flapjack/Core
   - Flapjack/UIKit (0.1.0):
     - Flapjack/Core
+  - SwiftLint (0.27.0)
 
 DEPENDENCIES:
   - Flapjack/CoreData (from `../`)
   - Flapjack/UIKit (from `../`)
+  - SwiftLint (= 0.27.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SwiftLint
 
 EXTERNAL SOURCES:
   Flapjack:
@@ -15,7 +21,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flapjack: 4d68da9e87686b842f2807f82474e58140ab8de1
+  SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
 
-PODFILE CHECKSUM: e5a7a5d2932140dd7be0b51cf0d6ea3a273e8d3b
+PODFILE CHECKSUM: 6536b5232812701cf2d192e4f670661d2a5eb5d9
 
 COCOAPODS: 1.5.3
