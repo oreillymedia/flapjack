@@ -15,7 +15,7 @@ public enum LoggerLevel: Int, CustomStringConvertible {
     case warning
     case error
     case fatal
-    
+
     public var description: String {
         switch self {
         case .verbose: return "Verbose"
@@ -30,25 +30,27 @@ public enum LoggerLevel: Int, CustomStringConvertible {
 
 public final class Logger: NSObject {
     static var logLevel: LoggerLevel = .debug
-    
-    private static var df: DateFormatter = {
-        let f = DateFormatter()
-        f.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
-        return f
+
+    private static var formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
+        return formatter
     }()
-    
+
     public static func logLn(_ level: LoggerLevel, with message: String) {
-        guard level.rawValue >= logLevel.rawValue else { return }
-        
-        let date = df.string(from: Date())
+        guard level.rawValue >= logLevel.rawValue else {
+            return
+        }
+
+        let date = formatter.string(from: Date())
         print("\(date) [Flapjack | \(level)] > \(message)")
     }
-    
+
     public static func logLn(_ level: LoggerLevel, with object: CustomStringConvertible) {
         logLn(level, with: object.description)
     }
-    
-    
+
+
     /// MARK: Convenience log methods
     public static func verbose(_ object: CustomStringConvertible) {
         logLn(.verbose, with: object)

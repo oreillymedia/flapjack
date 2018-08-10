@@ -9,7 +9,7 @@
 import Foundation
 
 public extension Set where Element: AnyObject {
-    public func sortedArray(using descriptors: [SortDescriptor]) -> Array<Element> {
-        return (self as NSSet).sortedArray(using: descriptors.asNSSortDescriptors) as? Array<Element> ?? []
+    func sortedArray(using descriptors: [SortDescriptor]) -> [Element] {
+        return (self as NSSet).sortedArray(using: descriptors.asNSSortDescriptors) as? [Element] ?? []
     }
 }

@@ -19,14 +19,14 @@ public class Pancake: NSManagedObject {
     @NSManaged public var height: Double
     @NSManaged private(set) public var toppings: [String]
     @NSManaged private(set) public var createdAt: Date
-    
+
     public override func awakeFromInsert() {
         super.awakeFromInsert()
         setPrimitiveValue(UUID().uuidString, forKey: #keyPath(identifier))
         setPrimitiveValue(Date(), forKey: #keyPath(createdAt))
         setPrimitiveValue([String](), forKey: #keyPath(toppings))
     }
-    
+
     func addTopping(_ topping: String) {
         var mToppings = toppings
         mToppings.append(topping)

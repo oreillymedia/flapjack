@@ -9,11 +9,11 @@
 import Foundation
 
 public protocol SingleDataSource {
-    associatedtype T
-    
+    associatedtype ModelType
+
     var attributes: DataContext.Attributes { get }
-    var object: T? { get }
-    var objectDidChange: ((T?) -> Void)? { get set }
-    
+    var object: ModelType? { get }
+    var objectDidChange: ((ModelType?) -> Void)? { get set }
+
     func execute()
 }

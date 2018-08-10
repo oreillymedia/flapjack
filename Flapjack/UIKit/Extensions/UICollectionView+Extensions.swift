@@ -3,12 +3,14 @@
 //  Flapjack
 //
 //  Created by Ben Kreeger on 07/19/2018.
-//  Copyright (c) 2018 kreeger. All rights reserved.
+//  Copyright (c) 2018 O'Reilly Media, Inc. All rights reserved.
 //
 
 public extension UICollectionView {
-    public func performBatchUpdates(_ objectChanges: Set<DataSourceChange>, sectionChanges: Set<DataSourceSectionChange> = [], completion: ((Bool) -> Void)? = nil) {
-        guard superview != nil, !objectChanges.isEmpty else { return }
+    func performBatchUpdates(_ objectChanges: Set<DataSourceChange>, sectionChanges: Set<DataSourceSectionChange> = [], completion: ((Bool) -> Void)? = nil) {
+        guard superview != nil, !objectChanges.isEmpty else {
+            return
+        }
         let (inserts, deletes, moves, updates) = objectChanges.components
         let (sectionInserts, sectionDeletes) = sectionChanges.components
         performBatchUpdates({
@@ -21,4 +23,3 @@ public extension UICollectionView {
         }, completion: completion)
     }
 }
-

@@ -10,10 +10,10 @@ import Foundation
 import CoreData
 
 public extension NSManagedObjectContext {
-    public typealias NotificationObjectSet<T: DataObject & Hashable> = (refreshes: Set<T>, inserts: Set<T>, updates: Set<T>, deletes: Set<T>)
-    public typealias NotificationObjectIDSet = (refreshes: Set<NSManagedObjectID>, inserts: Set<NSManagedObjectID>, updates: Set<NSManagedObjectID>, deletes: Set<NSManagedObjectID>)
-    
-    public class func objectIDsFrom(notification: Notification) -> NotificationObjectIDSet {
+    typealias NotificationObjectSet<T: DataObject & Hashable> = (refreshes: Set<T>, inserts: Set<T>, updates: Set<T>, deletes: Set<T>)
+    typealias NotificationObjectIDSet = (refreshes: Set<NSManagedObjectID>, inserts: Set<NSManagedObjectID>, updates: Set<NSManagedObjectID>, deletes: Set<NSManagedObjectID>)
+
+    class func objectIDsFrom(notification: Notification) -> NotificationObjectIDSet {
         let refreshed = notification.userInfo?[NSRefreshedObjectsKey] as? Set<NSManagedObject>
         let updated = notification.userInfo?[NSUpdatedObjectsKey] as? Set<NSManagedObject>
         let deleted = notification.userInfo?[NSDeletedObjectsKey] as? Set<NSManagedObject>
@@ -25,19 +25,21 @@ public extension NSManagedObjectContext {
             Set<NSManagedObjectID>(deleted?.map { $0.objectID } ?? [])
         )
     }
-    
-    public class func objectsFrom<T: DataObject & Hashable>(notification: Notification, ofType type: T.Type) -> NotificationObjectSet<T> {
+
+    class func objectsFrom<T: DataObject & Hashable>(notification: Notification, ofType type: T.Type) -> NotificationObjectSet<T> {
         let refreshed = notification.userInfo?[NSRefreshedObjectsKey] as? Set<T> ?? Set<T>()
         let updated = notification.userInfo?[NSUpdatedObjectsKey] as? Set<T> ?? Set<T>()
         let deleted = notification.userInfo?[NSDeletedObjectsKey] as? Set<T> ?? Set<T>()
         let inserted = notification.userInfo?[NSInsertedObjectsKey] as? Set<T> ?? Set<T>()
         return (refreshed, inserted, updated, deleted)
     }
-    
-    public class func referencedObject<T: DataObject & Hashable>(for objectID: NSManagedObjectID, type: T.Type, in notification: Notification, refetch: Bool = false) -> (object: T, deleted: Bool)? {
+
+    class func referencedObject<T: DataObject & Hashable>(for objectID: NSManagedObjectID, type: T.Type, in notification: Notification, refetch: Bool = false) -> (object: T, deleted: Bool)? {
         let (refreshes, inserts, updates, deletes) = objectsFrom(notification: notification, ofType: type)
-        guard let context = notification.object as? NSManagedObjectContext else { return nil }
-        
+        guard let context = notification.object as? NSManagedObjectContext else {
+            return nil
+        }
+
         for object in refreshes {
             guard let managed = object as? NSManagedObject, managed.objectID == objectID else { continue }
             if refetch, let refetched = context.object(with: objectID) as? T {
@@ -65,8 +67,8 @@ public extension NSManagedObjectContext {
         }
         return nil
     }
-    
-    public class func isObject(_ object: NSManagedObject, referencedIn notification: Notification) -> Bool {
+
+    class func isObject(_ object: NSManagedObject, referencedIn notification: Notification) -> Bool {
         let objectID = object.objectID
         let (refreshes, inserts, updates, deletes) = objectIDsFrom(notification: notification)
         return refreshes.contains(objectID) || inserts.contains(objectID) || updates.contains(objectID) || deletes.contains(objectID)

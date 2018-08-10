@@ -11,21 +11,21 @@ import Foundation
 public typealias OnChangeClosure = (Set<DataSourceChange>, Set<DataSourceSectionChange>) -> Void
 
 public protocol DataSource {
-    associatedtype T: DataObject & Hashable
-    
+    associatedtype ModelType: DataObject & Hashable
+
     var numberOfObjects: Int { get }
-    var allObjects: [T] { get }
+    var allObjects: [ModelType] { get }
     var numberOfSections: Int { get }
     var sectionNames: [String] { get }
     var sectionIndexTitles: [String] { get }
     var onChange: OnChangeClosure? { get set }
-    
+
     func execute()
     func numberOfObjects(in section: Int) -> Int
-    func object(at indexPath: IndexPath) -> T?
-    func indexPath(for object: T?) -> IndexPath?
-    func firstObject(_ matching: (T) -> Bool) -> T?
-    func objectsWhere(_ matching: (T) -> Bool) -> [T]
-    
-    subscript(uniqueId: T.PrimaryKeyType) -> T? { get }
+    func object(at indexPath: IndexPath) -> ModelType?
+    func indexPath(for object: ModelType?) -> IndexPath?
+    func firstObject(_ matching: (ModelType) -> Bool) -> ModelType?
+    func objectsWhere(_ matching: (ModelType) -> Bool) -> [ModelType]
+
+    subscript(uniqueId: ModelType.PrimaryKeyType) -> ModelType? { get }
 }

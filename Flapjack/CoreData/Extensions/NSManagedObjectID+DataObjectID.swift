@@ -10,5 +10,5 @@ import Foundation
 import CoreData
 
 extension NSManagedObjectID: DataObjectID {
-    
+
 }

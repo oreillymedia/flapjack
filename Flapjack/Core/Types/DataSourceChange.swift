@@ -13,7 +13,7 @@ public enum DataSourceChange: CustomStringConvertible, Hashable {
     case delete(path: IndexPath)
     case move(from: IndexPath, toPath: IndexPath)
     case update(path: IndexPath)
-    
+
     public var description: String {
         switch self {
         case .insert(let path):
@@ -26,7 +26,7 @@ public enum DataSourceChange: CustomStringConvertible, Hashable {
             return "update (path: \(path))"
         }
     }
-    
+
     public var hashValue: Int {
         return description.hashValue
     }

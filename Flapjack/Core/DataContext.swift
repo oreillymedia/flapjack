@@ -13,40 +13,43 @@ import Foundation
 public protocol DataContext {
     typealias Attributes = [String:Any]
     typealias PrimaryKey = Int32
-    
+
     func perform(_ operation: @escaping (_ context: DataContext) -> Void)
     func performSync(_ operation: @escaping (_ context: DataContext) -> Void)
     func processPendingChanges()
     func refresh<T: DataObject>(_ object: T)
-    @discardableResult func persist() -> DataContextError?
-    @discardableResult func persistOrRollback() -> Bool
-    @discardableResult func forcePersist() -> DataContextError?
-    
+    @discardableResult
+    func persist() -> DataContextError?
+    @discardableResult
+    func persistOrRollback() -> Bool
+    @discardableResult
+    func forcePersist() -> DataContextError?
+
     // MARK: Collection fetch operations
-    
+
     func objects<T: DataObject>(ofType type: T.Type, predicate: NSPredicate?, prefetch: [String]?, sortBy sorters: [SortDescriptor], limit: Int?) -> [T]
     func objects<T: DataObject>(ofType type: T.Type, attributes: Attributes, prefetch: [String]?, sortBy sorters: [SortDescriptor], limit: Int?) -> [T]
     func objects<T: DataObject>(ofType type: T.Type, objectIDs: [DataObjectID], prefetch: [String]?, sortBy sorters: [SortDescriptor], limit: Int?) -> [T]
     func objects<T: DataObject>(ofType type: T.Type, primaryKeys: [PrimaryKey], prefetch: [String]?, sortBy sorters: [SortDescriptor], limit: Int?) -> [T]
     func numberOfObjects<T: DataObject>(ofType type: T.Type, predicate: NSPredicate?) -> Int
-    
-    
+
+
     // MARK: Single fetch operations
-    
+
     func object<T: DataObject>(ofType type: T.Type, predicate: NSPredicate?, prefetch: [String]?, sortBy sorters: [SortDescriptor]) -> T?
     func object<T: DataObject>(ofType type: T.Type, attributes: Attributes, prefetch: [String]?, sortBy sorters: [SortDescriptor]) -> T?
     func object<T: DataObject>(ofType type: T.Type, objectID: DataObjectID) -> T?
     func refetch<T: DataObject>(_ dataObject: T) -> T?
-    
-    
+
+
     // MARK: Creation operations
-    
+
     func create<T: DataObject>(_ type: T.Type) -> T
     func create<T: DataObject>(_ type: T.Type, attributes: Attributes) -> T
-    
-    
+
+
     // MARK: Destruction operations
-    
+
     func destroy<T: DataObject>(_ object: T?)
     func destroy<T: DataObject>(_ objects: [T])
 }
@@ -54,85 +57,93 @@ public protocol DataContext {
 
 // MARK: - DataContext protocol extension
 
-extension DataContext {
-    
+public extension DataContext {
+
     // MARK: Collection fetch operations
-    
-    public func objects<T: DataObject>(ofType type: T.Type) -> [T] {
+
+    func objects<T: DataObject>(ofType type: T.Type) -> [T] {
         return objects(ofType: type, predicate: nil, prefetch: nil, sortBy: [], limit: 0)
     }
-    
-    public func objects<T: DataObject>(ofType type: T.Type, predicate: NSPredicate?) -> [T] {
+
+    func objects<T: DataObject>(ofType type: T.Type, predicate: NSPredicate?) -> [T] {
         return objects(ofType: type, predicate: predicate, prefetch: nil, sortBy: [], limit: 0)
     }
-    
-    public func objects<T: DataObject>(ofType type: T.Type, predicate: NSPredicate?, prefetch: [String]?) -> [T] {
+
+    func objects<T: DataObject>(ofType type: T.Type, predicate: NSPredicate?, prefetch: [String]?) -> [T] {
         return objects(ofType: type, predicate: predicate, prefetch: prefetch, sortBy: [], limit: 0)
     }
-    
-    public func objects<T: DataObject>(ofType type: T.Type, attributes: Attributes) -> [T] {
+
+    func objects<T: DataObject>(ofType type: T.Type, attributes: Attributes) -> [T] {
         return objects(ofType: type, attributes: attributes, prefetch: nil, sortBy: [], limit: 0)
     }
-    
-    public func objects<T: DataObject>(ofType type: T.Type, attributes: Attributes, prefetch: [String]?) -> [T] {
+
+    func objects<T: DataObject>(ofType type: T.Type, attributes: Attributes, prefetch: [String]?) -> [T] {
         return objects(ofType: type, attributes: attributes, prefetch: prefetch, sortBy: [], limit: 0)
     }
-    
-    public func objects<T: DataObject>(ofType type: T.Type, attributes: Attributes, prefetch: [String]?, sortBy sorters: [SortDescriptor], limit: Int?) -> [T] {
+
+    func objects<T: DataObject>(ofType type: T.Type, attributes: Attributes, prefetch: [String]?, sortBy sorters: [SortDescriptor], limit: Int?) -> [T] {
         return objects(ofType: type, predicate: NSCompoundPredicate(andPredicateFrom: attributes), prefetch: prefetch, sortBy: sorters, limit: limit)
     }
-    
-    public func objects<T: DataObject>(ofType type: T.Type, objectIDs: [DataObjectID]) -> [T] {
+
+    func objects<T: DataObject>(ofType type: T.Type, objectIDs: [DataObjectID]) -> [T] {
         return objects(ofType: type, objectIDs: objectIDs, prefetch: nil, sortBy: [], limit: 0)
     }
-    
-    public func objects<T: DataObject>(ofType type: T.Type, objectIDs: [DataObjectID], prefetch: [String]?) -> [T] {
+
+    func objects<T: DataObject>(ofType type: T.Type, objectIDs: [DataObjectID], prefetch: [String]?) -> [T] {
         return objects(ofType: type, objectIDs: objectIDs, prefetch: prefetch, sortBy: [], limit: 0)
     }
-    
-    public func objects<T: DataObject>(ofType type: T.Type, primaryKeys: [PrimaryKey]) -> [T] {
+
+    func objects<T: DataObject>(ofType type: T.Type, primaryKeys: [PrimaryKey]) -> [T] {
         return objects(ofType: type, primaryKeys: primaryKeys, prefetch: nil, sortBy: [], limit: 0)
     }
-    
-    public func objects<T: DataObject>(ofType type: T.Type, primaryKeys: [PrimaryKey], prefetch: [String]?) -> [T] {
+
+    func objects<T: DataObject>(ofType type: T.Type, primaryKeys: [PrimaryKey], prefetch: [String]?) -> [T] {
         return objects(ofType: type, primaryKeys: primaryKeys, prefetch: prefetch, sortBy: [], limit: 0)
     }
-    
-    public func objects<T: DataObject>(ofType type: T.Type, primaryKeys: [PrimaryKey], prefetch: [String]?, sortBy sorters: [SortDescriptor], limit: Int?) -> [T] {
-        guard primaryKeys.count > 0 else { return [] }
+
+    func objects<T: DataObject>(ofType type: T.Type, primaryKeys: [PrimaryKey], prefetch: [String]?, sortBy sorters: [SortDescriptor], limit: Int?) -> [T] {
+        guard !primaryKeys.isEmpty else {
+            return []
+        }
         return objects(ofType: type, attributes: [type.primaryKeyPath: primaryKeys], prefetch: prefetch, sortBy: sorters, limit: limit)
     }
-    
-    
+
+
     // MARK: Single fetch operations
-    
-    public func object<T: DataObject>(ofType type: T.Type, predicate: NSPredicate?) -> T? {
+
+    func object<T: DataObject>(ofType type: T.Type, predicate: NSPredicate?) -> T? {
         return object(ofType: type, predicate: predicate, prefetch: nil, sortBy: [])
     }
-    
-    public func object<T: DataObject>(ofType type: T.Type, attributes: Attributes) -> T? {
+
+    func object<T: DataObject>(ofType type: T.Type, attributes: Attributes) -> T? {
         return object(ofType: type, attributes: attributes, prefetch: nil, sortBy: [])
     }
-    
-    public func object<T: DataObject>(ofType type: T.Type, attributes: Attributes, prefetch: [String]?, sortBy sorters: [SortDescriptor]) -> T? {
+
+    func object<T: DataObject>(ofType type: T.Type, attributes: Attributes, prefetch: [String]?, sortBy sorters: [SortDescriptor]) -> T? {
         return object(ofType: type, predicate: NSCompoundPredicate(andPredicateFrom: attributes), prefetch: prefetch, sortBy: sorters)
     }
-    
-    public func object<T: DataObject>(ofType type: T.Type, primaryKey: PrimaryKey?) -> T? {
-        guard let primaryKey = primaryKey else { return nil }
+
+    func object<T: DataObject>(ofType type: T.Type, primaryKey: PrimaryKey?) -> T? {
+        guard let primaryKey = primaryKey else {
+            return nil
+        }
         return object(ofType: type, attributes: [type.primaryKeyPath: primaryKey])
     }
-    
-    
+
+
     // MARK: Creation operations
-    
-    public func findOrCreate<T: DataObject>(_ type: T.Type, primaryKey: PrimaryKey?) -> (object: T, isNew: Bool)? {
-        guard let primaryKey = primaryKey else { return nil }
+
+    func findOrCreate<T: DataObject>(_ type: T.Type, primaryKey: PrimaryKey?) -> (object: T, isNew: Bool)? {
+        guard let primaryKey = primaryKey else {
+            return nil
+        }
         return findOrCreate(type, attributes: [type.primaryKeyPath: primaryKey])
     }
-    
-    public func findOrCreate<T: DataObject>(_ type: T.Type, attributes: DataContext.Attributes) -> (object: T, isNew: Bool)? {
-        if let found = object(ofType: type, attributes: attributes) { return (found, false) }
+
+    func findOrCreate<T: DataObject>(_ type: T.Type, attributes: DataContext.Attributes) -> (object: T, isNew: Bool)? {
+        if let found = object(ofType: type, attributes: attributes) {
+            return (found, false)
+        }
         return (create(type, attributes: attributes), true)
     }
 }

@@ -3,7 +3,7 @@
 //  Flapjack
 //
 //  Created by kreeger on 07/19/2018.
-//  Copyright (c) 2018 kreeger. All rights reserved.
+//  Copyright (c) 2018 O'Reilly Media, Inc. All rights reserved.
 //
 
 import UIKit
@@ -17,29 +17,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
-        
+
         let dataSourceFactory = CoreDataSourceFactory(dataAccess: dataAccess)
         let maker = PancakeMaker(dataAccess: dataAccess)
-        
-        let manualVC = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "ManualViewController") as! ManualViewController
+
+        guard
+            let manualVC = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "ManualViewController") as? ManualViewController,
+            let autoVC = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "AutomaticViewController") as? AutomaticViewController
+        else {
+            return false
+        }
         let manualNav = UINavigationController(rootViewController: manualVC)
         manualVC.title = "Manual Refresh"
         manualVC.maker = maker
-        
-        let autoVC = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "AutomaticViewController") as! AutomaticViewController
+
         let autoNav = UINavigationController(rootViewController: autoVC)
         autoVC.title = "Auto Refresh"
         autoVC.maker = maker
-        
-        dataAccess.prepareStack { [weak self] (error) in
+
+        dataAccess.prepareStack { [weak self] error in
             if let error = error {
                 print(error.localizedDescription)
             }
-            
+
             manualVC.dataAccess = self?.dataAccess
             autoVC.dataSource = dataSourceFactory.vendObjectsDataSource(attributes: [:], sectionProperty: "flavor", limit: nil)
         }
-        
+
         let tabVC = UITabBarController()
         tabVC.viewControllers = [manualNav, autoNav]
         window.rootViewController = tabVC

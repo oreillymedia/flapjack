@@ -3,6 +3,7 @@
 
 disabled_rules:
   # Disable rules that are in the default set
+  - colon  # Disabled because it's too restrictive. See realm/SwiftLint#1901
   - file_length  # Maybe? What's the length for this?
   - function_body_length  # Maybe? What's the length for this?
   - large_tuple  # Maybe? What's the length for this, 2?
@@ -21,6 +22,7 @@ disabled_rules:
   - explicit_enum_raw_value
   - explicit_top_level_acl
   - explicit_type_interface
+  - file_header
   - force_unwrapping
   - implicit_return
   - implicitly_unwrapped_optional
@@ -68,7 +70,6 @@ opt_in_rules:
   - extension_access_modifier  # Maybe?
   - fallthrough
   - fatal_error_message
-  - file_header  # Maybe?
   - file_name  # Maybe?
   - first_where
   - function_default_parameter_at_end
@@ -88,7 +89,6 @@ opt_in_rules:
   - class_delegate_protocol
   - closing_brace
   - closure_parameter_position
-  - colon
   - comma
   - compiler_protocol_init
   - control_statement
@@ -145,3 +145,9 @@ opt_in_rules:
   - vertical_parameter_alignment
   - void_return
   - weak_delegate
+
+included:
+  - ../Flapjack
+
+cyclomatic_complexity:
+  warning: 12

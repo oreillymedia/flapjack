@@ -16,7 +16,7 @@ public final class CoreDataAccess: DataAccess {
     public enum StoreType {
         case sql(filename: String)
         case memory
-        
+
         var url: URL? {
             switch self {
             case .sql(let name):
@@ -25,7 +25,7 @@ public final class CoreDataAccess: DataAccess {
                 return nil
             }
         }
-        
+
         var storeDescription: NSPersistentStoreDescription {
             switch self {
             case .sql(let name):
@@ -40,28 +40,28 @@ public final class CoreDataAccess: DataAccess {
                 return description
             }
         }
-        
+
         var coreDataType: String {
             switch self {
             case .sql: return NSSQLiteStoreType
             case .memory: return NSInMemoryStoreType
             }
         }
-        
+
         private func storeUrl(for name: String) -> URL {
             return NSPersistentContainer.defaultDirectoryURL().appendingPathComponent(name)
         }
     }
-    
+
     private let storeType: StoreType
     private let container: NSPersistentContainer
     private var persistentStores = [NSPersistentStore]()
     private var persistentStoreCoordinator: NSPersistentStoreCoordinator {
         return container.persistentStoreCoordinator
     }
-    
+
     // MARK: Lifecycle
-    
+
     public init(name: String, type: StoreType) {
         storeType = type
         container = NSPersistentContainer(name: name)
@@ -74,40 +74,42 @@ public final class CoreDataAccess: DataAccess {
     public var mainContext: DataContext {
         return container.viewContext
     }
-    
+
     public func prepareStack(completion: @escaping (DataAccessError?) -> Void) {
         guard persistentStoreCoordinator.persistentStores.isEmpty else {
             completion(nil)
             return
         }
-        
+
         addDefaultPersistentStores { [weak self] fatalError in
-            guard let `self` = self else { return completion(fatalError) }
+            guard let `self` = self else {
+                return completion(fatalError)
+            }
             self.container.viewContext.automaticallyMergesChangesFromParent = true
             NotificationCenter.default.post(name: .didCreateNewMainContext, object: self.mainContext)
             completion(nil)
         }
     }
-    
+
     public func performInBackground(operation: @escaping (_ context: DataContext) -> Void) {
         container.performBackgroundTask { context in
             context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
             operation(context)
         }
     }
-    
+
     public func vendBackgroundContext() -> DataContext {
         let context = container.newBackgroundContext()
         context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
         return context
     }
-    
+
     public func deleteDatabase(rebuild: Bool, completion: @escaping (Error?) -> Void) {
         guard let storeURL = storeType.url else {
             completion(nil)
             return
         }
-        
+
         guard !persistentStores.isEmpty else {
             if rebuild {
                 addDefaultPersistentStores(completion: completion)
@@ -116,9 +118,9 @@ public final class CoreDataAccess: DataAccess {
             }
             return
         }
-        
+
         NotificationCenter.default.post(name: .willDestroyMainContext, object: mainContext)
-        
+
         var mPersistentStores = persistentStores
         persistentStores.enumerated().forEach { idx, persistentStore in
             do {
@@ -126,11 +128,11 @@ public final class CoreDataAccess: DataAccess {
             } catch let error {
                 print("Error removing persistent store #\(idx) \(persistentStore): \(error)")
             }
-            
+
             mPersistentStores.remove(at: idx)
         }
         persistentStores = mPersistentStores
-        
+
         do {
             if FileManager.default.fileExists(atPath: storeURL.path, isDirectory: nil) {
                 try persistentStoreCoordinator.destroyPersistentStore(at: storeURL, ofType: storeType.coreDataType, options: nil)
@@ -138,34 +140,36 @@ public final class CoreDataAccess: DataAccess {
         } catch let error {
             print("Error destroying persistent store at \(storeURL): \(error)")
         }
-        
+
         if rebuild {
             addDefaultPersistentStores(completion: completion)
             return
         }
-        
+
         completion(nil)
     }
-    
-    
+
+
     // MARK: Private functions
-    
+
     private func addDefaultPersistentStores(completion: @escaping (DataAccessError?) -> Void) {
         var callCount = 0
         let totalCount = container.persistentStoreDescriptions.count
         var errors: [DataAccessError] = []
-        
+
         container.loadPersistentStores { [weak self] storeDescription, error in
             callCount += 1
-            
+
             if let error = error {
                 errors.append(.preparationError(error))
             } else if let url = storeDescription.url, let store = self?.container.persistentStoreCoordinator.persistentStore(for: url) {
                 Logger.info("Initializing persistent store at \(url.path).")
                 self?.persistentStores.append(store)
             }
-            
-            guard callCount >= totalCount else { return }
+
+            guard callCount >= totalCount else {
+                return
+            }
             completion(errors.first)
         }
     }
@@ -178,4 +182,3 @@ extension Notification.Name {
     static let didCreateNewMainContext = NSNotification.Name(rawValue: "didCreateNewMainContext")
     static let willDestroyMainContext = NSNotification.Name(rawValue: "willDestroyMainContext")
 }
-

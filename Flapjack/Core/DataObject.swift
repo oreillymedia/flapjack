@@ -13,7 +13,7 @@ import CoreData
 //   Fortunately it adds no methods and is just a typedef for NSObjectProtocol, but hey.
 public protocol DataObject: NSFetchRequestResult {
     associatedtype PrimaryKeyType: PrimaryKey
-    
+
     static var representedName: String { get }
     static var primaryKeyPath: String { get }
     static var defaultSorters: [SortDescriptor] { get }
@@ -22,10 +22,10 @@ public protocol DataObject: NSFetchRequestResult {
 }
 
 public extension DataObject where Self: NSManagedObject {
-    public var primaryKey: PrimaryKeyType? {
+    var primaryKey: PrimaryKeyType? {
         return self.value(forKey: type(of: self).primaryKeyPath) as? PrimaryKeyType
     }
-    
+
     var context: DataContext? {
         return managedObjectContext
     }
