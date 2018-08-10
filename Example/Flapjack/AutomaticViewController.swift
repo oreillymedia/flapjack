@@ -30,7 +30,7 @@ class AutomaticViewController: UIViewController {
     // MARK: Actions
 
     @IBAction private func addButtonTapped(_ sender: UIBarButtonItem) {
-        maker.makePancake { [weak self] (_, error) in
+        maker.makePancake { [weak self] _, error in
             if let error = error {
                 self?.displayAlert(for: error.localizedDescription)
             }
@@ -58,7 +58,9 @@ extension AutomaticViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard section < dataSource.sectionNames.count else { return nil }
+        guard section < dataSource.sectionNames.count else {
+            return nil
+        }
         return dataSource.sectionNames[section]
     }
 

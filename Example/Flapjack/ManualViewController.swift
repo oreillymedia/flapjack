@@ -33,7 +33,7 @@ class ManualViewController: UIViewController {
     // MARK: Actions
 
     @IBAction private func addButtonTapped(_ sender: UIBarButtonItem) {
-        maker.makePancake { [weak self] (pancake, error) in
+        maker.makePancake { [weak self] _, error in
             guard let `self` = self else {
                 return
             }

@@ -13,14 +13,14 @@ import Flapjack
 
 @objc(Pancake)
 public class Pancake: NSManagedObject {
-    @NSManaged private(set) public var identifier: String
+    @NSManaged public private(set) var identifier: String
     @NSManaged public var flavor: String?
     @NSManaged public var radius: Double
     @NSManaged public var height: Double
-    @NSManaged private(set) public var toppings: [String]
-    @NSManaged private(set) public var createdAt: Date
+    @NSManaged public private(set) var toppings: [String]
+    @NSManaged public private(set) var createdAt: Date
 
-    public override func awakeFromInsert() {
+    override public func awakeFromInsert() {
         super.awakeFromInsert()
         setPrimitiveValue(UUID().uuidString, forKey: #keyPath(identifier))
         setPrimitiveValue(Date(), forKey: #keyPath(createdAt))
