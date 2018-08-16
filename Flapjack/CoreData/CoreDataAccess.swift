@@ -31,11 +31,9 @@ public final class CoreDataAccess: DataAccess {
             case .sql(let name):
                 let description = NSPersistentStoreDescription(url: storeUrl(for: name))
                 description.type = NSSQLiteStoreType
-                description.shouldAddStoreAsynchronously = true
                 return description
             case .memory:
                 let description = NSPersistentStoreDescription()
-                description.shouldAddStoreAsynchronously = true
                 description.type = NSInMemoryStoreType
                 return description
             }
@@ -55,6 +53,7 @@ public final class CoreDataAccess: DataAccess {
 
     private let storeType: StoreType
     private let container: NSPersistentContainer
+    private var shouldLoadAsynchronously: Bool = false
     private var persistentStores = [NSPersistentStore]()
     private var persistentStoreCoordinator: NSPersistentStoreCoordinator {
         return container.persistentStoreCoordinator
@@ -75,13 +74,13 @@ public final class CoreDataAccess: DataAccess {
         return container.viewContext
     }
 
-    public func prepareStack(completion: @escaping (DataAccessError?) -> Void) {
+    public func prepareStack(asynchronously: Bool, completion: @escaping (DataAccessError?) -> Void) {
         guard persistentStoreCoordinator.persistentStores.isEmpty else {
             completion(nil)
             return
         }
 
-        addDefaultPersistentStores { [weak self] fatalError in
+        addDefaultPersistentStores(async: asynchronously) { [weak self] fatalError in
             guard let `self` = self else {
                 return completion(fatalError)
             }
@@ -100,6 +99,7 @@ public final class CoreDataAccess: DataAccess {
 
     public func vendBackgroundContext() -> DataContext {
         let context = container.newBackgroundContext()
+        context.persistentStoreCoordinator = container.persistentStoreCoordinator
         context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
         return context
     }
@@ -112,7 +112,7 @@ public final class CoreDataAccess: DataAccess {
 
         guard !persistentStores.isEmpty else {
             if rebuild {
-                addDefaultPersistentStores(completion: completion)
+                addDefaultPersistentStores(async: shouldLoadAsynchronously, completion: completion)
             } else {
                 completion(nil)
             }
@@ -142,7 +142,7 @@ public final class CoreDataAccess: DataAccess {
         }
 
         if rebuild {
-            addDefaultPersistentStores(completion: completion)
+            addDefaultPersistentStores(async: shouldLoadAsynchronously, completion: completion)
             return
         }
 
@@ -152,11 +152,13 @@ public final class CoreDataAccess: DataAccess {
 
     // MARK: Private functions
 
-    private func addDefaultPersistentStores(completion: @escaping (DataAccessError?) -> Void) {
+    private func addDefaultPersistentStores(async: Bool, completion: @escaping (DataAccessError?) -> Void) {
         var callCount = 0
         let totalCount = container.persistentStoreDescriptions.count
         var errors: [DataAccessError] = []
 
+        shouldLoadAsynchronously = async
+        container.persistentStoreDescriptions.forEach { $0.shouldAddStoreAsynchronously = async }
         container.loadPersistentStores { [weak self] storeDescription, error in
             callCount += 1
 
@@ -179,6 +181,6 @@ public final class CoreDataAccess: DataAccess {
 // MARK: - Notifications
 
 extension Notification.Name {
-    static let didCreateNewMainContext = NSNotification.Name(rawValue: "didCreateNewMainContext")
-    static let willDestroyMainContext = NSNotification.Name(rawValue: "willDestroyMainContext")
+    static let didCreateNewMainContext = Notification.Name("didCreateNewMainContext")
+    static let willDestroyMainContext = Notification.Name("willDestroyMainContext")
 }

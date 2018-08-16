@@ -128,10 +128,6 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
         return controller.fetchedObjects?.filter(matching) ?? []
     }
 
-    public subscript(uniqueId: T.PrimaryKeyType) -> T? {
-        return firstObject { $0.primaryKey == uniqueId }
-    }
-
 
     // MARK: Private functions
 

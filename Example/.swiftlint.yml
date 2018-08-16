@@ -6,6 +6,7 @@ disabled_rules:
   - colon  # Disabled because it's too restrictive. See realm/SwiftLint#1901
   - large_tuple  # Maybe? What's the length for this, 2?
   - line_length  # Maybe? What's the length for this?
+  - file_name
   - no_fallthrough_only
   - notification_center_detachment
   - vertical_whitespace  # Can I make this "no more than 2?"

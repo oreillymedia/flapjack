@@ -20,13 +20,3 @@ public protocol DataObject: NSFetchRequestResult {
     var primaryKey: PrimaryKeyType? { get }
     var context: DataContext? { get }
 }
-
-public extension DataObject where Self: NSManagedObject {
-    var primaryKey: PrimaryKeyType? {
-        return self.value(forKey: type(of: self).primaryKeyPath) as? PrimaryKeyType
-    }
-
-    var context: DataContext? {
-        return managedObjectContext
-    }
-}

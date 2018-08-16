@@ -3,7 +3,7 @@
 //  Flapjack
 //
 //  Created by Ben Kreeger on 3/3/17.
-//  Copyright © 2017 Safari Books Online. All rights reserved.
+//  Copyright © 2017 O'Reilly Media, Inc. All rights reserved.
 //
 
 import Foundation

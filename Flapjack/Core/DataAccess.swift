@@ -10,7 +10,7 @@ import Foundation
 
 public protocol DataAccess {
     var mainContext: DataContext { get }
-    func prepareStack(completion: @escaping (DataAccessError?) -> Void)
+    func prepareStack(asynchronously: Bool, completion: @escaping (DataAccessError?) -> Void)
     func performInBackground(operation: @escaping (_ context: DataContext) -> Void)
     func vendBackgroundContext() -> DataContext
     func deleteDatabase(rebuild: Bool, completion: @escaping (Error?) -> Void)

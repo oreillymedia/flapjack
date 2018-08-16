@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol PrimaryKey: Equatable & Hashable { }
+public protocol PrimaryKey { }
 
 extension String: PrimaryKey { }
 extension Int16: PrimaryKey { }

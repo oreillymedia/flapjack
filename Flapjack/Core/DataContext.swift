@@ -12,7 +12,6 @@ import Foundation
 
 public protocol DataContext {
     typealias Attributes = [String:Any]
-    typealias PrimaryKey = Int32
 
     func perform(_ operation: @escaping (_ context: DataContext) -> Void)
     func performSync(_ operation: @escaping (_ context: DataContext) -> Void)

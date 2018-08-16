@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         autoVC.title = "Auto Refresh"
         autoVC.maker = maker
 
-        dataAccess.prepareStack { [weak self] error in
+        dataAccess.prepareStack(asynchronously: true) { [weak self] error in
             if let error = error {
                 print(error.localizedDescription)
             }

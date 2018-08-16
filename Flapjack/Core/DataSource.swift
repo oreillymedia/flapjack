@@ -26,6 +26,4 @@ public protocol DataSource {
     func indexPath(for object: ModelType?) -> IndexPath?
     func firstObject(_ matching: (ModelType) -> Bool) -> ModelType?
     func objectsWhere(_ matching: (ModelType) -> Bool) -> [ModelType]
-
-    subscript(uniqueId: ModelType.PrimaryKeyType) -> ModelType? { get }
 }
