@@ -9,12 +9,19 @@
 import UIKit
 import Flapjack
 
+#if swift(>=4.2)
+#else
+extension UIApplication {
+    typealias LaunchOptionsKey = UIApplicationLaunchOptionsKey
+}
+#endif
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     lazy var dataAccess: DataAccess = CoreDataAccess(name: "FlapjackExample", type: .memory)
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
 
