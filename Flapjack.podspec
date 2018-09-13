@@ -19,7 +19,7 @@ TODO: Add long description of the pod here.
 
   s.subspec 'Core' do |core|
     core.frameworks = 'CoreData'
-    core.source_files = 'Flapjack/Core/**/*'
+    core.source_files = 'Flapjack/Core/**/*.swift'
   end
 
   s.subspec 'CoreData' do |core_data|
