@@ -33,4 +33,8 @@ TODO: Add long description of the pod here.
     uikit.frameworks = 'UIKit'
     uikit.source_files = 'Flapjack/UIKit/**/*'
   end
+
+  s.test_spec 'Tests' do |tests|
+  	tests.source_files = 'Tests/*.swift'
+  end
 end
