@@ -35,6 +35,6 @@ TODO: Add long description of the pod here.
   end
 
   s.test_spec 'Tests' do |tests|
-  	tests.source_files = 'Tests/*.swift'
+  	tests.source_files = 'Tests/**/*.swift'
   end
 end
