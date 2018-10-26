@@ -5,10 +5,8 @@ target 'FlapjackExample' do
 
   pod 'SwiftLint', '0.27.0'
 
-  # Specify Flapjack at the top level with its tests.
-  pod 'Flapjack', path: '../', testspecs: %w(Tests)
-  # These two do not have their own tests (yet).
-  pod 'Flapjack/CoreData', path: '../'
+  pod 'Flapjack/Core', path: '../', testspecs: %w(Tests)
+  pod 'Flapjack/CoreData', path: '../', testspecs: %w(Tests)
   pod 'Flapjack/UIKit', path: '../'
 
   # target 'Tests' do

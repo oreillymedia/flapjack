@@ -11,7 +11,11 @@ import XCTest
 @testable import Flapjack
 
 class CollectionExtensionsTests: XCTestCase {
-    func testStub() {
-        XCTFail("Not implemented yet.")
+    func testSafeSubscripting() {
+        var mutableArray: [String] = []
+        XCTAssertNil(mutableArray[safe: 0])
+
+        mutableArray.append("abc")
+        XCTAssertEqual(mutableArray[safe: 0], "abc")
     }
 }

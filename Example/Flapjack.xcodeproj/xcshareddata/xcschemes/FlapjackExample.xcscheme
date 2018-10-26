@@ -20,6 +20,34 @@
                ReferencedContainer = "container:Flapjack.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BF3EEE905AF898C2ED4179BCA3703FC4"
+               BuildableName = "Flapjack-Unit-Core-Tests.xctest"
+               BlueprintName = "Flapjack-Unit-Core-Tests"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "911B2FB7ED21A953BD821EA8CD4EB0E2"
+               BuildableName = "Flapjack-Unit-CoreData-Tests.xctest"
+               BlueprintName = "Flapjack-Unit-CoreData-Tests"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -33,9 +61,20 @@
             testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D4345E49064A1BE3F971E79ED1953943"
-               BuildableName = "Flapjack-Unit-Tests.xctest"
-               BlueprintName = "Flapjack-Unit-Tests"
+               BlueprintIdentifier = "BF3EEE905AF898C2ED4179BCA3703FC4"
+               BuildableName = "Flapjack-Unit-Core-Tests.xctest"
+               BlueprintName = "Flapjack-Unit-Core-Tests"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            testExecutionOrdering = "random">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "911B2FB7ED21A953BD821EA8CD4EB0E2"
+               BuildableName = "Flapjack-Unit-CoreData-Tests.xctest"
+               BlueprintName = "Flapjack-Unit-CoreData-Tests"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
             </BuildableReference>
          </TestableReference>

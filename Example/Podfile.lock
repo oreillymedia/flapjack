@@ -1,18 +1,19 @@
 PODS:
-  - Flapjack (0.1.0):
-    - Flapjack/Core (= 0.1.0)
   - Flapjack/Core (0.1.0)
+  - Flapjack/Core/Tests (0.1.0)
   - Flapjack/CoreData (0.1.0):
     - Flapjack/Core
-  - Flapjack/Tests (0.1.0)
+  - Flapjack/CoreData/Tests (0.1.0):
+    - Flapjack/Core
   - Flapjack/UIKit (0.1.0):
     - Flapjack/Core
   - SwiftLint (0.27.0)
 
 DEPENDENCIES:
-  - Flapjack (from `../`)
+  - Flapjack/Core (from `../`)
+  - Flapjack/Core/Tests (from `../`)
   - Flapjack/CoreData (from `../`)
-  - Flapjack/Tests (from `../`)
+  - Flapjack/CoreData/Tests (from `../`)
   - Flapjack/UIKit (from `../`)
   - SwiftLint (= 0.27.0)
 
@@ -25,9 +26,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Flapjack: 175fa7c79dab5ad38a1b763e7bc5941dc3e8044c
+  Flapjack: adfd1d098b7b3f5de476e4f6b01c2090961d27e6
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
 
-PODFILE CHECKSUM: 213ad21df37c400da4a8002531a1ae8f4a0f7ffa
+PODFILE CHECKSUM: 12ec5a6527102189dea106dd2200d5e902a29b73
 
 COCOAPODS: 1.6.0.beta.1
