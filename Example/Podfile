@@ -4,12 +4,14 @@ target 'FlapjackExample' do
   platform :ios, "10.3"
 
   pod 'SwiftLint', '0.27.0'
-  pod 'Flapjack/CoreData', path: '../'
+
+  pod 'Flapjack/Core', path: '../', testspecs: %w(Tests)
+  pod 'Flapjack/CoreData', path: '../', testspecs: %w(Tests)
   pod 'Flapjack/UIKit', path: '../'
 
-  target 'Tests' do
-    inherit! :search_paths
+  # target 'Tests' do
+  #   inherit! :search_paths
 
     
-  end
+  # end
 end

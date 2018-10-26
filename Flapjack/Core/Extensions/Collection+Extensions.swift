@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension Collection {
+extension Collection {
     /**
      Returns an optional element. If the `index` does not exist in the collection, the subscript returns nil.
 
@@ -16,30 +16,6 @@ public extension Collection {
      - returns: An optional element from the collection at the specified index.
      */
     subscript(safe index: Index) -> Self.Iterator.Element? {
-        return at(index)
-    }
-
-    /**
-     Returns an optional element. If the `index` does not exist in the collection, the function returns nil.
-
-     - parameter index: The index of the element to return, if it exists.
-     - returns: An optional element from the collection at the specified index.
-     */
-    func at(_ index: Index) -> Self.Iterator.Element? {
         return indices.contains(index) ? self[index] : nil
     }
 }
-
-#if swift(>=4.1)
-#else
-    extension Collection {
-        public func compactMap<ElementOfResult>(_ transform: (Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult] {
-            return try flatMap(transform)
-        }
-    }
-    extension EnumeratedSequence {
-        public func compactMap<ElementOfResult>(_ transform: (Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult] {
-            return try flatMap(transform)
-        }
-    }
-#endif

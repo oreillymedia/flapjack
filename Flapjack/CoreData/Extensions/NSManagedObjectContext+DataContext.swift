@@ -74,7 +74,7 @@ extension NSManagedObjectContext: DataContext {
         do {
             return try count(for: request)
         } catch {
-            print("Error fetching count of \(type) with predicate \(String(describing: predicate)): \(error.localizedDescription)")
+            Logger.error("Error fetching count of \(type) with predicate \(String(describing: predicate)): \(error.localizedDescription)")
             return 0
         }
     }
@@ -86,7 +86,7 @@ extension NSManagedObjectContext: DataContext {
         do {
             return try fetchObject(ofType: type, predicate: predicate, prefetch: prefetch ?? [], sortBy: sorters)
         } catch let error {
-            print("Error fetching objects \(type) with predicate \(String(describing: predicate)): \(error.localizedDescription)")
+            Logger.error("Error fetching objects \(type) with predicate \(String(describing: predicate)): \(error.localizedDescription)")
             return nil
         }
     }
@@ -106,7 +106,7 @@ extension NSManagedObjectContext: DataContext {
             }
             return found as? T
         } catch let error {
-            print("Error finding object by ID \(objectID): \(error)")
+            Logger.error("Error finding object by ID \(objectID): \(error)")
             return nil
         }
     }
@@ -125,7 +125,7 @@ extension NSManagedObjectContext: DataContext {
             }
             return found as? T
         } catch let error {
-            print("Error finding object by ID \(dataObject.objectID): \(error)")
+            Logger.error("Error finding object by ID \(dataObject.objectID): \(error)")
             return nil
         }
     }

@@ -27,16 +27,15 @@ public final class CoreDataAccess: DataAccess {
         }
 
         var storeDescription: NSPersistentStoreDescription {
+            var description: NSPersistentStoreDescription
             switch self {
             case .sql(let name):
-                let description = NSPersistentStoreDescription(url: storeUrl(for: name))
-                description.type = NSSQLiteStoreType
-                return description
+                description = NSPersistentStoreDescription(url: storeUrl(for: name))
             case .memory:
-                let description = NSPersistentStoreDescription()
-                description.type = NSInMemoryStoreType
-                return description
+                description = NSPersistentStoreDescription()
             }
+            description.type = coreDataType
+            return description
         }
 
         var coreDataType: String {
@@ -51,6 +50,7 @@ public final class CoreDataAccess: DataAccess {
         }
     }
 
+    public private(set) var isStackReady: Bool = false
     private let storeType: StoreType
     private let container: NSPersistentContainer
     private var shouldLoadAsynchronously: Bool = false
@@ -61,9 +61,13 @@ public final class CoreDataAccess: DataAccess {
 
     // MARK: Lifecycle
 
-    public init(name: String, type: StoreType) {
+    public init(name: String, type: StoreType, model: NSManagedObjectModel? = nil) {
         storeType = type
-        container = NSPersistentContainer(name: name)
+        if let model = model {
+            container = NSPersistentContainer(name: name, managedObjectModel: model)
+        } else {
+            container = NSPersistentContainer(name: name)
+        }
         container.persistentStoreDescriptions = [type.storeDescription]
     }
 
@@ -85,6 +89,7 @@ public final class CoreDataAccess: DataAccess {
                 return completion(fatalError)
             }
             self.container.viewContext.automaticallyMergesChangesFromParent = true
+            self.isStackReady = true
             NotificationCenter.default.post(name: .didCreateNewMainContext, object: self.mainContext)
             completion(nil)
         }
@@ -126,7 +131,7 @@ public final class CoreDataAccess: DataAccess {
             do {
                 try persistentStoreCoordinator.remove(persistentStore)
             } catch let error {
-                print("Error removing persistent store #\(idx) \(persistentStore): \(error)")
+                Logger.error("Error removing persistent store #\(idx) \(persistentStore): \(error)")
             }
 
             mPersistentStores.remove(at: idx)
@@ -136,9 +141,10 @@ public final class CoreDataAccess: DataAccess {
         do {
             if FileManager.default.fileExists(atPath: storeURL.path, isDirectory: nil) {
                 try persistentStoreCoordinator.destroyPersistentStore(at: storeURL, ofType: storeType.coreDataType, options: nil)
+                try FileManager.default.removeItem(atPath: storeURL.path)
             }
         } catch let error {
-            print("Error destroying persistent store at \(storeURL): \(error)")
+            Logger.error("Error destroying persistent store at \(storeURL): \(error)")
         }
 
         if rebuild {

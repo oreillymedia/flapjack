@@ -146,12 +146,3 @@ public extension DataContext {
         return (create(type, attributes: attributes), true)
     }
 }
-
-
-public extension Dictionary where Key == String, Value == Any {
-    var cacheKey: String {
-        return self.map { key, value in
-            return "\(key).\(String(describing: value))"
-        }.joined(separator: "-")
-    }
-}
