@@ -9,7 +9,9 @@
 import Foundation
 import XCTest
 import CoreData
+
 @testable import Flapjack
+@testable import FlapjackCoreData
 
 class NSFetchedResultsChangeTypeExtensionsTests: XCTestCase {
     func testDescription() {

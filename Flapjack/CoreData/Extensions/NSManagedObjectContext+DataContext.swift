@@ -8,6 +8,9 @@
 
 import Foundation
 import CoreData
+#if !COCOAPODS
+import Flapjack
+#endif
 
 extension NSManagedObjectContext: DataContext {
     public func perform(_ operation: @escaping (_ context: DataContext) -> Void) {

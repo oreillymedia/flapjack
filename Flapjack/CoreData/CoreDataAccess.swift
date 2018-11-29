@@ -8,6 +8,9 @@
 
 import Foundation
 import CoreData
+#if !COCOAPODS
+import Flapjack
+#endif
 
 
 // MARK: - CoreDataAccess

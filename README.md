@@ -10,6 +10,9 @@ It lets you _skip_ the boilerplate commonly associated with database layers like
 
 ## Getting started
 
+
+### CocoaPods
+
 Flapjack will soon be available through [CocoaPods][cpd]. To install it for now, simply add the following line to your Podfile:
 
 ```ruby
@@ -20,7 +23,30 @@ pod 'Flapjack/CoreData', git: 'https://github.com/oreillymedia/flapjack.git', ta
 pod 'Flapjack/UIKit', git: 'https://github.com/oreillymedia/flapjack.git', tag: '0.1.0'
 ```
 
-And run `pod install` at the command line. Then in your iOS project (like perhaps in your `UIApplicationDelegate`), kick things off with the following code (if you're using Core Data; support for more databases planned).
+And run `pod install` at the command line.
+
+
+### Carthage
+
+Make the following entry in your Cartfile:
+
+```
+github "oreillymedia/flapjack"
+```
+
+Then run `carthage update`. If this is your first time using Carthage in the project, you'll need to go through some additional steps as explained [over at Carthage][car]. Carthage will build three frameworks: `Flapjack`, `FlapjackCoreData`, and `FlapjackUIKit`. You'll need `Flapjack` as a base framework, and if you're using it with Core Data and/or UIKit, you'll want to bring in those frameworks as well (and reference those in your import statements where necessary).
+
+
+### Swift Package Manager
+
+Support for Swift Package Manager is forthcoming.
+
+
+## Usage
+
+Full documentation is forthcoming, but here's a good thorough run-through of what Flapjack has to offer.
+
+In your iOS project (like perhaps in your `UIApplicationDelegate`), kick things off with the following code (if you're using Core Data; support for more databases planned).  
 
 ```swift
 import Flapjack
@@ -39,13 +65,6 @@ dataAccess.prepareStack(asynchronously: true) { error in
     //   ready to go!
 }
 ```
-
-Note: support for Swift Package Manager and Carthage are forthcoming.
-
-
-## Usage
-
-Full documentation is forthcoming, but here's a good thorough run-through of what Flapjack has to offer.
 
 For your model objects to take part in the simplified API provided by Flapjack, you'll need to make sure they conform to `DataObject`. [For a class such as `Pancake`][pcm] that has the fields `identifier`, `flavor`, and `radius` defined in a Core Data model, this would look like the following.
 
@@ -160,3 +179,4 @@ Flapjack is available under the MIT license. See [LICENSE][lic] file for more in
 [mvc]:     https://github.com/oreillymedia/flapjack/blob/master/Example/Flapjack/ManualViewController.swift
 [krg]:     https://github.com/kreeger
 [lic]:     https://github.com/oreillymedia/flapjack/blob/master/LICENSE
+[car]:     https://github.com/Carthage/Carthage#adding-frameworks-to-an-application

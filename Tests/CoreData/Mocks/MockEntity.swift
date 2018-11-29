@@ -8,7 +8,9 @@
 
 import Foundation
 import CoreData
+
 @testable import Flapjack
+@testable import FlapjackCoreData
 
 @objc(MockEntity)
 public class MockEntity: NSManagedObject {
@@ -16,7 +18,7 @@ public class MockEntity: NSManagedObject {
     @NSManaged public var identifier: String
     @NSManaged public var someTransientProperty: Date?
 
-    public override func awakeFromInsert() {
+    override public func awakeFromInsert() {
         super.awakeFromInsert()
         setPrimitiveValue(UUID().uuidString, forKey: #keyPath(identifier))
     }

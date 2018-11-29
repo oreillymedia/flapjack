@@ -6,7 +6,7 @@
 //  Copyright © 2018 O'Reilly Media, Inc. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for Flapjack.
 FOUNDATION_EXPORT double FlapjackVersionNumber;

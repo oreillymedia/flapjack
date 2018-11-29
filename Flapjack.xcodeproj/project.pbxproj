@@ -1,0 +1,1352 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C31FD13D21B092FF007A84F9 /* Flapjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C31FD13621B092FF007A84F9 /* Flapjack.framework */; };
+		C31FD13E21B092FF007A84F9 /* Flapjack.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C31FD13621B092FF007A84F9 /* Flapjack.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C31FD18621B095DE007A84F9 /* SortDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16021B095DE007A84F9 /* SortDescriptor.swift */; };
+		C31FD18721B095DE007A84F9 /* DataContextError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16121B095DE007A84F9 /* DataContextError.swift */; };
+		C31FD18821B095DE007A84F9 /* PrimaryKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16221B095DE007A84F9 /* PrimaryKey.swift */; };
+		C31FD18921B095DE007A84F9 /* DataSourceChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16321B095DE007A84F9 /* DataSourceChange.swift */; };
+		C31FD18A21B095DE007A84F9 /* DataAccessError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16421B095DE007A84F9 /* DataAccessError.swift */; };
+		C31FD18B21B095DE007A84F9 /* DataSourceSectionChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16521B095DE007A84F9 /* DataSourceSectionChange.swift */; };
+		C31FD18C21B095DE007A84F9 /* DataObjectID.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16621B095DE007A84F9 /* DataObjectID.swift */; };
+		C31FD18D21B095DE007A84F9 /* SingleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16721B095DE007A84F9 /* SingleDataSource.swift */; };
+		C31FD18E21B095DE007A84F9 /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16821B095DE007A84F9 /* DataAccess.swift */; };
+		C31FD18F21B095DE007A84F9 /* DataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16921B095DE007A84F9 /* DataObject.swift */; };
+		C31FD19021B095DE007A84F9 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16B21B095DE007A84F9 /* Array+Extensions.swift */; };
+		C31FD19121B095DE007A84F9 /* NSCompoundPredicate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16C21B095DE007A84F9 /* NSCompoundPredicate+Extensions.swift */; };
+		C31FD19221B095DE007A84F9 /* Set+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16D21B095DE007A84F9 /* Set+Extensions.swift */; };
+		C31FD19321B095DE007A84F9 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16E21B095DE007A84F9 /* Dictionary+Extensions.swift */; };
+		C31FD19421B095DE007A84F9 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16F21B095DE007A84F9 /* Collection+Extensions.swift */; };
+		C31FD19521B095DE007A84F9 /* DataContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17021B095DE007A84F9 /* DataContext.swift */; };
+		C31FD19621B095DE007A84F9 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17221B095DE007A84F9 /* Logger.swift */; };
+		C31FD19921B095DE007A84F9 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17621B095DE007A84F9 /* DataSource.swift */; };
+		C31FD1B721B09875007A84F9 /* PancakeMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD1A921B09875007A84F9 /* PancakeMaker.swift */; };
+		C31FD1B821B09875007A84F9 /* Pancake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD1AB21B09875007A84F9 /* Pancake.swift */; };
+		C31FD1B921B09875007A84F9 /* FlapjackExample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C31FD1AC21B09875007A84F9 /* FlapjackExample.xcdatamodeld */; };
+		C31FD1BA21B09875007A84F9 /* AutomaticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD1AE21B09875007A84F9 /* AutomaticViewController.swift */; };
+		C31FD1BB21B09875007A84F9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C31FD1AF21B09875007A84F9 /* LaunchScreen.xib */; };
+		C31FD1BC21B09875007A84F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C31FD1B121B09875007A84F9 /* Main.storyboard */; };
+		C31FD1BD21B09875007A84F9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C31FD1B321B09875007A84F9 /* Images.xcassets */; };
+		C31FD1BE21B09875007A84F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD1B421B09875007A84F9 /* AppDelegate.swift */; };
+		C31FD1BF21B09875007A84F9 /* ManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD1B521B09875007A84F9 /* ManualViewController.swift */; };
+		C31FD1CD21B0996F007A84F9 /* FlapjackCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C31FD1C621B0996F007A84F9 /* FlapjackCoreData.framework */; };
+		C31FD1CE21B0996F007A84F9 /* FlapjackCoreData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C31FD1C621B0996F007A84F9 /* FlapjackCoreData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C31FD20921B099B9007A84F9 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17F21B095DE007A84F9 /* NSManagedObjectContext+Extensions.swift */; };
+		C31FD20A21B099B9007A84F9 /* NSManagedObjectContext+DataContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD18021B095DE007A84F9 /* NSManagedObjectContext+DataContext.swift */; };
+		C31FD20B21B099B9007A84F9 /* NSManagedObjectID+DataObjectID.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD18121B095DE007A84F9 /* NSManagedObjectID+DataObjectID.swift */; };
+		C31FD20C21B099B9007A84F9 /* NSManagedObject+DataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD18221B095DE007A84F9 /* NSManagedObject+DataObject.swift */; };
+		C31FD20D21B099B9007A84F9 /* NSFetchedResultsChangeType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD18321B095DE007A84F9 /* NSFetchedResultsChangeType+Extensions.swift */; };
+		C31FD20E21B099B9007A84F9 /* CoreSingleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17C21B095DE007A84F9 /* CoreSingleDataSource.swift */; };
+		C31FD20F21B099B9007A84F9 /* CoreDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17D21B095DE007A84F9 /* CoreDataAccess.swift */; };
+		C31FD21021B099B9007A84F9 /* CoreDataSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD18421B095DE007A84F9 /* CoreDataSourceFactory.swift */; };
+		C31FD21121B099B9007A84F9 /* CoreDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD18521B095DE007A84F9 /* CoreDataSource.swift */; };
+		C31FD21421B09B1A007A84F9 /* Flapjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C31FD13621B092FF007A84F9 /* Flapjack.framework */; };
+		C31FD21921B09B9B007A84F9 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16F21B095DE007A84F9 /* Collection+Extensions.swift */; };
+		C31FD21B21B09F29007A84F9 /* FlapjackCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = C31FD21A21B09F29007A84F9 /* FlapjackCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C31FD21C21B09F43007A84F9 /* Flapjack.h in Headers */ = {isa = PBXBuildFile; fileRef = C31FD17421B095DE007A84F9 /* Flapjack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C31FD22C21B0A406007A84F9 /* Flapjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C31FD13621B092FF007A84F9 /* Flapjack.framework */; };
+		C31FD24921B0A423007A84F9 /* DataContextErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD23521B0A423007A84F9 /* DataContextErrorTests.swift */; };
+		C31FD24A21B0A423007A84F9 /* SortDescriptorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD23621B0A423007A84F9 /* SortDescriptorTests.swift */; };
+		C31FD24B21B0A423007A84F9 /* DataAccessErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD23721B0A423007A84F9 /* DataAccessErrorTests.swift */; };
+		C31FD24C21B0A423007A84F9 /* Array+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD23921B0A423007A84F9 /* Array+ExtensionsTests.swift */; };
+		C31FD24D21B0A423007A84F9 /* NSCompoundPredicate+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD23A21B0A423007A84F9 /* NSCompoundPredicate+ExtensionsTests.swift */; };
+		C31FD24E21B0A423007A84F9 /* Dictionary+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD23B21B0A423007A84F9 /* Dictionary+ExtensionsTests.swift */; };
+		C31FD24F21B0A423007A84F9 /* Collection+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD23C21B0A423007A84F9 /* Collection+ExtensionsTests.swift */; };
+		C31FD25021B0A423007A84F9 /* MockEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD23F21B0A423007A84F9 /* MockEntity.swift */; };
+		C31FD25321B0A423007A84F9 /* NSFetchedResultsChangeTypeExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD24521B0A423007A84F9 /* NSFetchedResultsChangeTypeExtensionsTests.swift */; };
+		C31FD25421B0A423007A84F9 /* NSManagedObjectContextDataContextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD24621B0A423007A84F9 /* NSManagedObjectContextDataContextTests.swift */; };
+		C31FD25521B0A423007A84F9 /* CoreDataAccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD24721B0A423007A84F9 /* CoreDataAccessTests.swift */; };
+		C31FD25721B0A477007A84F9 /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C31FD24221B0A423007A84F9 /* TestModel.xcdatamodeld */; };
+		C3F52F6621B18C8A00F92897 /* FlapjackUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F52F5F21B18C8A00F92897 /* FlapjackUIKit.framework */; };
+		C3F52F6721B18C8A00F92897 /* FlapjackUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C3F52F5F21B18C8A00F92897 /* FlapjackUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C3F52F6B21B18CAE00F92897 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17921B095DE007A84F9 /* UITableView+Extensions.swift */; };
+		C3F52F6C21B18CB100F92897 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17A21B095DE007A84F9 /* UICollectionView+Extensions.swift */; };
+		C3F52F6D21B18CCD00F92897 /* Flapjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C31FD13621B092FF007A84F9 /* Flapjack.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C31FD13B21B092FF007A84F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C31FD13521B092FF007A84F9;
+			remoteInfo = Flapjack;
+		};
+		C31FD1CB21B0996F007A84F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C31FD1C521B0996F007A84F9;
+			remoteInfo = FlapjackCoreData;
+		};
+		C31FD22D21B0A406007A84F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C31FD13521B092FF007A84F9;
+			remoteInfo = Flapjack;
+		};
+		C31FD25821B0A49C007A84F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C31FD1C521B0996F007A84F9;
+			remoteInfo = FlapjackCoreData;
+		};
+		C3F52F6421B18C8A00F92897 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C3F52F5E21B18C8A00F92897;
+			remoteInfo = FlapjackUIKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C31FD14221B092FF007A84F9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C3F52F6721B18C8A00F92897 /* FlapjackUIKit.framework in Embed Frameworks */,
+				C31FD13E21B092FF007A84F9 /* Flapjack.framework in Embed Frameworks */,
+				C31FD1CE21B0996F007A84F9 /* FlapjackCoreData.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		607FACD01AFB9204008FA782 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C31FD13621B092FF007A84F9 /* Flapjack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Flapjack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C31FD16021B095DE007A84F9 /* SortDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortDescriptor.swift; sourceTree = "<group>"; };
+		C31FD16121B095DE007A84F9 /* DataContextError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataContextError.swift; sourceTree = "<group>"; };
+		C31FD16221B095DE007A84F9 /* PrimaryKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryKey.swift; sourceTree = "<group>"; };
+		C31FD16321B095DE007A84F9 /* DataSourceChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceChange.swift; sourceTree = "<group>"; };
+		C31FD16421B095DE007A84F9 /* DataAccessError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataAccessError.swift; sourceTree = "<group>"; };
+		C31FD16521B095DE007A84F9 /* DataSourceSectionChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceSectionChange.swift; sourceTree = "<group>"; };
+		C31FD16621B095DE007A84F9 /* DataObjectID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataObjectID.swift; sourceTree = "<group>"; };
+		C31FD16721B095DE007A84F9 /* SingleDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleDataSource.swift; sourceTree = "<group>"; };
+		C31FD16821B095DE007A84F9 /* DataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataAccess.swift; sourceTree = "<group>"; };
+		C31FD16921B095DE007A84F9 /* DataObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataObject.swift; sourceTree = "<group>"; };
+		C31FD16B21B095DE007A84F9 /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		C31FD16C21B095DE007A84F9 /* NSCompoundPredicate+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCompoundPredicate+Extensions.swift"; sourceTree = "<group>"; };
+		C31FD16D21B095DE007A84F9 /* Set+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Set+Extensions.swift"; sourceTree = "<group>"; };
+		C31FD16E21B095DE007A84F9 /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
+		C31FD16F21B095DE007A84F9 /* Collection+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
+		C31FD17021B095DE007A84F9 /* DataContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataContext.swift; sourceTree = "<group>"; };
+		C31FD17221B095DE007A84F9 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		C31FD17421B095DE007A84F9 /* Flapjack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flapjack.h; sourceTree = "<group>"; };
+		C31FD17521B095DE007A84F9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C31FD17621B095DE007A84F9 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		C31FD17921B095DE007A84F9 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		C31FD17A21B095DE007A84F9 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		C31FD17C21B095DE007A84F9 /* CoreSingleDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreSingleDataSource.swift; sourceTree = "<group>"; };
+		C31FD17D21B095DE007A84F9 /* CoreDataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataAccess.swift; sourceTree = "<group>"; };
+		C31FD17F21B095DE007A84F9 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
+		C31FD18021B095DE007A84F9 /* NSManagedObjectContext+DataContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+DataContext.swift"; sourceTree = "<group>"; };
+		C31FD18121B095DE007A84F9 /* NSManagedObjectID+DataObjectID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectID+DataObjectID.swift"; sourceTree = "<group>"; };
+		C31FD18221B095DE007A84F9 /* NSManagedObject+DataObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+DataObject.swift"; sourceTree = "<group>"; };
+		C31FD18321B095DE007A84F9 /* NSFetchedResultsChangeType+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSFetchedResultsChangeType+Extensions.swift"; sourceTree = "<group>"; };
+		C31FD18421B095DE007A84F9 /* CoreDataSourceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataSourceFactory.swift; sourceTree = "<group>"; };
+		C31FD18521B095DE007A84F9 /* CoreDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataSource.swift; sourceTree = "<group>"; };
+		C31FD1A921B09875007A84F9 /* PancakeMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PancakeMaker.swift; sourceTree = "<group>"; };
+		C31FD1AB21B09875007A84F9 /* Pancake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pancake.swift; sourceTree = "<group>"; };
+		C31FD1AD21B09875007A84F9 /* FlapjackExample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlapjackExample.xcdatamodel; sourceTree = "<group>"; };
+		C31FD1AE21B09875007A84F9 /* AutomaticViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutomaticViewController.swift; sourceTree = "<group>"; };
+		C31FD1B021B09875007A84F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		C31FD1B221B09875007A84F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C31FD1B321B09875007A84F9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C31FD1B421B09875007A84F9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C31FD1B521B09875007A84F9 /* ManualViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualViewController.swift; sourceTree = "<group>"; };
+		C31FD1B621B09875007A84F9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C31FD1C621B0996F007A84F9 /* FlapjackCoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlapjackCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C31FD21A21B09F29007A84F9 /* FlapjackCoreData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlapjackCoreData.h; sourceTree = "<group>"; };
+		C31FD21D21B09F54007A84F9 /* FlapjackUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlapjackUIKit.h; sourceTree = "<group>"; };
+		C31FD21F21B0A244007A84F9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C31FD22121B0A249007A84F9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C31FD22721B0A406007A84F9 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C31FD23521B0A423007A84F9 /* DataContextErrorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataContextErrorTests.swift; sourceTree = "<group>"; };
+		C31FD23621B0A423007A84F9 /* SortDescriptorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortDescriptorTests.swift; sourceTree = "<group>"; };
+		C31FD23721B0A423007A84F9 /* DataAccessErrorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataAccessErrorTests.swift; sourceTree = "<group>"; };
+		C31FD23921B0A423007A84F9 /* Array+ExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+ExtensionsTests.swift"; sourceTree = "<group>"; };
+		C31FD23A21B0A423007A84F9 /* NSCompoundPredicate+ExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCompoundPredicate+ExtensionsTests.swift"; sourceTree = "<group>"; };
+		C31FD23B21B0A423007A84F9 /* Dictionary+ExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+ExtensionsTests.swift"; sourceTree = "<group>"; };
+		C31FD23C21B0A423007A84F9 /* Collection+ExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+ExtensionsTests.swift"; sourceTree = "<group>"; };
+		C31FD23F21B0A423007A84F9 /* MockEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockEntity.swift; sourceTree = "<group>"; };
+		C31FD24321B0A423007A84F9 /* TestModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel.xcdatamodel; sourceTree = "<group>"; };
+		C31FD24521B0A423007A84F9 /* NSFetchedResultsChangeTypeExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSFetchedResultsChangeTypeExtensionsTests.swift; sourceTree = "<group>"; };
+		C31FD24621B0A423007A84F9 /* NSManagedObjectContextDataContextTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContextDataContextTests.swift; sourceTree = "<group>"; };
+		C31FD24721B0A423007A84F9 /* CoreDataAccessTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataAccessTests.swift; sourceTree = "<group>"; };
+		C31FD24821B0A423007A84F9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3F52F5F21B18C8A00F92897 /* FlapjackUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlapjackUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		607FACCD1AFB9204008FA782 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C31FD13D21B092FF007A84F9 /* Flapjack.framework in Frameworks */,
+				C31FD1CD21B0996F007A84F9 /* FlapjackCoreData.framework in Frameworks */,
+				C3F52F6621B18C8A00F92897 /* FlapjackUIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C31FD13321B092FF007A84F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C31FD1C321B0996F007A84F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C31FD21421B09B1A007A84F9 /* Flapjack.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C31FD22421B0A406007A84F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C31FD22C21B0A406007A84F9 /* Flapjack.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3F52F5C21B18C8A00F92897 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3F52F6D21B18CCD00F92897 /* Flapjack.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		607FACC71AFB9204008FA782 = {
+			isa = PBXGroup;
+			children = (
+				C31FD1A821B09875007A84F9 /* Example */,
+				C31FD15D21B095DE007A84F9 /* Flapjack */,
+				C31FD23221B0A423007A84F9 /* Tests */,
+				607FACD11AFB9204008FA782 /* Products */,
+				C31FD21321B09B1A007A84F9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		607FACD11AFB9204008FA782 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD01AFB9204008FA782 /* Example.app */,
+				C31FD13621B092FF007A84F9 /* Flapjack.framework */,
+				C31FD1C621B0996F007A84F9 /* FlapjackCoreData.framework */,
+				C31FD22721B0A406007A84F9 /* Tests.xctest */,
+				C3F52F5F21B18C8A00F92897 /* FlapjackUIKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C31FD15D21B095DE007A84F9 /* Flapjack */ = {
+			isa = PBXGroup;
+			children = (
+				C31FD15E21B095DE007A84F9 /* Core */,
+				C31FD17721B095DE007A84F9 /* UIKit */,
+				C31FD17B21B095DE007A84F9 /* CoreData */,
+			);
+			path = Flapjack;
+			sourceTree = "<group>";
+		};
+		C31FD15E21B095DE007A84F9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C31FD16A21B095DE007A84F9 /* Extensions */,
+				C31FD17121B095DE007A84F9 /* Support */,
+				C31FD17321B095DE007A84F9 /* Supporting Files */,
+				C31FD15F21B095DE007A84F9 /* Types */,
+				C31FD16621B095DE007A84F9 /* DataObjectID.swift */,
+				C31FD16721B095DE007A84F9 /* SingleDataSource.swift */,
+				C31FD16821B095DE007A84F9 /* DataAccess.swift */,
+				C31FD16921B095DE007A84F9 /* DataObject.swift */,
+				C31FD17021B095DE007A84F9 /* DataContext.swift */,
+				C31FD17621B095DE007A84F9 /* DataSource.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C31FD15F21B095DE007A84F9 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				C31FD16021B095DE007A84F9 /* SortDescriptor.swift */,
+				C31FD16121B095DE007A84F9 /* DataContextError.swift */,
+				C31FD16221B095DE007A84F9 /* PrimaryKey.swift */,
+				C31FD16321B095DE007A84F9 /* DataSourceChange.swift */,
+				C31FD16421B095DE007A84F9 /* DataAccessError.swift */,
+				C31FD16521B095DE007A84F9 /* DataSourceSectionChange.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
+		C31FD16A21B095DE007A84F9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C31FD16B21B095DE007A84F9 /* Array+Extensions.swift */,
+				C31FD16C21B095DE007A84F9 /* NSCompoundPredicate+Extensions.swift */,
+				C31FD16D21B095DE007A84F9 /* Set+Extensions.swift */,
+				C31FD16E21B095DE007A84F9 /* Dictionary+Extensions.swift */,
+				C31FD16F21B095DE007A84F9 /* Collection+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C31FD17121B095DE007A84F9 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				C31FD17221B095DE007A84F9 /* Logger.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		C31FD17321B095DE007A84F9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C31FD17421B095DE007A84F9 /* Flapjack.h */,
+				C31FD21A21B09F29007A84F9 /* FlapjackCoreData.h */,
+				C31FD21D21B09F54007A84F9 /* FlapjackUIKit.h */,
+				C31FD17521B095DE007A84F9 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C31FD17721B095DE007A84F9 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				C31FD17821B095DE007A84F9 /* Extensions */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		C31FD17821B095DE007A84F9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C31FD17921B095DE007A84F9 /* UITableView+Extensions.swift */,
+				C31FD17A21B095DE007A84F9 /* UICollectionView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C31FD17B21B095DE007A84F9 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				C31FD17E21B095DE007A84F9 /* Extensions */,
+				C31FD17C21B095DE007A84F9 /* CoreSingleDataSource.swift */,
+				C31FD17D21B095DE007A84F9 /* CoreDataAccess.swift */,
+				C31FD18421B095DE007A84F9 /* CoreDataSourceFactory.swift */,
+				C31FD18521B095DE007A84F9 /* CoreDataSource.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		C31FD17E21B095DE007A84F9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C31FD17F21B095DE007A84F9 /* NSManagedObjectContext+Extensions.swift */,
+				C31FD18021B095DE007A84F9 /* NSManagedObjectContext+DataContext.swift */,
+				C31FD18121B095DE007A84F9 /* NSManagedObjectID+DataObjectID.swift */,
+				C31FD18221B095DE007A84F9 /* NSManagedObject+DataObject.swift */,
+				C31FD18321B095DE007A84F9 /* NSFetchedResultsChangeType+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C31FD1A821B09875007A84F9 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				C31FD1AA21B09875007A84F9 /* Core Data */,
+				C31FD1B321B09875007A84F9 /* Images.xcassets */,
+				C31FD1A921B09875007A84F9 /* PancakeMaker.swift */,
+				C31FD1AE21B09875007A84F9 /* AutomaticViewController.swift */,
+				C31FD1AF21B09875007A84F9 /* LaunchScreen.xib */,
+				C31FD1B121B09875007A84F9 /* Main.storyboard */,
+				C31FD1B421B09875007A84F9 /* AppDelegate.swift */,
+				C31FD1B521B09875007A84F9 /* ManualViewController.swift */,
+				C31FD1B621B09875007A84F9 /* Info.plist */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		C31FD1AA21B09875007A84F9 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				C31FD1AB21B09875007A84F9 /* Pancake.swift */,
+				C31FD1AC21B09875007A84F9 /* FlapjackExample.xcdatamodeld */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		C31FD21321B09B1A007A84F9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C31FD22121B0A249007A84F9 /* CoreData.framework */,
+				C31FD21F21B0A244007A84F9 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C31FD23221B0A423007A84F9 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				C31FD23321B0A423007A84F9 /* Core */,
+				C31FD23D21B0A423007A84F9 /* CoreData */,
+				C31FD24821B0A423007A84F9 /* Info.plist */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		C31FD23321B0A423007A84F9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C31FD23421B0A423007A84F9 /* Types */,
+				C31FD23821B0A423007A84F9 /* Extensions */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C31FD23421B0A423007A84F9 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				C31FD23521B0A423007A84F9 /* DataContextErrorTests.swift */,
+				C31FD23621B0A423007A84F9 /* SortDescriptorTests.swift */,
+				C31FD23721B0A423007A84F9 /* DataAccessErrorTests.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
+		C31FD23821B0A423007A84F9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C31FD23921B0A423007A84F9 /* Array+ExtensionsTests.swift */,
+				C31FD23A21B0A423007A84F9 /* NSCompoundPredicate+ExtensionsTests.swift */,
+				C31FD23B21B0A423007A84F9 /* Dictionary+ExtensionsTests.swift */,
+				C31FD23C21B0A423007A84F9 /* Collection+ExtensionsTests.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C31FD23D21B0A423007A84F9 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				C31FD23E21B0A423007A84F9 /* Mocks */,
+				C31FD24121B0A423007A84F9 /* Resources */,
+				C31FD24421B0A423007A84F9 /* Extensions */,
+				C31FD24721B0A423007A84F9 /* CoreDataAccessTests.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		C31FD23E21B0A423007A84F9 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				C31FD23F21B0A423007A84F9 /* MockEntity.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		C31FD24121B0A423007A84F9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C31FD24221B0A423007A84F9 /* TestModel.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C31FD24421B0A423007A84F9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C31FD24521B0A423007A84F9 /* NSFetchedResultsChangeTypeExtensionsTests.swift */,
+				C31FD24621B0A423007A84F9 /* NSManagedObjectContextDataContextTests.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C31FD13121B092FF007A84F9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C31FD21C21B09F43007A84F9 /* Flapjack.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C31FD1C121B0996F007A84F9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C31FD21B21B09F29007A84F9 /* FlapjackCoreData.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3F52F5A21B18C8A00F92897 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		607FACCF1AFB9204008FA782 /* Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Example" */;
+			buildPhases = (
+				607FACCC1AFB9204008FA782 /* Sources */,
+				607FACCD1AFB9204008FA782 /* Frameworks */,
+				607FACCE1AFB9204008FA782 /* Resources */,
+				C31FD14221B092FF007A84F9 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C31FD13C21B092FF007A84F9 /* PBXTargetDependency */,
+				C31FD1CC21B0996F007A84F9 /* PBXTargetDependency */,
+				C3F52F6521B18C8A00F92897 /* PBXTargetDependency */,
+			);
+			name = Example;
+			productName = Flapjack;
+			productReference = 607FACD01AFB9204008FA782 /* Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C31FD13521B092FF007A84F9 /* Flapjack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C31FD14121B092FF007A84F9 /* Build configuration list for PBXNativeTarget "Flapjack" */;
+			buildPhases = (
+				C31FD1A521B09717007A84F9 /* SwiftLint */,
+				C31FD13121B092FF007A84F9 /* Headers */,
+				C31FD13221B092FF007A84F9 /* Sources */,
+				C31FD13321B092FF007A84F9 /* Frameworks */,
+				C31FD13421B092FF007A84F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Flapjack;
+			productName = Flapjack;
+			productReference = C31FD13621B092FF007A84F9 /* Flapjack.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C31FD1C521B0996F007A84F9 /* FlapjackCoreData */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C31FD1CF21B0996F007A84F9 /* Build configuration list for PBXNativeTarget "FlapjackCoreData" */;
+			buildPhases = (
+				C31FD25C21B0A56D007A84F9 /* SwiftLint */,
+				C31FD1C121B0996F007A84F9 /* Headers */,
+				C31FD1C221B0996F007A84F9 /* Sources */,
+				C31FD1C321B0996F007A84F9 /* Frameworks */,
+				C31FD1C421B0996F007A84F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlapjackCoreData;
+			productName = FlapjackCoreData;
+			productReference = C31FD1C621B0996F007A84F9 /* FlapjackCoreData.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C31FD22621B0A406007A84F9 /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C31FD22F21B0A406007A84F9 /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				C31FD22321B0A406007A84F9 /* Sources */,
+				C31FD22521B0A406007A84F9 /* Resources */,
+				C31FD22421B0A406007A84F9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C31FD25921B0A49C007A84F9 /* PBXTargetDependency */,
+				C31FD22E21B0A406007A84F9 /* PBXTargetDependency */,
+			);
+			name = Tests;
+			productName = FlapjackTests;
+			productReference = C31FD22721B0A406007A84F9 /* Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C3F52F5E21B18C8A00F92897 /* FlapjackUIKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3F52F6821B18C8A00F92897 /* Build configuration list for PBXNativeTarget "FlapjackUIKit" */;
+			buildPhases = (
+				C3F52F5A21B18C8A00F92897 /* Headers */,
+				C3F52F5B21B18C8A00F92897 /* Sources */,
+				C3F52F5C21B18C8A00F92897 /* Frameworks */,
+				C3F52F5D21B18C8A00F92897 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlapjackUIKit;
+			productName = FlapjackUIKit;
+			productReference = C3F52F5F21B18C8A00F92897 /* FlapjackUIKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		607FACC81AFB9204008FA782 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "O'Reilly Media, Inc.";
+				TargetAttributes = {
+					607FACCF1AFB9204008FA782 = {
+						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 5XJYJPRTH5;
+						LastSwiftMigration = 1000;
+					};
+					C31FD13521B092FF007A84F9 = {
+						CreatedOnToolsVersion = 10.1;
+						DevelopmentTeam = 5XJYJPRTH5;
+						ProvisioningStyle = Automatic;
+					};
+					C31FD1C521B0996F007A84F9 = {
+						CreatedOnToolsVersion = 10.1;
+						DevelopmentTeam = 5XJYJPRTH5;
+						ProvisioningStyle = Automatic;
+					};
+					C31FD22621B0A406007A84F9 = {
+						CreatedOnToolsVersion = 10.1;
+						DevelopmentTeam = 5XJYJPRTH5;
+						ProvisioningStyle = Automatic;
+					};
+					C3F52F5E21B18C8A00F92897 = {
+						CreatedOnToolsVersion = 10.1;
+						DevelopmentTeam = 5XJYJPRTH5;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "Flapjack" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 607FACC71AFB9204008FA782;
+			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				607FACCF1AFB9204008FA782 /* Example */,
+				C31FD13521B092FF007A84F9 /* Flapjack */,
+				C31FD1C521B0996F007A84F9 /* FlapjackCoreData */,
+				C3F52F5E21B18C8A00F92897 /* FlapjackUIKit */,
+				C31FD22621B0A406007A84F9 /* Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		607FACCE1AFB9204008FA782 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C31FD1BC21B09875007A84F9 /* Main.storyboard in Resources */,
+				C31FD1BD21B09875007A84F9 /* Images.xcassets in Resources */,
+				C31FD1BB21B09875007A84F9 /* LaunchScreen.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C31FD13421B092FF007A84F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C31FD1C421B0996F007A84F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C31FD22521B0A406007A84F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3F52F5D21B18C8A00F92897 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C31FD1A521B09717007A84F9 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  if which swiftlint > /dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint to lint!\"\n  fi\nfi\n";
+		};
+		C31FD25C21B0A56D007A84F9 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  if which swiftlint > /dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint to lint!\"\n  fi\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		607FACCC1AFB9204008FA782 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C31FD1B921B09875007A84F9 /* FlapjackExample.xcdatamodeld in Sources */,
+				C31FD1B721B09875007A84F9 /* PancakeMaker.swift in Sources */,
+				C31FD1BA21B09875007A84F9 /* AutomaticViewController.swift in Sources */,
+				C31FD1BE21B09875007A84F9 /* AppDelegate.swift in Sources */,
+				C31FD1BF21B09875007A84F9 /* ManualViewController.swift in Sources */,
+				C31FD1B821B09875007A84F9 /* Pancake.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C31FD13221B092FF007A84F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C31FD18C21B095DE007A84F9 /* DataObjectID.swift in Sources */,
+				C31FD19121B095DE007A84F9 /* NSCompoundPredicate+Extensions.swift in Sources */,
+				C31FD19221B095DE007A84F9 /* Set+Extensions.swift in Sources */,
+				C31FD19321B095DE007A84F9 /* Dictionary+Extensions.swift in Sources */,
+				C31FD18721B095DE007A84F9 /* DataContextError.swift in Sources */,
+				C31FD18621B095DE007A84F9 /* SortDescriptor.swift in Sources */,
+				C31FD19021B095DE007A84F9 /* Array+Extensions.swift in Sources */,
+				C31FD18B21B095DE007A84F9 /* DataSourceSectionChange.swift in Sources */,
+				C31FD19621B095DE007A84F9 /* Logger.swift in Sources */,
+				C31FD18F21B095DE007A84F9 /* DataObject.swift in Sources */,
+				C31FD18921B095DE007A84F9 /* DataSourceChange.swift in Sources */,
+				C31FD18821B095DE007A84F9 /* PrimaryKey.swift in Sources */,
+				C31FD19921B095DE007A84F9 /* DataSource.swift in Sources */,
+				C31FD19521B095DE007A84F9 /* DataContext.swift in Sources */,
+				C31FD18D21B095DE007A84F9 /* SingleDataSource.swift in Sources */,
+				C31FD18E21B095DE007A84F9 /* DataAccess.swift in Sources */,
+				C31FD18A21B095DE007A84F9 /* DataAccessError.swift in Sources */,
+				C31FD19421B095DE007A84F9 /* Collection+Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C31FD1C221B0996F007A84F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C31FD20A21B099B9007A84F9 /* NSManagedObjectContext+DataContext.swift in Sources */,
+				C31FD20B21B099B9007A84F9 /* NSManagedObjectID+DataObjectID.swift in Sources */,
+				C31FD20E21B099B9007A84F9 /* CoreSingleDataSource.swift in Sources */,
+				C31FD21921B09B9B007A84F9 /* Collection+Extensions.swift in Sources */,
+				C31FD20C21B099B9007A84F9 /* NSManagedObject+DataObject.swift in Sources */,
+				C31FD20F21B099B9007A84F9 /* CoreDataAccess.swift in Sources */,
+				C31FD20D21B099B9007A84F9 /* NSFetchedResultsChangeType+Extensions.swift in Sources */,
+				C31FD20921B099B9007A84F9 /* NSManagedObjectContext+Extensions.swift in Sources */,
+				C31FD21021B099B9007A84F9 /* CoreDataSourceFactory.swift in Sources */,
+				C31FD21121B099B9007A84F9 /* CoreDataSource.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C31FD22321B0A406007A84F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C31FD25721B0A477007A84F9 /* TestModel.xcdatamodeld in Sources */,
+				C31FD24A21B0A423007A84F9 /* SortDescriptorTests.swift in Sources */,
+				C31FD24D21B0A423007A84F9 /* NSCompoundPredicate+ExtensionsTests.swift in Sources */,
+				C31FD25021B0A423007A84F9 /* MockEntity.swift in Sources */,
+				C31FD24B21B0A423007A84F9 /* DataAccessErrorTests.swift in Sources */,
+				C31FD24921B0A423007A84F9 /* DataContextErrorTests.swift in Sources */,
+				C31FD24F21B0A423007A84F9 /* Collection+ExtensionsTests.swift in Sources */,
+				C31FD25521B0A423007A84F9 /* CoreDataAccessTests.swift in Sources */,
+				C31FD24E21B0A423007A84F9 /* Dictionary+ExtensionsTests.swift in Sources */,
+				C31FD25321B0A423007A84F9 /* NSFetchedResultsChangeTypeExtensionsTests.swift in Sources */,
+				C31FD24C21B0A423007A84F9 /* Array+ExtensionsTests.swift in Sources */,
+				C31FD25421B0A423007A84F9 /* NSManagedObjectContextDataContextTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3F52F5B21B18C8A00F92897 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3F52F6C21B18CB100F92897 /* UICollectionView+Extensions.swift in Sources */,
+				C3F52F6B21B18CAE00F92897 /* UITableView+Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C31FD13C21B092FF007A84F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C31FD13521B092FF007A84F9 /* Flapjack */;
+			targetProxy = C31FD13B21B092FF007A84F9 /* PBXContainerItemProxy */;
+		};
+		C31FD1CC21B0996F007A84F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C31FD1C521B0996F007A84F9 /* FlapjackCoreData */;
+			targetProxy = C31FD1CB21B0996F007A84F9 /* PBXContainerItemProxy */;
+		};
+		C31FD22E21B0A406007A84F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C31FD13521B092FF007A84F9 /* Flapjack */;
+			targetProxy = C31FD22D21B0A406007A84F9 /* PBXContainerItemProxy */;
+		};
+		C31FD25921B0A49C007A84F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C31FD1C521B0996F007A84F9 /* FlapjackCoreData */;
+			targetProxy = C31FD25821B0A49C007A84F9 /* PBXContainerItemProxy */;
+		};
+		C3F52F6521B18C8A00F92897 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C3F52F5E21B18C8A00F92897 /* FlapjackUIKit */;
+			targetProxy = C3F52F6421B18C8A00F92897 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C31FD1AF21B09875007A84F9 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C31FD1B021B09875007A84F9 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		C31FD1B121B09875007A84F9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C31FD1B221B09875007A84F9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		607FACED1AFB9204008FA782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		607FACEE1AFB9204008FA782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		607FACF01AFB9204008FA782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 5XJYJPRTH5;
+				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oreilly.FlapjackExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		607FACF11AFB9204008FA782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 5XJYJPRTH5;
+				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oreilly.FlapjackExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		C31FD13F21B092FF007A84F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5XJYJPRTH5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/Flapjack/Core/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oreillymedia.Flapjack;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C31FD14021B092FF007A84F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5XJYJPRTH5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/Flapjack/Core/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oreillymedia.Flapjack;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C31FD1D021B0996F007A84F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5XJYJPRTH5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/Flapjack/Core/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oreillymedia.FlapjackCoreData;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C31FD1D121B0996F007A84F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5XJYJPRTH5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/Flapjack/Core/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oreillymedia.FlapjackCoreData;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C31FD23021B0A406007A84F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 5XJYJPRTH5;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oreillymedia.FlapjackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C31FD23121B0A406007A84F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5XJYJPRTH5;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oreillymedia.FlapjackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C3F52F6921B18C8A00F92897 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5XJYJPRTH5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/Flapjack/Core/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oreillymedia.FlapjackUIKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C3F52F6A21B18C8A00F92897 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5XJYJPRTH5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/Flapjack/Core/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oreillymedia.FlapjackUIKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "Flapjack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				607FACED1AFB9204008FA782 /* Debug */,
+				607FACEE1AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				607FACF01AFB9204008FA782 /* Debug */,
+				607FACF11AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C31FD14121B092FF007A84F9 /* Build configuration list for PBXNativeTarget "Flapjack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C31FD13F21B092FF007A84F9 /* Debug */,
+				C31FD14021B092FF007A84F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C31FD1CF21B0996F007A84F9 /* Build configuration list for PBXNativeTarget "FlapjackCoreData" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C31FD1D021B0996F007A84F9 /* Debug */,
+				C31FD1D121B0996F007A84F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C31FD22F21B0A406007A84F9 /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C31FD23021B0A406007A84F9 /* Debug */,
+				C31FD23121B0A406007A84F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3F52F6821B18C8A00F92897 /* Build configuration list for PBXNativeTarget "FlapjackUIKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3F52F6921B18C8A00F92897 /* Debug */,
+				C3F52F6A21B18C8A00F92897 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C31FD1AC21B09875007A84F9 /* FlapjackExample.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C31FD1AD21B09875007A84F9 /* FlapjackExample.xcdatamodel */,
+			);
+			currentVersion = C31FD1AD21B09875007A84F9 /* FlapjackExample.xcdatamodel */;
+			path = FlapjackExample.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		C31FD24221B0A423007A84F9 /* TestModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C31FD24321B0A423007A84F9 /* TestModel.xcdatamodel */,
+			);
+			currentVersion = C31FD24321B0A423007A84F9 /* TestModel.xcdatamodel */;
+			path = TestModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 607FACC81AFB9204008FA782 /* Project object */;
+}

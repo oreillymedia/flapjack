@@ -9,7 +9,9 @@
 import Foundation
 import XCTest
 import CoreData
+
 @testable import Flapjack
+@testable import FlapjackCoreData
 
 class CoreDataAccessStoreTypeTests: XCTestCase {
     func testStoreTypeSQL() {
@@ -39,7 +41,7 @@ class CoreDataAccessTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        model = NSManagedObjectModel(contentsOf: resourceBundle.url(forResource: "TestModel", withExtension: "momd")!)
+        model = NSManagedObjectModel(contentsOf: Bundle(for: type(of: self)).url(forResource: "TestModel", withExtension: "momd")!)
         dataAccess = CoreDataAccess(name: "TestModel", type: .memory, model: model)
     }
 
@@ -61,7 +63,9 @@ class CoreDataAccessTests: XCTestCase {
         XCTAssertFalse(dataAccess.isStackReady)
         let expect = expectation(description: "completion")
         dataAccess.prepareStack(asynchronously: true) { [weak self] error in
-            guard let self = self else { return XCTFail("Expected self.") }
+            guard let self = self else {
+                return XCTFail("Expected self.")
+            }
             XCTAssertNil(error)
             XCTAssertTrue(self.dataAccess.isStackReady)
             expect.fulfill()
@@ -106,7 +110,7 @@ class CoreDataAccessWithSQLFileTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        model = NSManagedObjectModel(contentsOf: resourceBundle.url(forResource: "TestModel", withExtension: "momd")!)
+        model = NSManagedObjectModel(contentsOf: Bundle(for: type(of: self)).url(forResource: "TestModel", withExtension: "momd")!)
         storeType = .sql(filename: UUID().uuidString + ".sqlite")
         dataAccess = CoreDataAccess(name: "TestModel", type: storeType, model: model)
         XCTAssertFalse(FileManager.default.fileExists(atPath: storeURL.path, isDirectory: nil))
@@ -124,7 +128,7 @@ class CoreDataAccessWithSQLFileTests: XCTestCase {
         XCTAssertTrue(FileManager.default.fileExists(atPath: storeURL.path, isDirectory: nil))
 
         let expect = expectation(description: "completion")
-        dataAccess.deleteDatabase(rebuild: false) { error in
+        dataAccess.deleteDatabase(rebuild: false) { _ in
             XCTAssertFalse(FileManager.default.fileExists(atPath: self.storeURL.path, isDirectory: nil))
             expect.fulfill()
         }
@@ -136,7 +140,7 @@ class CoreDataAccessWithSQLFileTests: XCTestCase {
         XCTAssertTrue(FileManager.default.fileExists(atPath: storeURL.path, isDirectory: nil))
 
         let expect = expectation(description: "completion")
-        dataAccess.deleteDatabase(rebuild: true) { error in
+        dataAccess.deleteDatabase(rebuild: true) { _ in
             XCTAssertTrue(FileManager.default.fileExists(atPath: self.storeURL.path, isDirectory: nil))
             expect.fulfill()
         }
@@ -145,7 +149,7 @@ class CoreDataAccessWithSQLFileTests: XCTestCase {
 
     func testDeleteDatabaseWithoutPersistentStoresNoRebuild() {
         let expect = expectation(description: "completion")
-        dataAccess.deleteDatabase(rebuild: false) { error in
+        dataAccess.deleteDatabase(rebuild: false) { _ in
             XCTAssertFalse(FileManager.default.fileExists(atPath: self.storeURL.path, isDirectory: nil))
             expect.fulfill()
         }
@@ -154,7 +158,7 @@ class CoreDataAccessWithSQLFileTests: XCTestCase {
 
     func testDeleteDatabaseWithoutPersistentStoresWithRebuild() {
         let expect = expectation(description: "completion")
-        dataAccess.deleteDatabase(rebuild: true) { error in
+        dataAccess.deleteDatabase(rebuild: true) { _ in
             XCTAssertTrue(FileManager.default.fileExists(atPath: self.storeURL.path, isDirectory: nil))
             expect.fulfill()
         }

@@ -7,6 +7,9 @@
 
 import Foundation
 import CoreData
+#if !COCOAPODS
+import Flapjack
+#endif
 
 public extension DataObject where Self: NSManagedObject {
     var primaryKey: PrimaryKeyType? {

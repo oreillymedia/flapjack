@@ -8,6 +8,8 @@
 
 import UIKit
 import Flapjack
+// This import is necessary if you're importing the framework manually or via Carthage.
+import FlapjackCoreData
 
 #if swift(>=4.2)
 #else

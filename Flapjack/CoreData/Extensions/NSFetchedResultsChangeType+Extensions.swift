@@ -8,6 +8,9 @@
 
 import Foundation
 import CoreData
+#if !COCOAPODS
+import Flapjack
+#endif
 
 extension NSFetchedResultsChangeType: CustomStringConvertible {
     public var description: String {

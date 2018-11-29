@@ -8,6 +8,9 @@
 
 import UIKit
 import Flapjack
+// These imports are necessary if you're importing the framework manually or via Carthage.
+import FlapjackCoreData
+import FlapjackUIKit
 
 class AutomaticViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
