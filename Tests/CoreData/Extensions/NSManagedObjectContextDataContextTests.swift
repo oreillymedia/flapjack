@@ -175,4 +175,33 @@ class NSManagedObjectContextDataContextTests: XCTestCase {
 
 
     // MARK: - Creation & destruction operations
+
+    func testCreateSimple() {
+        let result1 = context.create(MockEntity.self)
+        XCTAssertEqual(result1.managedObjectContext, context)
+        XCTAssertTrue(result1.isInserted)
+    }
+
+    func testCreateWithAttributes() {
+        let result1 = context.create(MockEntity.self, attributes: ["someProperty": "some value"])
+        XCTAssertEqual(result1.managedObjectContext, context)
+        XCTAssertTrue(result1.isInserted)
+        XCTAssertEqual(result1.someProperty, "some value")
+    }
+
+    func testDestroy() {
+        let result1 = context.create(MockEntity.self, attributes: ["someProperty": "some value"])
+        _ = context.persist()
+        context.destroy(result1)
+        XCTAssertTrue(result1.isDeleted)
+    }
+
+    func testDestroyMany() {
+        let result1 = context.create(MockEntity.self, attributes: ["someProperty": "some value"])
+        let result2 = context.create(MockEntity.self, attributes: ["someProperty": "some other value"])
+        _ = context.persist()
+        context.destroy([result1, result2])
+        XCTAssertTrue(result1.isDeleted)
+        XCTAssertTrue(result2.isDeleted)
+    }
 }
