@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1000"
+   LastUpgradeVersion = "1010"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -42,7 +42,7 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "911B2FB7ED21A953BD821EA8CD4EB0E2"
+               BlueprintIdentifier = "A1A4874D886FD161DF1642E98215994C"
                BuildableName = "Flapjack-Unit-CoreData-Tests.xctest"
                BlueprintName = "Flapjack-Unit-CoreData-Tests"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -54,6 +54,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      codeCoverageEnabled = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
@@ -72,7 +73,7 @@
             testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "911B2FB7ED21A953BD821EA8CD4EB0E2"
+               BlueprintIdentifier = "A1A4874D886FD161DF1642E98215994C"
                BuildableName = "Flapjack-Unit-CoreData-Tests.xctest"
                BlueprintName = "Flapjack-Unit-CoreData-Tests"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">

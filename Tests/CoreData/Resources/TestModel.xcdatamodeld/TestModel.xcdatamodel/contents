@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.30.1" systemVersion="18A389" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18A389" minimumToolsVersion="Xcode 9.0" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="MockEntity" representedClassName="MockEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="identifier" attributeType="String" spotlightIndexingEnabled="YES" syncable="YES"/>
+        <attribute name="someProperty" attributeType="String" defaultValueString="default" syncable="YES"/>
+        <attribute name="someTransientProperty" optional="YES" transient="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="MockEntity" positionX="-63" positionY="-18" width="128" height="90"/>
+    </elements>
 </model>

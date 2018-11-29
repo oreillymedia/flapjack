@@ -115,19 +115,7 @@ extension NSManagedObjectContext: DataContext {
         guard let dataObject = dataObject as? NSManagedObject else {
             return nil
         }
-        if let found = registeredObject(for: dataObject.objectID), !found.isDeleted, let cast = found as? T {
-            return cast
-        }
-        do {
-            let found = try existingObject(with: dataObject.objectID)
-            guard !found.isDeleted else {
-                return nil
-            }
-            return found as? T
-        } catch let error {
-            Logger.error("Error finding object by ID \(dataObject.objectID): \(error)")
-            return nil
-        }
+        return object(ofType: T.self, objectID: dataObject.objectID)
     }
 
 
@@ -191,7 +179,7 @@ extension NSManagedObjectContext: DataContext {
     // MARK: Private functions
 
     private func fetchObject<T: DataObject>(ofType type: T.Type, predicate: NSPredicate?, prefetch: [String], sortBy sorters: [SortDescriptor]) throws -> T? {
-        let preregistered: T? = registeredObjects.first { obj in
+        let preregistered: T? = registeredObjects.sortedArray(using: sorters).first { obj in
             guard !obj.isFault, !obj.isDeleted, let obj = obj as? T else {
                 return false
             }
