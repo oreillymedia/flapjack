@@ -8,6 +8,9 @@
 
 import Foundation
 import CoreData
+#if !COCOAPODS
+import Flapjack
+#endif
 
 public extension NSManagedObjectContext {
     typealias NotificationObjectSet<T: DataObject & Hashable> = (refreshes: Set<T>, inserts: Set<T>, updates: Set<T>, deletes: Set<T>)

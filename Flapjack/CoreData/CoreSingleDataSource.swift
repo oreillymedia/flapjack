@@ -8,6 +8,9 @@
 
 import Foundation
 import CoreData
+#if !COCOAPODS
+import Flapjack
+#endif
 
 public class CoreSingleDataSource<T: NSManagedObject & DataObject>: NSObject, SingleDataSource {
     public let attributes: DataContext.Attributes

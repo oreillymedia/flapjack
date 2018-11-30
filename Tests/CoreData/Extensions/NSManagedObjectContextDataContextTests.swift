@@ -8,7 +8,9 @@
 import UIKit
 import XCTest
 import CoreData
+
 @testable import Flapjack
+@testable import FlapjackCoreData
 
 class NSManagedObjectContextDataContextTests: XCTestCase {
     private var context: NSManagedObjectContext!
@@ -16,7 +18,7 @@ class NSManagedObjectContextDataContextTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        let model = NSManagedObjectModel(contentsOf: resourceBundle.url(forResource: "TestModel", withExtension: "momd")!)
+        let model = NSManagedObjectModel(contentsOf: Bundle(for: type(of: self)).url(forResource: "TestModel", withExtension: "momd")!)
         let dataAccess = CoreDataAccess(name: "TestModel", type: .memory, model: model)
         dataAccess.prepareStack(asynchronously: false) { _ in }
         context = dataAccess.mainContext as? NSManagedObjectContext

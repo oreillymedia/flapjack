@@ -6,6 +6,12 @@
 //  Copyright (c) 2018 O'Reilly Media, Inc. All rights reserved.
 //
 
+import Foundation
+import UIKit
+#if !COCOAPODS
+import Flapjack
+#endif
+
 public extension UITableView {
     func performBatchUpdates(_ objectChanges: Set<DataSourceChange>, sectionChanges: Set<DataSourceSectionChange> = [], completion: ((Bool) -> Void)? = nil) {
         guard superview != nil, !objectChanges.isEmpty else {

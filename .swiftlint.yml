@@ -57,8 +57,8 @@ opt_in_rules:
   - redundant_type_annotation  # Maybe?
 
 included:
-  - ../Flapjack  # CocoaPods code
-  - Flapjack  # Example project code
+  - Flapjack  # CocoaPods code
+  - Example  # Example project code
 
 cyclomatic_complexity:
   warning: 12

@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Set where Element: AnyObject {
+public extension Set where Element: AnyObject {
     func sortedArray(using descriptors: [SortDescriptor]) -> [Element] {
         return (self as NSSet).sortedArray(using: descriptors.asNSSortDescriptors) as? [Element] ?? []
     }

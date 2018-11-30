@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "FlapjackExample.app"
-               BlueprintName = "FlapjackExample"
+               BuildableName = "Example.app"
+               BlueprintName = "Example"
                ReferencedContainer = "container:Flapjack.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -84,8 +84,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "FlapjackExample.app"
-            BlueprintName = "FlapjackExample"
+            BuildableName = "Example.app"
+            BlueprintName = "Example"
             ReferencedContainer = "container:Flapjack.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -107,8 +107,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "FlapjackExample.app"
-            BlueprintName = "FlapjackExample"
+            BuildableName = "Example.app"
+            BlueprintName = "Example"
             ReferencedContainer = "container:Flapjack.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -126,8 +126,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "FlapjackExample.app"
-            BlueprintName = "FlapjackExample"
+            BuildableName = "Example.app"
+            BlueprintName = "Example"
             ReferencedContainer = "container:Flapjack.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

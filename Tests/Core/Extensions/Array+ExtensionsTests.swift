@@ -33,7 +33,7 @@ class ArrayExtensionsTests: XCTestCase {
 }
 
 
-fileprivate class MockEquatable: NSObject {
+private class MockEquatable: NSObject {
     // To be key-value compliant.
     @objc let string: String
 
@@ -43,7 +43,9 @@ fileprivate class MockEquatable: NSObject {
     }
 
     override func isEqual(_ object: Any?) -> Bool {
-        guard let object = object as? MockEquatable else { return false }
+        guard let object = object as? MockEquatable else {
+            return false
+        }
         return object.string == self.string
     }
 }
