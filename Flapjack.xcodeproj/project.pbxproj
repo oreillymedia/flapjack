@@ -70,6 +70,7 @@
 		C3F52F6C21B18CB100F92897 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17A21B095DE007A84F9 /* UICollectionView+Extensions.swift */; };
 		C3F52F6D21B18CCD00F92897 /* Flapjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C31FD13621B092FF007A84F9 /* Flapjack.framework */; };
 		C3F52F7021B19C2E00F92897 /* CoreSingleDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F52F6F21B19C2E00F92897 /* CoreSingleDataSourceTests.swift */; };
+		C3F52F7221B1A50800F92897 /* CoreDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F52F7121B1A50800F92897 /* CoreDataSourceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -191,6 +192,7 @@
 		C31FD24821B0A423007A84F9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3F52F5F21B18C8A00F92897 /* FlapjackUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlapjackUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F52F6F21B19C2E00F92897 /* CoreSingleDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreSingleDataSourceTests.swift; sourceTree = "<group>"; };
+		C3F52F7121B1A50800F92897 /* CoreDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSourceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -455,6 +457,7 @@
 				C31FD24421B0A423007A84F9 /* Extensions */,
 				C31FD24721B0A423007A84F9 /* CoreDataAccessTests.swift */,
 				C3F52F6F21B19C2E00F92897 /* CoreSingleDataSourceTests.swift */,
+				C3F52F7121B1A50800F92897 /* CoreDataSourceTests.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -838,6 +841,7 @@
 				C31FD25521B0A423007A84F9 /* CoreDataAccessTests.swift in Sources */,
 				C31FD24E21B0A423007A84F9 /* Dictionary+ExtensionsTests.swift in Sources */,
 				C31FD25321B0A423007A84F9 /* NSFetchedResultsChangeTypeExtensionsTests.swift in Sources */,
+				C3F52F7221B1A50800F92897 /* CoreDataSourceTests.swift in Sources */,
 				C31FD24C21B0A423007A84F9 /* Array+ExtensionsTests.swift in Sources */,
 				C31FD25421B0A423007A84F9 /* NSManagedObjectContextDataContextTests.swift in Sources */,
 			);
