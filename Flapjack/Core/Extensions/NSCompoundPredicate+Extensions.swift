@@ -54,11 +54,11 @@ public extension NSPredicate {
 }
 
 public extension NSCompoundPredicate {
-    convenience init(andPredicateFrom dictionary: [String:Any]) {
+    convenience init(andPredicateFrom dictionary: [String: Any]) {
         self.init(andPredicateWithSubpredicates: NSPredicate.fromConditions(dictionary))
     }
 
-    convenience init(orPredicateFrom dictionary: [String:Any]) {
+    convenience init(orPredicateFrom dictionary: [String: Any]) {
         self.init(orPredicateWithSubpredicates: NSPredicate.fromConditions(dictionary))
     }
 }
