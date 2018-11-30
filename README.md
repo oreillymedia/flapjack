@@ -39,7 +39,13 @@ Then run `carthage update`. If this is your first time using Carthage in the pro
 
 ### Swift Package Manager
 
-Support for Swift Package Manager is forthcoming.
+Support for [Swift Package Manager][spm] is in its initial stage; the project does not build with support for Core Data or UIKit, since those frameworks are not packaged or available for Swift Package Manager (since [SPM only builds for the host platform](https://stackoverflow.com/a/34779231/194869), UIKit is currently impossible to use as a dependency for `FlapjackUIKit`). In order to use `Flapjack` by itself, add the following as a dependency to the `dependencies` array in your `Package.swift` file:
+
+```swift
+.package(url: "https://github.com/oreillymedia/flapjack.git", .upToNextMajor(from: "0.1.0"))
+```
+
+Then you'll specify `Flapjack` as a dependency of the target in which you wish to use it.
 
 
 ## Usage
@@ -180,3 +186,4 @@ Flapjack is available under the MIT license. See [LICENSE][lic] file for more in
 [krg]:     https://github.com/kreeger
 [lic]:     https://github.com/oreillymedia/flapjack/blob/master/LICENSE
 [car]:     https://github.com/Carthage/Carthage#adding-frameworks-to-an-application
+[spm]:     https://swift.org/package-manager/
