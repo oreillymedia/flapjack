@@ -70,6 +70,7 @@ public class CoreSingleDataSource<T: NSManagedObject & DataObject>: NSObject, Si
 
         if (allObjects.deletes as NSSet).filtered(using: NSCompoundPredicate(andPredicateFrom: attributes)).first as? T != nil {
             object = nil
+            objectDidChange?(nil)
             return
         }
 

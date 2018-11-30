@@ -62,21 +62,10 @@
             testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BF3EEE905AF898C2ED4179BCA3703FC4"
-               BuildableName = "Flapjack-Unit-Core-Tests.xctest"
-               BlueprintName = "Flapjack-Unit-Core-Tests"
-               ReferencedContainer = "container:Pods/Pods.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO"
-            testExecutionOrdering = "random">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A1A4874D886FD161DF1642E98215994C"
-               BuildableName = "Flapjack-Unit-CoreData-Tests.xctest"
-               BlueprintName = "Flapjack-Unit-CoreData-Tests"
-               ReferencedContainer = "container:Pods/Pods.xcodeproj">
+               BlueprintIdentifier = "C31FD22621B0A406007A84F9"
+               BuildableName = "Tests.xctest"
+               BlueprintName = "Tests"
+               ReferencedContainer = "container:Flapjack.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>

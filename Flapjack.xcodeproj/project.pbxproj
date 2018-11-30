@@ -69,6 +69,7 @@
 		C3F52F6B21B18CAE00F92897 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17921B095DE007A84F9 /* UITableView+Extensions.swift */; };
 		C3F52F6C21B18CB100F92897 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17A21B095DE007A84F9 /* UICollectionView+Extensions.swift */; };
 		C3F52F6D21B18CCD00F92897 /* Flapjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C31FD13621B092FF007A84F9 /* Flapjack.framework */; };
+		C3F52F7021B19C2E00F92897 /* CoreSingleDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F52F6F21B19C2E00F92897 /* CoreSingleDataSourceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +190,7 @@
 		C31FD24721B0A423007A84F9 /* CoreDataAccessTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataAccessTests.swift; sourceTree = "<group>"; };
 		C31FD24821B0A423007A84F9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3F52F5F21B18C8A00F92897 /* FlapjackUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlapjackUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3F52F6F21B19C2E00F92897 /* CoreSingleDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreSingleDataSourceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -452,6 +454,7 @@
 				C31FD24121B0A423007A84F9 /* Resources */,
 				C31FD24421B0A423007A84F9 /* Extensions */,
 				C31FD24721B0A423007A84F9 /* CoreDataAccessTests.swift */,
+				C3F52F6F21B19C2E00F92897 /* CoreSingleDataSourceTests.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -828,6 +831,7 @@
 				C31FD24A21B0A423007A84F9 /* SortDescriptorTests.swift in Sources */,
 				C31FD24D21B0A423007A84F9 /* NSCompoundPredicate+ExtensionsTests.swift in Sources */,
 				C31FD25021B0A423007A84F9 /* MockEntity.swift in Sources */,
+				C3F52F7021B19C2E00F92897 /* CoreSingleDataSourceTests.swift in Sources */,
 				C31FD24B21B0A423007A84F9 /* DataAccessErrorTests.swift in Sources */,
 				C31FD24921B0A423007A84F9 /* DataContextErrorTests.swift in Sources */,
 				C31FD24F21B0A423007A84F9 /* Collection+ExtensionsTests.swift in Sources */,
