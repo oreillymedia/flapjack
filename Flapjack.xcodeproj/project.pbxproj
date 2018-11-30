@@ -592,6 +592,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C3F52F6821B18C8A00F92897 /* Build configuration list for PBXNativeTarget "FlapjackUIKit" */;
 			buildPhases = (
+				C3F52F6E21B19AFF00F92897 /* SwiftLint */,
 				C3F52F5A21B18C8A00F92897 /* Headers */,
 				C3F52F5B21B18C8A00F92897 /* Sources */,
 				C3F52F5C21B18C8A00F92897 /* Frameworks */,
@@ -726,6 +727,24 @@
 			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  if which swiftlint > /dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint to lint!\"\n  fi\nfi\n";
 		};
 		C31FD25C21B0A56D007A84F9 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  if which swiftlint > /dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint to lint!\"\n  fi\nfi\n";
+		};
+		C3F52F6E21B19AFF00F92897 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (

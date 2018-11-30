@@ -11,7 +11,7 @@ import Foundation
 // MARK: - DataContext
 
 public protocol DataContext {
-    typealias Attributes = [String:Any]
+    typealias Attributes = [String: Any]
 
     func perform(_ operation: @escaping (_ context: DataContext) -> Void)
     func performSync(_ operation: @escaping (_ context: DataContext) -> Void)

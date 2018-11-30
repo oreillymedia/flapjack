@@ -13,7 +13,7 @@ import CoreData
 @testable import Flapjack
 @testable import FlapjackCoreData
 
-class NSFetchedResultsChangeTypeExtensionsTests: XCTestCase {
+class NSFRCTExtensionsTests: XCTestCase {
     func testDescription() {
         XCTAssertEqual(NSFetchedResultsChangeType.delete.description, "delete")
         XCTAssertEqual(NSFetchedResultsChangeType.insert.description, "insert")
