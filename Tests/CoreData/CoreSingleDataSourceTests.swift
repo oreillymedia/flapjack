@@ -1,0 +1,171 @@
+//
+//  CoreSingleDataSourceTests.swift
+//  Tests
+//
+//  Created by Ben Kreeger on 11/30/18.
+//  Copyright © 2018 O'Reilly Media, Inc. All rights reserved.
+//
+
+import Foundation
+import XCTest
+import CoreData
+
+@testable import Flapjack
+@testable import FlapjackCoreData
+
+class CoreSingleDataSourceTests: XCTestCase {
+    private var dataAccess: DataAccess!
+    private var dataSource: CoreSingleDataSource<MockEntity>!
+    private var attributes: [String: String] {
+        return ["someProperty": "someValue"]
+    }
+    private var entity: MockEntity!
+
+    override func setUp() {
+        super.setUp()
+        let model = NSManagedObjectModel(contentsOf: Bundle(for: type(of: self)).url(forResource: "TestModel", withExtension: "momd")!)
+        dataAccess = CoreDataAccess(name: "TestModel", type: .memory, model: model)
+        dataAccess.prepareStack(asynchronously: false, completion: { _ in })
+
+        entity = dataAccess.mainContext.create(MockEntity.self, attributes: attributes)
+        dataSource = CoreSingleDataSource<MockEntity>(dataAccess: dataAccess, attributes: attributes, prefetch: [])
+    }
+
+    override func tearDown() {
+        dataAccess = nil
+        entity = nil
+        dataSource = nil
+        super.tearDown()
+    }
+
+    func testObjectIsNilOnInit() {
+        XCTAssertNil(dataSource.object)
+        XCTAssertEqual(dataSource.attributes as? [String: String], attributes)
+        XCTAssertNil(dataSource.objectDidChange)
+    }
+
+    func testExecutionFetchesRightAway() {
+        XCTAssertNil(dataSource.object)
+        dataSource.execute()
+        XCTAssertEqual(dataSource.object, entity)
+    }
+
+    func testCoreDataNotificationNotPickedUpBeforeExecute() {
+        let expect = expectation(description: "did change block")
+        expect.isInverted = true
+        dataSource.objectDidChange = { object in
+            expect.fulfill()
+        }
+        // Should not fire the expectation
+        entity.someProperty = "some other value"
+        dataAccess.mainContext.persist()
+        waitForExpectations(timeout: 0.25) { XCTAssertNil($0) }
+    }
+
+    func testExecutionSubscribesToNotificationAndDidChangeFiresRightAway() {
+        let expect = expectation(description: "did change block")
+        expect.expectedFulfillmentCount = 1
+        dataSource.objectDidChange = { object in
+            expect.fulfill()
+        }
+        dataSource.execute()
+        waitForExpectations(timeout: 0.5) { XCTAssertNil($0) }
+    }
+
+    func testObjectDidChangeBlockFiresForSavesInvolvingObject() {
+        let expect = expectation(description: "did change block")
+        expect.expectedFulfillmentCount = 2
+        dataSource.objectDidChange = { object in
+            expect.fulfill()
+        }
+        dataSource.execute()
+        entity.someProperty = "some new value"
+        dataAccess.mainContext.persist()
+        waitForExpectations(timeout: 0.5) { XCTAssertNil($0) }
+    }
+
+    func testObjectDidChangeBlockFiresForChangeProcessesInvolvingObject() {
+        let expect = expectation(description: "did change block")
+        expect.expectedFulfillmentCount = 2
+        dataSource.objectDidChange = { object in
+            expect.fulfill()
+        }
+        dataSource.execute()
+        entity.someProperty = "some new value"
+        dataAccess.mainContext.processPendingChanges()
+        waitForExpectations(timeout: 0.5) { XCTAssertNil($0) }
+    }
+
+    func testObjectDidChangeBlockFiresForOnlyChangesAndSavesInvolvingObject() {
+        let otherEntity = dataAccess.mainContext.create(MockEntity.self, attributes: ["someProperty": "other value"])
+        dataAccess.mainContext.persist()
+
+        let expect = expectation(description: "did change block")
+        expect.expectedFulfillmentCount = 2
+        dataSource.objectDidChange = { object in
+            expect.fulfill()
+        }
+        dataSource.execute()
+        entity.someProperty = "some new value"
+        otherEntity.someProperty = "other other value"
+        dataAccess.mainContext.persist()
+        waitForExpectations(timeout: 0.5) { XCTAssertNil($0) }
+    }
+
+    func testObjectIsNilIfDestroyed() {
+        dataAccess.mainContext.destroy(entity)
+        dataAccess.mainContext.persist()
+
+        dataSource.execute()
+        XCTAssertNil(dataSource.object)
+    }
+
+    func testDidChangeIsCalledWithNilIfDestroyed() {
+        let expect = expectation(description: "did change block")
+        expect.expectedFulfillmentCount = 2
+        dataSource.objectDidChange = { object in
+            expect.fulfill()
+        }
+        dataSource.execute()
+        dataAccess.mainContext.destroy(entity)
+        waitForExpectations(timeout: 0.5) { XCTAssertNil($0) }
+        XCTAssertNil(dataSource.object)
+    }
+
+    func testObjectDidChangeBlockFiresWhenObjectStartsToExist() {
+        dataAccess.mainContext.destroy(entity)
+        dataAccess.mainContext.persist()
+
+        let expect = expectation(description: "did change block")
+        expect.expectedFulfillmentCount = 2
+        dataSource.objectDidChange = { object in
+            expect.fulfill()
+        }
+        dataSource.execute()
+        XCTAssertNil(dataSource.object)
+
+        let newEntity = dataAccess.mainContext.create(MockEntity.self, attributes: attributes)
+        waitForExpectations(timeout: 0.5) { XCTAssertNil($0) }
+
+        XCTAssertEqual(dataSource.object, newEntity)
+    }
+
+    func testObjectDidChangeBlockFiresWhenObjectMatchingQueryIsReplaced() {
+        let newEntity = dataAccess.mainContext.create(MockEntity.self, attributes: attributes)
+        dataAccess.mainContext.persist()
+
+        let expect = expectation(description: "did change block")
+        expect.expectedFulfillmentCount = 2
+        dataSource.objectDidChange = { object in
+            expect.fulfill()
+        }
+        dataSource.execute()
+
+        entity.someProperty = "some new value"
+        newEntity.someProperty = attributes["someProperty"]
+        dataAccess.mainContext.persist()
+
+        waitForExpectations(timeout: 0.5) { XCTAssertNil($0) }
+        XCTAssertEqual(dataSource.object, newEntity)
+    }
+}

@@ -62,7 +62,7 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
 
     public var numberOfObjects: Int {
         if let limit = limit {
-            return limit
+            return min(limit, controller.fetchedObjects?.count ?? 0)
         }
         return controller.fetchedObjects?.count ?? 0
     }
