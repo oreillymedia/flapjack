@@ -74,6 +74,12 @@
 		C3F52F7421B1E43E00F92897 /* Migrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F52F7321B1E43E00F92897 /* Migrator.swift */; };
 		C3F52F7621B1E4C700F92897 /* CoreDataMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F52F7521B1E4C700F92897 /* CoreDataMigrator.swift */; };
 		C3F52F7A21B1FBC600F92897 /* CoreDataMigratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F52F7921B1FBC600F92897 /* CoreDataMigratorTests.swift */; };
+		C3F8CCBA21C4513F00199781 /* TestMigrationModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C3F8CCB821C4513F00199781 /* TestMigrationModel.xcdatamodeld */; };
+		C3F8CCC121C468A300199781 /* TestMigrationModel 3.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = C3F8CCC021C468A300199781 /* TestMigrationModel 3.xcmappingmodel */; };
+		C3F8CCC421C468DC00199781 /* TestMigrationModel 4.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = C3F8CCC321C468DC00199781 /* TestMigrationModel 4.xcmappingmodel */; };
+		C3F8CCC621C4697E00199781 /* MigrationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F8CCC521C4697E00199781 /* MigrationPolicy.swift */; };
+		C3F8CCC821C469F600199781 /* NSMigrationManager+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F8CCC721C469F600199781 /* NSMigrationManager+Extensions.swift */; };
+		C3F8CCCA21C46ADE00199781 /* MockMigrationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F8CCC921C46ADE00199781 /* MockMigrationPolicy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -199,6 +205,15 @@
 		C3F52F7321B1E43E00F92897 /* Migrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Migrator.swift; sourceTree = "<group>"; };
 		C3F52F7521B1E4C700F92897 /* CoreDataMigrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMigrator.swift; sourceTree = "<group>"; };
 		C3F52F7921B1FBC600F92897 /* CoreDataMigratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMigratorTests.swift; sourceTree = "<group>"; };
+		C3F8CCB921C4513F00199781 /* TestMigrationModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestMigrationModel.xcdatamodel; sourceTree = "<group>"; };
+		C3F8CCBB21C4517800199781 /* TestMigrationModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TestMigrationModel 2.xcdatamodel"; sourceTree = "<group>"; };
+		C3F8CCBC21C4583400199781 /* TestMigrationModel 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TestMigrationModel 3.xcdatamodel"; sourceTree = "<group>"; };
+		C3F8CCBD21C4589100199781 /* TestMigrationModel 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TestMigrationModel 4.xcdatamodel"; sourceTree = "<group>"; };
+		C3F8CCC021C468A300199781 /* TestMigrationModel 3.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = "TestMigrationModel 3.xcmappingmodel"; sourceTree = "<group>"; };
+		C3F8CCC321C468DC00199781 /* TestMigrationModel 4.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = "TestMigrationModel 4.xcmappingmodel"; sourceTree = "<group>"; };
+		C3F8CCC521C4697E00199781 /* MigrationPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationPolicy.swift; sourceTree = "<group>"; };
+		C3F8CCC721C469F600199781 /* NSMigrationManager+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMigrationManager+Extensions.swift"; sourceTree = "<group>"; };
+		C3F8CCC921C46ADE00199781 /* MockMigrationPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMigrationPolicy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -367,6 +382,7 @@
 				C31FD18421B095DE007A84F9 /* CoreDataSourceFactory.swift */,
 				C31FD18521B095DE007A84F9 /* CoreDataSource.swift */,
 				C3F52F7521B1E4C700F92897 /* CoreDataMigrator.swift */,
+				C3F8CCC521C4697E00199781 /* MigrationPolicy.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -374,11 +390,12 @@
 		C31FD17E21B095DE007A84F9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C31FD18321B095DE007A84F9 /* NSFetchedResultsChangeType+Extensions.swift */,
 				C31FD17F21B095DE007A84F9 /* NSManagedObjectContext+Extensions.swift */,
 				C31FD18021B095DE007A84F9 /* NSManagedObjectContext+DataContext.swift */,
 				C31FD18121B095DE007A84F9 /* NSManagedObjectID+DataObjectID.swift */,
 				C31FD18221B095DE007A84F9 /* NSManagedObject+DataObject.swift */,
-				C31FD18321B095DE007A84F9 /* NSFetchedResultsChangeType+Extensions.swift */,
+				C3F8CCC721C469F600199781 /* NSMigrationManager+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -475,6 +492,7 @@
 			isa = PBXGroup;
 			children = (
 				C31FD23F21B0A423007A84F9 /* MockEntity.swift */,
+				C3F8CCC921C46ADE00199781 /* MockMigrationPolicy.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -482,7 +500,9 @@
 		C31FD24121B0A423007A84F9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C3F8CCC221C468AA00199781 /* Mapping Models */,
 				C31FD24221B0A423007A84F9 /* TestModel.xcdatamodeld */,
+				C3F8CCB821C4513F00199781 /* TestMigrationModel.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -494,6 +514,15 @@
 				C31FD24621B0A423007A84F9 /* NSManagedObjectContextDataContextTests.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C3F8CCC221C468AA00199781 /* Mapping Models */ = {
+			isa = PBXGroup;
+			children = (
+				C3F8CCC321C468DC00199781 /* TestMigrationModel 4.xcmappingmodel */,
+				C3F8CCC021C468A300199781 /* TestMigrationModel 3.xcmappingmodel */,
+			);
+			path = "Mapping Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -823,8 +852,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3F8CCC821C469F600199781 /* NSMigrationManager+Extensions.swift in Sources */,
 				C31FD20A21B099B9007A84F9 /* NSManagedObjectContext+DataContext.swift in Sources */,
 				C31FD20B21B099B9007A84F9 /* NSManagedObjectID+DataObjectID.swift in Sources */,
+				C3F8CCC621C4697E00199781 /* MigrationPolicy.swift in Sources */,
 				C3F52F7621B1E4C700F92897 /* CoreDataMigrator.swift in Sources */,
 				C31FD20E21B099B9007A84F9 /* CoreSingleDataSource.swift in Sources */,
 				C31FD21921B09B9B007A84F9 /* Collection+Extensions.swift in Sources */,
@@ -843,14 +874,18 @@
 			files = (
 				C31FD25721B0A477007A84F9 /* TestModel.xcdatamodeld in Sources */,
 				C31FD24A21B0A423007A84F9 /* SortDescriptorTests.swift in Sources */,
+				C3F8CCC121C468A300199781 /* TestMigrationModel 3.xcmappingmodel in Sources */,
+				C3F8CCBA21C4513F00199781 /* TestMigrationModel.xcdatamodeld in Sources */,
 				C31FD24D21B0A423007A84F9 /* NSCompoundPredicate+ExtensionsTests.swift in Sources */,
 				C31FD25021B0A423007A84F9 /* MockEntity.swift in Sources */,
 				C3F52F7021B19C2E00F92897 /* CoreSingleDataSourceTests.swift in Sources */,
 				C31FD24B21B0A423007A84F9 /* DataAccessErrorTests.swift in Sources */,
 				C31FD24921B0A423007A84F9 /* DataContextErrorTests.swift in Sources */,
+				C3F8CCCA21C46ADE00199781 /* MockMigrationPolicy.swift in Sources */,
 				C31FD24F21B0A423007A84F9 /* Collection+ExtensionsTests.swift in Sources */,
 				C31FD25521B0A423007A84F9 /* CoreDataAccessTests.swift in Sources */,
 				C31FD24E21B0A423007A84F9 /* Dictionary+ExtensionsTests.swift in Sources */,
+				C3F8CCC421C468DC00199781 /* TestMigrationModel 4.xcmappingmodel in Sources */,
 				C3F52F7A21B1FBC600F92897 /* CoreDataMigratorTests.swift in Sources */,
 				C31FD25321B0A423007A84F9 /* NSFetchedResultsChangeTypeExtensionsTests.swift in Sources */,
 				C3F52F7221B1A50800F92897 /* CoreDataSourceTests.swift in Sources */,
@@ -1382,6 +1417,19 @@
 			);
 			currentVersion = C31FD24321B0A423007A84F9 /* TestModel.xcdatamodel */;
 			path = TestModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		C3F8CCB821C4513F00199781 /* TestMigrationModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C3F8CCBD21C4589100199781 /* TestMigrationModel 4.xcdatamodel */,
+				C3F8CCBC21C4583400199781 /* TestMigrationModel 3.xcdatamodel */,
+				C3F8CCBB21C4517800199781 /* TestMigrationModel 2.xcdatamodel */,
+				C3F8CCB921C4513F00199781 /* TestMigrationModel.xcdatamodel */,
+			);
+			currentVersion = C3F8CCBD21C4589100199781 /* TestMigrationModel 4.xcdatamodel */;
+			path = TestMigrationModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -16,6 +16,7 @@ class CoreDataMigrator: Migrator {
     private typealias VersionModelPair = (version: String, model: NSManagedObjectModel)
 
     private let storeURL: URL
+    private let bundle: Bundle
     private let compiledModelURL: URL
     private let storeType: CoreDataAccess.StoreType
     private var tempURL: URL?
@@ -42,9 +43,18 @@ class CoreDataMigrator: Migrator {
         }
     }()
 
-    init(storeURL: URL, compiledModelURL: URL, storeType: CoreDataAccess.StoreType) {
+    init(storeURL: URL, bundle: Bundle, modelName: String, storeType: CoreDataAccess.StoreType) {
         self.storeURL = storeURL
-        self.compiledModelURL = compiledModelURL
+        self.bundle = bundle
+
+        guard let url = bundle.url(forResource: modelName, withExtension: "momd") else {
+            assertionFailure("Unable to load up compiled Core Data model for model name \(modelName)")
+            self.compiledModelURL = URL(fileURLWithPath: "")
+            self.storeType = .memory
+            return
+        }
+
+        self.compiledModelURL = url
         self.storeType = storeType
     }
 
@@ -60,26 +70,30 @@ class CoreDataMigrator: Migrator {
     func migrate() throws -> Bool {
         // If no file exists at the store URL, we definitely don't need to try and migrate, as Core
         //   Data probably hasn't even been initialized yet. If we're already up-to-date, return nothing.
-        guard storeExists, !storeIsUpToDate else { return false }
+        guard storeExists, !storeIsUpToDate else {
+            return false
+        }
 
         try createTempFolder()
         defer {
             if let url = tempURL {
                 do {
                     try FileManager.default.removeItem(at: url)
-                    Logger.verbose("Successfully removed temporary store file.")
+                    Logger.debug("Successfully removed temporary store file.")
                 } catch let error {
                     // This is a non-critical error.
-                    Logger.warning("Couldn't remove temporary store file: \(error.localizedDescription)")
+                    Logger.error("Couldn't remove temporary store file: \(error.localizedDescription)")
                 }
             }
         }
 
         // If we don't have any models to migrate to, don't do it.
         let modelsToMigrate = relevantModelVersions
-        guard !modelsToMigrate.isEmpty else { return false }
+        guard !modelsToMigrate.isEmpty else {
+            return false
+        }
         if let first = modelsToMigrate.first?.version, let last = modelsToMigrate.last?.version {
-            Logger.verbose("Core Data: need to migrate from version \(first) to version \(last).")
+            Logger.debug("Core Data: need to migrate from version \(first) to version \(last).")
         }
 
         var currentURLStore = storeURL
@@ -89,7 +103,7 @@ class CoreDataMigrator: Migrator {
                 let source = modelsToMigrate[idx]
                 let destination = modelsToMigrate[idx + 1]
 
-                Logger.verbose("Migrating to \(destination.version).")
+                Logger.debug("Migrating to \(destination.version).")
                 let migratedURL = try migrateStore(at: currentURLStore, from: source, to: destination)
                 if idx > 0 {
                     try removeStore(at: currentURLStore)
@@ -106,9 +120,9 @@ class CoreDataMigrator: Migrator {
         do {
             try removeStore(at: storeURL)
             try FileManager.default.moveItem(at: currentURLStore, to: storeURL)
-            Logger.verbose("Successfully migrated Core Data store and moved to \(storeURL)")
+            Logger.debug("Successfully migrated Core Data store and moved to \(storeURL)")
         } catch let error {
-            Logger.warning("Successfully migrated Core Data store, but wasn't able to move to \(storeURL): \(error.localizedDescription)")
+            Logger.error("Successfully migrated Core Data store, but wasn't able to move to \(storeURL): \(error.localizedDescription)")
             throw MigratorError.cleanupError(error)
         }
 
@@ -123,7 +137,7 @@ class CoreDataMigrator: Migrator {
      */
     private var currentModel: NSManagedObjectModel? {
         guard let currentMeta = currentStoreMeta else { return nil }
-        return NSManagedObjectModel.mergedModel(from: nil, forStoreMetadata: currentMeta)
+        return NSManagedObjectModel.mergedModel(from: [bundle], forStoreMetadata: currentMeta)
     }
 
     /**
@@ -132,7 +146,9 @@ class CoreDataMigrator: Migrator {
      are needed.
      */
     private var relevantModelVersions: [VersionModelPair] {
-        guard let currentModel = currentModel, let versionInfo = versionInfo else { return [] }
+        guard let currentModel = currentModel, let versionInfo = versionInfo else {
+            return []
+        }
 
         var isCurrentFoundInList = false
         return versionInfo.allVersions.compactMap { name in
@@ -157,9 +173,19 @@ class CoreDataMigrator: Migrator {
     private func removeStore(at url: URL) throws {
         let storePath = storeURL.path
         let manager = FileManager.default
-        try manager.removeItem(atPath: "\(storePath)-wal")
-        try manager.removeItem(atPath: "\(storePath)-shm")
-        try manager.removeItem(atPath: storePath)
+        do {
+            if manager.fileExists(atPath: "\(storePath)-wal") {
+                try manager.removeItem(atPath: "\(storePath)-wal")
+            }
+            if manager.fileExists(atPath: "\(storePath)-shm") {
+                try manager.removeItem(atPath: "\(storePath)-shm")
+            }
+            if manager.fileExists(atPath: "\(storePath)") {
+                try manager.removeItem(atPath: storePath)
+            }
+        } catch let error {
+            throw MigratorError.cleanupError(error)
+        }
     }
 
     /**
@@ -180,21 +206,22 @@ class CoreDataMigrator: Migrator {
             throw MigratorError.diskPreparationError
         }
 
+        // Setup a migration manager and fire off the actual migration.
+        let migrationManager = NSMigrationManager(sourceModel: source.model, destinationModel: destination.model)
+        let mappingModel = try findMappingModel(from: source, to: destination)
+        try migrationManager.migrateStore(from: url, sourceType: storeType.coreDataType, options: nil, with: mappingModel, toDestinationURL: destinationURL, destinationType: storeType.coreDataType, destinationOptions: nil)
+        return destinationURL
+    }
+
+    private func findMappingModel(from source: VersionModelPair, to destination: VersionModelPair) throws -> NSMappingModel {
         // Get either a specific mapping model class _or_ an inferred, default-behavior mapping
         //   model. Any specific mapping model classes are generated from (and referred to in) the
         //   Core Data schema file.
-        var mappingModel = NSMappingModel(from: nil, forSourceModel: source.model, destinationModel: destination.model)
-        if mappingModel == nil {
-            Logger.verbose("Inferring mapping model from source model \(source.version) to destination model \(destination.version).")
-            mappingModel = try NSMappingModel.inferredMappingModel(forSourceModel: source.model, destinationModel: destination.model)
-        } else {
-            Logger.verbose("Found concrete mapping model from source model \(source.version) to destination model \(destination.version).")
+        if let explicitModel = NSMappingModel(from: [bundle], forSourceModel: source.model, destinationModel: destination.model) {
+            Logger.debug("Found concrete mapping model from source model \(source.version) to destination model \(destination.version).")
+            return explicitModel
         }
-
-        // Setup a migration manager and fire off the actual migration.
-        let migrationManager = NSMigrationManager(sourceModel: source.model, destinationModel: destination.model)
-        try migrationManager.migrateStore(from: url, sourceType: storeType.coreDataType, options: nil, with: mappingModel, toDestinationURL: destinationURL, destinationType: storeType.coreDataType, destinationOptions: nil)
-        return destinationURL
+        return try NSMappingModel.inferredMappingModel(forSourceModel: source.model, destinationModel: destination.model)
     }
 }
 

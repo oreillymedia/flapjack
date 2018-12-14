@@ -39,7 +39,7 @@ extension NSManagedObjectContext: DataContext {
         if self.persist() == nil {
             return true
         }
-        Logger.warning("Rolling back Core Data store.")
+        Logger.error("Rolling back Core Data store.")
         rollback()
         return false
     }
