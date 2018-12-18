@@ -31,6 +31,10 @@ public class MigrationPolicy: NSEntityMigrationPolicy {
         let destination = manager.destinationObject(in: mapping.name, source: sourceInstance)
         let migrationOperation = migrations[mapping.name]
         try migrationOperation?(manager, sourceInstance, destination)
+
+        if let destination = destination, migrationsWithoutNecessaryCreationStep.contains(mapping.name) {
+            manager.associate(sourceInstance: sourceInstance, withDestinationInstance: destination, for: mapping)
+        }
     }
 
     /**

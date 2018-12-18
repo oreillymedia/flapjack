@@ -37,15 +37,18 @@ class CoreDataAccessStoreTypeTests: XCTestCase {
 class CoreDataAccessTests: XCTestCase {
     private var dataAccess: CoreDataAccess!
     private var model: NSManagedObjectModel!
+    private var delegate: MockDataAccessDelegate! // swiftlint:disable:this weak_delegate
 
     override func setUp() {
         super.setUp()
 
+        delegate = MockDataAccessDelegate()
         model = NSManagedObjectModel(contentsOf: Bundle(for: type(of: self)).url(forResource: "TestModel", withExtension: "momd")!)
-        dataAccess = CoreDataAccess(name: "TestModel", type: .memory, model: model)
+        dataAccess = CoreDataAccess(name: "TestModel", type: .memory, model: model, delegate: delegate)
     }
 
     override func tearDown() {
+        delegate = nil
         dataAccess = nil
         model = nil
         super.tearDown()
@@ -53,14 +56,59 @@ class CoreDataAccessTests: XCTestCase {
 
     func testStackPreparation() {
         XCTAssertFalse(dataAccess.isStackReady)
+        XCTAssertFalse(delegate.wantsMigratorForStoreAtCalled.called)
         dataAccess.prepareStack(asynchronously: false) { error in
             XCTAssertNil(error)
         }
         XCTAssertTrue(dataAccess.isStackReady)
+        XCTAssertTrue(delegate.wantsMigratorForStoreAtCalled.called)
+    }
+
+    func testStackPreparationWithMigrator() {
+        let migrator = MockMigrator()
+        migrator.storeIsUpToDate = true
+        delegate.migrator = migrator
+        dataAccess.prepareStack(asynchronously: false) { error in
+            XCTAssertNil(error)
+        }
+        XCTAssertTrue(dataAccess.isStackReady)
+        XCTAssertTrue(delegate.wantsMigratorForStoreAtCalled.called)
+    }
+
+    func testStackPreparationWithMigratorNeedingMigrations() {
+        let migrator = MockMigrator()
+        migrator.storeIsUpToDate = false
+        delegate.migrator = migrator
+        dataAccess.prepareStack(asynchronously: false) { error in
+            XCTAssertNil(error)
+        }
+        XCTAssertTrue(dataAccess.isStackReady)
+        XCTAssertTrue(delegate.wantsMigratorForStoreAtCalled.called)
+    }
+
+    func testStackPreparationWithMigratorNeedingMigrationsAndBarfing() {
+        let migrator = MockMigrator()
+        migrator.storeIsUpToDate = false
+        migrator.errorToThrow = .diskPreparationError
+        delegate.migrator = migrator
+        dataAccess.prepareStack(asynchronously: false) { error in
+            switch error {
+            case .preparationError(let innerError)?:
+                switch innerError as? MigratorError {
+                case .diskPreparationError?: break
+                default: XCTFail("Expected diskPreparationError")
+                }
+
+            default: XCTFail("Expected an error.")
+            }
+        }
+        XCTAssertFalse(dataAccess.isStackReady)
+        XCTAssertTrue(delegate.wantsMigratorForStoreAtCalled.called)
     }
 
     func testAsyncStackPreparation() {
         XCTAssertFalse(dataAccess.isStackReady)
+        XCTAssertFalse(delegate.wantsMigratorForStoreAtCalled.called)
         let expect = expectation(description: "completion")
         dataAccess.prepareStack(asynchronously: true) { [weak self] error in
             guard let self = self else {
@@ -68,9 +116,64 @@ class CoreDataAccessTests: XCTestCase {
             }
             XCTAssertNil(error)
             XCTAssertTrue(self.dataAccess.isStackReady)
+            XCTAssertTrue(self.delegate.wantsMigratorForStoreAtCalled.called)
             expect.fulfill()
         }
         XCTAssertFalse(dataAccess.isStackReady)
+        waitForExpectations(timeout: 1.0) { XCTAssertNil($0) }
+    }
+
+    func testAsyncStackPreparationWithMigrator() {
+        let migrator = MockMigrator()
+        migrator.storeIsUpToDate = true
+        delegate.migrator = migrator
+        let expect = expectation(description: "completion")
+        dataAccess.prepareStack(asynchronously: true) { error in
+            XCTAssertNil(error)
+            XCTAssertTrue(self.dataAccess.isStackReady)
+            expect.fulfill()
+        }
+        XCTAssertFalse(dataAccess.isStackReady)
+        // This gets called on the main thread.
+        XCTAssertTrue(delegate.wantsMigratorForStoreAtCalled.called)
+        waitForExpectations(timeout: 1.0) { XCTAssertNil($0) }
+    }
+
+    func testAsyncStackPreparationWithMigratorNeedingMigrations() {
+        let migrator = MockMigrator()
+        migrator.storeIsUpToDate = false
+        delegate.migrator = migrator
+        let expect = expectation(description: "completion")
+        dataAccess.prepareStack(asynchronously: true) { error in
+            XCTAssertNil(error)
+            XCTAssertTrue(self.dataAccess.isStackReady)
+            expect.fulfill()
+        }
+        XCTAssertFalse(dataAccess.isStackReady)
+        XCTAssertTrue(delegate.wantsMigratorForStoreAtCalled.called)
+        waitForExpectations(timeout: 1.0) { XCTAssertNil($0) }
+    }
+
+    func testAsyncStackPreparationWithMigratorNeedingMigrationsAndBarfing() {
+        let migrator = MockMigrator()
+        migrator.storeIsUpToDate = false
+        migrator.errorToThrow = .diskPreparationError
+        delegate.migrator = migrator
+        let expect = expectation(description: "completion")
+        dataAccess.prepareStack(asynchronously: true) { error in
+            expect.fulfill()
+            switch error {
+            case .preparationError(let innerError)?:
+                switch innerError as? MigratorError {
+                case .diskPreparationError?: break
+                default: XCTFail("Expected diskPreparationError")
+                }
+
+            default: XCTFail("Expected an error.")
+            }
+            XCTAssertFalse(self.dataAccess.isStackReady)
+        }
+        XCTAssertTrue(self.delegate.wantsMigratorForStoreAtCalled.called)
         waitForExpectations(timeout: 1.0) { XCTAssertNil($0) }
     }
 

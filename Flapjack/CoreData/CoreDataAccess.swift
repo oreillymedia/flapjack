@@ -68,13 +68,14 @@ public final class CoreDataAccess: DataAccess {
     // MARK: Lifecycle
 
     public init(name: String, type: StoreType, model: NSManagedObjectModel? = nil, delegate: DataAccessDelegate? = nil) {
-        storeType = type
+        self.storeType = type
         if let model = model {
-            container = NSPersistentContainer(name: name, managedObjectModel: model)
+            self.container = NSPersistentContainer(name: name, managedObjectModel: model)
         } else {
-            container = NSPersistentContainer(name: name)
+            self.container = NSPersistentContainer(name: name)
         }
-        container.persistentStoreDescriptions = [type.storeDescription]
+        self.container.persistentStoreDescriptions = [type.storeDescription]
+        self.delegate = delegate
     }
 
 
@@ -191,6 +192,7 @@ public final class CoreDataAccess: DataAccess {
         let toExecute = {
             do {
                 try migrator.migrate()
+                completion(nil)
             } catch let error {
                 // If a migration fails, notify the caller, who can then choose to nuke the data store and try again,
                 //   or perform some other action

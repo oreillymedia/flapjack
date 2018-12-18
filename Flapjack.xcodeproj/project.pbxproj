@@ -64,6 +64,8 @@
 		C31FD25421B0A423007A84F9 /* NSManagedObjectContextDataContextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD24621B0A423007A84F9 /* NSManagedObjectContextDataContextTests.swift */; };
 		C31FD25521B0A423007A84F9 /* CoreDataAccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD24721B0A423007A84F9 /* CoreDataAccessTests.swift */; };
 		C31FD25721B0A477007A84F9 /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C31FD24221B0A423007A84F9 /* TestModel.xcdatamodeld */; };
+		C33F37BE21C9845E006F0E8E /* MockMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33F37BD21C9845E006F0E8E /* MockMigrator.swift */; };
+		C33F37C021C9852A006F0E8E /* MockDataAccessDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33F37BF21C9852A006F0E8E /* MockDataAccessDelegate.swift */; };
 		C3F52F6621B18C8A00F92897 /* FlapjackUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F52F5F21B18C8A00F92897 /* FlapjackUIKit.framework */; };
 		C3F52F6721B18C8A00F92897 /* FlapjackUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C3F52F5F21B18C8A00F92897 /* FlapjackUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C3F52F6B21B18CAE00F92897 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17921B095DE007A84F9 /* UITableView+Extensions.swift */; };
@@ -199,6 +201,8 @@
 		C31FD24621B0A423007A84F9 /* NSManagedObjectContextDataContextTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContextDataContextTests.swift; sourceTree = "<group>"; };
 		C31FD24721B0A423007A84F9 /* CoreDataAccessTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataAccessTests.swift; sourceTree = "<group>"; };
 		C31FD24821B0A423007A84F9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C33F37BD21C9845E006F0E8E /* MockMigrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMigrator.swift; sourceTree = "<group>"; };
+		C33F37BF21C9852A006F0E8E /* MockDataAccessDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataAccessDelegate.swift; sourceTree = "<group>"; };
 		C3F52F5F21B18C8A00F92897 /* FlapjackUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlapjackUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F52F6F21B19C2E00F92897 /* CoreSingleDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreSingleDataSourceTests.swift; sourceTree = "<group>"; };
 		C3F52F7121B1A50800F92897 /* CoreDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSourceTests.swift; sourceTree = "<group>"; };
@@ -493,6 +497,8 @@
 			children = (
 				C31FD23F21B0A423007A84F9 /* MockEntity.swift */,
 				C3F8CCC921C46ADE00199781 /* MockMigrationPolicy.swift */,
+				C33F37BD21C9845E006F0E8E /* MockMigrator.swift */,
+				C33F37BF21C9852A006F0E8E /* MockDataAccessDelegate.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -872,6 +878,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C33F37BE21C9845E006F0E8E /* MockMigrator.swift in Sources */,
 				C31FD25721B0A477007A84F9 /* TestModel.xcdatamodeld in Sources */,
 				C31FD24A21B0A423007A84F9 /* SortDescriptorTests.swift in Sources */,
 				C3F8CCC121C468A300199781 /* TestMigrationModel 3.xcmappingmodel in Sources */,
@@ -883,6 +890,7 @@
 				C31FD24921B0A423007A84F9 /* DataContextErrorTests.swift in Sources */,
 				C3F8CCCA21C46ADE00199781 /* MockMigrationPolicy.swift in Sources */,
 				C31FD24F21B0A423007A84F9 /* Collection+ExtensionsTests.swift in Sources */,
+				C33F37C021C9852A006F0E8E /* MockDataAccessDelegate.swift in Sources */,
 				C31FD25521B0A423007A84F9 /* CoreDataAccessTests.swift in Sources */,
 				C31FD24E21B0A423007A84F9 /* Dictionary+ExtensionsTests.swift in Sources */,
 				C3F8CCC421C468DC00199781 /* TestMigrationModel 4.xcmappingmodel in Sources */,
