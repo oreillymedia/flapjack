@@ -95,10 +95,10 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
         }
 
         do {
-            Logger.verbose("Fetching cache key \"\(cacheKey)\"")
+            Logger.debug("Fetching cache key \"\(cacheKey)\"")
             try controller.performFetch()
         } catch let error {
-            Logger.warning("Error fetching CoreDataSource<\(T.self)>: \(error)")
+            Logger.debug("Error fetching CoreDataSource<\(T.self)>: \(error)")
         }
     }
 
@@ -109,15 +109,15 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
     public func object(at indexPath: IndexPath) -> T? {
         // controller.object(at: indexPath) is garbage. We do this our way.
         guard let info = sectionInfo(for: indexPath.section) else {
-            Logger.warning("Couldn't find section info for section \(indexPath.section).")
+            Logger.error("Couldn't find section info for section \(indexPath.section).")
             return nil
         }
         guard let objects = info.objects else {
-            Logger.warning("Couldn't find objects for section \(indexPath.section), section info \(info).")
+            Logger.error("Couldn't find objects for section \(indexPath.section), section info \(info).")
             return nil
         }
         guard let found = objects[safe: indexPath.item] else {
-            Logger.warning("Couldn't find object at given index path \(indexPath) among \(objects.count) objects.")
+            Logger.error("Couldn't find object at given index path \(indexPath) among \(objects.count) objects.")
             return nil
         }
         return found as? T
@@ -177,9 +177,9 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
             return
         }
 
-        Logger.verbose("\(#function): (\(T.self))")
+        Logger.debug("\(#function): (\(T.self))")
         guard let change = theType.asDataSourceSectionChange(section: sectionIndex) else {
-            Logger.warning("No section change calculated for \(theType), index \(sectionIndex))")
+            Logger.error("No section change calculated for \(theType), index \(sectionIndex))")
             return
         }
         pendingSectionChanges.insert(change)
@@ -191,7 +191,7 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
         }
 
         guard var change = theType.asDataSourceChange(at: indexPath, newPath: newIndexPath) else {
-            Logger.warning("No change calculated for \(theType), indexPath \(String(describing: indexPath)), newIndexPath: \(String(describing: newIndexPath))")
+            Logger.error("No change calculated for \(theType), indexPath \(String(describing: indexPath)), newIndexPath: \(String(describing: newIndexPath))")
             return
         }
 

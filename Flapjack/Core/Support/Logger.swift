@@ -7,67 +7,54 @@
 //
 
 import Foundation
+import os
 
 public enum LoggerLevel: Int, CustomStringConvertible {
-    case verbose = 0
-    case debug
+    case debug = 0
     case info
-    case warning
     case error
-    case fatal
+
+    var osLogType: OSLogType {
+        switch self {
+        case .debug: return OSLogType.debug
+        case .info: return OSLogType.info
+        case .error: return OSLogType.error
+        }
+    }
 
     public var description: String {
         switch self {
-        case .verbose: return "Verbose"
         case .debug: return "Debug"
         case .info: return "Info"
-        case .warning: return "Warning"
         case .error: return "Error"
-        case .fatal: return "Fatal"
         }
     }
 }
 
 public final class Logger: NSObject {
-    static var logLevel: LoggerLevel = .debug
+    public static var logLevel: LoggerLevel = .debug
+    public static var osLog = OSLog(subsystem: "com.oreillymedia.flapjack", category: "Flapjack")
 
-    private static var formatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
-        return formatter
-    }()
-
-    public static func logLn(_ level: LoggerLevel, with message: String) {
+    private static func logLn(_ level: LoggerLevel, with message: String, isPrivate: Bool) {
         guard level.rawValue >= logLevel.rawValue else {
             return
         }
 
-        let date = formatter.string(from: Date())
-        print("\(date) [Flapjack | \(level)] > \(message)")
+        let staticString: StaticString = isPrivate ? "[%@] > %{private}@" : "[%@] > %{public}@"
+        os_log(staticString, log: osLog, type: level.osLogType, level.description, message)
     }
 
-    public static func logLn(_ level: LoggerLevel, with object: CustomStringConvertible) {
-        logLn(level, with: object.description)
+    private static func logLn(_ level: LoggerLevel, with object: CustomStringConvertible, isPrivate: Bool) {
+        logLn(level, with: object.description, isPrivate: isPrivate)
     }
 
-
-    /// MARK: Convenience log methods
-    public static func verbose(_ object: CustomStringConvertible) {
-        logLn(.verbose, with: object)
-    }
-    public static func debug(_ object: CustomStringConvertible) {
-        logLn(.debug, with: object)
+    public static func debug(_ object: CustomStringConvertible, isPrivate: Bool = true) {
+        logLn(.debug, with: object, isPrivate: isPrivate)
     }
     public static func info(_ object: CustomStringConvertible) {
-        logLn(.info, with: object)
-    }
-    public static func warning(_ object: CustomStringConvertible) {
-        logLn(.warning, with: object)
+        logLn(.info, with: object, isPrivate: false)
     }
     public static func error(_ object: CustomStringConvertible) {
-        logLn(.error, with: object)
-    }
-    public static func fatal(_ object: CustomStringConvertible) {
-        logLn(.fatal, with: object)
+        logLn(.error, with: object, isPrivate: false)
     }
 }
