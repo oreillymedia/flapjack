@@ -21,6 +21,9 @@ public enum DataAccessError: LocalizedError, CustomStringConvertible {
     public var localizedDescription: String {
         switch self {
         case .preparationError(let error):
+            if let error = error as? LocalizedError {
+                return error.localizedDescription
+            }
             return (error as NSError?)?.localizedDescription ?? "unknown error"
         }
     }

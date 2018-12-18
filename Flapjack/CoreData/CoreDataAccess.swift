@@ -12,10 +12,10 @@ import CoreData
 import Flapjack
 #endif
 
-
-// MARK: - CoreDataAccess
-
 public final class CoreDataAccess: DataAccess {
+    public static let didCreateNewMainContextNotification = Notification.Name("com.oreillymedia.flapjack.didCreateNewMainContext")
+    public static let willDestroyMainContextNotification = Notification.Name("com.oreillymedia.flapjack.willDestroyMainContext")
+
     public enum StoreType {
         case sql(filename: String)
         case memory
@@ -53,18 +53,21 @@ public final class CoreDataAccess: DataAccess {
         }
     }
 
+    public weak var delegate: DataAccessDelegate?
     public private(set) var isStackReady: Bool = false
     private let storeType: StoreType
     private let container: NSPersistentContainer
     private var shouldLoadAsynchronously: Bool = false
+    private lazy var dispatchQueue = DispatchQueue(label: "com.oreillymedia.flapjack.coreDataAccessQueue")
     private var persistentStores = [NSPersistentStore]()
     private var persistentStoreCoordinator: NSPersistentStoreCoordinator {
         return container.persistentStoreCoordinator
     }
 
+
     // MARK: Lifecycle
 
-    public init(name: String, type: StoreType, model: NSManagedObjectModel? = nil) {
+    public init(name: String, type: StoreType, model: NSManagedObjectModel? = nil, delegate: DataAccessDelegate? = nil) {
         storeType = type
         if let model = model {
             container = NSPersistentContainer(name: name, managedObjectModel: model)
@@ -87,14 +90,24 @@ public final class CoreDataAccess: DataAccess {
             return
         }
 
-        addDefaultPersistentStores(async: asynchronously) { [weak self] fatalError in
-            guard let `self` = self else {
-                return completion(fatalError)
+        migrateIfNecessary(async: asynchronously) { [weak self] error in
+            guard let self = self, error == nil else {
+                // Notify the caller; if they so choose, they can nuke the data store and rebuild it
+                completion(error)
+                return
             }
-            self.container.viewContext.automaticallyMergesChangesFromParent = true
-            self.isStackReady = true
-            NotificationCenter.default.post(name: .didCreateNewMainContext, object: self.mainContext)
-            completion(nil)
+
+            self.addDefaultPersistentStores(async: asynchronously) { [weak self] fatalError in
+                guard let self = self, fatalError == nil else {
+                    completion(fatalError)
+                    return
+                }
+
+                self.container.viewContext.automaticallyMergesChangesFromParent = true
+                self.isStackReady = true
+                NotificationCenter.default.post(name: type(of: self).didCreateNewMainContextNotification, object: self.mainContext)
+                completion(nil)
+            }
         }
     }
 
@@ -127,7 +140,7 @@ public final class CoreDataAccess: DataAccess {
             return
         }
 
-        NotificationCenter.default.post(name: .willDestroyMainContext, object: mainContext)
+        NotificationCenter.default.post(name: type(of: self).willDestroyMainContextNotification, object: mainContext)
 
         var mPersistentStores = persistentStores
         persistentStores.enumerated().forEach { idx, persistentStore in
@@ -161,35 +174,70 @@ public final class CoreDataAccess: DataAccess {
 
     // MARK: Private functions
 
+    /**
+     Asks the delegate for a migrator object, and if given one, performs migration operations in either the background
+     or in the calling thread.
+
+     - parameter async: If `true`, operation will be performed in our background thread.
+     - parameter completion: A block to be called upon completion; will be passed an error if one occurred. If `async`
+                             is `true`, this will be called on our background thread.
+     */
+    private func migrateIfNecessary(async: Bool, completion: @escaping (DataAccessError?) -> Void) {
+        guard let migrator = delegate?.dataAccess(self, wantsMigratorForStoreAt: self.storeType.url), !migrator.storeIsUpToDate else {
+            completion(nil)
+            return
+        }
+
+        let toExecute = {
+            do {
+                try migrator.migrate()
+            } catch let error {
+                // If a migration fails, notify the caller, who can then choose to nuke the data store and try again,
+                //   or perform some other action
+                completion(.preparationError(error))
+            }
+        }
+
+        if async {
+            dispatchQueue.async(execute: toExecute)
+        } else {
+            toExecute()
+        }
+    }
+
+    /**
+     Asks Core Data to go through its list of persistent stores and add them one by one.
+
+     - parameter async: If `true`, operation will be performed asynchronously according to Core Data.
+     - parameter completion: A block to be called upon completion; will be passed an error if one occurred. If `async`
+                             is `true`, this will be dispatched out to the main thread. If `false`, this function
+                             assumes it's being called on the main thread already, and the completion block will be
+                             called on the main/calling thread.
+     */
     private func addDefaultPersistentStores(async: Bool, completion: @escaping (DataAccessError?) -> Void) {
-        var callCount = 0
-        let totalCount = container.persistentStoreDescriptions.count
         var errors: [DataAccessError] = []
 
         shouldLoadAsynchronously = async
         container.persistentStoreDescriptions.forEach { $0.shouldAddStoreAsynchronously = async }
-        container.loadPersistentStores { [weak self] storeDescription, error in
-            callCount += 1
 
+        let group = DispatchGroup()
+        group.enter()
+        container.loadPersistentStores { [weak self] storeDescription, error in
             if let error = error {
                 errors.append(.preparationError(error))
             } else if let url = storeDescription.url, let store = self?.container.persistentStoreCoordinator.persistentStore(for: url) {
                 Logger.info("Initializing persistent store at \(url.path).")
                 self?.persistentStores.append(store)
             }
+            group.leave()
+        }
 
-            guard callCount >= totalCount else {
-                return
+        if async {
+            group.notify(queue: .main) {
+                completion(errors.first)
             }
+        } else {
             completion(errors.first)
         }
     }
-}
-
-
-// MARK: - Notifications
-
-extension Notification.Name {
-    static let didCreateNewMainContext = Notification.Name("didCreateNewMainContext")
-    static let willDestroyMainContext = Notification.Name("willDestroyMainContext")
 }

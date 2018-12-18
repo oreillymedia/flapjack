@@ -18,6 +18,7 @@ public protocol Migrator {
 
      - returns: `true` if a migration was performed, `false` if one was not needed.
      */
+    @discardableResult
     func migrate() throws -> Bool
 }
 
