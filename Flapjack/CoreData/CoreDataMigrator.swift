@@ -12,6 +12,9 @@ import CoreData
 import Flapjack
 #endif
 
+/**
+ Determines if content should be migrated, and supplies Core Data-centric mechanisms for doing so.
+ */
 class CoreDataMigrator: Migrator {
     private typealias VersionModelPair = (version: String, model: NSManagedObjectModel)
 
@@ -43,6 +46,17 @@ class CoreDataMigrator: Migrator {
         }
     }()
 
+
+    /**
+     Creates and returns a new instance of this migrator with the necessary information to execute a migration when
+     requested. Does not automatically invoke a migration, but does check the validity of the `storeType` provided.
+     Only supports migrating on-disk stores; in-memory migrations are not supported.
+
+     - parameter storeURL: The on-disk URL where the data store exists.
+     - parameter bundle: The application bundle where the managed object model files can be found.
+     - parameter modelName: The name of the Core Data managed object model.
+     - parameter storeType: The Core Data store type information; this should be `.sql` with the filename supplied.
+     */
     init(storeURL: URL, bundle: Bundle, modelName: String, storeType: CoreDataAccess.StoreType) {
         self.storeURL = storeURL
         self.bundle = bundle
@@ -61,12 +75,19 @@ class CoreDataMigrator: Migrator {
 
     // MARK: Migrator
 
+    /// If `true`, migrations do not need to be performed, and calling migrate() is a no-op.
     var storeIsUpToDate: Bool {
         guard let currentStoreMeta = currentStoreMeta else { return false }
         let model = NSManagedObjectModel(contentsOf: compiledModelURL)
         return model?.isConfiguration(withName: nil, compatibleWithStoreMetadata: currentStoreMeta) ?? false
     }
 
+    /**
+     Performs the migration by setting up temp directories and iterating over all model versions. If an error occurs,
+     it will be thrown as a MigratorError.
+
+     - returns: `true` if a migration was performed, `false` if one was not needed.
+     */
     func migrate() throws -> Bool {
         // If no file exists at the store URL, we definitely don't need to try and migrate, as Core
         //   Data probably hasn't even been initialized yet. If we're already up-to-date, return nothing.

@@ -8,8 +8,12 @@
 
 import Foundation
 
+/**
+ Encapsulates error state when thrown by the `DataAccess` object. Generally this is related to stack preparation.
+ */
 public enum DataAccessError: LocalizedError, CustomStringConvertible {
-    case preparationError(Error?)
+    /// Indicates an error was thrown while preparing the stack; includes the underlying error.
+    case preparationError(Error)
 
     public var description: String {
         switch self {

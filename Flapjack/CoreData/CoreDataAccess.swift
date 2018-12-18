@@ -12,6 +12,12 @@ import CoreData
 import Flapjack
 #endif
 
+/**
+ Presides over the setup and management of the entire Core Data stack, along with managing the lifecycle of background
+ context operations. Background contexts use the `NSMergeByPropertyObjectTrumpMergePolicy` merge policy, and will share
+ a persistent store with the `mainContext`, and change synchronization between the contexts are performed by
+ `NSPersistentContainer`.
+ */
 public final class CoreDataAccess: DataAccess {
     public static let didCreateNewMainContextNotification = Notification.Name("com.oreillymedia.flapjack.didCreateNewMainContext")
     public static let willDestroyMainContextNotification = Notification.Name("com.oreillymedia.flapjack.willDestroyMainContext")
@@ -81,10 +87,20 @@ public final class CoreDataAccess: DataAccess {
 
     // MARK: DataAccess
 
+    /// The main thread, view-layer context. Should generally only be used for read-only operations.
     public var mainContext: DataContext {
         return container.viewContext
     }
 
+    /**
+     Load up its store from disk (or in memory), asks for any migrations needed, populates the necessary instance
+     variables for accessing it, and sets the `isStackReady` property to `true` if everything succeeded.
+
+     - parameter asynchronously: If `true`, the stack preparation will be performed in a background thread, and the
+                                 `completion` block will return on the main thread.
+     - parameter completion: A closure to be called upon completion. If `asynchronously` is `true`, this is guaranteed
+                             to be called on the main thread. If `false`, it will be called on the calling thread.
+     */
     public func prepareStack(asynchronously: Bool, completion: @escaping (DataAccessError?) -> Void) {
         guard persistentStoreCoordinator.persistentStores.isEmpty else {
             completion(nil)
@@ -112,6 +128,12 @@ public final class CoreDataAccess: DataAccess {
         }
     }
 
+    /**
+     Prepares a background-thread context for use, and then pops into a background thread and calls the `operation`.
+     Basically wraps Core Data's `NSPersistentContainer.performBackgroundTask(_:)`.
+
+     - parameter operation: The actions to execute upon the background `DataContext`; will be passed said context.
+     */
     public func performInBackground(operation: @escaping (_ context: DataContext) -> Void) {
         container.performBackgroundTask { context in
             context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
@@ -119,6 +141,12 @@ public final class CoreDataAccess: DataAccess {
         }
     }
 
+    /**
+     Prepares a background-thread `DataContext` for use, and then returns that context right away on the calling thread.
+     It should be the caller's responsibility to use the context responsibly.
+
+     - returns: A background-thread-ready `DataContext`.
+     */
     public func vendBackgroundContext() -> DataContext {
         let context = container.newBackgroundContext()
         context.persistentStoreCoordinator = container.persistentStoreCoordinator
@@ -126,12 +154,14 @@ public final class CoreDataAccess: DataAccess {
         return context
     }
 
-    public func deleteDatabase(rebuild: Bool, completion: @escaping (Error?) -> Void) {
-        guard let storeURL = storeType.url else {
-            completion(nil)
-            return
-        }
+    /**
+     Deletes the data store from disk if the Core Data container uses SQLite backing stores. If in memory, the in-memory
+     context is wiped and started anew.
 
+     - parameter rebuild: If `true`, the data store will be reconstructed after it's deleted.
+     - parameter completion: A closure to be called upon completion.
+     */
+    public func deleteDatabase(rebuild: Bool, completion: @escaping (DataAccessError?) -> Void) {
         guard !persistentStores.isEmpty else {
             if rebuild {
                 addDefaultPersistentStores(async: shouldLoadAsynchronously, completion: completion)
@@ -155,13 +185,15 @@ public final class CoreDataAccess: DataAccess {
         }
         persistentStores = mPersistentStores
 
-        do {
-            if FileManager.default.fileExists(atPath: storeURL.path, isDirectory: nil) {
-                try persistentStoreCoordinator.destroyPersistentStore(at: storeURL, ofType: storeType.coreDataType, options: nil)
-                try FileManager.default.removeItem(atPath: storeURL.path)
+        if let storeURL = storeType.url {
+            do {
+                if FileManager.default.fileExists(atPath: storeURL.path, isDirectory: nil) {
+                    try persistentStoreCoordinator.destroyPersistentStore(at: storeURL, ofType: storeType.coreDataType, options: nil)
+                    try FileManager.default.removeItem(atPath: storeURL.path)
+                }
+            } catch let error {
+                Logger.error("Error destroying persistent store at \(storeURL): \(error)")
             }
-        } catch let error {
-            Logger.error("Error destroying persistent store at \(storeURL): \(error)")
         }
 
         if rebuild {

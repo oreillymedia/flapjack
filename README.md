@@ -5,7 +5,7 @@ Flapjack is an iOS/macOS/tvOS framework with 2 primary goals.
 1. Help you abstract your model-focused database persistence layer from the rest of your app
 2. Simplify the database layer's API into an easy-to-use, easy-to-remember, full Swift one
 
-It lets you _skip_ the boilerplate commonly associated with database layers like Core Data and lets you introduce structured, sane data persistence in your app _sooner_, letting you spend more of your time creating the app you really want. We use it at [O'Reilly Media][orm] and [Safari Books Online][sbo] for our iOS apps, and if you like what you see, perhaps you will too.
+It lets you _skip_ the boilerplate commonly associated with database layers like Core Data and lets you introduce structured, sane data persistence in your app _sooner_, letting you spend more of your time creating the app you really want. We use it at [O'Reilly Media][orm] for our iOS apps, and if you like what you see, perhaps you will too.
 
 
 ## Getting started
@@ -178,7 +178,6 @@ Flapjack is available under the MIT license. See [LICENSE][lic] file for more in
 
 
 [orm]:     https://oreilly.com
-[sbo]:     https://safaribooksonline.com
 [cpd]:     https://cocoapods.org
 [pcm]:     https://github.com/oreillymedia/flapjack/blob/master/Example/Flapjack/Core%20Data/Pancake.swift
 [avc]:     https://github.com/oreillymedia/flapjack/blob/master/Example/Flapjack/AutomaticViewController.swift

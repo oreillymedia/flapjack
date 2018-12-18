@@ -22,7 +22,7 @@ extension NSFetchedResultsChangeType: CustomStringConvertible {
         }
     }
 
-    func asDataSourceSectionChange(section: Int) -> DataSourceSectionChange? {
+    internal func asDataSourceSectionChange(section: Int) -> DataSourceSectionChange? {
         switch self {
         case .insert: return .insert(section: section)
         case .delete: return .delete(section: section)
@@ -30,7 +30,7 @@ extension NSFetchedResultsChangeType: CustomStringConvertible {
         }
     }
 
-    func asDataSourceChange(at path: IndexPath?, newPath: IndexPath?) -> DataSourceChange? {
+    internal func asDataSourceChange(at path: IndexPath?, newPath: IndexPath?) -> DataSourceChange? {
         switch self {
         case .insert:
             guard let newPath = newPath else {

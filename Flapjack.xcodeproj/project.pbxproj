@@ -19,10 +19,8 @@
 		C31FD18D21B095DE007A84F9 /* SingleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16721B095DE007A84F9 /* SingleDataSource.swift */; };
 		C31FD18E21B095DE007A84F9 /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16821B095DE007A84F9 /* DataAccess.swift */; };
 		C31FD18F21B095DE007A84F9 /* DataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16921B095DE007A84F9 /* DataObject.swift */; };
-		C31FD19021B095DE007A84F9 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16B21B095DE007A84F9 /* Array+Extensions.swift */; };
 		C31FD19121B095DE007A84F9 /* NSCompoundPredicate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16C21B095DE007A84F9 /* NSCompoundPredicate+Extensions.swift */; };
 		C31FD19221B095DE007A84F9 /* Set+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16D21B095DE007A84F9 /* Set+Extensions.swift */; };
-		C31FD19321B095DE007A84F9 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16E21B095DE007A84F9 /* Dictionary+Extensions.swift */; };
 		C31FD19421B095DE007A84F9 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16F21B095DE007A84F9 /* Collection+Extensions.swift */; };
 		C31FD19521B095DE007A84F9 /* DataContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17021B095DE007A84F9 /* DataContext.swift */; };
 		C31FD19621B095DE007A84F9 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17221B095DE007A84F9 /* Logger.swift */; };
@@ -66,6 +64,9 @@
 		C31FD25721B0A477007A84F9 /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C31FD24221B0A423007A84F9 /* TestModel.xcdatamodeld */; };
 		C33F37BE21C9845E006F0E8E /* MockMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33F37BD21C9845E006F0E8E /* MockMigrator.swift */; };
 		C33F37C021C9852A006F0E8E /* MockDataAccessDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33F37BF21C9852A006F0E8E /* MockDataAccessDelegate.swift */; };
+		C33F37C121C9A777006F0E8E /* NSCompoundPredicate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16C21B095DE007A84F9 /* NSCompoundPredicate+Extensions.swift */; };
+		C33F37C221C9A786006F0E8E /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16E21B095DE007A84F9 /* Dictionary+Extensions.swift */; };
+		C33F37C421C9A7C2006F0E8E /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16B21B095DE007A84F9 /* Array+Extensions.swift */; };
 		C3F52F6621B18C8A00F92897 /* FlapjackUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F52F5F21B18C8A00F92897 /* FlapjackUIKit.framework */; };
 		C3F52F6721B18C8A00F92897 /* FlapjackUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C3F52F5F21B18C8A00F92897 /* FlapjackUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C3F52F6B21B18CAE00F92897 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17921B095DE007A84F9 /* UITableView+Extensions.swift */; };
@@ -82,6 +83,7 @@
 		C3F8CCC621C4697E00199781 /* MigrationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F8CCC521C4697E00199781 /* MigrationPolicy.swift */; };
 		C3F8CCC821C469F600199781 /* NSMigrationManager+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F8CCC721C469F600199781 /* NSMigrationManager+Extensions.swift */; };
 		C3F8CCCA21C46ADE00199781 /* MockMigrationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F8CCC921C46ADE00199781 /* MockMigrationPolicy.swift */; };
+		C3FDECB321CC4D9600E0E95A /* Set+DataSourceChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FDECB221CC4D9600E0E95A /* Set+DataSourceChange.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -218,6 +220,7 @@
 		C3F8CCC521C4697E00199781 /* MigrationPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationPolicy.swift; sourceTree = "<group>"; };
 		C3F8CCC721C469F600199781 /* NSMigrationManager+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMigrationManager+Extensions.swift"; sourceTree = "<group>"; };
 		C3F8CCC921C46ADE00199781 /* MockMigrationPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMigrationPolicy.swift; sourceTree = "<group>"; };
+		C3FDECB221CC4D9600E0E95A /* Set+DataSourceChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+DataSourceChange.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -335,7 +338,6 @@
 				C31FD16B21B095DE007A84F9 /* Array+Extensions.swift */,
 				C31FD16C21B095DE007A84F9 /* NSCompoundPredicate+Extensions.swift */,
 				C31FD16D21B095DE007A84F9 /* Set+Extensions.swift */,
-				C31FD16E21B095DE007A84F9 /* Dictionary+Extensions.swift */,
 				C31FD16F21B095DE007A84F9 /* Collection+Extensions.swift */,
 			);
 			path = Extensions;
@@ -371,6 +373,7 @@
 		C31FD17821B095DE007A84F9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C3FDECB221CC4D9600E0E95A /* Set+DataSourceChange.swift */,
 				C31FD17921B095DE007A84F9 /* UITableView+Extensions.swift */,
 				C31FD17A21B095DE007A84F9 /* UICollectionView+Extensions.swift */,
 			);
@@ -394,6 +397,7 @@
 		C31FD17E21B095DE007A84F9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C31FD16E21B095DE007A84F9 /* Dictionary+Extensions.swift */,
 				C31FD18321B095DE007A84F9 /* NSFetchedResultsChangeType+Extensions.swift */,
 				C31FD17F21B095DE007A84F9 /* NSManagedObjectContext+Extensions.swift */,
 				C31FD18021B095DE007A84F9 /* NSManagedObjectContext+DataContext.swift */,
@@ -833,12 +837,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C31FD18C21B095DE007A84F9 /* DataObjectID.swift in Sources */,
+				C33F37C421C9A7C2006F0E8E /* Array+Extensions.swift in Sources */,
 				C31FD19121B095DE007A84F9 /* NSCompoundPredicate+Extensions.swift in Sources */,
 				C31FD19221B095DE007A84F9 /* Set+Extensions.swift in Sources */,
-				C31FD19321B095DE007A84F9 /* Dictionary+Extensions.swift in Sources */,
 				C31FD18721B095DE007A84F9 /* DataContextError.swift in Sources */,
 				C31FD18621B095DE007A84F9 /* SortDescriptor.swift in Sources */,
-				C31FD19021B095DE007A84F9 /* Array+Extensions.swift in Sources */,
 				C31FD18B21B095DE007A84F9 /* DataSourceSectionChange.swift in Sources */,
 				C31FD19621B095DE007A84F9 /* Logger.swift in Sources */,
 				C31FD18F21B095DE007A84F9 /* DataObject.swift in Sources */,
@@ -859,6 +862,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3F8CCC821C469F600199781 /* NSMigrationManager+Extensions.swift in Sources */,
+				C33F37C121C9A777006F0E8E /* NSCompoundPredicate+Extensions.swift in Sources */,
+				C33F37C221C9A786006F0E8E /* Dictionary+Extensions.swift in Sources */,
 				C31FD20A21B099B9007A84F9 /* NSManagedObjectContext+DataContext.swift in Sources */,
 				C31FD20B21B099B9007A84F9 /* NSManagedObjectID+DataObjectID.swift in Sources */,
 				C3F8CCC621C4697E00199781 /* MigrationPolicy.swift in Sources */,
@@ -906,6 +911,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3FDECB321CC4D9600E0E95A /* Set+DataSourceChange.swift in Sources */,
 				C3F52F6C21B18CB100F92897 /* UICollectionView+Extensions.swift in Sources */,
 				C3F52F6B21B18CAE00F92897 /* UITableView+Extensions.swift in Sources */,
 			);

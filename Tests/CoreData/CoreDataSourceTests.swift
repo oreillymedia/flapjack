@@ -74,7 +74,7 @@ class CoreDataSourceTests: XCTestCase {
             expect.fulfill()
         }
         _ = dataAccess.mainContext.create(MockEntity.self, attributes: ["someProperty": "someValue alpha"])
-        dataAccess.mainContext.destroy(entityOne)
+        dataAccess.mainContext.destroy(object: entityOne)
         dataAccess.mainContext.persist()
         waitForExpectations(timeout: 0.25) { XCTAssertNil($0) }
     }
@@ -90,7 +90,7 @@ class CoreDataSourceTests: XCTestCase {
         }
         dataSource.execute()
         _ = dataAccess.mainContext.create(MockEntity.self, attributes: ["someProperty": "someValue alpha"])
-        dataAccess.mainContext.destroy(entityOne)
+        dataAccess.mainContext.destroy(object: entityOne)
         dataAccess.mainContext.persist()
         waitForExpectations(timeout: 0.5) { XCTAssertNil($0) }
     }
@@ -126,7 +126,7 @@ class CoreDataSourceTests: XCTestCase {
         dataSource.execute()
         XCTAssertEqual(dataSource.numberOfObjects, 2)
         XCTAssertEqual(dataSource.allObjects.count, 2)
-        dataAccess.mainContext.destroy(entityOne)
+        dataAccess.mainContext.destroy(object: entityOne)
         dataAccess.mainContext.persist()
         XCTAssertEqual(dataSource.numberOfObjects, 1)
         XCTAssertEqual(dataSource.allObjects.count, 1)

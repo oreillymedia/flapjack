@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Collection {
+internal extension Collection {
     /**
      Returns an optional element. If the `index` does not exist in the collection, the subscript returns nil.
 

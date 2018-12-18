@@ -8,4 +8,9 @@
 
 import Foundation
 
+/**
+ A generic way to describe a `DataObject`'s data store identifier (not to be confused with its `PrimaryKey` without
+ tying it to a specific underlying database technology. An object's `DataObjectID` should generally uniquely identify an
+ object across multiple data stores.
+ */
 public protocol DataObjectID { }

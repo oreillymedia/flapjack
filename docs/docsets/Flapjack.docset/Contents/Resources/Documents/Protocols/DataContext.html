@@ -1,0 +1,2626 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>DataContext Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Protocol/DataContext" class="dashAnchor"></a>
+
+    <a title="DataContext Protocol Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          Flapjack Docs
+        </a>
+         (94% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/oreillymedia/flapjack">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">Flapjack Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      DataContext Protocol Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/CoreDataAccess.html">CoreDataAccess</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/CoreDataAccess/StoreType.html">– StoreType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/CoreDataSource.html">CoreDataSource</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/CoreDataSourceFactory.html">CoreDataSourceFactory</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/CoreSingleDataSource.html">CoreSingleDataSource</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Logger.html">Logger</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MigrationPolicy.html">MigrationPolicy</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DataAccessError.html">DataAccessError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DataContextError.html">DataContextError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DataSourceChange.html">DataSourceChange</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DataSourceSectionChange.html">DataSourceSectionChange</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/LoggerLevel.html">LoggerLevel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MigratorError.html">MigratorError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Array.html">Array</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/NSFetchedResultsChangeType.html">NSFetchedResultsChangeType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/NSManagedObjectContext.html">NSManagedObjectContext</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/NSMigrationManager.html">NSMigrationManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/NSMigrationManager/Layer.html">– Layer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Sequence.html">Sequence</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Set.html">Set</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/UICollectionView.html">UICollectionView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/UITableView.html">UITableView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DataAccess.html">DataAccess</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DataAccessDelegate.html">DataAccessDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DataContext.html">DataContext</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DataObject.html">DataObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols.html#/s:8Flapjack12DataObjectIDP">DataObjectID</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DataSource.html">DataSource</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/Migrator.html">Migrator</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols.html#/s:8Flapjack10PrimaryKeyP">PrimaryKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/SingleDataSource.html">SingleDataSource</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/SortDescriptor.html">SortDescriptor</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>DataContext</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">DataContext</span></code></pre>
+
+                </div>
+              </div>
+            <p>One of the two prominantly-used objects in Flapjack, the <code>DataContext</code> protocol (and those that conform to it) preside
+over a modifiable and searchable <q>context</q> of model objects lifted from a backing store.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextP10Attributesa"></a>
+                    <a name="//apple_ref/swift/Alias/Attributes" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP10Attributesa">Attributes</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A generic alias for searchable criteria (this often gets converted into an <code>NSPredicate</code> under the hood).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">Attributes</span> <span class="o">=</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L20">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextP7performyyyAaB_pcF"></a>
+                    <a name="//apple_ref/swift/Method/perform(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP7performyyyAaB_pcF">perform(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asks the context to perform an operation against itself on an isolated thread or queue.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">perform</span><span class="p">(</span><span class="n">_</span> <span class="nv">operation</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">DataContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>operation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The closure containing the operation(s) to perform; should be passed this context object.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L27">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextP11performSyncyyyAaB_pcF"></a>
+                    <a name="//apple_ref/swift/Method/performSync(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP11performSyncyyyAaB_pcF">performSync(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asks the context to perform an operation against itself on an isolated thread or queue, but to block the calling
+thread while doing so.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">performSync</span><span class="p">(</span><span class="n">_</span> <span class="nv">operation</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">DataContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>operation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The closure containing the operation(s) to perform; should be passed this context object.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L35">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextP21processPendingChangesyyF"></a>
+                    <a name="//apple_ref/swift/Method/processPendingChanges()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP21processPendingChangesyyF">processPendingChanges()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asks the context to go through any unsaved modifications and do anything short of saving them to the disk; this may
+include giving new objects unique identifiers, establishing relationships in an object graph, etc.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">processPendingChanges</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L41">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextP7refreshyyqd__AA0B6ObjectRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/refresh(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP7refreshyyqd__AA0B6ObjectRd__lF">refresh(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asks the context to go back to its backing store to get a new copy of the requested object (and thereby dump its
+potentially-cached version).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">refresh</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>object</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The model object to be refreshed.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L49">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextP7persistAA0bC5ErrorOSgyF"></a>
+                    <a name="//apple_ref/swift/Method/persist()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP7persistAA0bC5ErrorOSgyF">persist()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asks the context to save any pending changes to its backing store. If no changes are detected, this method should
+not invoke an unnecessary save.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">func</span> <span class="nf">persist</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Enums/DataContextError.html">DataContextError</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An error if one occurred while saving.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L58">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextP17persistOrRollbackSbyF"></a>
+                    <a name="//apple_ref/swift/Method/persistOrRollback()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP17persistOrRollbackSbyF">persistOrRollback()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asks the context to save any pending changes to its backing store, but if it encounters an error, it should attempt
+a rollback and return whether or not the save succeeded.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">func</span> <span class="nf">persistOrRollback</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>true</code> if the persist operation was successful; <code>false</code> if it had to roll back.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L67">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextP12forcePersistAA0bC5ErrorOSgyF"></a>
+                    <a name="//apple_ref/swift/Method/forcePersist()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP12forcePersistAA0bC5ErrorOSgyF">forcePersist()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asks the context to save any pending changes to its backing store, regardless of whether or not unsaved changes
+exist. Should guarantee a round trip to the backing store.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">func</span> <span class="nf">forcePersist</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Enums/DataContextError.html">DataContextError</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An error if one occurred while saving.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L76">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Collection%20fetch%20operations"></a>
+                <a name="//apple_ref/swift/Section/Collection fetch operations" class="dashAnchor"></a>
+                <a href="#/Collection%20fetch%20operations">
+                  <h3 class="section-name">Collection fetch operations</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextP7objects6ofType9predicate8prefetch6sortBy5limitSayqd__Gqd__m_So11NSPredicateCSgSaySSGSgSayAA14SortDescriptorVGSiSgtAA0B6ObjectRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/objects(ofType:predicate:prefetch:sortBy:limit:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP7objects6ofType9predicate8prefetch6sortBy5limitSayqd__Gqd__m_So11NSPredicateCSgSaySSGSgSayAA14SortDescriptorVGSiSgtAA0B6ObjectRd__lF">objects(ofType:predicate:prefetch:sortBy:limit:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Queries for a collection of objects matching the given <code>type</code>, and optional <code>predicate</code>, with an optional
+<code>prefetch</code> parameter for eagerly fetching related records, and an optional <code>limit</code> parameter for restricting the
+count of matches returned.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">objects</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">predicate</span><span class="p">:</span> <span class="kt">NSPredicate</span><span class="p">?,</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?,</span> <span class="n">sortBy</span> <span class="nv">sorters</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/SortDescriptor.html">SortDescriptor</a></span><span class="p">],</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">T</span><span class="p">]</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The specific type of <code><a href="../Protocols/DataObject.html">DataObject</a></code> to be returned.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>predicate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional query to be applied to the lookup.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>prefetch</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of keypaths for relationships to be eagerly-fetched, if desired.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sorters</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of sort descriptors to be applied to the results, if desired.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>limit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional limit to be applied to the results.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An array of any found objects. If none are found, an empty array is returned.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L93">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextP7objects6ofType10attributes8prefetch6sortBy5limitSayqd__Gqd__m_SDySSypGSaySSGSgSayAA14SortDescriptorVGSiSgtAA0B6ObjectRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/objects(ofType:attributes:prefetch:sortBy:limit:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP7objects6ofType10attributes8prefetch6sortBy5limitSayqd__Gqd__m_SDySSypGSaySSGSgSayAA14SortDescriptorVGSiSgtAA0B6ObjectRd__lF">objects(ofType:attributes:prefetch:sortBy:limit:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Queries for a collection of objects matching the given <code>type</code>, and optional <code>attributes</code>, with an optional
+<code>prefetch</code> parameter for eagerly fetching related records, and an optional <code>limit</code> parameter for restricting the
+count of matches returned.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Queries for a collection of objects matching the given <code>type</code>, and optional <code>attributes</code>, with an optional
+<code>prefetch</code> parameter for eagerly fetching related records, and an optional <code>limit</code> parameter for restricting the
+count of matches returned.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">objects</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">attributes</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataContext.html#/s:8Flapjack11DataContextP10Attributesa">Attributes</a></span><span class="p">,</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?,</span> <span class="n">sortBy</span> <span class="nv">sorters</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/SortDescriptor.html">SortDescriptor</a></span><span class="p">],</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">T</span><span class="p">]</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The specific type of <code><a href="../Protocols/DataObject.html">DataObject</a></code> to be returned.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>attributes</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional dictionary of key-value query constraints to apply to the lookup.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>prefetch</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of keypaths for relationships to be eagerly-fetched, if desired.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sorters</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of sort descriptors to be applied to the results, if desired.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>limit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional limit to be applied to the results.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An array of any found objects. If none are found, an empty array is returned.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L107">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextP7objects6ofType9objectIDs8prefetch6sortBy5limitSayqd__Gqd__m_SayAA0B8ObjectID_pGSaySSGSgSayAA14SortDescriptorVGSiSgtAA0bM0Rd__lF"></a>
+                    <a name="//apple_ref/swift/Method/objects(ofType:objectIDs:prefetch:sortBy:limit:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP7objects6ofType9objectIDs8prefetch6sortBy5limitSayqd__Gqd__m_SayAA0B8ObjectID_pGSaySSGSgSayAA14SortDescriptorVGSiSgtAA0bM0Rd__lF">objects(ofType:objectIDs:prefetch:sortBy:limit:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Queries for a collection of objects matching the given <code>type</code> and database <code>objectIDs</code>, with an optional <code>prefetch</code>
+parameter for eagerly fetching related records, and an optional <code>limit</code> parameter for restricting the count of
+records returned.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">objects</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">objectIDs</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Protocols.html#/s:8Flapjack12DataObjectIDP">DataObjectID</a></span><span class="p">],</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?,</span> <span class="n">sortBy</span> <span class="nv">sorters</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/SortDescriptor.html">SortDescriptor</a></span><span class="p">],</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">T</span><span class="p">]</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The specific type of <code><a href="../Protocols/DataObject.html">DataObject</a></code> to be returned.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>objectIDs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The unique database object identifiers of the objects to be retrieved.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>prefetch</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of keypaths for relationships to be eagerly-fetched, if desired.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sorters</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of sort descriptors to be applied to the results, if desired.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>limit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional limit to be applied to the results.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An array of objects matching the <code><a href="../Protocols.html#/s:8Flapjack12DataObjectIDP">DataObjectID</a></code>s given, if any. If none are found, an empty array is
+       returned.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L122">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextP7objects6ofType11primaryKeys8prefetch6sortBy5limitSayqd__Gqd__m_SayAA10PrimaryKey_pGSaySSGSgSayAA14SortDescriptorVGSiSgtAA0B6ObjectRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/objects(ofType:primaryKeys:prefetch:sortBy:limit:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP7objects6ofType11primaryKeys8prefetch6sortBy5limitSayqd__Gqd__m_SayAA10PrimaryKey_pGSaySSGSgSayAA14SortDescriptorVGSiSgtAA0B6ObjectRd__lF">objects(ofType:primaryKeys:prefetch:sortBy:limit:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Queries for a collection of objects matching the given <code>type</code> and <code>primaryKeys</code>, with an optional <code>prefetch</code>
+parameter for eagerly fetching related records, and an optional <code>limit</code> parameter for restricting the count of
+records returned.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Queries for a collection of objects matching the given <code>type</code> and <code>primaryKeys</code>, with an optional <code>prefetch</code>
+parameter for eagerly fetching related records, and an optional <code>limit</code> parameter for restricting the count of
+records returned.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">objects</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">primaryKeys</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Protocols.html#/s:8Flapjack10PrimaryKeyP">PrimaryKey</a></span><span class="p">],</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?,</span> <span class="n">sortBy</span> <span class="nv">sorters</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/SortDescriptor.html">SortDescriptor</a></span><span class="p">],</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">T</span><span class="p">]</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The specific type of <code><a href="../Protocols/DataObject.html">DataObject</a></code> to be returned.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>primaryKeys</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The unique primary keys of the objects to be retrieved.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>prefetch</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of keypaths for relationships to be eagerly-fetched, if desired.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sorters</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of sort descriptors to be applied to the results, if desired.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>limit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional limit to be applied to the results.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An array of objects matching the <code><a href="../Protocols.html#/s:8Flapjack12DataObjectIDP">DataObjectID</a></code>s given, if any. If none are found, an empty array is
+       returned.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L137">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextP15numberOfObjects6ofType9predicateSiqd__m_So11NSPredicateCSgtAA0B6ObjectRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/numberOfObjects(ofType:predicate:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP15numberOfObjects6ofType9predicateSiqd__m_So11NSPredicateCSgtAA0B6ObjectRd__lF">numberOfObjects(ofType:predicate:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Queries for the count of objects matching a given predicate. This is meant to provide an optimized query for <em>just</em>
+returning an integer count instead of an entire record set.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">numberOfObjects</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">predicate</span><span class="p">:</span> <span class="kt">NSPredicate</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The specific type of <code><a href="../Protocols/DataObject.html">DataObject</a></code> to be queried for.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>predicate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional query to be applied to the lookup.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An integer representing the number of objects that match the query.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L147">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Single%20fetch%20operations"></a>
+                <a name="//apple_ref/swift/Section/Single fetch operations" class="dashAnchor"></a>
+                <a href="#/Single%20fetch%20operations">
+                  <h3 class="section-name">Single fetch operations</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextP6object6ofType9predicate8prefetch6sortByqd__Sgqd__m_So11NSPredicateCSgSaySSGSgSayAA14SortDescriptorVGtAA0B6ObjectRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/object(ofType:predicate:prefetch:sortBy:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP6object6ofType9predicate8prefetch6sortByqd__Sgqd__m_So11NSPredicateCSgSaySSGSgSayAA14SortDescriptorVGtAA0B6ObjectRd__lF">object(ofType:predicate:prefetch:sortBy:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Queries for a single object matching the given <code>type</code>, and optional <code>predicate</code>, with an optional <code>prefetch</code>
+parameter for eagerly fetching related records. If multiple records match the given criteria, <code>sorters</code> will be
+used to sort the results, and the first object will be returned.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">object</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">predicate</span><span class="p">:</span> <span class="kt">NSPredicate</span><span class="p">?,</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?,</span> <span class="n">sortBy</span> <span class="nv">sorters</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/SortDescriptor.html">SortDescriptor</a></span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">?</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The specific type of <code><a href="../Protocols/DataObject.html">DataObject</a></code> to be returned.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>predicate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional query to be applied to the lookup.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>prefetch</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of keypaths for relationships to be eagerly-fetched, if desired.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sorters</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of sort descriptors to be applied to the results, if desired.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A matched object, if found. If multiple records match the given criteria, <code>sorters</code> will be used to sort
+       the results, and the first object will be returned.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L164">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextP6object6ofType10attributes8prefetch6sortByqd__Sgqd__m_SDySSypGSaySSGSgSayAA14SortDescriptorVGtAA0B6ObjectRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/object(ofType:attributes:prefetch:sortBy:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP6object6ofType10attributes8prefetch6sortByqd__Sgqd__m_SDySSypGSaySSGSgSayAA14SortDescriptorVGtAA0B6ObjectRd__lF">object(ofType:attributes:prefetch:sortBy:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Queries for a single object matching the given <code>type</code>, and optional <code>attributes</code>, with an optional <code>prefetch</code>
+parameter for eagerly fetching related records. If multiple records match the given criteria, <code>sorters</code> will be
+used to sort the results, and the first object will be returned.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Queries for a single object matching the given <code>type</code>, and optional <code>attributes</code>, with an optional <code>prefetch</code>
+parameter for eagerly fetching related records. If multiple records match the given criteria, <code>sorters</code> will be
+used to sort the results, and the first object will be returned.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">object</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">attributes</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataContext.html#/s:8Flapjack11DataContextP10Attributesa">Attributes</a></span><span class="p">,</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?,</span> <span class="n">sortBy</span> <span class="nv">sorters</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/SortDescriptor.html">SortDescriptor</a></span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">?</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The specific type of <code><a href="../Protocols/DataObject.html">DataObject</a></code> to be returned.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>attributes</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional dictionary of key-value query constraints to apply to the lookup.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>prefetch</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of keypaths for relationships to be eagerly-fetched, if desired.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sorters</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of sort descriptors to be applied to the results, if desired.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A matched object, if found. If multiple records match the given criteria, <code>sorters</code> will be used to sort
+the results, and the first object will be returned.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L178">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextP6object6ofType0D2IDqd__Sgqd__m_AA0b6ObjectG0_ptAA0bH0Rd__lF"></a>
+                    <a name="//apple_ref/swift/Method/object(ofType:objectID:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP6object6ofType0D2IDqd__Sgqd__m_AA0b6ObjectG0_ptAA0bH0Rd__lF">object(ofType:objectID:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Queries for a single object matching the given <code>type</code>, and database <code>objectID</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">object</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">objectID</span><span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:8Flapjack12DataObjectIDP">DataObjectID</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">?</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The specific type of <code><a href="../Protocols/DataObject.html">DataObject</a></code> to be returned.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>objectIDs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The unique database object identifier of the object to be retrieved.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A matched object, if found.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L187">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextP7refetchyqd__Sgqd__AA0B6ObjectRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/refetch(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP7refetchyqd__Sgqd__AA0B6ObjectRd__lF">refetch(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Queries for an object that exists in this context, and then returns a refreshed version of it.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">refetch</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">dataObject</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">?</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>dataObject</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The object to be refreshed.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A refreshed object, if it still exists in the persistent store.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L195">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Creation%20operations"></a>
+                <a name="//apple_ref/swift/Section/Creation operations" class="dashAnchor"></a>
+                <a href="#/Creation%20operations">
+                  <h3 class="section-name">Creation operations</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextP6createyqd__qd__mAA0B6ObjectRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/create(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP6createyqd__qd__mAA0B6ObjectRd__lF">create(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates and returns a new entity in the context (without fully committing it to the backing store).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">create</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The type of the <code><a href="../Protocols/DataObject.html">DataObject</a></code> to create.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A newly added model, ready for modification and then later persistence to the context.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L206">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextP6create_10attributesqd__qd__m_SDySSypGtAA0B6ObjectRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/create(_:attributes:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP6create_10attributesqd__qd__m_SDySSypGtAA0B6ObjectRd__lF">create(_:attributes:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a new entity in the context (without fully committing it to the backing store) and assigns it a series of
+attributes as properties.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">create</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">attributes</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataContext.html#/s:8Flapjack11DataContextP10Attributesa">Attributes</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The type of the <code><a href="../Protocols/DataObject.html">DataObject</a></code> to create.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>attributes</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The attributes to assign to the new instance.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A newly added model, ready for modification and then later persistence to the context.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L216">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Destruction%20operations"></a>
+                <a name="//apple_ref/swift/Section/Destruction operations" class="dashAnchor"></a>
+                <a href="#/Destruction%20operations">
+                  <h3 class="section-name">Destruction operations</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextP7destroy6objectyqd__Sg_tAA0B6ObjectRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/destroy(object:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP7destroy6objectyqd__Sg_tAA0B6ObjectRd__lF">destroy(object:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">destroy</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">object</span><span class="p">:</span> <span class="kt">T</span><span class="p">?)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextP7destroy7objectsySayqd__G_tAA0B6ObjectRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/destroy(objects:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP7destroy7objectsySayqd__G_tAA0B6ObjectRd__lF">destroy(objects:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Removes an array of objects from the backing store.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>The default implementation of this function loops over the objects provided and calls <code>destroy(_:)</code> on each one.
+Concrete implementations may wish to provide a more performant version, if necessary.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">destroy</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">objects</span><span class="p">:</span> <span class="p">[</span><span class="kt">T</span><span class="p">])</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>objects</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The objects to remove from the backing store.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L229">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Collection%20fetch%20operations2"></a>
+                <a name="//apple_ref/swift/Section/Collection fetch operations" class="dashAnchor"></a>
+                <a href="#/Collection%20fetch%20operations2">
+                  <h3 class="section-name">Collection fetch operations</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextPAAE7objects6ofTypeSayqd__Gqd__m_tAA0B6ObjectRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/objects(ofType:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE7objects6ofTypeSayqd__Gqd__m_tAA0B6ObjectRd__lF">objects(ofType:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Queries for a collection of objects matching the given <code>type</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">objects</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">T</span><span class="p">]</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The specific type of <code><a href="../Protocols/DataObject.html">DataObject</a></code> to be returned.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An array of any found objects. If none are found, an empty array is returned.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L245-L247">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextPAAE7objects6ofType9predicateSayqd__Gqd__m_So11NSPredicateCSgtAA0B6ObjectRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/objects(ofType:predicate:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE7objects6ofType9predicateSayqd__Gqd__m_So11NSPredicateCSgtAA0B6ObjectRd__lF">objects(ofType:predicate:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Queries for a collection of objects matching the given <code>type</code> and optional <code>predicate</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">objects</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">predicate</span><span class="p">:</span> <span class="kt">NSPredicate</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">T</span><span class="p">]</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The specific type of <code><a href="../Protocols/DataObject.html">DataObject</a></code> to be returned.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>predicate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional query to be applied to the lookup.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An array of any found objects. If none are found, an empty array is returned.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L256-L258">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextPAAE7objects6ofType9predicate8prefetchSayqd__Gqd__m_So11NSPredicateCSgSaySSGSgtAA0B6ObjectRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/objects(ofType:predicate:prefetch:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE7objects6ofType9predicate8prefetchSayqd__Gqd__m_So11NSPredicateCSgSaySSGSgtAA0B6ObjectRd__lF">objects(ofType:predicate:prefetch:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Queries for a collection of objects matching the given <code>type</code>, and optional <code>predicate</code>, with an optional
+<code>prefetch</code> parameter for eagerly fetching related records.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">objects</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">predicate</span><span class="p">:</span> <span class="kt">NSPredicate</span><span class="p">?,</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">T</span><span class="p">]</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The specific type of <code><a href="../Protocols/DataObject.html">DataObject</a></code> to be returned.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>predicate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional query to be applied to the lookup.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>prefetch</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of keypaths for relationships to be eagerly-fetched, if desired.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An array of any found objects. If none are found, an empty array is returned.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L269-L271">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextPAAE7objects6ofType10attributesSayqd__Gqd__m_SDySSypGtAA0B6ObjectRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/objects(ofType:attributes:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE7objects6ofType10attributesSayqd__Gqd__m_SDySSypGtAA0B6ObjectRd__lF">objects(ofType:attributes:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Queries for a collection of objects matching the given <code>type</code> and optional <code>attributes</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">objects</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">attributes</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataContext.html#/s:8Flapjack11DataContextP10Attributesa">Attributes</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">T</span><span class="p">]</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The specific type of <code><a href="../Protocols/DataObject.html">DataObject</a></code> to be returned.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>attributes</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional dictionary of key-value query constraints to apply to the lookup.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An array of any found objects. If none are found, an empty array is returned.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L280-L282">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextPAAE7objects6ofType10attributes8prefetchSayqd__Gqd__m_SDySSypGSaySSGSgtAA0B6ObjectRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/objects(ofType:attributes:prefetch:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE7objects6ofType10attributes8prefetchSayqd__Gqd__m_SDySSypGSaySSGSgtAA0B6ObjectRd__lF">objects(ofType:attributes:prefetch:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Queries for a collection of objects matching the given <code>type</code>, and optional <code>attributes</code>, with an optional
+<code>prefetch</code> parameter for eagerly fetching related records.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">objects</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">attributes</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataContext.html#/s:8Flapjack11DataContextP10Attributesa">Attributes</a></span><span class="p">,</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">T</span><span class="p">]</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The specific type of <code><a href="../Protocols/DataObject.html">DataObject</a></code> to be returned.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>attributes</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional dictionary of key-value query constraints to apply to the lookup.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>prefetch</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of keypaths for relationships to be eagerly-fetched, if desired.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An array of any found objects. If none are found, an empty array is returned.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L293-L295">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextPAAE7objects6ofType9objectIDsSayqd__Gqd__m_SayAA0B8ObjectID_pGtAA0bI0Rd__lF"></a>
+                    <a name="//apple_ref/swift/Method/objects(ofType:objectIDs:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE7objects6ofType9objectIDsSayqd__Gqd__m_SayAA0B8ObjectID_pGtAA0bI0Rd__lF">objects(ofType:objectIDs:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Queries for a collection of objects matching the given <code>type</code> and database <code>objectIDs</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">objects</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">objectIDs</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Protocols.html#/s:8Flapjack12DataObjectIDP">DataObjectID</a></span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">T</span><span class="p">]</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The specific type of <code><a href="../Protocols/DataObject.html">DataObject</a></code> to be returned.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>objectIDs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The unique database object identifiers of the objects to be retrieved.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An array of objects matching the <code><a href="../Protocols.html#/s:8Flapjack12DataObjectIDP">DataObjectID</a></code>s given, if any. If none are found, an empty array is
+       returned.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L321-L323">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextPAAE7objects6ofType9objectIDs8prefetchSayqd__Gqd__m_SayAA0B8ObjectID_pGSaySSGSgtAA0bJ0Rd__lF"></a>
+                    <a name="//apple_ref/swift/Method/objects(ofType:objectIDs:prefetch:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE7objects6ofType9objectIDs8prefetchSayqd__Gqd__m_SayAA0B8ObjectID_pGSaySSGSgtAA0bJ0Rd__lF">objects(ofType:objectIDs:prefetch:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Queries for a collection of objects matching the given <code>type</code> and database <code>objectIDs</code>, with an optional <code>prefetch</code>
+parameter for eagerly fetching related records.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">objects</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">objectIDs</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Protocols.html#/s:8Flapjack12DataObjectIDP">DataObjectID</a></span><span class="p">],</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">T</span><span class="p">]</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The specific type of <code><a href="../Protocols/DataObject.html">DataObject</a></code> to be returned.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>objectIDs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The unique database object identifiers of the objects to be retrieved.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>prefetch</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of keypaths for relationships to be eagerly-fetched, if desired.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An array of objects matching the <code><a href="../Protocols.html#/s:8Flapjack12DataObjectIDP">DataObjectID</a></code>s given, if any. If none are found, an empty array is
+       returned.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L335-L337">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextPAAE7objects6ofType11primaryKeysSayqd__Gqd__m_SayAA10PrimaryKey_pGtAA0B6ObjectRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/objects(ofType:primaryKeys:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE7objects6ofType11primaryKeysSayqd__Gqd__m_SayAA10PrimaryKey_pGtAA0B6ObjectRd__lF">objects(ofType:primaryKeys:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Queries for a collection of objects matching the given <code>type</code> and <code>primaryKeys</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">objects</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">primaryKeys</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Protocols.html#/s:8Flapjack10PrimaryKeyP">PrimaryKey</a></span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">T</span><span class="p">]</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The specific type of <code><a href="../Protocols/DataObject.html">DataObject</a></code> to be returned.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>primaryKeys</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The unique primary keys of the objects to be retrieved.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An array of objects matching the <code><a href="../Protocols.html#/s:8Flapjack12DataObjectIDP">DataObjectID</a></code>s given, if any. If none are found, an empty array is
+       returned.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L347-L349">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextPAAE7objects6ofType11primaryKeys8prefetchSayqd__Gqd__m_SayAA10PrimaryKey_pGSaySSGSgtAA0B6ObjectRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/objects(ofType:primaryKeys:prefetch:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE7objects6ofType11primaryKeys8prefetchSayqd__Gqd__m_SayAA10PrimaryKey_pGSaySSGSgtAA0B6ObjectRd__lF">objects(ofType:primaryKeys:prefetch:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Queries for a collection of objects matching the given <code>type</code> and <code>primaryKeys</code>, with an optional <code>prefetch</code>
+parameter for eagerly fetching related records.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">objects</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">primaryKeys</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Protocols.html#/s:8Flapjack10PrimaryKeyP">PrimaryKey</a></span><span class="p">],</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">T</span><span class="p">]</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The specific type of <code><a href="../Protocols/DataObject.html">DataObject</a></code> to be returned.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>primaryKeys</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The unique primary keys of the objects to be retrieved.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>prefetch</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of keypaths for relationships to be eagerly-fetched, if desired.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An array of objects matching the <code><a href="../Protocols.html#/s:8Flapjack12DataObjectIDP">DataObjectID</a></code>s given, if any. If none are found, an empty array is
+       returned.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L361-L363">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Single%20fetch%20operations2"></a>
+                <a name="//apple_ref/swift/Section/Single fetch operations" class="dashAnchor"></a>
+                <a href="#/Single%20fetch%20operations2">
+                  <h3 class="section-name">Single fetch operations</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextPAAE6object6ofType9predicateqd__Sgqd__m_So11NSPredicateCSgtAA0B6ObjectRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/object(ofType:predicate:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE6object6ofType9predicateqd__Sgqd__m_So11NSPredicateCSgtAA0B6ObjectRd__lF">object(ofType:predicate:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Queries for a single object matching the given <code>type</code> and optional <code>predicate</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">object</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">predicate</span><span class="p">:</span> <span class="kt">NSPredicate</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">?</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The specific type of <code><a href="../Protocols/DataObject.html">DataObject</a></code> to be returned.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>predicate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional query to be applied to the lookup.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A matched object, if found. If multiple records match the given criteria, <code>sorters</code> will be used to sort
+       the results, and the first object will be returned.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L396-L398">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextPAAE6object6ofType10attributesqd__Sgqd__m_SDySSypGtAA0B6ObjectRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/object(ofType:attributes:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE6object6ofType10attributesqd__Sgqd__m_SDySSypGtAA0B6ObjectRd__lF">object(ofType:attributes:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Queries for a single object matching the given <code>type</code> and optional <code>attributes</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">object</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">attributes</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataContext.html#/s:8Flapjack11DataContextP10Attributesa">Attributes</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">?</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The specific type of <code><a href="../Protocols/DataObject.html">DataObject</a></code> to be returned.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>attributes</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional dictionary of key-value query constraints to apply to the lookup.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A matched object, if found. If multiple records match the given criteria, <code>sorters</code> will be used to sort
+       the results, and the first object will be returned.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L408-L410">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextPAAE6object6ofType10primaryKeyqd__Sgqd__m_AA07PrimaryH0_pSgtAA0B6ObjectRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/object(ofType:primaryKey:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE6object6ofType10primaryKeyqd__Sgqd__m_AA07PrimaryH0_pSgtAA0B6ObjectRd__lF">object(ofType:primaryKey:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Queries for a single object matching the given <code>type</code> and <code>primaryKey</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">object</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">primaryKey</span><span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:8Flapjack10PrimaryKeyP">PrimaryKey</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">?</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The specific type of <code><a href="../Protocols/DataObject.html">DataObject</a></code> to be returned.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>primaryKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The unique primary key of the object to be retrieved.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A matched object, if found.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L435-L440">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Creation%20operations2"></a>
+                <a name="//apple_ref/swift/Section/Creation operations" class="dashAnchor"></a>
+                <a href="#/Creation%20operations2">
+                  <h3 class="section-name">Creation operations</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextPAAE12findOrCreate_10primaryKeyqd__6object_Sb5isNewtSgqd__m_AA07PrimaryH0_pSgtAA0B6ObjectRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/findOrCreate(_:primaryKey:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE12findOrCreate_10primaryKeyqd__6object_Sb5isNewtSgqd__m_AA07PrimaryH0_pSgtAA0B6ObjectRd__lF">findOrCreate(_:primaryKey:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Finds or creates an instance of the given <code>type</code> based on the <code>primaryKey</code> provided. Returns a tuple of information
+including the <code>object</code> and whether or not the object <code>isNew</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">findOrCreate</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">primaryKey</span><span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:8Flapjack10PrimaryKeyP">PrimaryKey</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nv">object</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="nv">isNew</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)?</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The type of the <code><a href="../Protocols/DataObject.html">DataObject</a></code> to find (or create).</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>primaryKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The unique primary key of the object to be found. If not found, will be assigned to the
+                    newly-created object.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A tuple of information including the <code>object</code> and whether or not the object <code>isNew</code>.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L454-L459">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack11DataContextPAAE12findOrCreate_10attributesqd__6object_Sb5isNewtSgqd__m_SDySSypGtAA0B6ObjectRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/findOrCreate(_:attributes:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE12findOrCreate_10attributesqd__6object_Sb5isNewtSgqd__m_SDySSypGtAA0B6ObjectRd__lF">findOrCreate(_:attributes:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Finds or creates an instance of the given <code>type</code> based on the <code>attributes</code> provided. Returns a tuple of information
+including the <code>object</code> and whether or not the object <code>isNew</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">findOrCreate</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">attributes</span><span class="p">:</span> <span class="kt">DataContext</span><span class="o">.</span><span class="kt"><a href="../Protocols/DataContext.html#/s:8Flapjack11DataContextP10Attributesa">Attributes</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nv">object</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="nv">isNew</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)?</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The type of the <code><a href="../Protocols/DataObject.html">DataObject</a></code> to find (or create).</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>attributes</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The attributes of the object to be found. If not found, will be assigned to the
+                    newly-created object.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A tuple of information including the <code>object</code> and whether or not the object <code>isNew</code>.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L470-L475">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2019 <a class="link" href="https://oreilly.com" target="_blank" rel="external">O&#39;Reilly Media, Inc.</a>. All rights reserved. (Last updated: 2019-01-11)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

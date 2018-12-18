@@ -28,7 +28,7 @@ class CoreSingleDataSourceTests: XCTestCase {
         dataAccess.prepareStack(asynchronously: false, completion: { _ in })
 
         entity = dataAccess.mainContext.create(MockEntity.self, attributes: attributes)
-        dataSource = CoreSingleDataSource<MockEntity>(dataAccess: dataAccess, attributes: attributes, prefetch: [])
+        dataSource = CoreSingleDataSource<MockEntity>(context: dataAccess.mainContext, attributes: attributes, prefetch: [])
     }
 
     override func tearDown() {
@@ -41,7 +41,7 @@ class CoreSingleDataSourceTests: XCTestCase {
     func testObjectIsNilOnInit() {
         XCTAssertNil(dataSource.object)
         XCTAssertEqual(dataSource.attributes as? [String: String], attributes)
-        XCTAssertNil(dataSource.objectDidChange)
+        XCTAssertNil(dataSource.onChange)
     }
 
     func testExecutionFetchesRightAway() {
@@ -53,7 +53,7 @@ class CoreSingleDataSourceTests: XCTestCase {
     func testCoreDataNotificationNotPickedUpBeforeExecute() {
         let expect = expectation(description: "did change block")
         expect.isInverted = true
-        dataSource.objectDidChange = { object in
+        dataSource.onChange = { object in
             expect.fulfill()
         }
         // Should not fire the expectation
@@ -65,7 +65,7 @@ class CoreSingleDataSourceTests: XCTestCase {
     func testExecutionSubscribesToNotificationAndDidChangeFiresRightAway() {
         let expect = expectation(description: "did change block")
         expect.expectedFulfillmentCount = 1
-        dataSource.objectDidChange = { object in
+        dataSource.onChange = { object in
             expect.fulfill()
         }
         dataSource.execute()
@@ -75,7 +75,7 @@ class CoreSingleDataSourceTests: XCTestCase {
     func testObjectDidChangeBlockFiresForSavesInvolvingObject() {
         let expect = expectation(description: "did change block")
         expect.expectedFulfillmentCount = 2
-        dataSource.objectDidChange = { object in
+        dataSource.onChange = { object in
             expect.fulfill()
         }
         dataSource.execute()
@@ -87,7 +87,7 @@ class CoreSingleDataSourceTests: XCTestCase {
     func testObjectDidChangeBlockFiresForChangeProcessesInvolvingObject() {
         let expect = expectation(description: "did change block")
         expect.expectedFulfillmentCount = 2
-        dataSource.objectDidChange = { object in
+        dataSource.onChange = { object in
             expect.fulfill()
         }
         dataSource.execute()
@@ -102,7 +102,7 @@ class CoreSingleDataSourceTests: XCTestCase {
 
         let expect = expectation(description: "did change block")
         expect.expectedFulfillmentCount = 2
-        dataSource.objectDidChange = { object in
+        dataSource.onChange = { object in
             expect.fulfill()
         }
         dataSource.execute()
@@ -113,7 +113,7 @@ class CoreSingleDataSourceTests: XCTestCase {
     }
 
     func testObjectIsNilIfDestroyed() {
-        dataAccess.mainContext.destroy(entity)
+        dataAccess.mainContext.destroy(object: entity)
         dataAccess.mainContext.persist()
 
         dataSource.execute()
@@ -123,22 +123,22 @@ class CoreSingleDataSourceTests: XCTestCase {
     func testDidChangeIsCalledWithNilIfDestroyed() {
         let expect = expectation(description: "did change block")
         expect.expectedFulfillmentCount = 2
-        dataSource.objectDidChange = { object in
+        dataSource.onChange = { object in
             expect.fulfill()
         }
         dataSource.execute()
-        dataAccess.mainContext.destroy(entity)
+        dataAccess.mainContext.destroy(object: entity)
         waitForExpectations(timeout: 0.5) { XCTAssertNil($0) }
         XCTAssertNil(dataSource.object)
     }
 
     func testObjectDidChangeBlockFiresWhenObjectStartsToExist() {
-        dataAccess.mainContext.destroy(entity)
+        dataAccess.mainContext.destroy(object: entity)
         dataAccess.mainContext.persist()
 
         let expect = expectation(description: "did change block")
         expect.expectedFulfillmentCount = 2
-        dataSource.objectDidChange = { object in
+        dataSource.onChange = { object in
             expect.fulfill()
         }
         dataSource.execute()
@@ -156,7 +156,7 @@ class CoreSingleDataSourceTests: XCTestCase {
 
         let expect = expectation(description: "did change block")
         expect.expectedFulfillmentCount = 2
-        dataSource.objectDidChange = { object in
+        dataSource.onChange = { object in
             expect.fulfill()
         }
         dataSource.execute()

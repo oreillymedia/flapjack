@@ -1,0 +1,8 @@
+sdk: iphoneos
+author: O'Reilly Media, Inc.
+author_url: https://oreilly.com
+readme: readme.md
+podspec: Flapjack.podspec
+github_url: https://github.com/oreillymedia/flapjack
+github_file_prefix: https://github.com/oreillymedia/flapjack/tree/master
+theme: fullwidth
