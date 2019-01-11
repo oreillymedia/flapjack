@@ -8,15 +8,15 @@
 
 import Foundation
 
+/**
+ Describes a change in position for a section grouping of content observed by a data source. This can be an insertion or
+ a deletion. Each case comes with the relevant section index information.
+ */
 public enum DataSourceSectionChange: CustomStringConvertible, Hashable {
+    /// Describes an insertion of a new section into the data source's grouped object set.
     case insert(section: Int)
+    /// Describes a deletion of an existing section from the data source's grouped object set.
     case delete(section: Int)
-
-    public var section: Int {
-        switch self {
-        case .insert(let section), .delete(let section): return section
-        }
-    }
 
     public var description: String {
         switch self {
@@ -25,21 +25,7 @@ public enum DataSourceSectionChange: CustomStringConvertible, Hashable {
         }
     }
 
-    public var hashValue: Int {
-        return description.hashValue
-    }
-}
-
-
-public extension Set where Element == DataSourceSectionChange {
-    var components: (inserts: IndexSet, deletes: IndexSet) {
-        var tuple: (inserts: IndexSet, deletes: IndexSet) = ([], [])
-        forEach { element in
-            switch element {
-            case .insert: tuple.inserts.insert(element.section)
-            case .delete: tuple.deletes.insert(element.section)
-            }
-        }
-        return tuple
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(description)
     }
 }

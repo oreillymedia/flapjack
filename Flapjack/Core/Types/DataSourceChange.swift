@@ -8,10 +8,18 @@
 
 import Foundation
 
+/**
+ Describes a change in position for an element observed by a data source. This can be an insertion, a deletion, a move,
+ or an update-in-place. Each case comes with the relevant index path information.
+ */
 public enum DataSourceChange: CustomStringConvertible, Hashable {
+    /// Describes an insertion into the data source's object set at a given index path.
     case insert(path: IndexPath)
+    /// Describes a deletion from the data source's object set at a given index path.
     case delete(path: IndexPath)
+    /// Describes a positional move from the data source's object set from an index path to another index path.
     case move(from: IndexPath, toPath: IndexPath)
+    /// Describes an in-place update in the data source's object set (the object should then be refreshed).
     case update(path: IndexPath)
 
     public var description: String {
@@ -27,23 +35,7 @@ public enum DataSourceChange: CustomStringConvertible, Hashable {
         }
     }
 
-    public var hashValue: Int {
-        return description.hashValue
-    }
-}
-
-
-public extension Set where Element == DataSourceChange {
-    var components: (inserts: [IndexPath], deletes: [IndexPath], moves: [(from: IndexPath, to: IndexPath)], updates: [IndexPath]) {
-        var tuple: (inserts: [IndexPath], deletes: [IndexPath], moves: [(from: IndexPath, to: IndexPath)], updates: [IndexPath]) = ([], [], [], [])
-        forEach { element in
-            switch element {
-            case .insert(let path): tuple.inserts.append(path)
-            case .delete(let path): tuple.deletes.append(path)
-            case .move(let fromPath, let toPath): tuple.moves.append((fromPath, toPath))
-            case .update(let path): tuple.updates.append(path)
-            }
-        }
-        return tuple
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(description)
     }
 }

@@ -125,7 +125,7 @@ class NSManagedObjectContextDataContextTests: XCTestCase {
         XCTAssertTrue(results.contains(expect3))
         XCTAssertFalse(results.contains(expect1))
 
-        context.destroy(expect3)
+        context.destroy(object: expect3)
         let results2 = context.objects(ofType: MockEntity.self, objectIDs: objectIDs, prefetch: nil, sortBy: MockEntity.defaultSorters, limit: nil)
         XCTAssertEqual(results2.count, 1)
         XCTAssertTrue(results2.contains(expect2))
@@ -162,7 +162,7 @@ class NSManagedObjectContextDataContextTests: XCTestCase {
         _ = context.create(MockEntity.self, attributes: ["someProperty": "some value"])
         XCTAssertEqual(context.object(ofType: MockEntity.self, objectID: result1.objectID), result1)
 
-        context.destroy(result1)
+        context.destroy(object: result1)
         XCTAssertNil(context.object(ofType: MockEntity.self, objectID: result1.objectID))
     }
 
@@ -171,7 +171,7 @@ class NSManagedObjectContextDataContextTests: XCTestCase {
         _ = context.create(MockEntity.self, attributes: ["someProperty": "some value"])
         XCTAssertEqual(context.refetch(result1), result1)
 
-        context.destroy(result1)
+        context.destroy(object: result1)
         XCTAssertNil(context.refetch(result1))
     }
 
@@ -194,7 +194,7 @@ class NSManagedObjectContextDataContextTests: XCTestCase {
     func testDestroy() {
         let result1 = context.create(MockEntity.self, attributes: ["someProperty": "some value"])
         _ = context.persist()
-        context.destroy(result1)
+        context.destroy(object: result1)
         XCTAssertTrue(result1.isDeleted)
     }
 
@@ -202,7 +202,7 @@ class NSManagedObjectContextDataContextTests: XCTestCase {
         let result1 = context.create(MockEntity.self, attributes: ["someProperty": "some value"])
         let result2 = context.create(MockEntity.self, attributes: ["someProperty": "some other value"])
         _ = context.persist()
-        context.destroy([result1, result2])
+        context.destroy(objects: [result1, result2])
         XCTAssertTrue(result1.isDeleted)
         XCTAssertTrue(result2.isDeleted)
     }

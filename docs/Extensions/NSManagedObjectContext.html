@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>NSManagedObjectContext Extension Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Extension/NSManagedObjectContext" class="dashAnchor"></a>
+
+    <a title="NSManagedObjectContext Extension Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          Flapjack Docs
+        </a>
+         (94% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/oreillymedia/flapjack">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">Flapjack Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      NSManagedObjectContext Extension Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/CoreDataAccess.html">CoreDataAccess</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/CoreDataAccess/StoreType.html">– StoreType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/CoreDataSource.html">CoreDataSource</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/CoreDataSourceFactory.html">CoreDataSourceFactory</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/CoreSingleDataSource.html">CoreSingleDataSource</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Logger.html">Logger</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MigrationPolicy.html">MigrationPolicy</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DataAccessError.html">DataAccessError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DataContextError.html">DataContextError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DataSourceChange.html">DataSourceChange</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DataSourceSectionChange.html">DataSourceSectionChange</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/LoggerLevel.html">LoggerLevel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MigratorError.html">MigratorError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Array.html">Array</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/NSFetchedResultsChangeType.html">NSFetchedResultsChangeType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/NSManagedObjectContext.html">NSManagedObjectContext</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/NSMigrationManager.html">NSMigrationManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/NSMigrationManager/Layer.html">– Layer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Sequence.html">Sequence</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Set.html">Set</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/UICollectionView.html">UICollectionView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/UITableView.html">UITableView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DataAccess.html">DataAccess</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DataAccessDelegate.html">DataAccessDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DataContext.html">DataContext</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DataObject.html">DataObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols.html#/s:8Flapjack12DataObjectIDP">DataObjectID</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DataSource.html">DataSource</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/Migrator.html">Migrator</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols.html#/s:8Flapjack10PrimaryKeyP">PrimaryKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/SingleDataSource.html">SingleDataSource</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/SortDescriptor.html">SortDescriptor</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>NSManagedObjectContext</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">NSManagedObjectContext</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">NSCoding</span><span class="p">,</span> <span class="kt">NSLocking</span></code></pre>
+
+                </div>
+              </div>
+            
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So22NSManagedObjectContextC8FlapjackE7performyyyAC04DataC0_pcF"></a>
+                    <a name="//apple_ref/swift/Method/perform(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE7performyyyAC04DataC0_pcF">perform(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Performs an operation against this context on an isolated queue.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">perform</span><span class="p">(</span><span class="n">_</span> <span class="nv">operation</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">context</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataContext.html">DataContext</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>operation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The closure containing the operation(s) to perform; will be passed the background-thread
+                   <code>NSManagedObjectContext</code> as a <code><a href="../Protocols/DataContext.html">DataContext</a></code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L22-L24">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So22NSManagedObjectContextC8FlapjackE11performSyncyyyAC04DataC0_pcF"></a>
+                    <a name="//apple_ref/swift/Method/performSync(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE11performSyncyyyAC04DataC0_pcF">performSync(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Performs an operation against this context on an isolated queue, but blocks the calling thread while doing so.
+Wraps <code>NSManagedObjectContext.performAndWait(_:)</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">performSync</span><span class="p">(</span><span class="n">_</span> <span class="nv">operation</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">context</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataContext.html">DataContext</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>operation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The closure containing the operation(s) to perform; will be passed the background-thread
+                   <code>NSManagedObjectContext</code> as a <code><a href="../Protocols/DataContext.html">DataContext</a></code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L33-L35">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So22NSManagedObjectContextC8FlapjackE7refreshyyxAC04DataB0RzlF"></a>
+                    <a name="//apple_ref/swift/Method/refresh(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE7refreshyyxAC04DataB0RzlF">refresh(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Goes back to this context&rsquo;s backing store to get a new copy of the requested object (which dumps its
+potentially-cached version).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">refresh</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>object</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The model object to be refreshed. Must be an <code>NSManagedObject</code> otherwise this is a no-op.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L43-L48">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So22NSManagedObjectContextC8FlapjackE7persistAC04DataC5ErrorOSgyF"></a>
+                    <a name="//apple_ref/swift/Method/persist()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE7persistAC04DataC5ErrorOSgyF">persist()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Saves any pending changes to our backing store. If no changes are detected, this method is a no-op.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">persist</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Enums/DataContextError.html">DataContextError</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An error if one occurred while saving.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L55-L60">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So22NSManagedObjectContextC8FlapjackE17persistOrRollbackSbyF"></a>
+                    <a name="//apple_ref/swift/Method/persistOrRollback()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE17persistOrRollbackSbyF">persistOrRollback()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Save any pending changes to our backing store, but if we encounter an error, attempts a rollback and returns
+whether or not the save succeeded.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">persistOrRollback</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>true</code> if the persist operation was successful; <code>false</code> if a rollback happened as a result of a failure.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L68-L75">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So22NSManagedObjectContextC8FlapjackE12forcePersistAC04DataC5ErrorOSgyF"></a>
+                    <a name="//apple_ref/swift/Method/forcePersist()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE12forcePersistAC04DataC5ErrorOSgyF">forcePersist()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Save any pending changes to our backing store, regardless of whether or not unsaved changes exist. Guarantees a
+round trip to the backing store.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">forcePersist</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Enums/DataContextError.html">DataContextError</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An error if one occurred while saving.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L83-L93">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Collection%20fetch%20operations"></a>
+                <a name="//apple_ref/swift/Section/Collection fetch operations" class="dashAnchor"></a>
+                <a href="#/Collection%20fetch%20operations">
+                  <h3 class="section-name">Collection fetch operations</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So22NSManagedObjectContextC8FlapjackE7objects6ofType9predicate8prefetch6sortBy5limitSayxGxm_So11NSPredicateCSgSaySSGSgSayAC14SortDescriptorVGSiSgtAC04DataB0RzlF"></a>
+                    <a name="//apple_ref/swift/Method/objects(ofType:predicate:prefetch:sortBy:limit:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE7objects6ofType9predicate8prefetch6sortBy5limitSayxGxm_So11NSPredicateCSgSaySSGSgSayAC14SortDescriptorVGSiSgtAC04DataB0RzlF">objects(ofType:predicate:prefetch:sortBy:limit:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Queries for a collection of objects matching the given <code>type</code>, and optional <code>predicate</code>, with an optional
+<code>prefetch</code> parameter for eagerly fetching related records, and an optional <code>limit</code> parameter for restricting the
+count of matches returned.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">objects</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">predicate</span><span class="p">:</span> <span class="kt">NSPredicate</span><span class="p">?,</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?,</span> <span class="n">sortBy</span> <span class="nv">sorters</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/SortDescriptor.html">SortDescriptor</a></span><span class="p">],</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">T</span><span class="p">]</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The specific type of <code><a href="../Protocols/DataObject.html">DataObject</a></code> to be returned.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>predicate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional query to be applied to the lookup.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>prefetch</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of keypaths for relationships to be eagerly-fetched, if desired.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sorters</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of sort descriptors to be applied to the results, if desired.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>limit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional limit to be applied to the results.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An array of any found objects. If none are found, an empty array is returned.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L110-L117">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So22NSManagedObjectContextC8FlapjackE7objects6ofType9objectIDs8prefetch6sortBy5limitSayxGxm_SayAC04DataB2ID_pGSaySSGSgSayAC14SortDescriptorVGSiSgtAC0nB0RzlF"></a>
+                    <a name="//apple_ref/swift/Method/objects(ofType:objectIDs:prefetch:sortBy:limit:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE7objects6ofType9objectIDs8prefetch6sortBy5limitSayxGxm_SayAC04DataB2ID_pGSaySSGSgSayAC14SortDescriptorVGSiSgtAC0nB0RzlF">objects(ofType:objectIDs:prefetch:sortBy:limit:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Queries for a collection of objects matching the given <code>type</code> and database <code>objectIDs</code>, with an optional <code>prefetch</code>
+parameter for eagerly fetching related records, and an optional <code>limit</code> parameter for restricting the count of
+records returned.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">objects</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">objectIDs</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Protocols.html#/s:8Flapjack12DataObjectIDP">DataObjectID</a></span><span class="p">],</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?,</span> <span class="n">sortBy</span> <span class="nv">sorters</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/SortDescriptor.html">SortDescriptor</a></span><span class="p">],</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">T</span><span class="p">]</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The specific type of <code><a href="../Protocols/DataObject.html">DataObject</a></code> to be returned.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>objectIDs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The unique database object identifiers of the objects to be retrieved.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>prefetch</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of keypaths for relationships to be eagerly-fetched, if desired.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sorters</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of sort descriptors to be applied to the results, if desired.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>limit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional limit to be applied to the results.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An array of objects matching the <code><a href="../Protocols.html#/s:8Flapjack12DataObjectIDP">DataObjectID</a></code>s given, if any. If none are found, an empty array is
+       returned.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L132-L134">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So22NSManagedObjectContextC8FlapjackE15numberOfObjects6ofType9predicateSixm_So11NSPredicateCSgtAC04DataB0RzlF"></a>
+                    <a name="//apple_ref/swift/Method/numberOfObjects(ofType:predicate:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE15numberOfObjects6ofType9predicateSixm_So11NSPredicateCSgtAC04DataB0RzlF">numberOfObjects(ofType:predicate:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Queries for the count of objects matching a given predicate. Provides an optimized query for <em>just</em> returning an
+integer count instead of an entire record set.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">numberOfObjects</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">predicate</span><span class="p">:</span> <span class="kt">NSPredicate</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The specific type of <code><a href="../Protocols/DataObject.html">DataObject</a></code> to be queried for.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>predicate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional query to be applied to the lookup.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An integer representing the number of objects that match the query.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L144-L152">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Single%20fetch%20operations"></a>
+                <a name="//apple_ref/swift/Section/Single fetch operations" class="dashAnchor"></a>
+                <a href="#/Single%20fetch%20operations">
+                  <h3 class="section-name">Single fetch operations</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So22NSManagedObjectContextC8FlapjackE6object6ofType9predicate8prefetch6sortByxSgxm_So11NSPredicateCSgSaySSGSgSayAC14SortDescriptorVGtAC04DataB0RzlF"></a>
+                    <a name="//apple_ref/swift/Method/object(ofType:predicate:prefetch:sortBy:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE6object6ofType9predicate8prefetch6sortByxSgxm_So11NSPredicateCSgSaySSGSgSayAC14SortDescriptorVGtAC04DataB0RzlF">object(ofType:predicate:prefetch:sortBy:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Queries for a single object matching the given <code>type</code>, and optional <code>predicate</code>, with an optional <code>prefetch</code>
+parameter for eagerly fetching related records. If multiple records match the given criteria, <code>sorters</code> will be
+used to sort the results, and the first object will be returned.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">object</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">predicate</span><span class="p">:</span> <span class="kt">NSPredicate</span><span class="p">?,</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?,</span> <span class="n">sortBy</span> <span class="nv">sorters</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/SortDescriptor.html">SortDescriptor</a></span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">?</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The specific type of <code><a href="../Protocols/DataObject.html">DataObject</a></code> to be returned.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>predicate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional query to be applied to the lookup.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>prefetch</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of keypaths for relationships to be eagerly-fetched, if desired.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sorters</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of sort descriptors to be applied to the results, if desired.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A matched object, if found. If multiple records match the given criteria, <code>sorters</code> will be used to sort
+       the results, and the first object will be returned.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L169-L176">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So22NSManagedObjectContextC8FlapjackE6object6ofType0E2IDxSgxm_AC04DatabH0_ptAC0iB0RzlF"></a>
+                    <a name="//apple_ref/swift/Method/object(ofType:objectID:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE6object6ofType0E2IDxSgxm_AC04DatabH0_ptAC0iB0RzlF">object(ofType:objectID:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Queries for a single object matching the given <code>type</code>, and database <code>objectID</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">object</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">objectID</span><span class="p">:</span> <span class="kt"><a href="../Protocols.html#/s:8Flapjack12DataObjectIDP">DataObjectID</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">?</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The specific type of <code><a href="../Protocols/DataObject.html">DataObject</a></code> to be returned.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>objectIDs</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The unique database object identifier of the object to be retrieved.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A matched object, if found.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L185-L203">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So22NSManagedObjectContextC8FlapjackE7refetchyxSgxAC04DataB0RzlF"></a>
+                    <a name="//apple_ref/swift/Method/refetch(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE7refetchyxSgxAC04DataB0RzlF">refetch(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Queries for an object that exists in this context, and then returns a refreshed version of it.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">refetch</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">dataObject</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">?</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>dataObject</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The object to be refreshed.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A refreshed object, if it still exists in the persistent store.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L211-L216">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Creation%20operations"></a>
+                <a name="//apple_ref/swift/Section/Creation operations" class="dashAnchor"></a>
+                <a href="#/Creation%20operations">
+                  <h3 class="section-name">Creation operations</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So22NSManagedObjectContextC8FlapjackE6createyxxmAC04DataB0RzlF"></a>
+                    <a name="//apple_ref/swift/Method/create(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE6createyxxmAC04DataB0RzlF">create(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates and returns a new entity in our context (without fully committing it to our backing store).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">create</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The type of the <code><a href="../Protocols/DataObject.html">DataObject</a></code> to create.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A newly added model, ready for modification and then later persistence to our context.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L227-L230">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So22NSManagedObjectContextC8FlapjackE6create_10attributesxxm_SDySSypGtAC04DataB0RzlF"></a>
+                    <a name="//apple_ref/swift/Method/create(_:attributes:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE6create_10attributesxxm_SDySSypGtAC04DataB0RzlF">create(_:attributes:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a new entity in our context (without fully committing it to our backing store) and assigns it a series of
+attributes as properties.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">create</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">attributes</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataContext.html">DataContext</a></span><span class="o">.</span><span class="kt">Attributes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The type of the <code><a href="../Protocols/DataObject.html">DataObject</a></code> to create.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>attributes</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The attributes to assign to the new instance.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A newly added model, ready for modification and then later persistence to our context.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L240-L245">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Destruction%20operations"></a>
+                <a name="//apple_ref/swift/Section/Destruction operations" class="dashAnchor"></a>
+                <a href="#/Destruction%20operations">
+                  <h3 class="section-name">Destruction operations</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So22NSManagedObjectContextC8FlapjackE7destroy6objectyxSg_tAC04DataB0RzlF"></a>
+                    <a name="//apple_ref/swift/Method/destroy(object:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE7destroy6objectyxSg_tAC04DataB0RzlF">destroy(object:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Removes an object from our backing store.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">destroy</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">object</span><span class="p">:</span> <span class="kt">T</span><span class="p">?)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>object</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The object to remove from our backing store.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L255-L260">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Fetch%20request%20helpers"></a>
+                <a name="//apple_ref/swift/Section/Fetch request helpers" class="dashAnchor"></a>
+                <a href="#/Fetch%20request%20helpers">
+                  <h3 class="section-name">Fetch request helpers</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So22NSManagedObjectContextC8FlapjackE12fetchRequest3for9predicate8prefetch6sortBy5limitSo07NSFetchF0CySo0aB0CGxm_So11NSPredicateCSgSaySSGSayAC14SortDescriptorVGSiSgtAC04DataB0RzlF"></a>
+                    <a name="//apple_ref/swift/Method/fetchRequest(for:predicate:prefetch:sortBy:limit:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE12fetchRequest3for9predicate8prefetch6sortBy5limitSo07NSFetchF0CySo0aB0CGxm_So11NSPredicateCSgSaySSGSayAC14SortDescriptorVGSiSgtAC04DataB0RzlF">fetchRequest(for:predicate:prefetch:sortBy:limit:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Generates an <code>NSFetchRequest</code> for manual fetching operations based on a number of parameters passed in. Defaults to
+a <code>fetchBatchSize</code> of 50.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">fetchRequest</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span><span class="o">&gt;</span><span class="p">(</span><span class="k">for</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">predicate</span><span class="p">:</span> <span class="kt">NSPredicate</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span> <span class="n">sortBy</span> <span class="nv">sorters</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/SortDescriptor.html">SortDescriptor</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSFetchRequest</span><span class="o">&lt;</span><span class="kt">NSManagedObject</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The specific type of <code><a href="../Protocols/DataObject.html">DataObject</a></code> to be returned.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>predicate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional query to be applied to the fetch request.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>prefetch</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of keypaths for relationships to be eagerly-fetched, if desired.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sorters</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of sort descriptors to be applied to the fetch request, if desired.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>limit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional limit to be applied to the fetch request.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A formulated <code>NSFetchRequest</code> with the given parameters.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L276-L290">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So22NSManagedObjectContextC8FlapjackE012NotificationB3Seta"></a>
+                    <a name="//apple_ref/swift/Alias/NotificationObjectSet" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE012NotificationB3Seta">NotificationObjectSet</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A tuple that represents a series of refreshed, inserted, updated, and deleted <code>DataObjects</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">NotificationObjectSet</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">(</span><span class="nv">refreshes</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">inserts</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">updates</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">deletes</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+Extensions.swift#L19">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So22NSManagedObjectContextC8FlapjackE012NotificationB5IDSeta"></a>
+                    <a name="//apple_ref/swift/Alias/NotificationObjectIDSet" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE012NotificationB5IDSeta">NotificationObjectIDSet</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A tuple that represents a series of refreshed, inserted, updated, and deleted objects based on their
+<code>NSManagedObjectID</code>s.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">NotificationObjectIDSet</span> <span class="o">=</span> <span class="p">(</span><span class="nv">refreshes</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">NSManagedObjectID</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">inserts</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">NSManagedObjectID</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">updates</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">NSManagedObjectID</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">deletes</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">NSManagedObjectID</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+Extensions.swift#L24">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So22NSManagedObjectContextC8FlapjackE13objectIDsFrom12notificationShySo0aB2IDCSo8NSObjectCSH10ObjectiveCg_G9refreshes_AK7insertsAK7updatesAK7deletest10Foundation12NotificationV_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/objectIDsFrom(notification:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE13objectIDsFrom12notificationShySo0aB2IDCSo8NSObjectCSH10ObjectiveCg_G9refreshes_AK7insertsAK7updatesAK7deletest10Foundation12NotificationV_tFZ">objectIDsFrom(notification:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Obtains the refreshed, updated, inserted, and deleted object identifiers from a Core Data object-did-change or
+context-did-save notification.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">objectIDsFrom</span><span class="p">(</span><span class="nv">notification</span><span class="p">:</span> <span class="kt">Notification</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Extensions/NSManagedObjectContext.html#/s:So22NSManagedObjectContextC8FlapjackE012NotificationB5IDSeta">NotificationObjectIDSet</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>notification</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The notification object from an <code>NSManagedObjectContextObjectsDidChange</code> or
+                      <code>NSManagedObjectContextDidSave</code> notification.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A tuple containing the object IDs from the notification.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+Extensions.swift#L34-L45">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So22NSManagedObjectContextC8FlapjackE11objectsFrom12notification6ofTypeShyxG9refreshes_AG7insertsAG7updatesAG7deletest10Foundation12NotificationV_xmtAC04DataB0RzSHRzlFZ"></a>
+                    <a name="//apple_ref/swift/Method/objectsFrom(notification:ofType:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE11objectsFrom12notification6ofTypeShyxG9refreshes_AG7insertsAG7updatesAG7deletest10Foundation12NotificationV_xmtAC04DataB0RzSHRzlFZ">objectsFrom(notification:ofType:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Obtains the refreshed, updated, inserted, and deleted object identifiers from a Core Data object-did-change or
+context-did-save notification matching a given type.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="n">objectsFrom</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">notification</span><span class="p">:</span> <span class="kt">Notification</span><span class="p">,</span> <span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Extensions/NSManagedObjectContext.html#/s:So22NSManagedObjectContextC8FlapjackE012NotificationB3Seta">NotificationObjectSet</a></span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span><span class="p">,</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">Hashable</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>notification</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The notification object from an <code>NSManagedObjectContextObjectsDidChange</code> or
+                      <code>NSManagedObjectContextDidSave</code> notification.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The type of the objects to retrieve; only those matching this type will be returned.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A tuple containing the object IDs from the notification.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+Extensions.swift#L56-L62">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So22NSManagedObjectContextC8FlapjackE010referencedB03for4type2in7refetchx6object_Sb7deletedtSgSo0aB2IDC_xm10Foundation12NotificationVSbtAC04DataB0RzSHRzlFZ"></a>
+                    <a name="//apple_ref/swift/Method/referencedObject(for:type:in:refetch:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE010referencedB03for4type2in7refetchx6object_Sb7deletedtSgSo0aB2IDC_xm10Foundation12NotificationVSbtAC04DataB0RzSHRzlFZ">referencedObject(for:type:in:refetch:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Obtains the object from an <code>NSManagedObjectContextObjectsDidChange</code> or <code>NSManagedObjectContextDidSave</code> notification
+based on that object&rsquo;s <code>NSManagedObjectID</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="n">referencedObject</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span> <span class="o">&amp;</span> <span class="kt">Hashable</span><span class="o">&gt;</span><span class="p">(</span><span class="k">for</span> <span class="nv">objectID</span><span class="p">:</span> <span class="kt">NSManagedObjectID</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="k">in</span> <span class="nv">notification</span><span class="p">:</span> <span class="kt">Notification</span><span class="p">,</span> <span class="nv">refetch</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nv">object</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="nv">deleted</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>objectID</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The managed object identifier of the object to retrieve.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The type of the object to retrieve.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>notification</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The notification object from an <code>NSManagedObjectContextObjectsDidChange</code> or
+                      <code>NSManagedObjectContextDidSave</code> notification.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>refetch</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>If <code>true</code>, the object will be refreshed again from Core Data. Generally this should be
+                 left to the default value <code>false</code> unless you have a good reason.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A tuple containing the object and whether or not it came through as a deletion, if found.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+Extensions.swift#L76-L108">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So22NSManagedObjectContextC8FlapjackE02isB0_12referencedInSbSo0aB0C_10Foundation12NotificationVtFZ"></a>
+                    <a name="//apple_ref/swift/Method/isObject(_:referencedIn:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE02isB0_12referencedInSbSo0aB0C_10Foundation12NotificationVtFZ">isObject(_:referencedIn:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Checks if the given object is referenced in the given <code>NSManagedObjectContextObjectsDidChange</code> or
+<code>NSManagedObjectContextDidSave</code> notification.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">isObject</span><span class="p">(</span><span class="n">_</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">NSManagedObject</span><span class="p">,</span> <span class="n">referencedIn</span> <span class="nv">notification</span><span class="p">:</span> <span class="kt">Notification</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>object</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The object to look for in the change notification.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>notification</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The notification object from an <code>NSManagedObjectContextObjectsDidChange</code> or
+                      <code>NSManagedObjectContextDidSave</code> notification.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>true</code> if found.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+Extensions.swift#L119-L123">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2019 <a class="link" href="https://oreilly.com" target="_blank" rel="external">O&#39;Reilly Media, Inc.</a>. All rights reserved. (Last updated: 2019-01-11)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

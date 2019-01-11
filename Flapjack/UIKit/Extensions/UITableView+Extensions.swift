@@ -13,6 +13,15 @@ import Flapjack
 #endif
 
 public extension UITableView {
+    /**
+     Divvies up the changes passed in and forwards the calls to native iOS APIs for performing batch changes in a
+     `UITableView`. Provides a convenience API for not having to do this yourself!
+
+     - parameter objectChanges: A set of change enumerations coming from a collection-observing `DataSource`.
+     - parameter sectionChanges: A set of section change enumerations coming from a collection-observing `DataSource`.
+     - parameter completion: A block to be called upon completion. The included boolean indicates if the animations
+                             finished successfully.
+     */
     func performBatchUpdates(_ objectChanges: Set<DataSourceChange>, sectionChanges: Set<DataSourceSectionChange> = [], completion: ((Bool) -> Void)? = nil) {
         guard superview != nil, !objectChanges.isEmpty else {
             return
@@ -20,7 +29,7 @@ public extension UITableView {
         let (inserts, deletes, moves, updates) = objectChanges.components
         let (sectionInserts, sectionDeletes) = sectionChanges.components
 
-        let changesToPerform: () -> Void = { [weak self] in
+        performBatchUpdates({ [weak self] in
             guard let `self` = self else {
                 return
             }
@@ -30,15 +39,6 @@ public extension UITableView {
             if !inserts.isEmpty { self.insertRows(at: inserts, with: .automatic) }
             if !updates.isEmpty { self.reloadRows(at: updates, with: .automatic) }
             moves.forEach { self.moveRow(at: $0, to: $1) }
-        }
-
-        if #available(iOS 11.0, *) {
-            performBatchUpdates(changesToPerform, completion: completion)
-        } else {
-            beginUpdates()
-            changesToPerform()
-            endUpdates()
-            completion?(true)
-        }
+        }, completion: completion)
     }
 }

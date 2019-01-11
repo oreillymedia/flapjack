@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MigrationPolicy Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Class/MigrationPolicy" class="dashAnchor"></a>
+
+    <a title="MigrationPolicy Class Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          Flapjack Docs
+        </a>
+         (94% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/oreillymedia/flapjack">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">Flapjack Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      MigrationPolicy Class Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/CoreDataAccess.html">CoreDataAccess</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/CoreDataAccess/StoreType.html">– StoreType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/CoreDataSource.html">CoreDataSource</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/CoreDataSourceFactory.html">CoreDataSourceFactory</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/CoreSingleDataSource.html">CoreSingleDataSource</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Logger.html">Logger</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MigrationPolicy.html">MigrationPolicy</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DataAccessError.html">DataAccessError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DataContextError.html">DataContextError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DataSourceChange.html">DataSourceChange</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DataSourceSectionChange.html">DataSourceSectionChange</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/LoggerLevel.html">LoggerLevel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MigratorError.html">MigratorError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Array.html">Array</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/NSFetchedResultsChangeType.html">NSFetchedResultsChangeType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/NSManagedObjectContext.html">NSManagedObjectContext</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/NSMigrationManager.html">NSMigrationManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/NSMigrationManager/Layer.html">– Layer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Sequence.html">Sequence</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Set.html">Set</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/UICollectionView.html">UICollectionView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/UITableView.html">UITableView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DataAccess.html">DataAccess</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DataAccessDelegate.html">DataAccessDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DataContext.html">DataContext</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DataObject.html">DataObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols.html#/s:8Flapjack12DataObjectIDP">DataObjectID</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DataSource.html">DataSource</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/Migrator.html">Migrator</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols.html#/s:8Flapjack10PrimaryKeyP">PrimaryKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/SingleDataSource.html">SingleDataSource</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/SortDescriptor.html">SortDescriptor</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>MigrationPolicy</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">MigrationPolicy</span> <span class="p">:</span> <span class="kt">NSEntityMigrationPolicy</span></code></pre>
+
+                </div>
+              </div>
+            <p>A common subclass for <q>hooking in</q> to the existing Core Data APIs for handling mapping model migrations in order to
+make them Swift-y and much easier to deal with.</p>
+
+<p>Subclasses must override the <code>migrations</code> property, where keys should be the <em>names</em> of the mappings (like
+<code>PlaylistToPlaylist</code>), and the <em>values</em> should be the properties vending functions to run.</p>
+
+<p>See the docstring for <code>migrations</code> for more information.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack15MigrationPolicyC0B9Operationa"></a>
+                    <a name="//apple_ref/swift/Alias/MigrationOperation" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack15MigrationPolicyC0B9Operationa">MigrationOperation</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">MigrationOperation</span> <span class="o">=</span> <span class="p">(</span><span class="n">_</span> <span class="nv">manager</span><span class="p">:</span> <span class="kt">NSMigrationManager</span><span class="p">,</span> <span class="n">_</span> <span class="nv">source</span><span class="p">:</span> <span class="kt">NSManagedObject</span><span class="p">,</span> <span class="n">_</span> <span class="nv">destination</span><span class="p">:</span> <span class="kt">NSManagedObject</span><span class="p">?)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/MigrationPolicy.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Flapjack@objc(cs)MigrationPolicy(im)createDestinationInstancesForSourceInstance:entityMapping:manager:error:"></a>
+                    <a name="//apple_ref/swift/Method/createDestinationInstances(forSource:in:manager:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Flapjack@objc(cs)MigrationPolicy(im)createDestinationInstancesForSourceInstance:entityMapping:manager:error:">createDestinationInstances(forSource:in:manager:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="k">override</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">createDestinationInstances</span><span class="p">(</span><span class="n">forSource</span> <span class="nv">sourceInstance</span><span class="p">:</span> <span class="kt">NSManagedObject</span><span class="p">,</span> <span class="k">in</span> <span class="nv">mapping</span><span class="p">:</span> <span class="kt">NSEntityMapping</span><span class="p">,</span> <span class="nv">manager</span><span class="p">:</span> <span class="kt">NSMigrationManager</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/MigrationPolicy.swift#L26-L38">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack15MigrationPolicyC10migrationsSDySSySo18NSMigrationManagerC_So15NSManagedObjectCAHSgtKcGvp"></a>
+                    <a name="//apple_ref/swift/Property/migrations" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack15MigrationPolicyC10migrationsSDySSySo18NSMigrationManagerC_So15NSManagedObjectCAHSgtKcGvp">migrations</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Subclasses should override this method and return a dictionary whose keys are mapped directly
+to Core Data Mapping Model entity mappings (like <code>PlaylistToPlaylist</code>), and whose values are
+properties vending functions to run (conforming to the <code><a href="../Classes/MigrationPolicy.html#/s:8Flapjack15MigrationPolicyC0B9Operationa">MigrationOperation</a></code> typealias).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">migrations</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt"><a href="../Classes/MigrationPolicy.html#/s:8Flapjack15MigrationPolicyC0B9Operationa">MigrationOperation</a></span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/MigrationPolicy.swift#L45-L47">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack15MigrationPolicyC38migrationsWithoutNecessaryCreationStepSaySSGvp"></a>
+                    <a name="//apple_ref/swift/Property/migrationsWithoutNecessaryCreationStep" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack15MigrationPolicyC38migrationsWithoutNecessaryCreationStepSaySSGvp">migrationsWithoutNecessaryCreationStep</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>For second-tier mappings (to be run after the initial mapping runs for an entity), subclasses should override
+this property and define their names as the return value to this function. This tells the parent whether or not
+it needs to <em>create</em> the entities in the destination context (second-tier mappings should not create entities
+otherwise duplication of entities will occur).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">migrationsWithoutNecessaryCreationStep</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/MigrationPolicy.swift#L55-L57">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2019 <a class="link" href="https://oreilly.com" target="_blank" rel="external">O&#39;Reilly Media, Inc.</a>. All rights reserved. (Last updated: 2019-01-11)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

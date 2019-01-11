@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ Describes an object responsible for determining if content should be migrated, and for doing so.
+ */
 public protocol Migrator {
     /// If `true`, migrations do not need to be performed, and calling migrate() is a no-op.
     var storeIsUpToDate: Bool { get }
@@ -22,9 +25,14 @@ public protocol Migrator {
     func migrate() throws -> Bool
 }
 
-
+/**
+ An error potentially thrown by an object conforming to the `Migrator` protocol.
+ */
 public enum MigratorError: Error {
+    /// Indicates a failure creating a destination folder, or creating the database on the file system.
     case diskPreparationError
+    /// Indicates a failure setting up the stack, by whatever database technology is doing so.
     case proceduralError(Error)
+    /// Indicates a failure occurring during database removal or other cleanup procedure.
     case cleanupError(Error)
 }

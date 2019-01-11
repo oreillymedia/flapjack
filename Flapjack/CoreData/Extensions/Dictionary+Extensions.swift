@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension Dictionary where Key == String, Value == Any {
+internal extension Dictionary where Key == String, Value == Any {
     var cacheKey: String {
         return self.keys.sorted().compactMap { key in
             guard let value = self[key] else {

@@ -12,9 +12,6 @@ import XCTest
 
 class DataAccessErrorTests: XCTestCase {
     func testPreparationError() {
-        XCTAssertFalse(DataAccessError.preparationError(nil).description.isEmpty)
-        XCTAssertFalse(DataAccessError.preparationError(nil).localizedDescription.isEmpty)
-
         let nserror = NSError(domain: "Domain", code: 0, userInfo: nil)
         XCTAssertFalse(DataAccessError.preparationError(nserror).description.isEmpty)
         XCTAssertFalse(DataAccessError.preparationError(nserror).localizedDescription.isEmpty)

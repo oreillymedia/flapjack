@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension NSPredicate {
+internal extension NSPredicate {
     class func fromConditions(_ dictionary: [String: Any]) -> [NSPredicate] {
         return dictionary.compactMap { NSPredicate(key: $0, value: $1) }
     }
@@ -53,7 +53,7 @@ public extension NSPredicate {
     }
 }
 
-public extension NSCompoundPredicate {
+internal extension NSCompoundPredicate {
     convenience init(andPredicateFrom dictionary: [String: Any]) {
         self.init(andPredicateWithSubpredicates: NSPredicate.fromConditions(dictionary))
     }

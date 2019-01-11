@@ -9,6 +9,7 @@
 import Foundation
 import os
 
+/// An enumeration describing the logging severity level used inside of Flapjack.
 public enum LoggerLevel: Int, CustomStringConvertible {
     case debug = 0
     case info
@@ -31,8 +32,12 @@ public enum LoggerLevel: Int, CustomStringConvertible {
     }
 }
 
+
+/// A logger object used for printing out relevant statements to `os_log`.
 public final class Logger: NSObject {
-    public static var logLevel: LoggerLevel = .debug
+    /// The minimum severity level to log; default is `.info`.
+    public static var logLevel: LoggerLevel = .info
+    /// The `OSLog` to which statements are delivered.
     public static var osLog = OSLog(subsystem: "com.oreillymedia.flapjack", category: "Flapjack")
 
     private static func logLn(_ level: LoggerLevel, with message: String, isPrivate: Bool) {
@@ -48,12 +53,30 @@ public final class Logger: NSObject {
         logLn(level, with: object.description, isPrivate: isPrivate)
     }
 
+    /**
+     Convenience function for logging a debugging statement with a logging severity level of `.debug`.
+
+     - parameter object: The string or string-convertible object to log.
+     - parameter isPrivate: If `true`, the line will be redacted from the log when not attached to Xcode. Defaults to `true`.
+     */
     public static func debug(_ object: CustomStringConvertible, isPrivate: Bool = true) {
         logLn(.debug, with: object, isPrivate: isPrivate)
     }
+
+    /**
+     Convenience function for logging a debugging statement with a logging severity level of `.info`.
+
+     - parameter object: The string or string-convertible object to log.
+     */
     public static func info(_ object: CustomStringConvertible) {
         logLn(.info, with: object, isPrivate: false)
     }
+
+    /**
+     Convenience function for logging a debugging statement with a logging severity level of `.error`.
+
+     - parameter object: The string or string-convertible object to log.
+     */
     public static func error(_ object: CustomStringConvertible) {
         logLn(.error, with: object, isPrivate: false)
     }

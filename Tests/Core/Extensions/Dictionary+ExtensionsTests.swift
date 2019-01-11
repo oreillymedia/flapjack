@@ -9,6 +9,7 @@
 import Foundation
 import XCTest
 @testable import Flapjack
+@testable import FlapjackCoreData
 
 class DictionaryExtensionsTests: XCTestCase {
     func testCacheKeyGeneration() {

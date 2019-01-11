@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CoreDataSource Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Class/CoreDataSource" class="dashAnchor"></a>
+
+    <a title="CoreDataSource Class Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          Flapjack Docs
+        </a>
+         (94% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/oreillymedia/flapjack">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">Flapjack Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      CoreDataSource Class Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/CoreDataAccess.html">CoreDataAccess</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/CoreDataAccess/StoreType.html">– StoreType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/CoreDataSource.html">CoreDataSource</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/CoreDataSourceFactory.html">CoreDataSourceFactory</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/CoreSingleDataSource.html">CoreSingleDataSource</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Logger.html">Logger</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MigrationPolicy.html">MigrationPolicy</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DataAccessError.html">DataAccessError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DataContextError.html">DataContextError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DataSourceChange.html">DataSourceChange</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DataSourceSectionChange.html">DataSourceSectionChange</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/LoggerLevel.html">LoggerLevel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MigratorError.html">MigratorError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Array.html">Array</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/NSFetchedResultsChangeType.html">NSFetchedResultsChangeType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/NSManagedObjectContext.html">NSManagedObjectContext</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/NSMigrationManager.html">NSMigrationManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/NSMigrationManager/Layer.html">– Layer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Sequence.html">Sequence</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Set.html">Set</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/UICollectionView.html">UICollectionView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/UITableView.html">UITableView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DataAccess.html">DataAccess</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DataAccessDelegate.html">DataAccessDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DataContext.html">DataContext</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DataObject.html">DataObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols.html#/s:8Flapjack12DataObjectIDP">DataObjectID</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DataSource.html">DataSource</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/Migrator.html">Migrator</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols.html#/s:8Flapjack10PrimaryKeyP">PrimaryKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/SingleDataSource.html">SingleDataSource</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/SortDescriptor.html">SortDescriptor</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>CoreDataSource</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">CoreDataSource</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">NSFetchedResultsControllerDelegate</span><span class="p">,</span> <span class="kt"><a href="../Protocols/DataSource.html">DataSource</a></span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">NSManagedObject</span><span class="p">,</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>Listens for changes in an <code>NSManagedObjectContext</code> based on the <code>NSManagedObjectContextDidChange</code> notification for a
+series of objects described by a set of <code>attributes</code>. Invokes the <code>onChange</code> clsoure when the objects identified by the
+lookup change, get deleted, or when new objects are added that match the attributes. Powered by an
+<code>NSFetchedResultsController</code>.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack14CoreDataSourceC8onChangeyShyAA0cdF0OG_ShyAA0cd7SectionF0OGtcSgvp"></a>
+                    <a name="//apple_ref/swift/Property/onChange" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack14CoreDataSourceC8onChangeyShyAA0cdF0OG_ShyAA0cd7SectionF0OGtcSgvp">onChange</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A retained closure that is invoked when section and/or object changes are detected in the matched data set.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">onChange</span><span class="p">:</span> <span class="kt">CoreDataSource</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;.</span><span class="kt">OnChangeClosure</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L30">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack14CoreDataSourceC10dataAccess10attributes8prefetch7sorters15sectionProperty5limit9batchSizeACyxGAA0cF0_p_SDySSypGSgSaySSGSayAA14SortDescriptorVGSSSgSiSgSitcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(dataAccess:attributes:prefetch:sorters:sectionProperty:limit:batchSize:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack14CoreDataSourceC10dataAccess10attributes8prefetch7sorters15sectionProperty5limit9batchSizeACyxGAA0cF0_p_SDySSypGSgSaySSGSayAA14SortDescriptorVGSSSgSiSgSitcfc">init(dataAccess:attributes:prefetch:sorters:sectionProperty:limit:batchSize:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates and returns an instance of this data source, but does not execute any fetch operations.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">dataAccess</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataAccess.html">DataAccess</a></span><span class="p">,</span> <span class="nv">attributes</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataContext.html">DataContext</a></span><span class="o">.</span><span class="kt">Attributes</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span> <span class="nv">sorters</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/SortDescriptor.html">SortDescriptor</a></span><span class="p">]</span> <span class="o">=</span> <span class="kt">T</span><span class="o">.</span><span class="n">defaultSorters</span><span class="p">,</span> <span class="nv">sectionProperty</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">batchSize</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">25</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>dataContext</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The context on which to listen for object changes.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>attributes</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The attributes of the objects to find and listen for, if applicable.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>prefetch</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of keypaths of relationships to be eagerly-fetched, if applicable.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sorters</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of sort descriptors to be applied to the results, if desired.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sectionProperty</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A keypath to a property to use when grouping together results, if desired.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>limit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional limit to be applied to the results.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>batchSize</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The size of the batch of results to be fetched at a time; default is 25.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L50-L58">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack14CoreDataSourceC10dataAccess9predicate8prefetch7sorters15sectionProperty5limit9batchSize9cacheNameACyxGAA0cF0_p_So11NSPredicateCSgSaySSGSayAA14SortDescriptorVGSSSgSiSgSiAUtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(dataAccess:predicate:prefetch:sorters:sectionProperty:limit:batchSize:cacheName:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack14CoreDataSourceC10dataAccess9predicate8prefetch7sorters15sectionProperty5limit9batchSize9cacheNameACyxGAA0cF0_p_So11NSPredicateCSgSaySSGSayAA14SortDescriptorVGSSSgSiSgSiAUtcfc">init(dataAccess:predicate:prefetch:sorters:sectionProperty:limit:batchSize:cacheName:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates and returns an instance of this data source, but does not execute any fetch operations.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">dataAccess</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataAccess.html">DataAccess</a></span><span class="p">,</span> <span class="nv">predicate</span><span class="p">:</span> <span class="kt">NSPredicate</span><span class="p">?,</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span> <span class="nv">sorters</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/SortDescriptor.html">SortDescriptor</a></span><span class="p">]</span> <span class="o">=</span> <span class="kt">T</span><span class="o">.</span><span class="n">defaultSorters</span><span class="p">,</span> <span class="nv">sectionProperty</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">batchSize</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">25</span><span class="p">,</span> <span class="nv">cacheName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>dataContext</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The context on which to listen for object changes.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>predicate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional query to be applied to the lookup.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>prefetch</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of keypaths of relationships to be eagerly-fetched, if applicable.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sorters</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of sort descriptors to be applied to the results, if desired.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sectionProperty</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A keypath to a property to use when grouping together results, if desired.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>limit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional limit to be applied to the results.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>batchSize</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The size of the batch of results to be fetched at a time; default is 25.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>cacheName</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional string cache key to be given to the fetched results controller; if not supplied,
+                   a unique cache key will be formulated based on the other parameters to this initializer.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L73-L90">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/DataSource"></a>
+                <a name="//apple_ref/swift/Section/DataSource" class="dashAnchor"></a>
+                <a href="#/DataSource">
+                  <h3 class="section-name">DataSource</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack14CoreDataSourceC15numberOfObjectsSivp"></a>
+                    <a name="//apple_ref/swift/Property/numberOfObjects" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack14CoreDataSourceC15numberOfObjectsSivp">numberOfObjects</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A number of all objects matched in the data set, if fetched. Otherwise is 0.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">numberOfObjects</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L96-L101">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack14CoreDataSourceC10allObjectsSayxGvp"></a>
+                    <a name="//apple_ref/swift/Property/allObjects" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack14CoreDataSourceC10allObjectsSayxGvp">allObjects</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An array of all objects in the matched data set, if fetched. Otherwise this is empty.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">allObjects</span><span class="p">:</span> <span class="p">[</span><span class="kt">T</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L104-L112">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack14CoreDataSourceC12sectionNamesSaySSGvp"></a>
+                    <a name="//apple_ref/swift/Property/sectionNames" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack14CoreDataSourceC12sectionNamesSaySSGvp">sectionNames</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Any full section titles for the sections found in the data set, if grouped.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">sectionNames</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L115-L117">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack14CoreDataSourceC18sectionIndexTitlesSaySSGvp"></a>
+                    <a name="//apple_ref/swift/Property/sectionIndexTitles" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack14CoreDataSourceC18sectionIndexTitlesSaySSGvp">sectionIndexTitles</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Any abbreviated section titles for the sections found in the data set, if grouped.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">sectionIndexTitles</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L120-L122">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack14CoreDataSourceC16numberOfSectionsSivp"></a>
+                    <a name="//apple_ref/swift/Property/numberOfSections" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack14CoreDataSourceC16numberOfSectionsSivp">numberOfSections</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The number of sections detected in the matched data set, if grouped by section. Otherwise, this is <code>1</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">numberOfSections</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L125-L127">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack14CoreDataSourceC7executeyyF"></a>
+                    <a name="//apple_ref/swift/Method/execute()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack14CoreDataSourceC7executeyyF">execute()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells the fetched results controller to fetch its initial results, and start listening for any new changes that
+come about matching our supplied predicate. If a fetch has already been executed, this method is a no-op.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">execute</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L133-L145">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack14CoreDataSourceC15numberOfObjects2inS2i_tF"></a>
+                    <a name="//apple_ref/swift/Method/numberOfObjects(in:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack14CoreDataSourceC15numberOfObjects2inS2i_tF">numberOfObjects(in:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Provides a count of the number of objects in the section at a given section index. If the given section index
+exceeds the known bounds of possible sections, returns <code>0</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">numberOfObjects</span><span class="p">(</span><span class="k">in</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>section</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The index of the section to use in the lookup.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The number of objects in that given section.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L154-L156">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack14CoreDataSourceC6object2atxSg10Foundation9IndexPathV_tF"></a>
+                    <a name="//apple_ref/swift/Method/object(at:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack14CoreDataSourceC6object2atxSg10Foundation9IndexPathV_tF">object(at:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Provides the object matching the given index path, if found.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">object</span><span class="p">(</span><span class="n">at</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>indexPath</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The index path to use in the lookup.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The object, if one is found at the given index path.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L164-L179">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack14CoreDataSourceC9indexPath3for10Foundation05IndexF0VSgxSg_tF"></a>
+                    <a name="//apple_ref/swift/Method/indexPath(for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack14CoreDataSourceC9indexPath3for10Foundation05IndexF0VSgxSg_tF">indexPath(for:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Provides the index path where the given object resides in the matched data set, if found.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">indexPath</span><span class="p">(</span><span class="k">for</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">T</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">IndexPath</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>object</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The object to use in the lookup.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The index path, if found for the given object.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L187-L192">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack14CoreDataSourceC11firstObject8matchingxSgSbxXE_tF"></a>
+                    <a name="//apple_ref/swift/Method/firstObject(matching:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack14CoreDataSourceC11firstObject8matchingxSgSbxXE_tF">firstObject(matching:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Provides the first object matching a given closure-based query, if found. This function will short circuit and
+return immediately as soon as a result is found.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">firstObject</span><span class="p">(</span><span class="nv">matching</span><span class="p">:</span> <span class="p">(</span><span class="kt">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>matching</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The closure to use as a query; will be passed each model in the matched data set.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The first object matching the query, if one as found.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L201-L203">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack14CoreDataSourceC10allObjects8matchingSayxGSbxXE_tF"></a>
+                    <a name="//apple_ref/swift/Method/allObjects(matching:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack14CoreDataSourceC10allObjects8matchingSayxGSbxXE_tF">allObjects(matching:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Provides the objects matching a given closure-based query, if found.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">allObjects</span><span class="p">(</span><span class="nv">matching</span><span class="p">:</span> <span class="p">(</span><span class="kt">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">T</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>matching</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The closure to use as a query; will be passed each model in the matched data set.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>All objects matching the query, if any as found.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L211-L213">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/NSFetchedResultsControllerDelegate"></a>
+                <a name="//apple_ref/swift/Section/NSFetchedResultsControllerDelegate" class="dashAnchor"></a>
+                <a href="#/NSFetchedResultsControllerDelegate">
+                  <h3 class="section-name">NSFetchedResultsControllerDelegate</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack14CoreDataSourceC27controllerWillChangeContentyySo26NSFetchedResultsControllerCySo20NSFetchRequestResult_pGF"></a>
+                    <a name="//apple_ref/swift/Method/controllerWillChangeContent(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack14CoreDataSourceC27controllerWillChangeContentyySo26NSFetchedResultsControllerCySo20NSFetchRequestResult_pGF">controllerWillChangeContent(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">controllerWillChangeContent</span><span class="p">(</span><span class="n">_</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">NSFetchedResultsController</span><span class="o">&lt;</span><span class="kt">NSFetchRequestResult</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L247-L253">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack14CoreDataSourceC10controller_9didChange14atSectionIndex3forySo26NSFetchedResultsControllerCySo20NSFetchRequestResult_pG_So0lmI4Info_pSiSo0lmG4TypeVtF"></a>
+                    <a name="//apple_ref/swift/Method/controller(_:didChange:atSectionIndex:for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack14CoreDataSourceC10controller_9didChange14atSectionIndex3forySo26NSFetchedResultsControllerCySo20NSFetchRequestResult_pG_So0lmI4Info_pSiSo0lmG4TypeVtF">controller(_:didChange:atSectionIndex:for:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">controller</span><span class="p">(</span><span class="n">_</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">NSFetchedResultsController</span><span class="o">&lt;</span><span class="kt">NSFetchRequestResult</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">didChange</span> <span class="nv">sectionInfo</span><span class="p">:</span> <span class="kt">NSFetchedResultsSectionInfo</span><span class="p">,</span> <span class="n">atSectionIndex</span> <span class="nv">sectionIndex</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="k">for</span> <span class="nv">theType</span><span class="p">:</span> <span class="kt">NSFetchedResultsChangeType</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L255-L266">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack14CoreDataSourceC10controller_9didChange2at3for12newIndexPathySo26NSFetchedResultsControllerCySo20NSFetchRequestResult_pG_yp10Foundation0kL0VSgSo0mnG4TypeVAPtF"></a>
+                    <a name="//apple_ref/swift/Method/controller(_:didChange:at:for:newIndexPath:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack14CoreDataSourceC10controller_9didChange2at3for12newIndexPathySo26NSFetchedResultsControllerCySo20NSFetchRequestResult_pG_yp10Foundation0kL0VSgSo0mnG4TypeVAPtF">controller(_:didChange:at:for:newIndexPath:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">controller</span><span class="p">(</span><span class="n">_</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">NSFetchedResultsController</span><span class="o">&lt;</span><span class="kt">NSFetchRequestResult</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">didChange</span> <span class="nv">anObject</span><span class="p">:</span> <span class="kt">Any</span><span class="p">,</span> <span class="n">at</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">?,</span> <span class="k">for</span> <span class="nv">theType</span><span class="p">:</span> <span class="kt">NSFetchedResultsChangeType</span><span class="p">,</span> <span class="nv">newIndexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L268-L296">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack14CoreDataSourceC26controllerDidChangeContentyySo26NSFetchedResultsControllerCySo20NSFetchRequestResult_pGF"></a>
+                    <a name="//apple_ref/swift/Method/controllerDidChangeContent(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack14CoreDataSourceC26controllerDidChangeContentyySo26NSFetchedResultsControllerCySo20NSFetchRequestResult_pGF">controllerDidChangeContent(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">controllerDidChangeContent</span><span class="p">(</span><span class="n">_</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">NSFetchedResultsController</span><span class="o">&lt;</span><span class="kt">NSFetchRequestResult</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L298-L308">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2019 <a class="link" href="https://oreilly.com" target="_blank" rel="external">O&#39;Reilly Media, Inc.</a>. All rights reserved. (Last updated: 2019-01-11)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>
