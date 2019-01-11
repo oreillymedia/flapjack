@@ -5,3 +5,4 @@ Example/* linguist-vendored
 Podfile* linguist-vendored
 Flapjack.podspec linguist-vendored
 "Flapjack/Core/Supporting Files/*" linguist-vendored
+docs/* linguist-vendored
