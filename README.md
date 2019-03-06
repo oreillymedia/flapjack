@@ -167,6 +167,18 @@ dataSource.execute()
 For a more complete example on how to use `CoreDataSource`, see [AutomaticViewController.swift][avc]. To see the steps you'd have to go through to access stored data _without_ it, see [ManualViewController.swift][mvc].
 
 
+## Migrations
+
+Support for "easier" Core Data migrations is currently evolving, but here's what you can expect right now. Flapjack has a `Migrator` class that you can conform to, and it's this object you'll use to provide your `DataAccess` class with a way to migrate your data store. It's a relatively sparse protocol right now, but if you look at the Core Data implementation of this object (`CoreDataMigrator`), you can see how this comes together. This is a pretty close adaptation of the way we handle migrations in our iOS apps at O'Reilly Media. Here's what happens, step by step.
+
+- By conforming to `DataAccessDelegate`, you'll be notified when the stack is ready for a `Migrator`.
+- In response to this delegate call, you'll initialize and return a `CoreDataMigrator` by providing the `storeURL` and `bundle` where the data store file and compiled model can be found, respectively.
+- Then the `DataAccess` object should handle the rest, which is essentially a call to `migrate()`.
+- Upon invocation of `migrate()`, a temporary folder is made to house any intermediary files.
+- Then your compiled data model is scanned for all available model versions, and then we also try and figure out which version is the _current_ version, and then we build an iterative list of versions by which to migrate (support for supplying a custom list of versions to migrate is forthcoming).
+- Then, between each version, we either process a heavyweight migration (if an explicit mapping model is found) or a lightweight migration (if an implicit mapping model can be inferred).
+
+
 ## Authors
 
 - Ben Kreeger ([@kreeger][krg])
