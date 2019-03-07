@@ -18,9 +18,11 @@ public protocol SingleDataSource {
     associatedtype ModelType: DataObject
 
     /// The criteria being used for finding the object being observed by this data source.
-    var attributes: DataContext.Attributes { get }
+    var predicate: NSPredicate { get }
     /// The object being observed by this data source, if found.
     var object: ModelType? { get }
+    /// If `true`, at least one fetch has been attempted.
+    var hasFetched: Bool { get }
     /// A closure to be called whenever a change is detected to the object being observed.
     var onChange: ((ModelType?) -> Void)? { get set }
 

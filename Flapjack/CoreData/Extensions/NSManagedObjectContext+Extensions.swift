@@ -54,11 +54,16 @@ public extension NSManagedObjectContext {
      - returns: A tuple containing the object IDs from the notification.
      */
     class func objectsFrom<T: DataObject & Hashable>(notification: Notification, ofType type: T.Type) -> NotificationObjectSet<T> {
-        let refreshed = notification.userInfo?[NSRefreshedObjectsKey] as? Set<T> ?? Set<T>()
-        let updated = notification.userInfo?[NSUpdatedObjectsKey] as? Set<T> ?? Set<T>()
-        let deleted = notification.userInfo?[NSDeletedObjectsKey] as? Set<T> ?? Set<T>()
-        let inserted = notification.userInfo?[NSInsertedObjectsKey] as? Set<T> ?? Set<T>()
-        return (refreshed, inserted, updated, deleted)
+        let refreshed = notification.userInfo?[NSRefreshedObjectsKey] as? Set<NSManagedObject>
+        let updated = notification.userInfo?[NSUpdatedObjectsKey] as? Set<NSManagedObject>
+        let deleted = notification.userInfo?[NSDeletedObjectsKey] as? Set<NSManagedObject>
+        let inserted = notification.userInfo?[NSInsertedObjectsKey] as? Set<NSManagedObject>
+        return (
+            Set<T>(refreshed?.compactMap { $0 as? T } ?? []),
+            Set<T>(inserted?.compactMap { $0 as? T } ?? []),
+            Set<T>(updated?.compactMap { $0 as? T } ?? []),
+            Set<T>(deleted?.compactMap { $0 as? T } ?? [])
+        )
     }
 
     /**

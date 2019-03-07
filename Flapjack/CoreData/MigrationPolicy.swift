@@ -19,11 +19,11 @@ import CoreData
  See the docstring for `migrations` for more information.
  */
 @objc
-public class MigrationPolicy: NSEntityMigrationPolicy {
+open class MigrationPolicy: NSEntityMigrationPolicy {
     public typealias MigrationOperation = (_ manager: NSMigrationManager, _ source: NSManagedObject, _ destination: NSManagedObject?) throws -> Void
 
     @objc
-    override public func createDestinationInstances(forSource sourceInstance: NSManagedObject, in mapping: NSEntityMapping, manager: NSMigrationManager) throws {
+    override open func createDestinationInstances(forSource sourceInstance: NSManagedObject, in mapping: NSEntityMapping, manager: NSMigrationManager) throws {
         if !migrationsWithoutNecessaryCreationStep.contains(mapping.name) {
             try super.createDestinationInstances(forSource: sourceInstance, in: mapping, manager: manager)
         }
@@ -42,7 +42,7 @@ public class MigrationPolicy: NSEntityMigrationPolicy {
      to Core Data Mapping Model entity mappings (like `PlaylistToPlaylist`), and whose values are
      properties vending functions to run (conforming to the `MigrationOperation` typealias).
      */
-    public var migrations: [String: MigrationOperation] {
+    open var migrations: [String: MigrationOperation] {
         return [:]
     }
 
@@ -52,7 +52,7 @@ public class MigrationPolicy: NSEntityMigrationPolicy {
      it needs to _create_ the entities in the destination context (second-tier mappings should not create entities
      otherwise duplication of entities will occur).
      */
-    public var migrationsWithoutNecessaryCreationStep: [String] {
+    open var migrationsWithoutNecessaryCreationStep: [String] {
         return []
     }
 }

@@ -40,7 +40,7 @@ class CoreSingleDataSourceTests: XCTestCase {
 
     func testObjectIsNilOnInit() {
         XCTAssertNil(dataSource.object)
-        XCTAssertEqual(dataSource.attributes as? [String: String], attributes)
+        XCTAssertNotNil(dataSource.predicate)
         XCTAssertNil(dataSource.onChange)
     }
 
