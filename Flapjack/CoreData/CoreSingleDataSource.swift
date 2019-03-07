@@ -18,15 +18,16 @@ import Flapjack
  the given `DataContext`.
  */
 public class CoreSingleDataSource<T: NSManagedObject & DataObject>: NSObject, SingleDataSource {
-    /// The criteria being used for finding the object being observed by this data source.
-    public let attributes: DataContext.Attributes
-    /// The object being observed by this data source, if found.
+    public let predicate: NSPredicate
     public private(set) var object: T?
-    /// A closure to be called whenever a change is detected to the object being observed.
+    public private(set) var hasFetched = false
     public var onChange: ((T?) -> Void)?
 
-    private let context: DataContext
+    // This can only change if the context gets torn down and we get notified about a new one.
+    private var context: DataContext
     private let prefetch: [String]
+    /// If this is true, our context has been deleted and we're waiting for a new one.
+    private var isContextAZombie: Bool = false
     private var isListening: Bool = false
 
 
@@ -35,13 +36,13 @@ public class CoreSingleDataSource<T: NSManagedObject & DataObject>: NSObject, Si
     /**
      Creates and returns an instance of this data source, but does not execute any fetch operations.
 
-     - parameter dataContext: The context on which to listen for object changes.
-     - parameter attributes: The attributes of the object to find and then listen for, if applicable.
+     - parameter context: The context on which to listen for object changes.
+     - parameter predicate: The predicate of the object to find and then listen for, if applicable.
      - parameter prefetch: An array of keypaths of relationships to be eagerly-fetched, if applicable.
      */
-    public init(context: DataContext, attributes: DataContext.Attributes, prefetch: [String]) {
+    public init(context: DataContext, predicate: NSPredicate, prefetch: [String] = []) {
         self.context = context
-        self.attributes = attributes
+        self.predicate = predicate
         self.prefetch = prefetch
         super.init()
     }
@@ -49,12 +50,36 @@ public class CoreSingleDataSource<T: NSManagedObject & DataObject>: NSObject, Si
     /**
      Creates and returns an instance of this data source, but does not execute any fetch operations.
 
-     - parameter dataContext: The context on which to listen for object changes.
+     - parameter context: The context on which to listen for object changes.
+     - parameter attributes: The attributes of the object to find and then listen for, if applicable.
+     - parameter prefetch: An array of keypaths of relationships to be eagerly-fetched, if applicable.
+     */
+    public convenience init(context: DataContext, attributes: DataContext.Attributes, prefetch: [String] = []) {
+        let predicate = NSCompoundPredicate(andPredicateFrom: attributes)
+        self.init(context: context, predicate: predicate, prefetch: prefetch)
+    }
+
+    /**
+     Creates and returns an instance of this data source, but does not execute any fetch operations.
+
+     - parameter context: The context on which to listen for object changes.
      - parameter uniqueID: The unique identifier of the object to find and then listen for.
      - parameter prefetch: An array of keypaths of relationships to be eagerly-fetched, if applicable.
      */
-    public convenience init(context: DataContext, uniqueID: T.PrimaryKeyType, prefetch: [String]) {
-        self.init(context: context, attributes: [T.primaryKeyPath: uniqueID], prefetch: prefetch)
+    public convenience init(context: DataContext, uniqueID: T.PrimaryKeyType, prefetch: [String] = []) {
+        let predicate = NSCompoundPredicate(andPredicateFrom: [T.primaryKeyPath: uniqueID])
+        self.init(context: context, predicate: predicate, prefetch: prefetch)
+    }
+
+    /**
+     Creates and returns an instance of this data source, but does not execute any fetch operations.
+
+     - parameter context: The managed object context instance on which to listen for changes.
+     - parameter object: The object for which to observe changes.
+     - parameter prefetch: An optional array of relationship keypaths to pre-fill faults on initial fetch.
+     */
+    public convenience init(context: DataContext, object: T, prefetch: [String] = []) {
+        self.init(context: context, predicate: NSPredicate(key: "self", value: object), prefetch: prefetch)
     }
 
     deinit {
@@ -75,37 +100,60 @@ public class CoreSingleDataSource<T: NSManagedObject & DataObject>: NSObject, Si
     public func execute() {
         if !isListening {
             NotificationCenter.default.addObserver(self, selector: #selector(objectsDidChange(_:)), name: .NSManagedObjectContextObjectsDidChange, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(contextWasCreated(_:)), name: CoreDataAccess.didCreateNewMainContextNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(contextWillBeDestroyed(_:)), name: CoreDataAccess.willDestroyMainContextNotification, object: nil)
             isListening = true
         }
 
-        object = context.object(ofType: T.self, attributes: attributes, prefetch: prefetch, sortBy: [])
+        object = context.object(ofType: T.self, predicate: predicate, prefetch: prefetch, sortBy: [])
         onChange?(object)
     }
 
 
     // MARK: Private functions
 
+    private func findObjectFrom(objects: Set<T>) -> T? {
+        return (objects as NSSet).filtered(using: predicate).first(where: { $0 is T }) as? T
+    }
+
     @objc
     private func objectsDidChange(_ notification: Notification) {
-        guard let context = notification.object as? NSManagedObjectContext, context === self.context as? NSManagedObjectContext else {
-            return
-        }
-        let allObjects = NSManagedObjectContext.objectsFrom(notification: notification, ofType: T.self)
-        if allObjects.refreshes.isEmpty, allObjects.inserts.isEmpty, allObjects.updates.isEmpty, allObjects.deletes.isEmpty {
-            return
-        }
+        guard context as? NSManagedObjectContext === notification.object as? NSManagedObjectContext else { return }
 
-        if (allObjects.deletes as NSSet).filtered(using: NSCompoundPredicate(andPredicateFrom: attributes)).first as? T != nil {
+        let (refreshes, inserts, updates, deletes) = NSManagedObjectContext.objectsFrom(notification: notification, ofType: T.self)
+
+        if findObjectFrom(objects: deletes) != nil {
+            hasFetched = true
             object = nil
             onChange?(nil)
             return
         }
 
-        let theRest = allObjects.inserts.union(allObjects.updates).union(allObjects.refreshes)
-        if let filtered = (theRest as NSSet).filtered(using: NSCompoundPredicate(andPredicateFrom: attributes)).first as? T {
+        let theRest = inserts.union(updates).union(refreshes)
+        if let filtered = findObjectFrom(objects: theRest) {
+            hasFetched = true
             object = filtered
         }
 
         onChange?(object)
+    }
+
+    @objc
+    private func contextWasCreated(_ notification: Notification) {
+        guard isContextAZombie else { return }
+        guard let newContext = notification.object as? DataContext else { return }
+
+        // Store our newly-minted context, and refetch.
+        self.context = newContext
+        execute()
+    }
+
+    @objc
+    private func contextWillBeDestroyed(_ notification: Notification) {
+        guard context as? NSManagedObjectContext === notification.object as? NSManagedObjectContext else { return }
+
+        isContextAZombie = true
+        hasFetched = false
+        object = nil
     }
 }

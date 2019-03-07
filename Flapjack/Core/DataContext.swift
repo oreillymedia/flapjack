@@ -467,7 +467,7 @@ public extension DataContext {
                              newly-created object.
      - returns: A tuple of information including the `object` and whether or not the object `isNew`.
      */
-    func findOrCreate<T: DataObject>(_ type: T.Type, attributes: DataContext.Attributes) -> (object: T, isNew: Bool)? {
+    func findOrCreate<T: DataObject>(_ type: T.Type, attributes: DataContext.Attributes) -> (object: T, isNew: Bool) {
         if let found = object(ofType: type, attributes: attributes) {
             return (found, false)
         }

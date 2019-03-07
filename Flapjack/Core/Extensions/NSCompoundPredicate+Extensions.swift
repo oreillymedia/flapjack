@@ -18,7 +18,7 @@ internal extension NSPredicate {
         var args: [Any] = key.hasPrefix("self") ? [value] : [key, value]
 
         switch value {
-        case is [Any], is [AnyHashable]:
+        case is [Any], is [AnyHashable], is Set<AnyHashable>:
             self.init(format: "(\(keyPath) IN %@)", argumentArray: args)
         case let range as Range<Date>:
             args = key.hasPrefix("self") ? [range.lowerBound, range.upperBound] : [key, range.lowerBound, key, range.upperBound]

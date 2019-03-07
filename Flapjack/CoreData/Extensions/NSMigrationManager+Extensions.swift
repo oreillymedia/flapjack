@@ -57,4 +57,20 @@ public extension NSMigrationManager {
             return []
         }
     }
+
+    /**
+     Executes a fetch request in the requested context for a single object with a matching value at a given key path.
+
+     - parameter object: The entity to be looked for in the context.
+     - parameter lookupKeyPath: The key path whose value will be used to match the two objects.
+     - parameter layer: The context to fetch from; either `.source` or `.destination`.
+     - returns: The object, if found.
+     */
+    func findEntity(_ object: NSManagedObject, by lookupKeyPath: String, in layer: Layer) -> NSManagedObject? {
+        guard let entityName = object.entity.name, let lookupValue = object.value(forKey: lookupKeyPath) else {
+            return nil
+        }
+
+        return findEntities(entityName, attributes: [lookupKeyPath: lookupValue], from: layer).first
+    }
 }

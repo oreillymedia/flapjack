@@ -26,12 +26,19 @@ public final class CoreDataAccess: DataAccess {
         case sql(filename: String)
         case memory
 
-        var url: URL? {
+        public var url: URL? {
             switch self {
             case .sql(let name):
                 return storeUrl(for: name)
             case .memory:
                 return nil
+            }
+        }
+
+        public var coreDataType: String {
+            switch self {
+            case .sql: return NSSQLiteStoreType
+            case .memory: return NSInMemoryStoreType
             }
         }
 
@@ -47,13 +54,6 @@ public final class CoreDataAccess: DataAccess {
             return description
         }
 
-        var coreDataType: String {
-            switch self {
-            case .sql: return NSSQLiteStoreType
-            case .memory: return NSInMemoryStoreType
-            }
-        }
-
         private func storeUrl(for name: String) -> URL {
             return NSPersistentContainer.defaultDirectoryURL().appendingPathComponent(name)
         }
@@ -65,9 +65,15 @@ public final class CoreDataAccess: DataAccess {
     private let container: NSPersistentContainer
     private var shouldLoadAsynchronously: Bool = false
     private lazy var dispatchQueue = DispatchQueue(label: "com.oreillymedia.flapjack.coreDataAccessQueue")
-    private var persistentStores = [NSPersistentStore]()
+
+    public var managedObjectModel: NSManagedObjectModel {
+        return container.managedObjectModel
+    }
     private var persistentStoreCoordinator: NSPersistentStoreCoordinator {
         return container.persistentStoreCoordinator
+    }
+    public var persistentStores: [NSPersistentStore] {
+        return persistentStoreCoordinator.persistentStores
     }
 
 
@@ -173,17 +179,14 @@ public final class CoreDataAccess: DataAccess {
 
         NotificationCenter.default.post(name: type(of: self).willDestroyMainContextNotification, object: mainContext)
 
-        var mPersistentStores = persistentStores
-        persistentStores.enumerated().forEach { idx, persistentStore in
+        let localPersistentStores = persistentStores
+        localPersistentStores.enumerated().forEach { idx, persistentStore in
             do {
                 try persistentStoreCoordinator.remove(persistentStore)
             } catch let error {
                 Logger.error("Error removing persistent store #\(idx) \(persistentStore): \(error)")
             }
-
-            mPersistentStores.remove(at: idx)
         }
-        persistentStores = mPersistentStores
 
         if let storeURL = storeType.url {
             do {
@@ -256,12 +259,9 @@ public final class CoreDataAccess: DataAccess {
 
         let group = DispatchGroup()
         group.enter()
-        container.loadPersistentStores { [weak self] storeDescription, error in
+        container.loadPersistentStores { _, error in
             if let error = error {
                 errors.append(.preparationError(error))
-            } else if let url = storeDescription.url, let store = self?.container.persistentStoreCoordinator.persistentStore(for: url) {
-                Logger.info("Initializing persistent store at \(url.path).")
-                self?.persistentStores.append(store)
             }
             group.leave()
         }

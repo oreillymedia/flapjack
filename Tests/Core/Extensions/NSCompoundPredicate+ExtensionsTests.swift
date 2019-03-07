@@ -21,6 +21,10 @@ class NSCompoundPredicateExtensionsTests: XCTestCase {
         XCTAssertEqual(NSPredicate(key: "keypath", value: ["bob", "ed"]).predicateFormat, "keypath IN {\"bob\", \"ed\"}")
     }
 
+    func testKeyValueInitializerWithSets() {
+        XCTAssertEqual(NSPredicate(key: "keypath", value: Set<String>(["bob", "ed"])).predicateFormat, "keypath IN {\"bob\", \"ed\"}")
+    }
+
     func testKeyValueInitializerWithRanges() {
         XCTAssertEqual(NSPredicate(key: "keypath", value: 1..<2).predicateFormat, "keypath >= 1 AND keypath < 2")
         XCTAssertEqual(NSPredicate(key: "keypath", value: 1...2).predicateFormat, "keypath >= 1 AND keypath <= 2")

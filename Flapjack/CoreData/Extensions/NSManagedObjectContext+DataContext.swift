@@ -53,7 +53,7 @@ extension NSManagedObjectContext: DataContext {
      - returns: An error if one occurred while saving.
      */
     public func persist() -> DataContextError? {
-        guard hasChanges else {
+        guard hasChanges, isDirty else {
             return nil
         }
         return forcePersist()
@@ -291,6 +291,11 @@ extension NSManagedObjectContext: DataContext {
 
 
     // MARK: Private functions
+
+    /// Similar to `hasChanges`, but returns false if any updates result in no actual changes to the data.
+    private var isDirty: Bool {
+        return !insertedObjects.isEmpty || !deletedObjects.isEmpty || updatedObjects.contains(where: { $0.hasPersistentChangedValues })
+    }
 
     private func fetchObject<T: DataObject>(ofType type: T.Type, predicate: NSPredicate?, prefetch: [String], sortBy sorters: [SortDescriptor]) throws -> T? {
         let preregistered: T? = registeredObjects.sortedArray(using: sorters).first { obj in
