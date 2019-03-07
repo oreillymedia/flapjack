@@ -17,3 +17,9 @@ cocoapods-deploy: cocoapods-preflight
 cocoapods-preflight:
 	pod lib lint
 	pod spec lint Flapjack.podspec 
+
+release:
+	jazzy
+	git add docs/
+	git commit -m "Version $(VERSION)"
+	git tag -s $(VERSION) -m "Version $(VERSION)"
