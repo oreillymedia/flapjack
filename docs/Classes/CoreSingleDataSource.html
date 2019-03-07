@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           Flapjack Docs
         </a>
-         (94% documented)
+         (93% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -198,9 +198,9 @@ the given <code><a href="../Protocols/DataContext.html">DataContext</a></code>.<
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Flapjack20CoreSingleDataSourceC10attributesSDySSypGvp"></a>
-                    <a name="//apple_ref/swift/Property/attributes" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack20CoreSingleDataSourceC10attributesSDySSypGvp">attributes</a>
+                    <a name="/s:8Flapjack16SingleDataSourceP9predicateSo11NSPredicateCvp"></a>
+                    <a name="//apple_ref/swift/Property/predicate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack16SingleDataSourceP9predicateSo11NSPredicateCvp">predicate</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -208,19 +208,18 @@ the given <code><a href="../Protocols/DataContext.html">DataContext</a></code>.<
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The criteria being used for finding the object being observed by this data source.</p>
-
+                        
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">attributes</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataContext.html">DataContext</a></span><span class="o">.</span><span class="kt">Attributes</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">predicate</span><span class="p">:</span> <span class="kt">NSPredicate</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreSingleDataSource.swift#L22">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreSingleDataSource.swift#L21">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -228,9 +227,9 @@ the given <code><a href="../Protocols/DataContext.html">DataContext</a></code>.<
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Flapjack20CoreSingleDataSourceC6objectxSgvp"></a>
+                    <a name="/s:8Flapjack16SingleDataSourceP6object9ModelTypeQzSgvp"></a>
                     <a name="//apple_ref/swift/Property/object" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack20CoreSingleDataSourceC6objectxSgvp">object</a>
+                    <a class="token" href="#/s:8Flapjack16SingleDataSourceP6object9ModelTypeQzSgvp">object</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -238,8 +237,7 @@ the given <code><a href="../Protocols/DataContext.html">DataContext</a></code>.<
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The object being observed by this data source, if found.</p>
-
+                        
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -250,7 +248,7 @@ the given <code><a href="../Protocols/DataContext.html">DataContext</a></code>.<
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreSingleDataSource.swift#L24">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreSingleDataSource.swift#L23">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -258,9 +256,9 @@ the given <code><a href="../Protocols/DataContext.html">DataContext</a></code>.<
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Flapjack20CoreSingleDataSourceC8onChangeyxSgcSgvp"></a>
-                    <a name="//apple_ref/swift/Property/onChange" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack20CoreSingleDataSourceC8onChangeyxSgcSgvp">onChange</a>
+                    <a name="/s:8Flapjack16SingleDataSourceP10hasFetchedSbvp"></a>
+                    <a name="//apple_ref/swift/Property/hasFetched" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack16SingleDataSourceP10hasFetchedSbvp">hasFetched</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -268,8 +266,36 @@ the given <code><a href="../Protocols/DataContext.html">DataContext</a></code>.<
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A closure to be called whenever a change is detected to the object being observed.</p>
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">hasFetched</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
 
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreSingleDataSource.swift#L25">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack16SingleDataSourceP8onChangey9ModelTypeQzSgcSgvp"></a>
+                    <a name="//apple_ref/swift/Property/onChange" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack16SingleDataSourceP8onChangey9ModelTypeQzSgcSgvp">onChange</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -280,7 +306,7 @@ the given <code><a href="../Protocols/DataContext.html">DataContext</a></code>.<
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreSingleDataSource.swift#L26">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreSingleDataSource.swift#L27">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -296,6 +322,79 @@ the given <code><a href="../Protocols/DataContext.html">DataContext</a></code>.<
                 </a>
               </div>
               <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack20CoreSingleDataSourceC7context9predicate8prefetchACyxGAA0D7Context_p_So11NSPredicateCSaySSGtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(context:predicate:prefetch:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack20CoreSingleDataSourceC7context9predicate8prefetchACyxGAA0D7Context_p_So11NSPredicateCSaySSGtcfc">init(context:predicate:prefetch:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates and returns an instance of this data source, but does not execute any fetch operations.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataContext.html">DataContext</a></span><span class="p">,</span> <span class="nv">predicate</span><span class="p">:</span> <span class="kt">NSPredicate</span><span class="p">,</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>context</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The context on which to listen for object changes.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>predicate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The predicate of the object to find and then listen for, if applicable.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>prefetch</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An array of keypaths of relationships to be eagerly-fetched, if applicable.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreSingleDataSource.swift#L43-L48">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
                 <li class="item">
                   <div>
                     <code>
@@ -316,7 +415,7 @@ the given <code><a href="../Protocols/DataContext.html">DataContext</a></code>.<
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataContext.html">DataContext</a></span><span class="p">,</span> <span class="nv">attributes</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataContext.html">DataContext</a></span><span class="o">.</span><span class="kt">Attributes</span><span class="p">,</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">])</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataContext.html">DataContext</a></span><span class="p">,</span> <span class="nv">attributes</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataContext.html">DataContext</a></span><span class="o">.</span><span class="kt">Attributes</span><span class="p">,</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[])</span></code></pre>
 
                         </div>
                       </div>
@@ -327,7 +426,7 @@ the given <code><a href="../Protocols/DataContext.html">DataContext</a></code>.<
                             <tr>
                               <td>
                                 <code>
-                                <em>dataContext</em>
+                                <em>context</em>
                                 </code>
                               </td>
                               <td>
@@ -364,7 +463,7 @@ the given <code><a href="../Protocols/DataContext.html">DataContext</a></code>.<
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreSingleDataSource.swift#L42-L47">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreSingleDataSource.swift#L57-L60">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -389,7 +488,7 @@ the given <code><a href="../Protocols/DataContext.html">DataContext</a></code>.<
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataContext.html">DataContext</a></span><span class="p">,</span> <span class="nv">uniqueID</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="kt">PrimaryKeyType</span><span class="p">,</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">])</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataContext.html">DataContext</a></span><span class="p">,</span> <span class="nv">uniqueID</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="kt">PrimaryKeyType</span><span class="p">,</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[])</span></code></pre>
 
                         </div>
                       </div>
@@ -400,7 +499,7 @@ the given <code><a href="../Protocols/DataContext.html">DataContext</a></code>.<
                             <tr>
                               <td>
                                 <code>
-                                <em>dataContext</em>
+                                <em>context</em>
                                 </code>
                               </td>
                               <td>
@@ -437,7 +536,80 @@ the given <code><a href="../Protocols/DataContext.html">DataContext</a></code>.<
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreSingleDataSource.swift#L56-L58">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreSingleDataSource.swift#L69-L72">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack20CoreSingleDataSourceC7context6object8prefetchACyxGAA0D7Context_p_xSaySSGtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(context:object:prefetch:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack20CoreSingleDataSourceC7context6object8prefetchACyxGAA0D7Context_p_xSaySSGtcfc">init(context:object:prefetch:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates and returns an instance of this data source, but does not execute any fetch operations.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataContext.html">DataContext</a></span><span class="p">,</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>context</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The managed object context instance on which to listen for changes.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>object</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The object for which to observe changes.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>prefetch</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional array of relationship keypaths to pre-fill faults on initial fetch.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreSingleDataSource.swift#L81-L83">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -467,7 +639,7 @@ the given <code><a href="../Protocols/DataContext.html">DataContext</a></code>.<
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Begins listening for <code>NSManagedObjectContextObjectsDidChange</code> notifications, and fetches the initial object result
-into the <code><a href="../Classes/CoreSingleDataSource.html#/s:8Flapjack20CoreSingleDataSourceC6objectxSgvp">object</a></code> property. Immediately invokes the <code><a href="../Classes/CoreSingleDataSource.html#/s:8Flapjack20CoreSingleDataSourceC8onChangeyxSgcSgvp">onChange</a></code> block upon completion and passes in the object if
+into the <code><a href="../Classes/CoreSingleDataSource.html#/s:8Flapjack16SingleDataSourceP6object9ModelTypeQzSgvp">object</a></code> property. Immediately invokes the <code><a href="../Classes/CoreSingleDataSource.html#/s:8Flapjack16SingleDataSourceP8onChangey9ModelTypeQzSgcSgvp">onChange</a></code> block upon completion and passes in the object if
 found.</p>
 
                       </div>
@@ -480,7 +652,7 @@ found.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreSingleDataSource.swift#L75-L83">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreSingleDataSource.swift#L100-L110">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -493,7 +665,7 @@ found.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://oreilly.com" target="_blank" rel="external">O&#39;Reilly Media, Inc.</a>. All rights reserved. (Last updated: 2019-03-06)</p>
+      <p>&copy; 2019 <a class="link" href="https://oreilly.com" target="_blank" rel="external">O&#39;Reilly Media, Inc.</a>. All rights reserved. (Last updated: 2019-03-07)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

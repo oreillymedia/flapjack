@@ -611,21 +611,105 @@
     },
     {
       "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
-      "line": 76,
+      "line": 29,
+      "symbol": "CoreDataAccess.StoreType.url",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "line": 29,
+      "symbol": "CoreDataAccess.StoreType.url",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "line": 29,
+      "symbol": "CoreDataAccess.StoreType.url",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "line": 38,
+      "symbol": "CoreDataAccess.StoreType.coreDataType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "line": 38,
+      "symbol": "CoreDataAccess.StoreType.coreDataType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "line": 38,
+      "symbol": "CoreDataAccess.StoreType.coreDataType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "line": 69,
+      "symbol": "CoreDataAccess.managedObjectModel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "line": 69,
+      "symbol": "CoreDataAccess.managedObjectModel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "line": 69,
+      "symbol": "CoreDataAccess.managedObjectModel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "line": 75,
+      "symbol": "CoreDataAccess.persistentStores",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "line": 75,
+      "symbol": "CoreDataAccess.persistentStores",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "line": 75,
+      "symbol": "CoreDataAccess.persistentStores",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "line": 82,
       "symbol": "CoreDataAccess.init(name:type:model:delegate:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
-      "line": 76,
+      "line": 82,
       "symbol": "CoreDataAccess.init(name:type:model:delegate:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
-      "line": 76,
+      "line": 82,
       "symbol": "CoreDataAccess.init(name:type:model:delegate:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
