@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C3F52F5E21B18C8A00F92897"
-               BuildableName = "FlapjackUIKit.framework"
-               BlueprintName = "FlapjackUIKit"
+               BlueprintIdentifier = "C3E90CEA22308698001DBF25"
+               BuildableName = "Flapjack.framework"
+               BlueprintName = "Flapjack-macOS"
                ReferencedContainer = "container:Flapjack.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C3F52F5E21B18C8A00F92897"
-            BuildableName = "FlapjackUIKit.framework"
-            BlueprintName = "FlapjackUIKit"
+            BlueprintIdentifier = "C3E90CEA22308698001DBF25"
+            BuildableName = "Flapjack.framework"
+            BlueprintName = "Flapjack-macOS"
             ReferencedContainer = "container:Flapjack.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C3F52F5E21B18C8A00F92897"
-            BuildableName = "FlapjackUIKit.framework"
-            BlueprintName = "FlapjackUIKit"
+            BlueprintIdentifier = "C3E90CEA22308698001DBF25"
+            BuildableName = "Flapjack.framework"
+            BlueprintName = "Flapjack-macOS"
             ReferencedContainer = "container:Flapjack.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

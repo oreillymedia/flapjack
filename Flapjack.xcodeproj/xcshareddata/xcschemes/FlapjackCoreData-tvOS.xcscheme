@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C31FD1C521B0996F007A84F9"
+               BlueprintIdentifier = "C37325D622309245003C9E48"
                BuildableName = "FlapjackCoreData.framework"
-               BlueprintName = "FlapjackCoreData"
+               BlueprintName = "FlapjackCoreData-tvOS"
                ReferencedContainer = "container:Flapjack.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C31FD1C521B0996F007A84F9"
+            BlueprintIdentifier = "C37325D622309245003C9E48"
             BuildableName = "FlapjackCoreData.framework"
-            BlueprintName = "FlapjackCoreData"
+            BlueprintName = "FlapjackCoreData-tvOS"
             ReferencedContainer = "container:Flapjack.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C31FD1C521B0996F007A84F9"
+            BlueprintIdentifier = "C37325D622309245003C9E48"
             BuildableName = "FlapjackCoreData.framework"
-            BlueprintName = "FlapjackCoreData"
+            BlueprintName = "FlapjackCoreData-tvOS"
             ReferencedContainer = "container:Flapjack.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

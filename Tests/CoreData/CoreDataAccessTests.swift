@@ -20,7 +20,14 @@ class CoreDataAccessStoreTypeTests: XCTestCase {
             XCTFail("Expected storeType.url.")
             return
         }
-        XCTAssertTrue(url.absoluteString.hasSuffix("/data/Library/Application%20Support/abc123.sqlite"))
+        #if os(iOS)
+        print(url.absoluteString)
+        XCTAssertTrue(url.absoluteString.hasSuffix("/Library/Application%20Support/abc123.sqlite"))
+        #elseif os(macOS)
+        XCTAssertTrue(url.absoluteString.hasSuffix("/Library/Application%20Support/xctest/abc123.sqlite"))
+        #elseif os(tvOS)
+        XCTAssertTrue(url.absoluteString.hasSuffix("/Library/Caches/abc123.sqlite"))
+        #endif
         XCTAssertEqual(storeType.coreDataType, NSSQLiteStoreType)
         XCTAssertEqual(storeType.storeDescription.type, NSSQLiteStoreType)
     }

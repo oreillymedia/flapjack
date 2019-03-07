@@ -67,6 +67,128 @@
 		C33F37C121C9A777006F0E8E /* NSCompoundPredicate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16C21B095DE007A84F9 /* NSCompoundPredicate+Extensions.swift */; };
 		C33F37C221C9A786006F0E8E /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16E21B095DE007A84F9 /* Dictionary+Extensions.swift */; };
 		C33F37C421C9A7C2006F0E8E /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16B21B095DE007A84F9 /* Array+Extensions.swift */; };
+		C37325BB2230923D003C9E48 /* Flapjack.h in Headers */ = {isa = PBXBuildFile; fileRef = C31FD17421B095DE007A84F9 /* Flapjack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C37325BD2230923D003C9E48 /* DataObjectID.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16621B095DE007A84F9 /* DataObjectID.swift */; };
+		C37325BE2230923D003C9E48 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16B21B095DE007A84F9 /* Array+Extensions.swift */; };
+		C37325BF2230923D003C9E48 /* NSCompoundPredicate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16C21B095DE007A84F9 /* NSCompoundPredicate+Extensions.swift */; };
+		C37325C02230923D003C9E48 /* Set+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16D21B095DE007A84F9 /* Set+Extensions.swift */; };
+		C37325C12230923D003C9E48 /* DataContextError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16121B095DE007A84F9 /* DataContextError.swift */; };
+		C37325C22230923D003C9E48 /* SortDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16021B095DE007A84F9 /* SortDescriptor.swift */; };
+		C37325C32230923D003C9E48 /* DataSourceSectionChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16521B095DE007A84F9 /* DataSourceSectionChange.swift */; };
+		C37325C42230923D003C9E48 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17221B095DE007A84F9 /* Logger.swift */; };
+		C37325C52230923D003C9E48 /* DataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16921B095DE007A84F9 /* DataObject.swift */; };
+		C37325C62230923D003C9E48 /* DataSourceChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16321B095DE007A84F9 /* DataSourceChange.swift */; };
+		C37325C72230923D003C9E48 /* PrimaryKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16221B095DE007A84F9 /* PrimaryKey.swift */; };
+		C37325C82230923D003C9E48 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17621B095DE007A84F9 /* DataSource.swift */; };
+		C37325C92230923D003C9E48 /* DataContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17021B095DE007A84F9 /* DataContext.swift */; };
+		C37325CA2230923D003C9E48 /* SingleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16721B095DE007A84F9 /* SingleDataSource.swift */; };
+		C37325CB2230923D003C9E48 /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16821B095DE007A84F9 /* DataAccess.swift */; };
+		C37325CC2230923D003C9E48 /* DataAccessError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16421B095DE007A84F9 /* DataAccessError.swift */; };
+		C37325CD2230923D003C9E48 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16F21B095DE007A84F9 /* Collection+Extensions.swift */; };
+		C37325CE2230923D003C9E48 /* Migrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F52F7321B1E43E00F92897 /* Migrator.swift */; };
+		C37325DB22309245003C9E48 /* FlapjackCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = C31FD21A21B09F29007A84F9 /* FlapjackCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C37325DD22309245003C9E48 /* NSMigrationManager+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F8CCC721C469F600199781 /* NSMigrationManager+Extensions.swift */; };
+		C37325DE22309245003C9E48 /* NSCompoundPredicate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16C21B095DE007A84F9 /* NSCompoundPredicate+Extensions.swift */; };
+		C37325DF22309245003C9E48 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16E21B095DE007A84F9 /* Dictionary+Extensions.swift */; };
+		C37325E022309245003C9E48 /* NSManagedObjectContext+DataContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD18021B095DE007A84F9 /* NSManagedObjectContext+DataContext.swift */; };
+		C37325E122309245003C9E48 /* NSManagedObjectID+DataObjectID.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD18121B095DE007A84F9 /* NSManagedObjectID+DataObjectID.swift */; };
+		C37325E222309245003C9E48 /* MigrationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F8CCC521C4697E00199781 /* MigrationPolicy.swift */; };
+		C37325E322309245003C9E48 /* CoreDataMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F52F7521B1E4C700F92897 /* CoreDataMigrator.swift */; };
+		C37325E422309245003C9E48 /* CoreSingleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17C21B095DE007A84F9 /* CoreSingleDataSource.swift */; };
+		C37325E522309245003C9E48 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16F21B095DE007A84F9 /* Collection+Extensions.swift */; };
+		C37325E622309245003C9E48 /* NSManagedObject+DataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD18221B095DE007A84F9 /* NSManagedObject+DataObject.swift */; };
+		C37325E722309245003C9E48 /* CoreDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17D21B095DE007A84F9 /* CoreDataAccess.swift */; };
+		C37325E822309245003C9E48 /* NSFetchedResultsChangeType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD18321B095DE007A84F9 /* NSFetchedResultsChangeType+Extensions.swift */; };
+		C37325E922309245003C9E48 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17F21B095DE007A84F9 /* NSManagedObjectContext+Extensions.swift */; };
+		C37325EA22309245003C9E48 /* CoreDataSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD18421B095DE007A84F9 /* CoreDataSourceFactory.swift */; };
+		C37325EB22309245003C9E48 /* CoreDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD18521B095DE007A84F9 /* CoreDataSource.swift */; };
+		C37325ED22309245003C9E48 /* Flapjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C31FD13621B092FF007A84F9 /* Flapjack.framework */; };
+		C37325F7223092DD003C9E48 /* FlapjackUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C31FD21D21B09F54007A84F9 /* FlapjackUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C37325F9223092DD003C9E48 /* Set+DataSourceChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FDECB221CC4D9600E0E95A /* Set+DataSourceChange.swift */; };
+		C37325FA223092DD003C9E48 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17A21B095DE007A84F9 /* UICollectionView+Extensions.swift */; };
+		C37325FB223092DD003C9E48 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17921B095DE007A84F9 /* UITableView+Extensions.swift */; };
+		C37325FD223092DD003C9E48 /* Flapjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C31FD13621B092FF007A84F9 /* Flapjack.framework */; };
+		C373261C22309346003C9E48 /* Flapjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C37325D42230923D003C9E48 /* Flapjack.framework */; };
+		C3732622223093BA003C9E48 /* DataContextErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD23521B0A423007A84F9 /* DataContextErrorTests.swift */; };
+		C3732623223093BA003C9E48 /* SortDescriptorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD23621B0A423007A84F9 /* SortDescriptorTests.swift */; };
+		C3732624223093BA003C9E48 /* DataAccessErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD23721B0A423007A84F9 /* DataAccessErrorTests.swift */; };
+		C3732625223093BA003C9E48 /* Array+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD23921B0A423007A84F9 /* Array+ExtensionsTests.swift */; };
+		C3732626223093BA003C9E48 /* NSCompoundPredicate+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD23A21B0A423007A84F9 /* NSCompoundPredicate+ExtensionsTests.swift */; };
+		C3732627223093BA003C9E48 /* Dictionary+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD23B21B0A423007A84F9 /* Dictionary+ExtensionsTests.swift */; };
+		C3732628223093BA003C9E48 /* Collection+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD23C21B0A423007A84F9 /* Collection+ExtensionsTests.swift */; };
+		C3732629223093BA003C9E48 /* MockEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD23F21B0A423007A84F9 /* MockEntity.swift */; };
+		C373262A223093BA003C9E48 /* MockMigrationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F8CCC921C46ADE00199781 /* MockMigrationPolicy.swift */; };
+		C373262B223093BA003C9E48 /* MockMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33F37BD21C9845E006F0E8E /* MockMigrator.swift */; };
+		C373262C223093BA003C9E48 /* MockDataAccessDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33F37BF21C9852A006F0E8E /* MockDataAccessDelegate.swift */; };
+		C373262D223093BA003C9E48 /* NSFetchedResultsChangeTypeExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD24521B0A423007A84F9 /* NSFetchedResultsChangeTypeExtensionsTests.swift */; };
+		C373262E223093BA003C9E48 /* NSManagedObjectContextDataContextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD24621B0A423007A84F9 /* NSManagedObjectContextDataContextTests.swift */; };
+		C373262F223093BA003C9E48 /* CoreDataAccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD24721B0A423007A84F9 /* CoreDataAccessTests.swift */; };
+		C3732630223093BA003C9E48 /* CoreSingleDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F52F6F21B19C2E00F92897 /* CoreSingleDataSourceTests.swift */; };
+		C3732631223093BA003C9E48 /* CoreDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F52F7121B1A50800F92897 /* CoreDataSourceTests.swift */; };
+		C3732632223093BA003C9E48 /* CoreDataMigratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F52F7921B1FBC600F92897 /* CoreDataMigratorTests.swift */; };
+		C3732633223093BD003C9E48 /* TestMigrationModel 4.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = C3F8CCC321C468DC00199781 /* TestMigrationModel 4.xcmappingmodel */; };
+		C3732634223093BD003C9E48 /* TestMigrationModel 3.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = C3F8CCC021C468A300199781 /* TestMigrationModel 3.xcmappingmodel */; };
+		C3732635223093C1003C9E48 /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C31FD24221B0A423007A84F9 /* TestModel.xcdatamodeld */; };
+		C3732636223093C1003C9E48 /* TestMigrationModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C3F8CCB821C4513F00199781 /* TestMigrationModel.xcdatamodeld */; };
+		C38F9F9022308E850037108A /* FlapjackUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C31FD21D21B09F54007A84F9 /* FlapjackUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C38F9F9122308F9C0037108A /* FlapjackCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = C31FD21A21B09F29007A84F9 /* FlapjackCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C38F9F9222308FA20037108A /* Flapjack.h in Headers */ = {isa = PBXBuildFile; fileRef = C31FD17421B095DE007A84F9 /* Flapjack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C38F9F9C223090000037108A /* Flapjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E90D0622308698001DBF25 /* Flapjack.framework */; };
+		C38F9FA4223090760037108A /* DataContextErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD23521B0A423007A84F9 /* DataContextErrorTests.swift */; };
+		C38F9FA5223090760037108A /* SortDescriptorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD23621B0A423007A84F9 /* SortDescriptorTests.swift */; };
+		C38F9FA6223090760037108A /* DataAccessErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD23721B0A423007A84F9 /* DataAccessErrorTests.swift */; };
+		C38F9FA7223090760037108A /* Array+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD23921B0A423007A84F9 /* Array+ExtensionsTests.swift */; };
+		C38F9FA8223090760037108A /* NSCompoundPredicate+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD23A21B0A423007A84F9 /* NSCompoundPredicate+ExtensionsTests.swift */; };
+		C38F9FA9223090760037108A /* Dictionary+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD23B21B0A423007A84F9 /* Dictionary+ExtensionsTests.swift */; };
+		C38F9FAA223090760037108A /* Collection+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD23C21B0A423007A84F9 /* Collection+ExtensionsTests.swift */; };
+		C38F9FAB223090790037108A /* MockEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD23F21B0A423007A84F9 /* MockEntity.swift */; };
+		C38F9FAC223090790037108A /* MockMigrationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F8CCC921C46ADE00199781 /* MockMigrationPolicy.swift */; };
+		C38F9FAD223090790037108A /* MockMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33F37BD21C9845E006F0E8E /* MockMigrator.swift */; };
+		C38F9FAE223090790037108A /* MockDataAccessDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33F37BF21C9852A006F0E8E /* MockDataAccessDelegate.swift */; };
+		C38F9FAF223090810037108A /* NSFetchedResultsChangeTypeExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD24521B0A423007A84F9 /* NSFetchedResultsChangeTypeExtensionsTests.swift */; };
+		C38F9FB0223090810037108A /* NSManagedObjectContextDataContextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD24621B0A423007A84F9 /* NSManagedObjectContextDataContextTests.swift */; };
+		C38F9FB1223090810037108A /* CoreDataAccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD24721B0A423007A84F9 /* CoreDataAccessTests.swift */; };
+		C38F9FB2223090810037108A /* CoreSingleDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F52F6F21B19C2E00F92897 /* CoreSingleDataSourceTests.swift */; };
+		C38F9FB3223090810037108A /* CoreDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F52F7121B1A50800F92897 /* CoreDataSourceTests.swift */; };
+		C38F9FB4223090810037108A /* CoreDataMigratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F52F7921B1FBC600F92897 /* CoreDataMigratorTests.swift */; };
+		C38F9FB52230908F0037108A /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C31FD24221B0A423007A84F9 /* TestModel.xcdatamodeld */; };
+		C38F9FB62230908F0037108A /* TestMigrationModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C3F8CCB821C4513F00199781 /* TestMigrationModel.xcdatamodeld */; };
+		C38F9FB7223090930037108A /* TestMigrationModel 4.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = C3F8CCC321C468DC00199781 /* TestMigrationModel 4.xcmappingmodel */; };
+		C38F9FB8223090930037108A /* TestMigrationModel 3.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = C3F8CCC021C468A300199781 /* TestMigrationModel 3.xcmappingmodel */; };
+		C3E90CEF22308698001DBF25 /* DataObjectID.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16621B095DE007A84F9 /* DataObjectID.swift */; };
+		C3E90CF022308698001DBF25 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16B21B095DE007A84F9 /* Array+Extensions.swift */; };
+		C3E90CF122308698001DBF25 /* NSCompoundPredicate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16C21B095DE007A84F9 /* NSCompoundPredicate+Extensions.swift */; };
+		C3E90CF222308698001DBF25 /* Set+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16D21B095DE007A84F9 /* Set+Extensions.swift */; };
+		C3E90CF322308698001DBF25 /* DataContextError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16121B095DE007A84F9 /* DataContextError.swift */; };
+		C3E90CF422308698001DBF25 /* SortDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16021B095DE007A84F9 /* SortDescriptor.swift */; };
+		C3E90CF522308698001DBF25 /* DataSourceSectionChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16521B095DE007A84F9 /* DataSourceSectionChange.swift */; };
+		C3E90CF622308698001DBF25 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17221B095DE007A84F9 /* Logger.swift */; };
+		C3E90CF722308698001DBF25 /* DataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16921B095DE007A84F9 /* DataObject.swift */; };
+		C3E90CF822308698001DBF25 /* DataSourceChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16321B095DE007A84F9 /* DataSourceChange.swift */; };
+		C3E90CF922308698001DBF25 /* PrimaryKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16221B095DE007A84F9 /* PrimaryKey.swift */; };
+		C3E90CFA22308698001DBF25 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17621B095DE007A84F9 /* DataSource.swift */; };
+		C3E90CFB22308698001DBF25 /* DataContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17021B095DE007A84F9 /* DataContext.swift */; };
+		C3E90CFC22308698001DBF25 /* SingleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16721B095DE007A84F9 /* SingleDataSource.swift */; };
+		C3E90CFD22308698001DBF25 /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16821B095DE007A84F9 /* DataAccess.swift */; };
+		C3E90CFE22308698001DBF25 /* DataAccessError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16421B095DE007A84F9 /* DataAccessError.swift */; };
+		C3E90CFF22308698001DBF25 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16F21B095DE007A84F9 /* Collection+Extensions.swift */; };
+		C3E90D0022308698001DBF25 /* Migrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F52F7321B1E43E00F92897 /* Migrator.swift */; };
+		C3E90D0D223086F0001DBF25 /* NSMigrationManager+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F8CCC721C469F600199781 /* NSMigrationManager+Extensions.swift */; };
+		C3E90D0E223086F0001DBF25 /* NSCompoundPredicate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16C21B095DE007A84F9 /* NSCompoundPredicate+Extensions.swift */; };
+		C3E90D0F223086F0001DBF25 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16E21B095DE007A84F9 /* Dictionary+Extensions.swift */; };
+		C3E90D10223086F0001DBF25 /* NSManagedObjectContext+DataContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD18021B095DE007A84F9 /* NSManagedObjectContext+DataContext.swift */; };
+		C3E90D11223086F0001DBF25 /* NSManagedObjectID+DataObjectID.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD18121B095DE007A84F9 /* NSManagedObjectID+DataObjectID.swift */; };
+		C3E90D12223086F0001DBF25 /* MigrationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F8CCC521C4697E00199781 /* MigrationPolicy.swift */; };
+		C3E90D13223086F0001DBF25 /* CoreDataMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F52F7521B1E4C700F92897 /* CoreDataMigrator.swift */; };
+		C3E90D14223086F0001DBF25 /* CoreSingleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17C21B095DE007A84F9 /* CoreSingleDataSource.swift */; };
+		C3E90D15223086F0001DBF25 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16F21B095DE007A84F9 /* Collection+Extensions.swift */; };
+		C3E90D16223086F0001DBF25 /* NSManagedObject+DataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD18221B095DE007A84F9 /* NSManagedObject+DataObject.swift */; };
+		C3E90D17223086F0001DBF25 /* CoreDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17D21B095DE007A84F9 /* CoreDataAccess.swift */; };
+		C3E90D18223086F0001DBF25 /* NSFetchedResultsChangeType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD18321B095DE007A84F9 /* NSFetchedResultsChangeType+Extensions.swift */; };
+		C3E90D19223086F0001DBF25 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17F21B095DE007A84F9 /* NSManagedObjectContext+Extensions.swift */; };
+		C3E90D1A223086F0001DBF25 /* CoreDataSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD18421B095DE007A84F9 /* CoreDataSourceFactory.swift */; };
+		C3E90D1B223086F0001DBF25 /* CoreDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD18521B095DE007A84F9 /* CoreDataSource.swift */; };
+		C3E90D1D223086F0001DBF25 /* Flapjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C31FD13621B092FF007A84F9 /* Flapjack.framework */; };
 		C3F52F6621B18C8A00F92897 /* FlapjackUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F52F5F21B18C8A00F92897 /* FlapjackUIKit.framework */; };
 		C3F52F6721B18C8A00F92897 /* FlapjackUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C3F52F5F21B18C8A00F92897 /* FlapjackUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C3F52F6B21B18CAE00F92897 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17921B095DE007A84F9 /* UITableView+Extensions.swift */; };
@@ -114,6 +236,55 @@
 			proxyType = 1;
 			remoteGlobalIDString = C31FD1C521B0996F007A84F9;
 			remoteInfo = FlapjackCoreData;
+		};
+		C37325D822309245003C9E48 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C31FD13521B092FF007A84F9;
+			remoteInfo = "Flapjack-iOS";
+		};
+		C373261D22309346003C9E48 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C37325B82230923D003C9E48;
+			remoteInfo = "Flapjack-tvOS";
+		};
+		C3732637223093F6003C9E48 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C37325D622309245003C9E48;
+			remoteInfo = "FlapjackCoreData-tvOS";
+		};
+		C38F9F9D223090000037108A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C3E90CEA22308698001DBF25;
+			remoteInfo = "Flapjack-macOS";
+		};
+		C38F9FA2223090080037108A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C3E90D08223086F0001DBF25;
+			remoteInfo = "FlapjackCoreData-macOS";
+		};
+		C3E90D4B22308809001DBF25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C3E90CEA22308698001DBF25;
+			remoteInfo = "Flapjack-macOS";
+		};
+		C3E90D4D22308810001DBF25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C31FD13521B092FF007A84F9;
+			remoteInfo = "Flapjack-iOS";
 		};
 		C3F52F6421B18C8A00F92897 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -202,9 +373,18 @@
 		C31FD24521B0A423007A84F9 /* NSFetchedResultsChangeTypeExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSFetchedResultsChangeTypeExtensionsTests.swift; sourceTree = "<group>"; };
 		C31FD24621B0A423007A84F9 /* NSManagedObjectContextDataContextTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContextDataContextTests.swift; sourceTree = "<group>"; };
 		C31FD24721B0A423007A84F9 /* CoreDataAccessTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataAccessTests.swift; sourceTree = "<group>"; };
-		C31FD24821B0A423007A84F9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C31FD24821B0A423007A84F9 /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		C33F37BD21C9845E006F0E8E /* MockMigrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMigrator.swift; sourceTree = "<group>"; };
 		C33F37BF21C9852A006F0E8E /* MockDataAccessDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataAccessDelegate.swift; sourceTree = "<group>"; };
+		C37325D42230923D003C9E48 /* Flapjack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Flapjack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C37325F222309245003C9E48 /* FlapjackCoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlapjackCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3732602223092DD003C9E48 /* FlapjackUIKit-tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "FlapjackUIKit-tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C373261722309346003C9E48 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C373261B22309346003C9E48 /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
+		C38F9F97223090000037108A /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C38F9F9B223090000037108A /* Info-macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-macOS.plist"; sourceTree = "<group>"; };
+		C3E90D0622308698001DBF25 /* Flapjack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Flapjack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3E90D22223086F0001DBF25 /* FlapjackCoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlapjackCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F52F5F21B18C8A00F92897 /* FlapjackUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlapjackUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F52F6F21B19C2E00F92897 /* CoreSingleDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreSingleDataSourceTests.swift; sourceTree = "<group>"; };
 		C3F52F7121B1A50800F92897 /* CoreDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSourceTests.swift; sourceTree = "<group>"; };
@@ -257,6 +437,60 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C37325CF2230923D003C9E48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C37325EC22309245003C9E48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C37325ED22309245003C9E48 /* Flapjack.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C37325FC223092DD003C9E48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C37325FD223092DD003C9E48 /* Flapjack.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C373261422309346003C9E48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C373261C22309346003C9E48 /* Flapjack.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C38F9F94223090000037108A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C38F9F9C223090000037108A /* Flapjack.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3E90D0122308698001DBF25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3E90D1C223086F0001DBF25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3E90D1D223086F0001DBF25 /* Flapjack.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C3F52F5C21B18C8A00F92897 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -287,6 +521,13 @@
 				C31FD1C621B0996F007A84F9 /* FlapjackCoreData.framework */,
 				C31FD22721B0A406007A84F9 /* Tests.xctest */,
 				C3F52F5F21B18C8A00F92897 /* FlapjackUIKit.framework */,
+				C3E90D0622308698001DBF25 /* Flapjack.framework */,
+				C3E90D22223086F0001DBF25 /* FlapjackCoreData.framework */,
+				C38F9F97223090000037108A /* Tests.xctest */,
+				C37325D42230923D003C9E48 /* Flapjack.framework */,
+				C37325F222309245003C9E48 /* FlapjackCoreData.framework */,
+				C3732602223092DD003C9E48 /* FlapjackUIKit-tvOS.framework */,
+				C373261722309346003C9E48 /* Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -447,7 +688,9 @@
 			children = (
 				C31FD23321B0A423007A84F9 /* Core */,
 				C31FD23D21B0A423007A84F9 /* CoreData */,
-				C31FD24821B0A423007A84F9 /* Info.plist */,
+				C31FD24821B0A423007A84F9 /* Info-iOS.plist */,
+				C38F9F9B223090000037108A /* Info-macOS.plist */,
+				C373261B22309346003C9E48 /* Info-tvOS.plist */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -554,10 +797,51 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C37325BA2230923D003C9E48 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C37325BB2230923D003C9E48 /* Flapjack.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C37325DA22309245003C9E48 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C37325DB22309245003C9E48 /* FlapjackCoreData.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C37325F6223092DD003C9E48 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C37325F7223092DD003C9E48 /* FlapjackUIKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3E90CEC22308698001DBF25 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C38F9F9222308FA20037108A /* Flapjack.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3E90D0A223086F0001DBF25 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C38F9F9122308F9C0037108A /* FlapjackCoreData.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C3F52F5A21B18C8A00F92897 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C38F9F9022308E850037108A /* FlapjackUIKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,9 +869,9 @@
 			productReference = 607FACD01AFB9204008FA782 /* Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C31FD13521B092FF007A84F9 /* Flapjack */ = {
+		C31FD13521B092FF007A84F9 /* Flapjack-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C31FD14121B092FF007A84F9 /* Build configuration list for PBXNativeTarget "Flapjack" */;
+			buildConfigurationList = C31FD14121B092FF007A84F9 /* Build configuration list for PBXNativeTarget "Flapjack-iOS" */;
 			buildPhases = (
 				C31FD1A521B09717007A84F9 /* SwiftLint */,
 				C31FD13121B092FF007A84F9 /* Headers */,
@@ -599,14 +883,14 @@
 			);
 			dependencies = (
 			);
-			name = Flapjack;
+			name = "Flapjack-iOS";
 			productName = Flapjack;
 			productReference = C31FD13621B092FF007A84F9 /* Flapjack.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		C31FD1C521B0996F007A84F9 /* FlapjackCoreData */ = {
+		C31FD1C521B0996F007A84F9 /* FlapjackCoreData-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C31FD1CF21B0996F007A84F9 /* Build configuration list for PBXNativeTarget "FlapjackCoreData" */;
+			buildConfigurationList = C31FD1CF21B0996F007A84F9 /* Build configuration list for PBXNativeTarget "FlapjackCoreData-iOS" */;
 			buildPhases = (
 				C31FD25C21B0A56D007A84F9 /* SwiftLint */,
 				C31FD1C121B0996F007A84F9 /* Headers */,
@@ -617,19 +901,20 @@
 			buildRules = (
 			);
 			dependencies = (
+				C3E90D4E22308810001DBF25 /* PBXTargetDependency */,
 			);
-			name = FlapjackCoreData;
+			name = "FlapjackCoreData-iOS";
 			productName = FlapjackCoreData;
 			productReference = C31FD1C621B0996F007A84F9 /* FlapjackCoreData.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		C31FD22621B0A406007A84F9 /* Tests */ = {
+		C31FD22621B0A406007A84F9 /* Tests-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C31FD22F21B0A406007A84F9 /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildConfigurationList = C31FD22F21B0A406007A84F9 /* Build configuration list for PBXNativeTarget "Tests-iOS" */;
 			buildPhases = (
 				C31FD22321B0A406007A84F9 /* Sources */,
-				C31FD22521B0A406007A84F9 /* Resources */,
 				C31FD22421B0A406007A84F9 /* Frameworks */,
+				C31FD22521B0A406007A84F9 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -637,14 +922,149 @@
 				C31FD25921B0A49C007A84F9 /* PBXTargetDependency */,
 				C31FD22E21B0A406007A84F9 /* PBXTargetDependency */,
 			);
-			name = Tests;
+			name = "Tests-iOS";
 			productName = FlapjackTests;
 			productReference = C31FD22721B0A406007A84F9 /* Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		C3F52F5E21B18C8A00F92897 /* FlapjackUIKit */ = {
+		C37325B82230923D003C9E48 /* Flapjack-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C3F52F6821B18C8A00F92897 /* Build configuration list for PBXNativeTarget "FlapjackUIKit" */;
+			buildConfigurationList = C37325D12230923D003C9E48 /* Build configuration list for PBXNativeTarget "Flapjack-tvOS" */;
+			buildPhases = (
+				C37325B92230923D003C9E48 /* SwiftLint */,
+				C37325BA2230923D003C9E48 /* Headers */,
+				C37325BC2230923D003C9E48 /* Sources */,
+				C37325CF2230923D003C9E48 /* Frameworks */,
+				C37325D02230923D003C9E48 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Flapjack-tvOS";
+			productName = Flapjack;
+			productReference = C37325D42230923D003C9E48 /* Flapjack.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C37325D622309245003C9E48 /* FlapjackCoreData-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C37325EF22309245003C9E48 /* Build configuration list for PBXNativeTarget "FlapjackCoreData-tvOS" */;
+			buildPhases = (
+				C37325D922309245003C9E48 /* SwiftLint */,
+				C37325DA22309245003C9E48 /* Headers */,
+				C37325DC22309245003C9E48 /* Sources */,
+				C37325EC22309245003C9E48 /* Frameworks */,
+				C37325EE22309245003C9E48 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C37325D722309245003C9E48 /* PBXTargetDependency */,
+			);
+			name = "FlapjackCoreData-tvOS";
+			productName = FlapjackCoreData;
+			productReference = C37325F222309245003C9E48 /* FlapjackCoreData.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C37325F4223092DD003C9E48 /* FlapjackUIKit-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C37325FF223092DD003C9E48 /* Build configuration list for PBXNativeTarget "FlapjackUIKit-tvOS" */;
+			buildPhases = (
+				C37325F5223092DD003C9E48 /* SwiftLint */,
+				C37325F6223092DD003C9E48 /* Headers */,
+				C37325F8223092DD003C9E48 /* Sources */,
+				C37325FC223092DD003C9E48 /* Frameworks */,
+				C37325FE223092DD003C9E48 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FlapjackUIKit-tvOS";
+			productName = FlapjackUIKit;
+			productReference = C3732602223092DD003C9E48 /* FlapjackUIKit-tvOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C373261622309346003C9E48 /* Tests-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C373261F22309346003C9E48 /* Build configuration list for PBXNativeTarget "Tests-tvOS" */;
+			buildPhases = (
+				C373261322309346003C9E48 /* Sources */,
+				C373261422309346003C9E48 /* Frameworks */,
+				C373261522309346003C9E48 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C3732638223093F6003C9E48 /* PBXTargetDependency */,
+				C373261E22309346003C9E48 /* PBXTargetDependency */,
+			);
+			name = "Tests-tvOS";
+			productName = "Tests-tvOS";
+			productReference = C373261722309346003C9E48 /* Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C38F9F96223090000037108A /* Tests-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C38F9F9F223090000037108A /* Build configuration list for PBXNativeTarget "Tests-macOS" */;
+			buildPhases = (
+				C38F9F93223090000037108A /* Sources */,
+				C38F9F94223090000037108A /* Frameworks */,
+				C38F9F95223090000037108A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C38F9FA3223090080037108A /* PBXTargetDependency */,
+				C38F9F9E223090000037108A /* PBXTargetDependency */,
+			);
+			name = "Tests-macOS";
+			productName = "Tests-macOS";
+			productReference = C38F9F97223090000037108A /* Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C3E90CEA22308698001DBF25 /* Flapjack-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3E90D0322308698001DBF25 /* Build configuration list for PBXNativeTarget "Flapjack-macOS" */;
+			buildPhases = (
+				C3E90CEB22308698001DBF25 /* SwiftLint */,
+				C3E90CEC22308698001DBF25 /* Headers */,
+				C3E90CEE22308698001DBF25 /* Sources */,
+				C3E90D0122308698001DBF25 /* Frameworks */,
+				C3E90D0222308698001DBF25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Flapjack-macOS";
+			productName = Flapjack;
+			productReference = C3E90D0622308698001DBF25 /* Flapjack.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C3E90D08223086F0001DBF25 /* FlapjackCoreData-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3E90D1F223086F0001DBF25 /* Build configuration list for PBXNativeTarget "FlapjackCoreData-macOS" */;
+			buildPhases = (
+				C3E90D09223086F0001DBF25 /* SwiftLint */,
+				C3E90D0A223086F0001DBF25 /* Headers */,
+				C3E90D0C223086F0001DBF25 /* Sources */,
+				C3E90D1C223086F0001DBF25 /* Frameworks */,
+				C3E90D1E223086F0001DBF25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C3E90D4C22308809001DBF25 /* PBXTargetDependency */,
+			);
+			name = "FlapjackCoreData-macOS";
+			productName = FlapjackCoreData;
+			productReference = C3E90D22223086F0001DBF25 /* FlapjackCoreData.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C3F52F5E21B18C8A00F92897 /* FlapjackUIKit-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3F52F6821B18C8A00F92897 /* Build configuration list for PBXNativeTarget "FlapjackUIKit-iOS" */;
 			buildPhases = (
 				C3F52F6E21B19AFF00F92897 /* SwiftLint */,
 				C3F52F5A21B18C8A00F92897 /* Headers */,
@@ -656,7 +1076,7 @@
 			);
 			dependencies = (
 			);
-			name = FlapjackUIKit;
+			name = "FlapjackUIKit-iOS";
 			productName = FlapjackUIKit;
 			productReference = C3F52F5F21B18C8A00F92897 /* FlapjackUIKit.framework */;
 			productType = "com.apple.product-type.framework";
@@ -691,6 +1111,36 @@
 						DevelopmentTeam = 5XJYJPRTH5;
 						ProvisioningStyle = Automatic;
 					};
+					C37325B82230923D003C9E48 = {
+						DevelopmentTeam = 5XJYJPRTH5;
+						ProvisioningStyle = Automatic;
+					};
+					C37325D622309245003C9E48 = {
+						DevelopmentTeam = 5XJYJPRTH5;
+						ProvisioningStyle = Automatic;
+					};
+					C37325F4223092DD003C9E48 = {
+						DevelopmentTeam = 5XJYJPRTH5;
+						ProvisioningStyle = Automatic;
+					};
+					C373261622309346003C9E48 = {
+						CreatedOnToolsVersion = 10.1;
+						DevelopmentTeam = 5XJYJPRTH5;
+						ProvisioningStyle = Automatic;
+					};
+					C38F9F96223090000037108A = {
+						CreatedOnToolsVersion = 10.1;
+						DevelopmentTeam = 5XJYJPRTH5;
+						ProvisioningStyle = Automatic;
+					};
+					C3E90CEA22308698001DBF25 = {
+						DevelopmentTeam = 5XJYJPRTH5;
+						ProvisioningStyle = Automatic;
+					};
+					C3E90D08223086F0001DBF25 = {
+						DevelopmentTeam = 5XJYJPRTH5;
+						ProvisioningStyle = Automatic;
+					};
 					C3F52F5E21B18C8A00F92897 = {
 						CreatedOnToolsVersion = 10.1;
 						DevelopmentTeam = 5XJYJPRTH5;
@@ -712,10 +1162,17 @@
 			projectRoot = "";
 			targets = (
 				607FACCF1AFB9204008FA782 /* Example */,
-				C31FD13521B092FF007A84F9 /* Flapjack */,
-				C31FD1C521B0996F007A84F9 /* FlapjackCoreData */,
-				C3F52F5E21B18C8A00F92897 /* FlapjackUIKit */,
-				C31FD22621B0A406007A84F9 /* Tests */,
+				C31FD13521B092FF007A84F9 /* Flapjack-iOS */,
+				C3E90CEA22308698001DBF25 /* Flapjack-macOS */,
+				C37325B82230923D003C9E48 /* Flapjack-tvOS */,
+				C31FD1C521B0996F007A84F9 /* FlapjackCoreData-iOS */,
+				C3E90D08223086F0001DBF25 /* FlapjackCoreData-macOS */,
+				C37325D622309245003C9E48 /* FlapjackCoreData-tvOS */,
+				C3F52F5E21B18C8A00F92897 /* FlapjackUIKit-iOS */,
+				C37325F4223092DD003C9E48 /* FlapjackUIKit-tvOS */,
+				C31FD22621B0A406007A84F9 /* Tests-iOS */,
+				C38F9F96223090000037108A /* Tests-macOS */,
+				C373261622309346003C9E48 /* Tests-tvOS */,
 			);
 		};
 /* End PBXProject section */
@@ -752,6 +1209,55 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C37325D02230923D003C9E48 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C37325EE22309245003C9E48 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C37325FE223092DD003C9E48 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C373261522309346003C9E48 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C38F9F95223090000037108A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3E90D0222308698001DBF25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3E90D1E223086F0001DBF25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C3F52F5D21B18C8A00F92897 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -781,6 +1287,96 @@
 			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  if which swiftlint > /dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint to lint!\"\n  fi\nfi\n";
 		};
 		C31FD25C21B0A56D007A84F9 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  if which swiftlint > /dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint to lint!\"\n  fi\nfi\n";
+		};
+		C37325B92230923D003C9E48 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  if which swiftlint > /dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint to lint!\"\n  fi\nfi\n";
+		};
+		C37325D922309245003C9E48 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  if which swiftlint > /dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint to lint!\"\n  fi\nfi\n";
+		};
+		C37325F5223092DD003C9E48 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  if which swiftlint > /dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint to lint!\"\n  fi\nfi\n";
+		};
+		C3E90CEB22308698001DBF25 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  if which swiftlint > /dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint to lint!\"\n  fi\nfi\n";
+		};
+		C3E90D09223086F0001DBF25 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -907,6 +1503,166 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C37325BC2230923D003C9E48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C37325BD2230923D003C9E48 /* DataObjectID.swift in Sources */,
+				C37325BE2230923D003C9E48 /* Array+Extensions.swift in Sources */,
+				C37325BF2230923D003C9E48 /* NSCompoundPredicate+Extensions.swift in Sources */,
+				C37325C02230923D003C9E48 /* Set+Extensions.swift in Sources */,
+				C37325C12230923D003C9E48 /* DataContextError.swift in Sources */,
+				C37325C22230923D003C9E48 /* SortDescriptor.swift in Sources */,
+				C37325C32230923D003C9E48 /* DataSourceSectionChange.swift in Sources */,
+				C37325C42230923D003C9E48 /* Logger.swift in Sources */,
+				C37325C52230923D003C9E48 /* DataObject.swift in Sources */,
+				C37325C62230923D003C9E48 /* DataSourceChange.swift in Sources */,
+				C37325C72230923D003C9E48 /* PrimaryKey.swift in Sources */,
+				C37325C82230923D003C9E48 /* DataSource.swift in Sources */,
+				C37325C92230923D003C9E48 /* DataContext.swift in Sources */,
+				C37325CA2230923D003C9E48 /* SingleDataSource.swift in Sources */,
+				C37325CB2230923D003C9E48 /* DataAccess.swift in Sources */,
+				C37325CC2230923D003C9E48 /* DataAccessError.swift in Sources */,
+				C37325CD2230923D003C9E48 /* Collection+Extensions.swift in Sources */,
+				C37325CE2230923D003C9E48 /* Migrator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C37325DC22309245003C9E48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C37325DD22309245003C9E48 /* NSMigrationManager+Extensions.swift in Sources */,
+				C37325DE22309245003C9E48 /* NSCompoundPredicate+Extensions.swift in Sources */,
+				C37325DF22309245003C9E48 /* Dictionary+Extensions.swift in Sources */,
+				C37325E022309245003C9E48 /* NSManagedObjectContext+DataContext.swift in Sources */,
+				C37325E122309245003C9E48 /* NSManagedObjectID+DataObjectID.swift in Sources */,
+				C37325E222309245003C9E48 /* MigrationPolicy.swift in Sources */,
+				C37325E322309245003C9E48 /* CoreDataMigrator.swift in Sources */,
+				C37325E422309245003C9E48 /* CoreSingleDataSource.swift in Sources */,
+				C37325E522309245003C9E48 /* Collection+Extensions.swift in Sources */,
+				C37325E622309245003C9E48 /* NSManagedObject+DataObject.swift in Sources */,
+				C37325E722309245003C9E48 /* CoreDataAccess.swift in Sources */,
+				C37325E822309245003C9E48 /* NSFetchedResultsChangeType+Extensions.swift in Sources */,
+				C37325E922309245003C9E48 /* NSManagedObjectContext+Extensions.swift in Sources */,
+				C37325EA22309245003C9E48 /* CoreDataSourceFactory.swift in Sources */,
+				C37325EB22309245003C9E48 /* CoreDataSource.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C37325F8223092DD003C9E48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C37325F9223092DD003C9E48 /* Set+DataSourceChange.swift in Sources */,
+				C37325FA223092DD003C9E48 /* UICollectionView+Extensions.swift in Sources */,
+				C37325FB223092DD003C9E48 /* UITableView+Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C373261322309346003C9E48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C373262B223093BA003C9E48 /* MockMigrator.swift in Sources */,
+				C373262C223093BA003C9E48 /* MockDataAccessDelegate.swift in Sources */,
+				C3732623223093BA003C9E48 /* SortDescriptorTests.swift in Sources */,
+				C3732632223093BA003C9E48 /* CoreDataMigratorTests.swift in Sources */,
+				C3732626223093BA003C9E48 /* NSCompoundPredicate+ExtensionsTests.swift in Sources */,
+				C3732629223093BA003C9E48 /* MockEntity.swift in Sources */,
+				C3732634223093BD003C9E48 /* TestMigrationModel 3.xcmappingmodel in Sources */,
+				C3732636223093C1003C9E48 /* TestMigrationModel.xcdatamodeld in Sources */,
+				C373262A223093BA003C9E48 /* MockMigrationPolicy.swift in Sources */,
+				C373262F223093BA003C9E48 /* CoreDataAccessTests.swift in Sources */,
+				C3732624223093BA003C9E48 /* DataAccessErrorTests.swift in Sources */,
+				C373262D223093BA003C9E48 /* NSFetchedResultsChangeTypeExtensionsTests.swift in Sources */,
+				C3732635223093C1003C9E48 /* TestModel.xcdatamodeld in Sources */,
+				C373262E223093BA003C9E48 /* NSManagedObjectContextDataContextTests.swift in Sources */,
+				C3732622223093BA003C9E48 /* DataContextErrorTests.swift in Sources */,
+				C3732633223093BD003C9E48 /* TestMigrationModel 4.xcmappingmodel in Sources */,
+				C3732631223093BA003C9E48 /* CoreDataSourceTests.swift in Sources */,
+				C3732630223093BA003C9E48 /* CoreSingleDataSourceTests.swift in Sources */,
+				C3732628223093BA003C9E48 /* Collection+ExtensionsTests.swift in Sources */,
+				C3732627223093BA003C9E48 /* Dictionary+ExtensionsTests.swift in Sources */,
+				C3732625223093BA003C9E48 /* Array+ExtensionsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C38F9F93223090000037108A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C38F9FAE223090790037108A /* MockDataAccessDelegate.swift in Sources */,
+				C38F9FB1223090810037108A /* CoreDataAccessTests.swift in Sources */,
+				C38F9FB3223090810037108A /* CoreDataSourceTests.swift in Sources */,
+				C38F9FAF223090810037108A /* NSFetchedResultsChangeTypeExtensionsTests.swift in Sources */,
+				C38F9FB2223090810037108A /* CoreSingleDataSourceTests.swift in Sources */,
+				C38F9FAD223090790037108A /* MockMigrator.swift in Sources */,
+				C38F9FA4223090760037108A /* DataContextErrorTests.swift in Sources */,
+				C38F9FB62230908F0037108A /* TestMigrationModel.xcdatamodeld in Sources */,
+				C38F9FAA223090760037108A /* Collection+ExtensionsTests.swift in Sources */,
+				C38F9FA6223090760037108A /* DataAccessErrorTests.swift in Sources */,
+				C38F9FB52230908F0037108A /* TestModel.xcdatamodeld in Sources */,
+				C38F9FB8223090930037108A /* TestMigrationModel 3.xcmappingmodel in Sources */,
+				C38F9FA5223090760037108A /* SortDescriptorTests.swift in Sources */,
+				C38F9FAB223090790037108A /* MockEntity.swift in Sources */,
+				C38F9FA9223090760037108A /* Dictionary+ExtensionsTests.swift in Sources */,
+				C38F9FB4223090810037108A /* CoreDataMigratorTests.swift in Sources */,
+				C38F9FA7223090760037108A /* Array+ExtensionsTests.swift in Sources */,
+				C38F9FB7223090930037108A /* TestMigrationModel 4.xcmappingmodel in Sources */,
+				C38F9FAC223090790037108A /* MockMigrationPolicy.swift in Sources */,
+				C38F9FA8223090760037108A /* NSCompoundPredicate+ExtensionsTests.swift in Sources */,
+				C38F9FB0223090810037108A /* NSManagedObjectContextDataContextTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3E90CEE22308698001DBF25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3E90CEF22308698001DBF25 /* DataObjectID.swift in Sources */,
+				C3E90CF022308698001DBF25 /* Array+Extensions.swift in Sources */,
+				C3E90CF122308698001DBF25 /* NSCompoundPredicate+Extensions.swift in Sources */,
+				C3E90CF222308698001DBF25 /* Set+Extensions.swift in Sources */,
+				C3E90CF322308698001DBF25 /* DataContextError.swift in Sources */,
+				C3E90CF422308698001DBF25 /* SortDescriptor.swift in Sources */,
+				C3E90CF522308698001DBF25 /* DataSourceSectionChange.swift in Sources */,
+				C3E90CF622308698001DBF25 /* Logger.swift in Sources */,
+				C3E90CF722308698001DBF25 /* DataObject.swift in Sources */,
+				C3E90CF822308698001DBF25 /* DataSourceChange.swift in Sources */,
+				C3E90CF922308698001DBF25 /* PrimaryKey.swift in Sources */,
+				C3E90CFA22308698001DBF25 /* DataSource.swift in Sources */,
+				C3E90CFB22308698001DBF25 /* DataContext.swift in Sources */,
+				C3E90CFC22308698001DBF25 /* SingleDataSource.swift in Sources */,
+				C3E90CFD22308698001DBF25 /* DataAccess.swift in Sources */,
+				C3E90CFE22308698001DBF25 /* DataAccessError.swift in Sources */,
+				C3E90CFF22308698001DBF25 /* Collection+Extensions.swift in Sources */,
+				C3E90D0022308698001DBF25 /* Migrator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3E90D0C223086F0001DBF25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3E90D0D223086F0001DBF25 /* NSMigrationManager+Extensions.swift in Sources */,
+				C3E90D0E223086F0001DBF25 /* NSCompoundPredicate+Extensions.swift in Sources */,
+				C3E90D0F223086F0001DBF25 /* Dictionary+Extensions.swift in Sources */,
+				C3E90D10223086F0001DBF25 /* NSManagedObjectContext+DataContext.swift in Sources */,
+				C3E90D11223086F0001DBF25 /* NSManagedObjectID+DataObjectID.swift in Sources */,
+				C3E90D12223086F0001DBF25 /* MigrationPolicy.swift in Sources */,
+				C3E90D13223086F0001DBF25 /* CoreDataMigrator.swift in Sources */,
+				C3E90D14223086F0001DBF25 /* CoreSingleDataSource.swift in Sources */,
+				C3E90D15223086F0001DBF25 /* Collection+Extensions.swift in Sources */,
+				C3E90D16223086F0001DBF25 /* NSManagedObject+DataObject.swift in Sources */,
+				C3E90D17223086F0001DBF25 /* CoreDataAccess.swift in Sources */,
+				C3E90D18223086F0001DBF25 /* NSFetchedResultsChangeType+Extensions.swift in Sources */,
+				C3E90D19223086F0001DBF25 /* NSManagedObjectContext+Extensions.swift in Sources */,
+				C3E90D1A223086F0001DBF25 /* CoreDataSourceFactory.swift in Sources */,
+				C3E90D1B223086F0001DBF25 /* CoreDataSource.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C3F52F5B21B18C8A00F92897 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -922,27 +1678,62 @@
 /* Begin PBXTargetDependency section */
 		C31FD13C21B092FF007A84F9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C31FD13521B092FF007A84F9 /* Flapjack */;
+			target = C31FD13521B092FF007A84F9 /* Flapjack-iOS */;
 			targetProxy = C31FD13B21B092FF007A84F9 /* PBXContainerItemProxy */;
 		};
 		C31FD1CC21B0996F007A84F9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C31FD1C521B0996F007A84F9 /* FlapjackCoreData */;
+			target = C31FD1C521B0996F007A84F9 /* FlapjackCoreData-iOS */;
 			targetProxy = C31FD1CB21B0996F007A84F9 /* PBXContainerItemProxy */;
 		};
 		C31FD22E21B0A406007A84F9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C31FD13521B092FF007A84F9 /* Flapjack */;
+			target = C31FD13521B092FF007A84F9 /* Flapjack-iOS */;
 			targetProxy = C31FD22D21B0A406007A84F9 /* PBXContainerItemProxy */;
 		};
 		C31FD25921B0A49C007A84F9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C31FD1C521B0996F007A84F9 /* FlapjackCoreData */;
+			target = C31FD1C521B0996F007A84F9 /* FlapjackCoreData-iOS */;
 			targetProxy = C31FD25821B0A49C007A84F9 /* PBXContainerItemProxy */;
+		};
+		C37325D722309245003C9E48 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C31FD13521B092FF007A84F9 /* Flapjack-iOS */;
+			targetProxy = C37325D822309245003C9E48 /* PBXContainerItemProxy */;
+		};
+		C373261E22309346003C9E48 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C37325B82230923D003C9E48 /* Flapjack-tvOS */;
+			targetProxy = C373261D22309346003C9E48 /* PBXContainerItemProxy */;
+		};
+		C3732638223093F6003C9E48 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C37325D622309245003C9E48 /* FlapjackCoreData-tvOS */;
+			targetProxy = C3732637223093F6003C9E48 /* PBXContainerItemProxy */;
+		};
+		C38F9F9E223090000037108A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C3E90CEA22308698001DBF25 /* Flapjack-macOS */;
+			targetProxy = C38F9F9D223090000037108A /* PBXContainerItemProxy */;
+		};
+		C38F9FA3223090080037108A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C3E90D08223086F0001DBF25 /* FlapjackCoreData-macOS */;
+			targetProxy = C38F9FA2223090080037108A /* PBXContainerItemProxy */;
+		};
+		C3E90D4C22308809001DBF25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C3E90CEA22308698001DBF25 /* Flapjack-macOS */;
+			targetProxy = C3E90D4B22308809001DBF25 /* PBXContainerItemProxy */;
+		};
+		C3E90D4E22308810001DBF25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C31FD13521B092FF007A84F9 /* Flapjack-iOS */;
+			targetProxy = C3E90D4D22308810001DBF25 /* PBXContainerItemProxy */;
 		};
 		C3F52F6521B18C8A00F92897 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C3F52F5E21B18C8A00F92897 /* FlapjackUIKit */;
+			target = C3F52F5E21B18C8A00F92897 /* FlapjackUIKit-iOS */;
 			targetProxy = C3F52F6421B18C8A00F92897 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1015,10 +1806,12 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TVOS_DEPLOYMENT_TARGET = 11.0;
 			};
 			name = Debug;
 		};
@@ -1063,9 +1856,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TVOS_DEPLOYMENT_TARGET = 11.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1127,7 +1922,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.oreillymedia.Flapjack;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Flapjack;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 4.2;
@@ -1160,7 +1955,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.oreillymedia.Flapjack;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Flapjack;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1194,7 +1989,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.oreillymedia.FlapjackCoreData;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = FlapjackCoreData;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 4.2;
@@ -1227,7 +2022,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.oreillymedia.FlapjackCoreData;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = FlapjackCoreData;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1250,13 +2045,13 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 5XJYJPRTH5;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				INFOPLIST_FILE = "Tests/Info-iOS.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.oreillymedia.FlapjackTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oreillymedia.FlapjackTests-iOS";
+				PRODUCT_MODULE_NAME = Tests;
+				PRODUCT_NAME = Tests;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1276,14 +2071,461 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5XJYJPRTH5;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				INFOPLIST_FILE = "Tests/Info-iOS.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.oreillymedia.FlapjackTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oreillymedia.FlapjackTests-iOS";
+				PRODUCT_MODULE_NAME = Tests;
+				PRODUCT_NAME = Tests;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C37325D22230923D003C9E48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5XJYJPRTH5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/Flapjack/Core/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oreillymedia.Flapjack;
+				PRODUCT_NAME = Flapjack;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C37325D32230923D003C9E48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5XJYJPRTH5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/Flapjack/Core/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oreillymedia.Flapjack;
+				PRODUCT_NAME = Flapjack;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C37325F022309245003C9E48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5XJYJPRTH5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/Flapjack/Core/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oreillymedia.FlapjackCoreData;
+				PRODUCT_NAME = FlapjackCoreData;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C37325F122309245003C9E48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5XJYJPRTH5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/Flapjack/Core/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oreillymedia.FlapjackCoreData;
+				PRODUCT_NAME = FlapjackCoreData;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C3732600223092DD003C9E48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5XJYJPRTH5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/Flapjack/Core/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oreillymedia.FlapjackUIKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C3732601223092DD003C9E48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5XJYJPRTH5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/Flapjack/Core/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oreillymedia.FlapjackUIKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C373262022309346003C9E48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 5XJYJPRTH5;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Tests/Info-tvOS.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oreillymedia.FlapjackTests-tvOS";
+				PRODUCT_NAME = Tests;
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 12.1;
+			};
+			name = Debug;
+		};
+		C373262122309346003C9E48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5XJYJPRTH5;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Tests/Info-tvOS.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oreillymedia.FlapjackTests-tvOS";
+				PRODUCT_NAME = Tests;
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 12.1;
+			};
+			name = Release;
+		};
+		C38F9FA0223090000037108A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 5XJYJPRTH5;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Tests/Info-macOS.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oreillymedia.FlapjackTests-macOS";
+				PRODUCT_NAME = Tests;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		C38F9FA1223090000037108A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5XJYJPRTH5;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Tests/Info-macOS.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oreillymedia.FlapjackTests-macOS";
+				PRODUCT_NAME = Tests;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		C3E90D0422308698001DBF25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5XJYJPRTH5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/Flapjack/Core/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oreillymedia.Flapjack;
+				PRODUCT_NAME = Flapjack;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C3E90D0522308698001DBF25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5XJYJPRTH5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/Flapjack/Core/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oreillymedia.Flapjack;
+				PRODUCT_NAME = Flapjack;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C3E90D20223086F0001DBF25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5XJYJPRTH5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/Flapjack/Core/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oreillymedia.FlapjackCoreData;
+				PRODUCT_NAME = FlapjackCoreData;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C3E90D21223086F0001DBF25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5XJYJPRTH5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/Flapjack/Core/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oreillymedia.FlapjackCoreData;
+				PRODUCT_NAME = FlapjackCoreData;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -1312,7 +2554,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.oreillymedia.FlapjackUIKit;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = FlapjackUIKit;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 4.2;
@@ -1345,7 +2587,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.oreillymedia.FlapjackUIKit;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = FlapjackUIKit;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1375,7 +2617,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C31FD14121B092FF007A84F9 /* Build configuration list for PBXNativeTarget "Flapjack" */ = {
+		C31FD14121B092FF007A84F9 /* Build configuration list for PBXNativeTarget "Flapjack-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C31FD13F21B092FF007A84F9 /* Debug */,
@@ -1384,7 +2626,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C31FD1CF21B0996F007A84F9 /* Build configuration list for PBXNativeTarget "FlapjackCoreData" */ = {
+		C31FD1CF21B0996F007A84F9 /* Build configuration list for PBXNativeTarget "FlapjackCoreData-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C31FD1D021B0996F007A84F9 /* Debug */,
@@ -1393,7 +2635,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C31FD22F21B0A406007A84F9 /* Build configuration list for PBXNativeTarget "Tests" */ = {
+		C31FD22F21B0A406007A84F9 /* Build configuration list for PBXNativeTarget "Tests-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C31FD23021B0A406007A84F9 /* Debug */,
@@ -1402,7 +2644,70 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C3F52F6821B18C8A00F92897 /* Build configuration list for PBXNativeTarget "FlapjackUIKit" */ = {
+		C37325D12230923D003C9E48 /* Build configuration list for PBXNativeTarget "Flapjack-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C37325D22230923D003C9E48 /* Debug */,
+				C37325D32230923D003C9E48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C37325EF22309245003C9E48 /* Build configuration list for PBXNativeTarget "FlapjackCoreData-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C37325F022309245003C9E48 /* Debug */,
+				C37325F122309245003C9E48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C37325FF223092DD003C9E48 /* Build configuration list for PBXNativeTarget "FlapjackUIKit-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3732600223092DD003C9E48 /* Debug */,
+				C3732601223092DD003C9E48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C373261F22309346003C9E48 /* Build configuration list for PBXNativeTarget "Tests-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C373262022309346003C9E48 /* Debug */,
+				C373262122309346003C9E48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C38F9F9F223090000037108A /* Build configuration list for PBXNativeTarget "Tests-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C38F9FA0223090000037108A /* Debug */,
+				C38F9FA1223090000037108A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3E90D0322308698001DBF25 /* Build configuration list for PBXNativeTarget "Flapjack-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3E90D0422308698001DBF25 /* Debug */,
+				C3E90D0522308698001DBF25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3E90D1F223086F0001DBF25 /* Build configuration list for PBXNativeTarget "FlapjackCoreData-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3E90D20223086F0001DBF25 /* Debug */,
+				C3E90D21223086F0001DBF25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3F52F6821B18C8A00F92897 /* Build configuration list for PBXNativeTarget "FlapjackUIKit-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C3F52F6921B18C8A00F92897 /* Debug */,

@@ -5,7 +5,6 @@
 //  Created by Ben Kreeger on 11/1/18.
 //
 
-import UIKit
 import XCTest
 import CoreData
 

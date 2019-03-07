@@ -64,7 +64,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C31FD22621B0A406007A84F9"
                BuildableName = "Tests.xctest"
-               BlueprintName = "Tests"
+               BlueprintName = "Tests-iOS"
                ReferencedContainer = "container:Flapjack.xcodeproj">
             </BuildableReference>
          </TestableReference>
