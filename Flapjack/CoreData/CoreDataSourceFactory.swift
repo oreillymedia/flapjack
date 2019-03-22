@@ -60,8 +60,8 @@ public class CoreDataSourceFactory {
      - parameter context: The context on which to listen for object changes.
      - returns: A data source that will get notified when the matching object is changed, inserted, or deleted.
      */
-    public func vendObjectDataSource<T: DataObject>(uniqueID: T.PrimaryKeyType, context: DataContext) -> CoreSingleDataSource<T> {
-        return CoreSingleDataSource<T>(context: context, uniqueID: uniqueID, prefetch: [])
+    public func vendObjectDataSource<T: DataObject>(uniqueID: T.PrimaryKeyType, context: DataContext) -> SingleCoreDataSource<T> {
+        return SingleCoreDataSource<T>(context: context, uniqueID: uniqueID, prefetch: [])
     }
 
     /**
@@ -72,7 +72,7 @@ public class CoreDataSourceFactory {
      - parameter context: The context on which to listen for object changes.
      - returns: A data source that will get notified when the matching object is changed, inserted, or deleted.
      */
-    public func vendObjectDataSource<T: DataObject>(attributes: DataContext.Attributes, context: DataContext) -> CoreSingleDataSource<T> {
-        return CoreSingleDataSource<T>(context: context, attributes: attributes, prefetch: [])
+    public func vendObjectDataSource<T: DataObject>(attributes: DataContext.Attributes, context: DataContext) -> SingleCoreDataSource<T> {
+        return SingleCoreDataSource<T>(context: context, attributes: attributes, prefetch: [])
     }
 }

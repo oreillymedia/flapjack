@@ -1,5 +1,5 @@
 //
-//  BaseSingleDataSource.swift
+//  SingleCoreDataSource.swift
 //  Flapjack+CoreData
 //
 //  Created by Ben Kreeger on 2/15/18.
@@ -17,7 +17,7 @@ import Flapjack
  single object described by a set of `attributes`. Invokes the `onChange` clsoure when the monitored object changes in
  the given `DataContext`.
  */
-public class CoreSingleDataSource<T: NSManagedObject & DataObject>: NSObject, SingleDataSource {
+public class SingleCoreDataSource<T: NSManagedObject & DataObject>: NSObject, SingleDataSource {
     public let predicate: NSPredicate
     public private(set) var object: T?
     public private(set) var hasFetched = false

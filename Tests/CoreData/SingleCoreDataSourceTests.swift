@@ -1,5 +1,5 @@
 //
-//  CoreSingleDataSourceTests.swift
+//  SingleCoreDataSourceTests.swift
 //  Tests
 //
 //  Created by Ben Kreeger on 11/30/18.
@@ -13,9 +13,9 @@ import CoreData
 @testable import Flapjack
 @testable import FlapjackCoreData
 
-class CoreSingleDataSourceTests: XCTestCase {
+class SingleCoreDataSourceTests: XCTestCase {
     private var dataAccess: DataAccess!
-    private var dataSource: CoreSingleDataSource<MockEntity>!
+    private var dataSource: SingleCoreDataSource<MockEntity>!
     private var attributes: [String: String] {
         return ["someProperty": "someValue"]
     }
@@ -28,7 +28,7 @@ class CoreSingleDataSourceTests: XCTestCase {
         dataAccess.prepareStack(asynchronously: false, completion: { _ in })
 
         entity = dataAccess.mainContext.create(MockEntity.self, attributes: attributes)
-        dataSource = CoreSingleDataSource<MockEntity>(context: dataAccess.mainContext, attributes: attributes, prefetch: [])
+        dataSource = SingleCoreDataSource<MockEntity>(context: dataAccess.mainContext, attributes: attributes, prefetch: [])
     }
 
     override func tearDown() {

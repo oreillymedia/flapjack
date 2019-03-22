@@ -41,7 +41,7 @@
 		C31FD20B21B099B9007A84F9 /* NSManagedObjectID+DataObjectID.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD18121B095DE007A84F9 /* NSManagedObjectID+DataObjectID.swift */; };
 		C31FD20C21B099B9007A84F9 /* NSManagedObject+DataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD18221B095DE007A84F9 /* NSManagedObject+DataObject.swift */; };
 		C31FD20D21B099B9007A84F9 /* NSFetchedResultsChangeType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD18321B095DE007A84F9 /* NSFetchedResultsChangeType+Extensions.swift */; };
-		C31FD20E21B099B9007A84F9 /* CoreSingleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17C21B095DE007A84F9 /* CoreSingleDataSource.swift */; };
+		C31FD20E21B099B9007A84F9 /* SingleCoreDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17C21B095DE007A84F9 /* SingleCoreDataSource.swift */; };
 		C31FD20F21B099B9007A84F9 /* CoreDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17D21B095DE007A84F9 /* CoreDataAccess.swift */; };
 		C31FD21021B099B9007A84F9 /* CoreDataSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD18421B095DE007A84F9 /* CoreDataSourceFactory.swift */; };
 		C31FD21121B099B9007A84F9 /* CoreDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD18521B095DE007A84F9 /* CoreDataSource.swift */; };
@@ -94,7 +94,7 @@
 		C37325E122309245003C9E48 /* NSManagedObjectID+DataObjectID.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD18121B095DE007A84F9 /* NSManagedObjectID+DataObjectID.swift */; };
 		C37325E222309245003C9E48 /* MigrationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F8CCC521C4697E00199781 /* MigrationPolicy.swift */; };
 		C37325E322309245003C9E48 /* CoreDataMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F52F7521B1E4C700F92897 /* CoreDataMigrator.swift */; };
-		C37325E422309245003C9E48 /* CoreSingleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17C21B095DE007A84F9 /* CoreSingleDataSource.swift */; };
+		C37325E422309245003C9E48 /* SingleCoreDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17C21B095DE007A84F9 /* SingleCoreDataSource.swift */; };
 		C37325E522309245003C9E48 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16F21B095DE007A84F9 /* Collection+Extensions.swift */; };
 		C37325E622309245003C9E48 /* NSManagedObject+DataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD18221B095DE007A84F9 /* NSManagedObject+DataObject.swift */; };
 		C37325E722309245003C9E48 /* CoreDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17D21B095DE007A84F9 /* CoreDataAccess.swift */; };
@@ -123,7 +123,7 @@
 		C373262D223093BA003C9E48 /* NSFetchedResultsChangeTypeExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD24521B0A423007A84F9 /* NSFetchedResultsChangeTypeExtensionsTests.swift */; };
 		C373262E223093BA003C9E48 /* NSManagedObjectContextDataContextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD24621B0A423007A84F9 /* NSManagedObjectContextDataContextTests.swift */; };
 		C373262F223093BA003C9E48 /* CoreDataAccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD24721B0A423007A84F9 /* CoreDataAccessTests.swift */; };
-		C3732630223093BA003C9E48 /* CoreSingleDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F52F6F21B19C2E00F92897 /* CoreSingleDataSourceTests.swift */; };
+		C3732630223093BA003C9E48 /* SingleCoreDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F52F6F21B19C2E00F92897 /* SingleCoreDataSourceTests.swift */; };
 		C3732631223093BA003C9E48 /* CoreDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F52F7121B1A50800F92897 /* CoreDataSourceTests.swift */; };
 		C3732632223093BA003C9E48 /* CoreDataMigratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F52F7921B1FBC600F92897 /* CoreDataMigratorTests.swift */; };
 		C3732633223093BD003C9E48 /* TestMigrationModel 4.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = C3F8CCC321C468DC00199781 /* TestMigrationModel 4.xcmappingmodel */; };
@@ -148,7 +148,7 @@
 		C38F9FAF223090810037108A /* NSFetchedResultsChangeTypeExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD24521B0A423007A84F9 /* NSFetchedResultsChangeTypeExtensionsTests.swift */; };
 		C38F9FB0223090810037108A /* NSManagedObjectContextDataContextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD24621B0A423007A84F9 /* NSManagedObjectContextDataContextTests.swift */; };
 		C38F9FB1223090810037108A /* CoreDataAccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD24721B0A423007A84F9 /* CoreDataAccessTests.swift */; };
-		C38F9FB2223090810037108A /* CoreSingleDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F52F6F21B19C2E00F92897 /* CoreSingleDataSourceTests.swift */; };
+		C38F9FB2223090810037108A /* SingleCoreDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F52F6F21B19C2E00F92897 /* SingleCoreDataSourceTests.swift */; };
 		C38F9FB3223090810037108A /* CoreDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F52F7121B1A50800F92897 /* CoreDataSourceTests.swift */; };
 		C38F9FB4223090810037108A /* CoreDataMigratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F52F7921B1FBC600F92897 /* CoreDataMigratorTests.swift */; };
 		C38F9FB52230908F0037108A /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C31FD24221B0A423007A84F9 /* TestModel.xcdatamodeld */; };
@@ -180,7 +180,7 @@
 		C3E90D11223086F0001DBF25 /* NSManagedObjectID+DataObjectID.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD18121B095DE007A84F9 /* NSManagedObjectID+DataObjectID.swift */; };
 		C3E90D12223086F0001DBF25 /* MigrationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F8CCC521C4697E00199781 /* MigrationPolicy.swift */; };
 		C3E90D13223086F0001DBF25 /* CoreDataMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F52F7521B1E4C700F92897 /* CoreDataMigrator.swift */; };
-		C3E90D14223086F0001DBF25 /* CoreSingleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17C21B095DE007A84F9 /* CoreSingleDataSource.swift */; };
+		C3E90D14223086F0001DBF25 /* SingleCoreDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17C21B095DE007A84F9 /* SingleCoreDataSource.swift */; };
 		C3E90D15223086F0001DBF25 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16F21B095DE007A84F9 /* Collection+Extensions.swift */; };
 		C3E90D16223086F0001DBF25 /* NSManagedObject+DataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD18221B095DE007A84F9 /* NSManagedObject+DataObject.swift */; };
 		C3E90D17223086F0001DBF25 /* CoreDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17D21B095DE007A84F9 /* CoreDataAccess.swift */; };
@@ -194,7 +194,7 @@
 		C3F52F6B21B18CAE00F92897 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17921B095DE007A84F9 /* UITableView+Extensions.swift */; };
 		C3F52F6C21B18CB100F92897 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17A21B095DE007A84F9 /* UICollectionView+Extensions.swift */; };
 		C3F52F6D21B18CCD00F92897 /* Flapjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C31FD13621B092FF007A84F9 /* Flapjack.framework */; };
-		C3F52F7021B19C2E00F92897 /* CoreSingleDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F52F6F21B19C2E00F92897 /* CoreSingleDataSourceTests.swift */; };
+		C3F52F7021B19C2E00F92897 /* SingleCoreDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F52F6F21B19C2E00F92897 /* SingleCoreDataSourceTests.swift */; };
 		C3F52F7221B1A50800F92897 /* CoreDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F52F7121B1A50800F92897 /* CoreDataSourceTests.swift */; };
 		C3F52F7421B1E43E00F92897 /* Migrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F52F7321B1E43E00F92897 /* Migrator.swift */; };
 		C3F52F7621B1E4C700F92897 /* CoreDataMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F52F7521B1E4C700F92897 /* CoreDataMigrator.swift */; };
@@ -336,7 +336,7 @@
 		C31FD17621B095DE007A84F9 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		C31FD17921B095DE007A84F9 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		C31FD17A21B095DE007A84F9 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
-		C31FD17C21B095DE007A84F9 /* CoreSingleDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreSingleDataSource.swift; sourceTree = "<group>"; };
+		C31FD17C21B095DE007A84F9 /* SingleCoreDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleCoreDataSource.swift; sourceTree = "<group>"; };
 		C31FD17D21B095DE007A84F9 /* CoreDataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataAccess.swift; sourceTree = "<group>"; };
 		C31FD17F21B095DE007A84F9 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
 		C31FD18021B095DE007A84F9 /* NSManagedObjectContext+DataContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+DataContext.swift"; sourceTree = "<group>"; };
@@ -386,7 +386,7 @@
 		C3E90D0622308698001DBF25 /* Flapjack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Flapjack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3E90D22223086F0001DBF25 /* FlapjackCoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlapjackCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F52F5F21B18C8A00F92897 /* FlapjackUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlapjackUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C3F52F6F21B19C2E00F92897 /* CoreSingleDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreSingleDataSourceTests.swift; sourceTree = "<group>"; };
+		C3F52F6F21B19C2E00F92897 /* SingleCoreDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCoreDataSourceTests.swift; sourceTree = "<group>"; };
 		C3F52F7121B1A50800F92897 /* CoreDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSourceTests.swift; sourceTree = "<group>"; };
 		C3F52F7321B1E43E00F92897 /* Migrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Migrator.swift; sourceTree = "<group>"; };
 		C3F52F7521B1E4C700F92897 /* CoreDataMigrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMigrator.swift; sourceTree = "<group>"; };
@@ -625,7 +625,7 @@
 			isa = PBXGroup;
 			children = (
 				C31FD17E21B095DE007A84F9 /* Extensions */,
-				C31FD17C21B095DE007A84F9 /* CoreSingleDataSource.swift */,
+				C31FD17C21B095DE007A84F9 /* SingleCoreDataSource.swift */,
 				C31FD17D21B095DE007A84F9 /* CoreDataAccess.swift */,
 				C31FD18421B095DE007A84F9 /* CoreDataSourceFactory.swift */,
 				C31FD18521B095DE007A84F9 /* CoreDataSource.swift */,
@@ -732,7 +732,7 @@
 				C31FD24121B0A423007A84F9 /* Resources */,
 				C31FD24421B0A423007A84F9 /* Extensions */,
 				C31FD24721B0A423007A84F9 /* CoreDataAccessTests.swift */,
-				C3F52F6F21B19C2E00F92897 /* CoreSingleDataSourceTests.swift */,
+				C3F52F6F21B19C2E00F92897 /* SingleCoreDataSourceTests.swift */,
 				C3F52F7121B1A50800F92897 /* CoreDataSourceTests.swift */,
 				C3F52F7921B1FBC600F92897 /* CoreDataMigratorTests.swift */,
 			);
@@ -1464,7 +1464,7 @@
 				C31FD20B21B099B9007A84F9 /* NSManagedObjectID+DataObjectID.swift in Sources */,
 				C3F8CCC621C4697E00199781 /* MigrationPolicy.swift in Sources */,
 				C3F52F7621B1E4C700F92897 /* CoreDataMigrator.swift in Sources */,
-				C31FD20E21B099B9007A84F9 /* CoreSingleDataSource.swift in Sources */,
+				C31FD20E21B099B9007A84F9 /* SingleCoreDataSource.swift in Sources */,
 				C31FD21921B09B9B007A84F9 /* Collection+Extensions.swift in Sources */,
 				C31FD20C21B099B9007A84F9 /* NSManagedObject+DataObject.swift in Sources */,
 				C31FD20F21B099B9007A84F9 /* CoreDataAccess.swift in Sources */,
@@ -1486,7 +1486,7 @@
 				C3F8CCBA21C4513F00199781 /* TestMigrationModel.xcdatamodeld in Sources */,
 				C31FD24D21B0A423007A84F9 /* NSCompoundPredicate+ExtensionsTests.swift in Sources */,
 				C31FD25021B0A423007A84F9 /* MockEntity.swift in Sources */,
-				C3F52F7021B19C2E00F92897 /* CoreSingleDataSourceTests.swift in Sources */,
+				C3F52F7021B19C2E00F92897 /* SingleCoreDataSourceTests.swift in Sources */,
 				C31FD24B21B0A423007A84F9 /* DataAccessErrorTests.swift in Sources */,
 				C31FD24921B0A423007A84F9 /* DataContextErrorTests.swift in Sources */,
 				C3F8CCCA21C46ADE00199781 /* MockMigrationPolicy.swift in Sources */,
@@ -1539,7 +1539,7 @@
 				C37325E122309245003C9E48 /* NSManagedObjectID+DataObjectID.swift in Sources */,
 				C37325E222309245003C9E48 /* MigrationPolicy.swift in Sources */,
 				C37325E322309245003C9E48 /* CoreDataMigrator.swift in Sources */,
-				C37325E422309245003C9E48 /* CoreSingleDataSource.swift in Sources */,
+				C37325E422309245003C9E48 /* SingleCoreDataSource.swift in Sources */,
 				C37325E522309245003C9E48 /* Collection+Extensions.swift in Sources */,
 				C37325E622309245003C9E48 /* NSManagedObject+DataObject.swift in Sources */,
 				C37325E722309245003C9E48 /* CoreDataAccess.swift in Sources */,
@@ -1581,7 +1581,7 @@
 				C3732622223093BA003C9E48 /* DataContextErrorTests.swift in Sources */,
 				C3732633223093BD003C9E48 /* TestMigrationModel 4.xcmappingmodel in Sources */,
 				C3732631223093BA003C9E48 /* CoreDataSourceTests.swift in Sources */,
-				C3732630223093BA003C9E48 /* CoreSingleDataSourceTests.swift in Sources */,
+				C3732630223093BA003C9E48 /* SingleCoreDataSourceTests.swift in Sources */,
 				C3732628223093BA003C9E48 /* Collection+ExtensionsTests.swift in Sources */,
 				C3732627223093BA003C9E48 /* Dictionary+ExtensionsTests.swift in Sources */,
 				C3732625223093BA003C9E48 /* Array+ExtensionsTests.swift in Sources */,
@@ -1596,7 +1596,7 @@
 				C38F9FB1223090810037108A /* CoreDataAccessTests.swift in Sources */,
 				C38F9FB3223090810037108A /* CoreDataSourceTests.swift in Sources */,
 				C38F9FAF223090810037108A /* NSFetchedResultsChangeTypeExtensionsTests.swift in Sources */,
-				C38F9FB2223090810037108A /* CoreSingleDataSourceTests.swift in Sources */,
+				C38F9FB2223090810037108A /* SingleCoreDataSourceTests.swift in Sources */,
 				C38F9FAD223090790037108A /* MockMigrator.swift in Sources */,
 				C38F9FA4223090760037108A /* DataContextErrorTests.swift in Sources */,
 				C38F9FB62230908F0037108A /* TestMigrationModel.xcdatamodeld in Sources */,
@@ -1652,7 +1652,7 @@
 				C3E90D11223086F0001DBF25 /* NSManagedObjectID+DataObjectID.swift in Sources */,
 				C3E90D12223086F0001DBF25 /* MigrationPolicy.swift in Sources */,
 				C3E90D13223086F0001DBF25 /* CoreDataMigrator.swift in Sources */,
-				C3E90D14223086F0001DBF25 /* CoreSingleDataSource.swift in Sources */,
+				C3E90D14223086F0001DBF25 /* SingleCoreDataSource.swift in Sources */,
 				C3E90D15223086F0001DBF25 /* Collection+Extensions.swift in Sources */,
 				C3E90D16223086F0001DBF25 /* NSManagedObject+DataObject.swift in Sources */,
 				C3E90D17223086F0001DBF25 /* CoreDataAccess.swift in Sources */,
