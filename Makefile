@@ -11,7 +11,7 @@ test-macos:
 test-tvos:
 	xcodebuild -project Flapjack.xcodeproj -scheme "Tests-tvOS" -destination 'platform=tvOS Simulator,name=Apple TV 4K,OS=latest' test | xcpretty --color
 
-cocoapods-deploy: cocoapods-preflight
+cocoapods-deploy:
 	pod trunk push Flapjack.podspec
 
 cocoapods-preflight:

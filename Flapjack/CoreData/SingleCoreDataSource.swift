@@ -1,5 +1,5 @@
 //
-//  BaseSingleDataSource.swift
+//  SingleCoreDataSource.swift
 //  Flapjack+CoreData
 //
 //  Created by Ben Kreeger on 2/15/18.
@@ -17,7 +17,7 @@ import Flapjack
  single object described by a set of `attributes`. Invokes the `onChange` clsoure when the monitored object changes in
  the given `DataContext`.
  */
-public class CoreSingleDataSource<T: NSManagedObject & DataObject>: NSObject, SingleDataSource {
+public class SingleCoreDataSource<T: NSManagedObject & DataObject>: NSObject, SingleDataSource {
     public let predicate: NSPredicate
     public private(set) var object: T?
     public private(set) var hasFetched = false
@@ -97,7 +97,7 @@ public class CoreSingleDataSource<T: NSManagedObject & DataObject>: NSObject, Si
      into the `object` property. Immediately invokes the `onChange` block upon completion and passes in the object if
      found.
      */
-    public func execute() {
+    public func startListening() {
         if !isListening {
             NotificationCenter.default.addObserver(self, selector: #selector(objectsDidChange(_:)), name: .NSManagedObjectContextObjectsDidChange, object: nil)
             NotificationCenter.default.addObserver(self, selector: #selector(contextWasCreated(_:)), name: CoreDataAccess.didCreateNewMainContextNotification, object: nil)

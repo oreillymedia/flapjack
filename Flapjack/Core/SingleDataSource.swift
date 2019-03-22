@@ -27,5 +27,5 @@ public protocol SingleDataSource {
     var onChange: ((ModelType?) -> Void)? { get set }
 
     /// Tells the data source to perform its operation and retain the matching result.
-    func execute()
+    func startListening()
 }
