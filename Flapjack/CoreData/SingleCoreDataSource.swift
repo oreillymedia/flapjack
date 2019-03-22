@@ -97,7 +97,7 @@ public class SingleCoreDataSource<T: NSManagedObject & DataObject>: NSObject, Si
      into the `object` property. Immediately invokes the `onChange` block upon completion and passes in the object if
      found.
      */
-    public func execute() {
+    public func startListening() {
         if !isListening {
             NotificationCenter.default.addObserver(self, selector: #selector(objectsDidChange(_:)), name: .NSManagedObjectContextObjectsDidChange, object: nil)
             NotificationCenter.default.addObserver(self, selector: #selector(contextWasCreated(_:)), name: CoreDataAccess.didCreateNewMainContextNotification, object: nil)

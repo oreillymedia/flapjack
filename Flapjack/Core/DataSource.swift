@@ -37,7 +37,7 @@ public protocol DataSource {
     var onChange: OnChangeClosure? { get set }
 
     /// Tells the data source to perform its operation and retain the matching results.
-    func execute()
+    func startListening()
 
     /**
      Provides a count of the number of objects in the section at a given section index. If the given section index

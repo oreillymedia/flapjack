@@ -130,7 +130,7 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
      Tells the fetched results controller to fetch its initial results, and start listening for any new changes that
      come about matching our supplied predicate. If a fetch has already been executed, this method is a no-op.
      */
-    public func execute() {
+    public func startListening() {
         guard !hasExecuted else {
             return
         }
