@@ -26,7 +26,7 @@ class AutomaticViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        dataSource.execute()
+        dataSource.startListening()
     }
 
 
