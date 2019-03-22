@@ -66,13 +66,13 @@
                 <a class="nav-group-task-link" href="Classes/CoreDataSourceFactory.html">CoreDataSourceFactory</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/CoreSingleDataSource.html">CoreSingleDataSource</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/Logger.html">Logger</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/MigrationPolicy.html">MigrationPolicy</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/SingleCoreDataSource.html">SingleCoreDataSource</a>
               </li>
             </ul>
           </li>
@@ -343,43 +343,6 @@ lookup change, get deleted, or when new objects are added that match the attribu
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Flapjack20CoreSingleDataSourceC"></a>
-                    <a name="//apple_ref/swift/Class/CoreSingleDataSource" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack20CoreSingleDataSourceC">CoreSingleDataSource</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Listens for changes in an <code>NSManagedObjectContext</code> based on the <code>NSManagedObjectContextDidChange</code> notification for a
-single object described by a set of <code>attributes</code>. Invokes the <code>onChange</code> clsoure when the monitored object changes in
-the given <code><a href="Protocols/DataContext.html">DataContext</a></code>.</p>
-
-                        <a href="Classes/CoreSingleDataSource.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">CoreSingleDataSource</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt"><a href="Protocols/SingleDataSource.html">SingleDataSource</a></span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">NSManagedObject</span><span class="p">,</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="Protocols/DataObject.html">DataObject</a></span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreSingleDataSource.swift#L20-L159">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/c:@M@Flapjack@objc(cs)MigrationPolicy"></a>
                     <a name="//apple_ref/swift/Class/MigrationPolicy" class="dashAnchor"></a>
                     <a class="token" href="#/c:@M@Flapjack@objc(cs)MigrationPolicy">MigrationPolicy</a>
@@ -417,13 +380,50 @@ make them Swift-y and much easier to deal with.</p>
                 </li>
               </ul>
             </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack20SingleCoreDataSourceC"></a>
+                    <a name="//apple_ref/swift/Class/SingleCoreDataSource" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack20SingleCoreDataSourceC">SingleCoreDataSource</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Listens for changes in an <code>NSManagedObjectContext</code> based on the <code>NSManagedObjectContextDidChange</code> notification for a
+single object described by a set of <code>attributes</code>. Invokes the <code>onChange</code> clsoure when the monitored object changes in
+the given <code><a href="Protocols/DataContext.html">DataContext</a></code>.</p>
+
+                        <a href="Classes/SingleCoreDataSource.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">SingleCoreDataSource</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt"><a href="Protocols/SingleDataSource.html">SingleDataSource</a></span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">NSManagedObject</span><span class="p">,</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="Protocols/DataObject.html">DataObject</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/SingleCoreDataSource.swift#L20-L159">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </section>
 
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://oreilly.com" target="_blank" rel="external">O&#39;Reilly Media, Inc.</a>. All rights reserved. (Last updated: 2019-03-07)</p>
+      <p>&copy; 2019 <a class="link" href="https://oreilly.com" target="_blank" rel="external">O&#39;Reilly Media, Inc.</a>. All rights reserved. (Last updated: 2019-03-22)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
