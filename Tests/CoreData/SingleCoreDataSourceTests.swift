@@ -46,11 +46,11 @@ class SingleCoreDataSourceTests: XCTestCase {
 
     func testExecutionFetchesRightAway() {
         XCTAssertNil(dataSource.object)
-        dataSource.execute()
+        dataSource.startListening()
         XCTAssertEqual(dataSource.object, entity)
     }
 
-    func testCoreDataNotificationNotPickedUpBeforeExecute() {
+    func testCoreDataNotificationNotPickedUpBeforestartListening() {
         let expect = expectation(description: "did change block")
         expect.isInverted = true
         dataSource.onChange = { object in
@@ -68,7 +68,7 @@ class SingleCoreDataSourceTests: XCTestCase {
         dataSource.onChange = { object in
             expect.fulfill()
         }
-        dataSource.execute()
+        dataSource.startListening()
         waitForExpectations(timeout: 0.5) { XCTAssertNil($0) }
     }
 
@@ -78,7 +78,7 @@ class SingleCoreDataSourceTests: XCTestCase {
         dataSource.onChange = { object in
             expect.fulfill()
         }
-        dataSource.execute()
+        dataSource.startListening()
         entity.someProperty = "some new value"
         dataAccess.mainContext.persist()
         waitForExpectations(timeout: 0.5) { XCTAssertNil($0) }
@@ -90,7 +90,7 @@ class SingleCoreDataSourceTests: XCTestCase {
         dataSource.onChange = { object in
             expect.fulfill()
         }
-        dataSource.execute()
+        dataSource.startListening()
         entity.someProperty = "some new value"
         dataAccess.mainContext.processPendingChanges()
         waitForExpectations(timeout: 0.5) { XCTAssertNil($0) }
@@ -105,7 +105,7 @@ class SingleCoreDataSourceTests: XCTestCase {
         dataSource.onChange = { object in
             expect.fulfill()
         }
-        dataSource.execute()
+        dataSource.startListening()
         entity.someProperty = "some new value"
         otherEntity.someProperty = "other other value"
         dataAccess.mainContext.persist()
@@ -116,7 +116,7 @@ class SingleCoreDataSourceTests: XCTestCase {
         dataAccess.mainContext.destroy(object: entity)
         dataAccess.mainContext.persist()
 
-        dataSource.execute()
+        dataSource.startListening()
         XCTAssertNil(dataSource.object)
     }
 
@@ -126,7 +126,7 @@ class SingleCoreDataSourceTests: XCTestCase {
         dataSource.onChange = { object in
             expect.fulfill()
         }
-        dataSource.execute()
+        dataSource.startListening()
         dataAccess.mainContext.destroy(object: entity)
         waitForExpectations(timeout: 0.5) { XCTAssertNil($0) }
         XCTAssertNil(dataSource.object)
@@ -141,7 +141,7 @@ class SingleCoreDataSourceTests: XCTestCase {
         dataSource.onChange = { object in
             expect.fulfill()
         }
-        dataSource.execute()
+        dataSource.startListening()
         XCTAssertNil(dataSource.object)
 
         let newEntity = dataAccess.mainContext.create(MockEntity.self, attributes: attributes)
@@ -159,7 +159,7 @@ class SingleCoreDataSourceTests: XCTestCase {
         dataSource.onChange = { object in
             expect.fulfill()
         }
-        dataSource.execute()
+        dataSource.startListening()
 
         entity.someProperty = "some new value"
         newEntity.someProperty = attributes["someProperty"]

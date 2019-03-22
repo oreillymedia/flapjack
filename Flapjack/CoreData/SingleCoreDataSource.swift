@@ -145,7 +145,7 @@ public class SingleCoreDataSource<T: NSManagedObject & DataObject>: NSObject, Si
 
         // Store our newly-minted context, and refetch.
         self.context = newContext
-        execute()
+        startListening()
     }
 
     @objc

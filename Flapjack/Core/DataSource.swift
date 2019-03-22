@@ -87,7 +87,8 @@ public protocol DataSource {
 /**
  This stub implementation of `DataSource` makes it relatively easy to build your own by only having to implement a few
  short properties/functions, especially if you're managing a non-grouped set of objects. Simply implement `allObjects`
- and `execute()`, make sure you call `onChange` when the data set changes, and everything else should hinge on that.
+ and `startListening()`, make sure you call `onChange` when the data set changes, and everything else should hinge on
+ that.
  */
 public extension DataSource {
     /// If not implemented, this returns the `count` of `allObjects`.

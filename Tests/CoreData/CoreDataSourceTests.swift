@@ -56,7 +56,7 @@ class CoreDataSourceTests: XCTestCase {
 
     func testObjectsArePopulatedAfterExecution() {
         let dataSource = CoreDataSource<MockEntity>(dataAccess: dataAccess)
-        dataSource.execute()
+        dataSource.startListening()
         XCTAssertEqual(dataSource.numberOfObjects, 5)
         XCTAssertEqual(dataSource.allObjects.count, 5)
         XCTAssertEqual(dataSource.numberOfSections, 1)
@@ -88,7 +88,7 @@ class CoreDataSourceTests: XCTestCase {
             XCTAssertEqual(items.count, 2)
             XCTAssertEqual(sections.count, 0)
         }
-        dataSource.execute()
+        dataSource.startListening()
         _ = dataAccess.mainContext.create(MockEntity.self, attributes: ["someProperty": "someValue alpha"])
         dataAccess.mainContext.destroy(object: entityOne)
         dataAccess.mainContext.persist()
@@ -100,7 +100,7 @@ class CoreDataSourceTests: XCTestCase {
 
     func testFilteredFetchOnlyReturnsThoseMatching() {
         let dataSource = CoreDataSource<MockEntity>(dataAccess: dataAccess, attributes: ["someProperty": "someValue alpha"])
-        dataSource.execute()
+        dataSource.startListening()
         XCTAssertEqual(dataSource.numberOfObjects, 2)
         XCTAssertEqual(dataSource.allObjects.count, 2)
         XCTAssertTrue(dataSource.allObjects.contains(entityOne))
@@ -111,7 +111,7 @@ class CoreDataSourceTests: XCTestCase {
 
     func testFilteredAutomaticallyUpdatesAllObjectsOnChange() {
         let dataSource = CoreDataSource<MockEntity>(dataAccess: dataAccess, attributes: ["someProperty": "someValue alpha"])
-        dataSource.execute()
+        dataSource.startListening()
         XCTAssertEqual(dataSource.numberOfObjects, 2)
         XCTAssertEqual(dataSource.allObjects.count, 2)
 
@@ -123,7 +123,7 @@ class CoreDataSourceTests: XCTestCase {
 
     func testFilteredAutomaticallyUpdatesAllObjectsOnDestroy() {
         let dataSource = CoreDataSource<MockEntity>(dataAccess: dataAccess, attributes: ["someProperty": "someValue alpha"])
-        dataSource.execute()
+        dataSource.startListening()
         XCTAssertEqual(dataSource.numberOfObjects, 2)
         XCTAssertEqual(dataSource.allObjects.count, 2)
         dataAccess.mainContext.destroy(object: entityOne)
@@ -134,7 +134,7 @@ class CoreDataSourceTests: XCTestCase {
 
     func testFilteredAutomaticallyIncludesNewMatchingObjects() {
         let dataSource = CoreDataSource<MockEntity>(dataAccess: dataAccess, attributes: ["someProperty": "someValue alpha"])
-        dataSource.execute()
+        dataSource.startListening()
         XCTAssertEqual(dataSource.numberOfObjects, 2)
         XCTAssertEqual(dataSource.allObjects.count, 2)
 
@@ -150,7 +150,7 @@ class CoreDataSourceTests: XCTestCase {
 
     func testSortedReturnsObjectsInProperOrder() {
         let dataSource = CoreDataSource<MockEntity>(dataAccess: dataAccess, sorters: [SortDescriptor("someProperty", ascending: false)])
-        dataSource.execute()
+        dataSource.startListening()
         // entityOne and entityTwo could be in either position 1 or 2
         XCTAssertEqual(dataSource.allObjects.first, entityFour)
         XCTAssertEqual(dataSource.allObjects.last, entityFive)
@@ -158,7 +158,7 @@ class CoreDataSourceTests: XCTestCase {
 
     func testSortedReturnsObjectsInProperOrderEvenWithNewItemsOrChanges() {
         let dataSource = CoreDataSource<MockEntity>(dataAccess: dataAccess, sorters: [SortDescriptor("someProperty", ascending: false)])
-        dataSource.execute()
+        dataSource.startListening()
         XCTAssertEqual(dataSource.allObjects.first, entityFour)
         XCTAssertEqual(dataSource.allObjects.last, entityFive)
 
@@ -184,7 +184,7 @@ class CoreDataSourceTests: XCTestCase {
             XCTAssertEqual(sections.count, 3)
         }
 
-        dataSource.execute()
+        dataSource.startListening()
 
         XCTAssertEqual(dataSource.numberOfObjects, 5)
         XCTAssertEqual(dataSource.numberOfSections, 4)
@@ -207,7 +207,7 @@ class CoreDataSourceTests: XCTestCase {
 
     func testLimitedOnlyReturnsThoseFallingInUnderTheLimit() {
         let dataSource = CoreDataSource<MockEntity>(dataAccess: dataAccess, sorters: [SortDescriptor("someProperty", ascending: false)], limit: 2)
-        dataSource.execute()
+        dataSource.startListening()
         XCTAssertEqual(dataSource.numberOfObjects, 2)
         XCTAssertEqual(dataSource.allObjects.count, 2)
         XCTAssertFalse(dataSource.allObjects.contains(entityOne))
@@ -219,7 +219,7 @@ class CoreDataSourceTests: XCTestCase {
 
     func testLimitedAutomaticallyUpdatesAllObjectsOnChange() {
         let dataSource = CoreDataSource<MockEntity>(dataAccess: dataAccess, sorters: [SortDescriptor("someProperty", ascending: false)], limit: 2)
-        dataSource.execute()
+        dataSource.startListening()
         XCTAssertEqual(dataSource.numberOfObjects, 2)
         XCTAssertEqual(dataSource.allObjects.count, 2)
 
