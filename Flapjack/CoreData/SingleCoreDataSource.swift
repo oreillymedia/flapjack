@@ -133,9 +133,8 @@ public class SingleCoreDataSource<T: NSManagedObject & DataObject>: NSObject, Si
         if let filtered = findObjectFrom(objects: theRest) {
             hasFetched = true
             object = filtered
+            onChange?(object)
         }
-
-        onChange?(object)
     }
 
     @objc
