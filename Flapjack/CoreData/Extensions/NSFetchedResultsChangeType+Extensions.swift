@@ -15,10 +15,11 @@ import Flapjack
 extension NSFetchedResultsChangeType: CustomStringConvertible {
     public var description: String {
         switch self {
-        case .delete: return "delete"
-        case .insert: return "insert"
-        case .update: return "update"
-        case .move:   return "move"
+        case .delete:     return "delete"
+        case .insert:     return "insert"
+        case .update:     return "update"
+        case .move:       return "move"
+        @unknown default: return "@unknown"
         }
     }
 
@@ -27,6 +28,7 @@ extension NSFetchedResultsChangeType: CustomStringConvertible {
         case .insert: return .insert(section: section)
         case .delete: return .delete(section: section)
         case .update, .move: return nil
+        @unknown default: return nil
         }
     }
 
@@ -55,6 +57,8 @@ extension NSFetchedResultsChangeType: CustomStringConvertible {
                 return nil
             }
             return .update(path: path)
+        @unknown default:
+            return nil
         }
     }
 }

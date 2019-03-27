@@ -15,11 +15,11 @@ class ArrayExtensionsTests: XCTestCase {
         // WITHOUT using pointer comparison, we settle for equality using index(of:)
         let toFind2 = MockEquatable("peach")
         let array2 = [MockEquatable("raspberry"), MockEquatable("peach"), toFind2]
-        XCTAssertEqual(array2.index(of: toFind2, pointerComparison: false), 1)
-        XCTAssertEqual(array2.index(of: toFind2), 1)
+        XCTAssertEqual(array2.firstIndex(of: toFind2, pointerComparison: false), 1)
+        XCTAssertEqual(array2.firstIndex(of: toFind2), 1)
 
         // But again, pointer comparison gets us true object identity
-        XCTAssertEqual(array2.index(of: toFind2, pointerComparison: true), 2)
+        XCTAssertEqual(array2.firstIndex(of: toFind2, pointerComparison: true), 2)
     }
 
     func testSortedUsingDescriptors() {
@@ -35,14 +35,14 @@ class ArrayExtensionsTests: XCTestCase {
 
 private class MockEquatable: NSObject {
     // To be key-value compliant.
-    @objc let string: String
+    @objc fileprivate let string: String
 
-    init(_ string: String) {
+    fileprivate init(_ string: String) {
         self.string = string
         super.init()
     }
 
-    override func isEqual(_ object: Any?) -> Bool {
+    override fileprivate func isEqual(_ object: Any?) -> Bool {
         guard let object = object as? MockEquatable else {
             return false
         }
