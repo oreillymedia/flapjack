@@ -74,7 +74,6 @@ class SingleCoreDataSourceTests: XCTestCase {
 
     func testObjectDidChangeBlockFiresForSavesInvolvingObject() {
         let expect = expectation(description: "did change block")
-        expect.expectedFulfillmentCount = 2
         dataSource.onChange = { object in
             expect.fulfill()
         }
@@ -86,7 +85,6 @@ class SingleCoreDataSourceTests: XCTestCase {
 
     func testObjectDidChangeBlockFiresForChangeProcessesInvolvingObject() {
         let expect = expectation(description: "did change block")
-        expect.expectedFulfillmentCount = 2
         dataSource.onChange = { object in
             expect.fulfill()
         }
@@ -101,7 +99,6 @@ class SingleCoreDataSourceTests: XCTestCase {
         dataAccess.mainContext.persist()
 
         let expect = expectation(description: "did change block")
-        expect.expectedFulfillmentCount = 2
         dataSource.onChange = { object in
             expect.fulfill()
         }
