@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name        = 'Flapjack'
-  s.version     = '0.3.0'
+  s.version     = '0.4.0'
   s.summary     = 'A Swift data persistence API with support for Core Data.'
   s.description = <<-DESC
 Flapjack is an iOS/macOS/tvOS framework with 2 primary goals.
@@ -29,7 +29,7 @@ like what you see, perhaps you will too.
   s.osx.deployment_target  = '10.13'
 
   s.frameworks = 'Foundation'
-  s.swift_version = '4.2'
+  s.swift_version = '5.0'
 
   s.default_subspec = 'Core'
 

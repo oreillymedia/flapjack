@@ -23,9 +23,9 @@ public extension Array where Element: AnyObject & Equatable {
 
 
 internal extension Array where Element: AnyObject & Equatable {
-    func index(of object: Element, pointerComparison: Bool) -> Index? {
+    func firstIndex(of object: Element, pointerComparison: Bool) -> Index? {
         guard pointerComparison else {
-            return index(of: object)
+            return firstIndex(of: object)
         }
         return enumerated().first { $0.element === object }?.offset
     }

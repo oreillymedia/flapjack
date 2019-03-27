@@ -22,7 +22,10 @@ class NSCompoundPredicateExtensionsTests: XCTestCase {
     }
 
     func testKeyValueInitializerWithSets() {
-        XCTAssertEqual(NSPredicate(key: "keypath", value: Set<String>(["bob", "ed"])).predicateFormat, "keypath IN {\"bob\", \"ed\"}")
+        let format = NSPredicate(key: "keypath", value: Set<String>(["bob", "ed"])).predicateFormat
+        let oneWay = format == "keypath IN {\"bob\", \"ed\"}"
+        let another = format == "keypath IN {\"ed\", \"bob\"}"
+        XCTAssertTrue(oneWay || another)
     }
 
     func testKeyValueInitializerWithRanges() {
