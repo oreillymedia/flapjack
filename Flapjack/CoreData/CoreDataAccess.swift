@@ -14,7 +14,7 @@ import Flapjack
 
 /**
  Presides over the setup and management of the entire Core Data stack, along with managing the lifecycle of background
- context operations. Background contexts use the `NSMergeByPropertyObjectTrumpMergePolicy` merge policy, and will share
+ context operations. Background contexts use the `NSMergeByPropertyStoreTrumpMergePolicy` merge policy, and will share
  a persistent store with the `mainContext`, and change synchronization between the contexts are performed by
  `NSPersistentContainer`.
  */
@@ -142,7 +142,7 @@ public final class CoreDataAccess: DataAccess {
      */
     public func performInBackground(operation: @escaping (_ context: DataContext) -> Void) {
         container.performBackgroundTask { context in
-            context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+            context.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
             operation(context)
         }
     }
@@ -156,7 +156,7 @@ public final class CoreDataAccess: DataAccess {
     public func vendBackgroundContext() -> DataContext {
         let context = container.newBackgroundContext()
         context.persistentStoreCoordinator = container.persistentStoreCoordinator
-        context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        context.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
         return context
     }
 

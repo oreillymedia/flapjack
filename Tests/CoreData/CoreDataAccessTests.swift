@@ -191,7 +191,7 @@ class CoreDataAccessTests: XCTestCase {
                 XCTFail("Couldn't get mergePolicy which is bad.")
                 return
             }
-            XCTAssertEqual(mergePolicy, NSMergeByPropertyObjectTrumpMergePolicy as? NSObject)
+            XCTAssertEqual(mergePolicy, NSMergeByPropertyStoreTrumpMergePolicy as? NSObject)
             expect.fulfill()
         }
         waitForExpectations(timeout: 1.0) { XCTAssertNil($0) }
@@ -202,7 +202,7 @@ class CoreDataAccessTests: XCTestCase {
             XCTFail("Expected a managed object context.")
             return
         }
-        XCTAssertEqual(context.mergePolicy as? NSObject, NSMergeByPropertyObjectTrumpMergePolicy as? NSObject)
+        XCTAssertEqual(context.mergePolicy as? NSObject, NSMergeByPropertyStoreTrumpMergePolicy as? NSObject)
         XCTAssertEqual(context.persistentStoreCoordinator, (dataAccess.mainContext as? NSManagedObjectContext)?.persistentStoreCoordinator)
         XCTAssertNil(context.parent)
     }
