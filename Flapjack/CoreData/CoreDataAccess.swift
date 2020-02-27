@@ -168,7 +168,18 @@ public final class CoreDataAccess: DataAccess {
      - parameter completion: A closure to be called upon completion.
      */
     public func deleteDatabase(rebuild: Bool, completion: @escaping (DataAccessError?) -> Void) {
+        let fileExistsAtPath = storeType.url.map { FileManager.default.fileExists(atPath: $0.path, isDirectory: nil) } ?? false
+
+        // If we've never attached any store, delete any stale file that may be there and add them
+        //   anew with `addDefaultPersistentStores(async:completion:)`.
         guard !persistentStores.isEmpty else {
+            if let storeURL = storeType.url, fileExistsAtPath {
+                do {
+                    try FileManager.default.removeItem(atPath: storeURL.path)
+                } catch let error {
+                    Logger.error("Error destroying persistent store at \(storeURL): \(error)")
+                }
+            }
             if rebuild {
                 addDefaultPersistentStores(async: shouldLoadAsynchronously, completion: completion)
             } else {
@@ -177,8 +188,8 @@ public final class CoreDataAccess: DataAccess {
             return
         }
 
+        // Let listeners know we're about to detach our store from our coordinator, and then do it.
         NotificationCenter.default.post(name: type(of: self).willDestroyMainContextNotification, object: mainContext)
-
         let localPersistentStores = persistentStores
         localPersistentStores.enumerated().forEach { idx, persistentStore in
             do {
@@ -188,12 +199,11 @@ public final class CoreDataAccess: DataAccess {
             }
         }
 
-        if let storeURL = storeType.url {
+        // Now that we've detached the store from the coordinator, 
+        if let storeURL = storeType.url, fileExistsAtPath {
             do {
-                if FileManager.default.fileExists(atPath: storeURL.path, isDirectory: nil) {
-                    try persistentStoreCoordinator.destroyPersistentStore(at: storeURL, ofType: storeType.coreDataType, options: nil)
-                    try FileManager.default.removeItem(atPath: storeURL.path)
-                }
+                try persistentStoreCoordinator.destroyPersistentStore(at: storeURL, ofType: storeType.coreDataType, options: nil)
+                try FileManager.default.removeItem(atPath: storeURL.path)
             } catch let error {
                 Logger.error("Error destroying persistent store at \(storeURL): \(error)")
             }
