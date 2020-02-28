@@ -238,7 +238,8 @@ class CoreDataAccessWithSQLFileTests: XCTestCase {
         XCTAssertTrue(FileManager.default.fileExists(atPath: storeURL.path, isDirectory: nil))
 
         let expect = expectation(description: "completion")
-        dataAccess.deleteDatabase(rebuild: false) { _ in
+        dataAccess.deleteDatabase(rebuild: false) { error in
+            XCTAssertNil(error)
             XCTAssertFalse(FileManager.default.fileExists(atPath: self.storeURL.path, isDirectory: nil))
             expect.fulfill()
         }
@@ -250,7 +251,8 @@ class CoreDataAccessWithSQLFileTests: XCTestCase {
         XCTAssertTrue(FileManager.default.fileExists(atPath: storeURL.path, isDirectory: nil))
 
         let expect = expectation(description: "completion")
-        dataAccess.deleteDatabase(rebuild: true) { _ in
+        dataAccess.deleteDatabase(rebuild: true) { error in
+            XCTAssertNil(error)
             XCTAssertTrue(FileManager.default.fileExists(atPath: self.storeURL.path, isDirectory: nil))
             expect.fulfill()
         }
@@ -259,7 +261,8 @@ class CoreDataAccessWithSQLFileTests: XCTestCase {
 
     func testDeleteDatabaseWithoutPersistentStoresNoRebuild() {
         let expect = expectation(description: "completion")
-        dataAccess.deleteDatabase(rebuild: false) { _ in
+        dataAccess.deleteDatabase(rebuild: false) { error in
+            XCTAssertNil(error)
             XCTAssertFalse(FileManager.default.fileExists(atPath: self.storeURL.path, isDirectory: nil))
             expect.fulfill()
         }
@@ -268,7 +271,34 @@ class CoreDataAccessWithSQLFileTests: XCTestCase {
 
     func testDeleteDatabaseWithoutPersistentStoresWithRebuild() {
         let expect = expectation(description: "completion")
-        dataAccess.deleteDatabase(rebuild: true) { _ in
+        dataAccess.deleteDatabase(rebuild: true) { error in
+            XCTAssertNil(error)
+            XCTAssertTrue(FileManager.default.fileExists(atPath: self.storeURL.path, isDirectory: nil))
+            expect.fulfill()
+        }
+        waitForExpectations(timeout: 1.0) { XCTAssertNil($0) }
+    }
+
+    func testDeleteDatabaseWithoutPersistentStoresJunkSQLNoRebuild() throws {
+        try "junk".write(to: storeURL, atomically: true, encoding: .utf8)
+        XCTAssertTrue(FileManager.default.fileExists(atPath: storeURL.path, isDirectory: nil))
+
+        let expect = expectation(description: "completion")
+        dataAccess.deleteDatabase(rebuild: false) { error in
+            XCTAssertNil(error)
+            XCTAssertFalse(FileManager.default.fileExists(atPath: self.storeURL.path, isDirectory: nil))
+            expect.fulfill()
+        }
+        waitForExpectations(timeout: 1.0) { XCTAssertNil($0) }
+    }
+
+    func testDeleteDatabaseWithoutPersistentStoresJunkSQLWithRebuild() throws {
+        try "junk".write(to: storeURL, atomically: true, encoding: .utf8)
+        XCTAssertTrue(FileManager.default.fileExists(atPath: storeURL.path, isDirectory: nil))
+
+        let expect = expectation(description: "completion")
+        dataAccess.deleteDatabase(rebuild: true) { error in
+            XCTAssertNil(error)
             XCTAssertTrue(FileManager.default.fileExists(atPath: self.storeURL.path, isDirectory: nil))
             expect.fulfill()
         }
