@@ -18,7 +18,7 @@ public protocol DataSource {
      Describes a type of closure that is used as a communication channel for letting the owner know about object and
      section changes in the matched data set.
      */
-    typealias OnChangeClosure = (Set<DataSourceChange>, Set<DataSourceSectionChange>) -> Void
+    typealias OnChangeClosure = ([DataSourceChange], [DataSourceSectionChange]) -> Void
 
     /// A generic alias for the underlying type of model object matched and managed by the data source.
     associatedtype ModelType: DataObject & Hashable
