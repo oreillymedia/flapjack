@@ -881,6 +881,27 @@
       "symbol": "MigrationPolicy.createDestinationInstances(forSource:in:manager:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/SingleCoreDataSource.swift",
+      "line": 85,
+      "symbol": "SingleCoreDataSource.deinit",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/SingleCoreDataSource.swift",
+      "line": 85,
+      "symbol": "SingleCoreDataSource.deinit",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/SingleCoreDataSource.swift",
+      "line": 85,
+      "symbol": "SingleCoreDataSource.deinit",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
     }
   ],
   "source_directory": "/Users/bkreeger/src/oreilly/native/flapjack"
