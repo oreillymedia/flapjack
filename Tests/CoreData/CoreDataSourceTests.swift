@@ -95,6 +95,31 @@ class CoreDataSourceTests: XCTestCase {
         waitForExpectations(timeout: 0.5) { XCTAssertNil($0) }
     }
 
+    func testChangeBlockDoesNotFireAfterStopListening() {
+        let dataSource = CoreDataSource<MockEntity>(dataAccess: dataAccess)
+        let expect = expectation(description: "on change")
+        expect.expectedFulfillmentCount = 1
+        dataSource.onChange = { items, sections in
+            expect.fulfill()
+            XCTAssertEqual(items.count, 2)
+            XCTAssertEqual(sections.count, 0)
+        }
+        dataSource.startListening()
+        _ = dataAccess.mainContext.create(MockEntity.self, attributes: ["someProperty": "someValue alpha"])
+        dataAccess.mainContext.destroy(object: entityOne)
+        dataAccess.mainContext.persist()
+        waitForExpectations(timeout: 0.5) { XCTAssertNil($0) }
+        dataSource.endListening()
+        let expect2 = expectation(description: "on change")
+        expect2.isInverted = true
+        dataSource.onChange = { items, sections in
+            expect2.fulfill()
+        }
+        _ = dataAccess.mainContext.create(MockEntity.self, attributes: ["someProperty": "someValue alpha"])
+        dataAccess.mainContext.destroy(object: entityTwo)
+        dataAccess.mainContext.persist()
+        waitForExpectations(timeout: 0.5) { XCTAssertNil($0) }
+    }
 
     // MARK: Filtered
 

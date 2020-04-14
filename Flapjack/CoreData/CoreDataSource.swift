@@ -30,8 +30,8 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
     public var onChange: OnChangeClosure?
 
     private var controller: NSFetchedResultsController<NSManagedObject>
-    private var pendingSectionChanges = Set<DataSourceSectionChange>()
-    private var pendingItemChanges = Set<DataSourceChange>()
+    private var pendingSectionChanges = [DataSourceSectionChange]()
+    private var pendingItemChanges = [DataSourceChange]()
     private var hasExecuted: Bool = false
     private var cacheKey: String
     private var limit: Int?
@@ -86,7 +86,6 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
         NSFetchedResultsController<NSManagedObject>.deleteCache(withName: cacheKey)
         controller = NSFetchedResultsController<NSManagedObject>(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: sectionProperty, cacheName: cacheKey)
         super.init()
-        controller.delegate = self
     }
 
 
@@ -137,11 +136,18 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
 
         do {
             Logger.debug("Fetching cache key \"\(cacheKey)\"")
+            controller.delegate = self
             try controller.performFetch()
             hasExecuted = true
         } catch let error {
             Logger.debug("Error fetching CoreDataSource<\(T.self)>: \(error)")
         }
+    }
+
+    public func endListening() {
+        guard hasExecuted else { return }
+        controller.delegate = nil
+        hasExecuted = false
     }
 
     /**
@@ -262,7 +268,7 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
             Logger.error("No section change calculated for \(theType), index \(sectionIndex))")
             return
         }
-        pendingSectionChanges.insert(change)
+        pendingSectionChanges.append(change)
     }
 
     public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for theType: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
@@ -270,29 +276,21 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
             return
         }
 
-        guard var change = theType.asDataSourceChange(at: indexPath, newPath: newIndexPath) else {
+        guard let change = theType.asDataSourceChange(at: indexPath, newPath: newIndexPath) else {
             Logger.error("No change calculated for \(theType), indexPath \(String(describing: indexPath)), newIndexPath: \(String(describing: newIndexPath))")
             return
         }
 
-        if let limit = limit {
-            switch change {
-            case .insert(let path), .delete(let path), .update(let path):
-                if path.item >= limit {
-                    return
-                }
-            case .move(let fromPath, let toPath):
-                if fromPath.item >= limit && toPath.item < limit {
-                    change = .insert(path: toPath)
-                } else if fromPath.item < limit && toPath.item >= limit {
-                    change = .delete(path: fromPath)
-                } else {
-                    return
-                }
-            }
+        var changes = [DataSourceChange]()
+        switch change {
+        case .move(let fromPath, let toPath):
+            changes.append(.delete(path: fromPath))
+            changes.append(.insert(path: toPath))
+        default:
+            changes.append(change)
         }
 
-        pendingItemChanges.insert(change)
+        pendingItemChanges.append(contentsOf: changes)
     }
 
     public func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {

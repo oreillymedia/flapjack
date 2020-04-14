@@ -22,19 +22,32 @@ public extension UICollectionView {
      - parameter completion: A block to be called upon completion. The included boolean indicates if the animations
                              finished successfully.
      */
-    func performBatchUpdates(_ objectChanges: Set<DataSourceChange>, sectionChanges: Set<DataSourceSectionChange> = [], completion: ((Bool) -> Void)? = nil) {
+    func performBatchUpdates(_ objectChanges: [DataSourceChange], sectionChanges: [DataSourceSectionChange] = [], completion: ((Bool) -> Void)? = nil) {
         guard superview != nil, !objectChanges.isEmpty else {
             return
         }
-        let (inserts, deletes, moves, updates) = objectChanges.components
-        let (sectionInserts, sectionDeletes) = sectionChanges.components
         performBatchUpdates({
-            if !sectionDeletes.isEmpty { deleteSections(sectionDeletes) }
-            if !sectionInserts.isEmpty { insertSections(sectionInserts) }
-            if !deletes.isEmpty { deleteItems(at: deletes) }
-            if !inserts.isEmpty { insertItems(at: inserts) }
-            if !updates.isEmpty { reloadItems(at: updates) }
-            moves.forEach { moveItem(at: $0, to: $1) }
+            for change in objectChanges {
+                switch change {
+                case .insert(let path):
+                    insertItems(at: [path])
+                case .delete(let path):
+                    deleteItems(at: [path])
+                case .move(let fromPath, let toPath):
+                    deleteItems(at: [fromPath])
+                    insertItems(at: [toPath])
+                case .update(let path):
+                    reloadItems(at: [path])
+                }
+            }
+            for sectionChange in sectionChanges {
+                switch sectionChange {
+                case .insert(let section):
+                    insertSections(IndexSet(integer: section))
+                case .delete(let section):
+                    deleteSections(IndexSet(integer: section))
+                }
+            }
         }, completion: completion)
     }
 }
