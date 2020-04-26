@@ -16,11 +16,11 @@ It lets you _skip_ the boilerplate commonly associated with database layers like
 Flapjack will soon be available through [CocoaPods][cpd]. To install it for now, simply add the following line to your Podfile:
 
 ```ruby
-pod 'Flapjack', git: 'https://github.com/oreillymedia/flapjack.git', tag: '0.1.0'
+pod 'Flapjack', git: 'https://github.com/oreillymedia/flapjack.git', tag: '0.6.1'
 # If you're using Core Data...
-pod 'Flapjack/CoreData', git: 'https://github.com/oreillymedia/flapjack.git', tag: '0.1.0'
+pod 'Flapjack/CoreData', git: 'https://github.com/oreillymedia/flapjack.git', tag: '0.6.1'
 # If you're targeting iOS and want some helpers...
-pod 'Flapjack/UIKit', git: 'https://github.com/oreillymedia/flapjack.git', tag: '0.1.0'
+pod 'Flapjack/UIKit', git: 'https://github.com/oreillymedia/flapjack.git', tag: '0.6.1'
 ```
 
 And run `pod install` at the command line.
@@ -42,7 +42,7 @@ Then run `carthage update`. If this is your first time using Carthage in the pro
 Support for [Swift Package Manager][spm] is in its initial stage; the project does not build with support for Core Data or UIKit, since those frameworks are not packaged or available for Swift Package Manager (since [SPM only builds for the host platform](https://stackoverflow.com/a/34779231/194869), UIKit is currently impossible to use as a dependency for `FlapjackUIKit`). In order to use `Flapjack` by itself, add the following as a dependency to the `dependencies` array in your `Package.swift` file:
 
 ```swift
-.package(url: "https://github.com/oreillymedia/flapjack.git", .upToNextMajor(from: "0.1.0"))
+.package(url: "https://github.com/oreillymedia/flapjack.git", .upToNextMajor(from: "0.4.5"))
 ```
 
 Then you'll specify `Flapjack` as a dependency of the target in which you wish to use it.
@@ -52,7 +52,7 @@ Then you'll specify `Flapjack` as a dependency of the target in which you wish t
 
 Full documentation is forthcoming, but here's a good thorough run-through of what Flapjack has to offer.
 
-In your iOS project (like perhaps in your `UIApplicationDelegate`), kick things off with the following code (if you're using Core Data; support for more databases planned).  
+In your iOS project (like perhaps in your `UIApplicationDelegate`), kick things off with the following code (if you're using Core Data; support for more databases planned).
 
 ```swift
 import Flapjack
