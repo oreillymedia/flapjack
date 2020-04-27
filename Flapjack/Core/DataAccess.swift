@@ -12,7 +12,7 @@ import Foundation
 // MARK: - DataAccess
 
 /**
- One of two prominantly-used objects in Flapjack, the `DataAccess` protocol (and those that conform to it) preside over
+ One of two prominently-used objects in Flapjack, the `DataAccess` protocol (and those that conform to it) preside over
  the setup and management of the entire data persistence stack, along with managing the lifecycle of background context
  operations.
  */
