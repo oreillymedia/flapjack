@@ -29,6 +29,22 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
     /// A retained closure that is invoked when section and/or object changes are detected in the matched data set.
     public var onChange: OnChangeClosure?
 
+    /// If a predicate is specified at initialization, return that value. Assigning to it changes the predicate associated
+    /// with the fetched results controller and will cause data to be reloaded, if a fetch has already been executed.
+    var predicate: NSPredicate? {
+        didSet {
+            controller.fetchRequest.predicate = predicate
+            if hasExecuted {
+                do {
+                    NSFetchedResultsController<NSManagedObject>.deleteCache(withName: cacheKey)
+                    try controller.performFetch()
+                } catch let error {
+                    Logger.debug("Error fetching CoreDataSource<\(T.self)>: \(error)")
+                }
+            }
+        }
+    }
+
     private var controller: NSFetchedResultsController<NSManagedObject>
     private var pendingSectionChanges = [DataSourceSectionChange]()
     private var pendingItemChanges = [DataSourceChange]()
@@ -83,6 +99,7 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
             cacheKey = type(of: self).cacheName(type: T.self, fetchRequest: fetchRequest)
         }
         self.limit = limit
+        self.predicate = predicate
         NSFetchedResultsController<NSManagedObject>.deleteCache(withName: cacheKey)
         controller = NSFetchedResultsController<NSManagedObject>(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: sectionProperty, cacheName: cacheKey)
         super.init()

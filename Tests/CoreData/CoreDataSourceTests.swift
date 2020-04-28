@@ -257,4 +257,16 @@ class CoreDataSourceTests: XCTestCase {
         XCTAssertTrue(dataSource.allObjects.contains(entityFour))
         XCTAssertTrue(dataSource.allObjects.contains(entityOne))
     }
+
+    // MARK: Change predicate
+
+    func testChangePredicate() {
+        let dataSource = CoreDataSource<MockEntity>(dataAccess: dataAccess, sorters: [SortDescriptor("someProperty", ascending: false)])
+        dataSource.startListening()
+        XCTAssertEqual(dataSource.numberOfObjects, 5)
+        dataSource.predicate = NSPredicate(format: "someProperty contains \"zzzz\"")
+        XCTAssertEqual(dataSource.numberOfObjects, 1)
+        dataSource.predicate = nil
+        XCTAssertEqual(dataSource.numberOfObjects, 5)
+    }
 }
