@@ -31,17 +31,17 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
 
     /// If a predicate is specified at initialization, return that value. Assigning to it changes the predicate associated
     /// with the fetched results controller and will cause data to be reloaded, if a fetch has already been executed.
-    var predicate: NSPredicate? {
+    public var predicate: NSPredicate? {
         didSet {
             controller.fetchRequest.predicate = predicate
-            if hasExecuted {
-                do {
-                    NSFetchedResultsController<NSManagedObject>.deleteCache(withName: cacheKey)
-                    try controller.performFetch()
-                } catch let error {
-                    Logger.debug("Error fetching CoreDataSource<\(T.self)>: \(error)")
-                }
-            }
+            refetchIfNeeded()
+        }
+    }
+
+    public var sorters: [SortDescriptor] = T.defaultSorters {
+        didSet {
+            controller.fetchRequest.sortDescriptors = sorters.asNSSortDescriptors
+            refetchIfNeeded()
         }
     }
 
@@ -100,6 +100,7 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
         }
         self.limit = limit
         self.predicate = predicate
+        self.sorters = sorters
         NSFetchedResultsController<NSManagedObject>.deleteCache(withName: cacheKey)
         controller = NSFetchedResultsController<NSManagedObject>(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: sectionProperty, cacheName: cacheKey)
         super.init()
@@ -262,6 +263,17 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
 
     private func sectionInfo(for index: Int) -> NSFetchedResultsSectionInfo? {
         return controller.sections?[safe: index]
+    }
+
+    private func refetchIfNeeded() {
+        if hasExecuted {
+            do {
+                NSFetchedResultsController<NSManagedObject>.deleteCache(withName: cacheKey)
+                try controller.performFetch()
+            } catch let error {
+                Logger.debug("Error fetching CoreDataSource<\(T.self)>: \(error)")
+            }
+        }
     }
 
 

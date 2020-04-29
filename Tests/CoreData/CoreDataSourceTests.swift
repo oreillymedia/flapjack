@@ -269,4 +269,13 @@ class CoreDataSourceTests: XCTestCase {
         dataSource.predicate = nil
         XCTAssertEqual(dataSource.numberOfObjects, 5)
     }
+
+    // MARK: Change sorters
+    func testChangeSorters() {
+        let dataSource = CoreDataSource<MockEntity>(dataAccess: dataAccess, sorters: [SortDescriptor("someProperty", ascending: true)])
+        dataSource.startListening()
+        XCTAssertEqual(dataSource.allObjects.first?.someProperty, "someValue aaaa")
+        dataSource.sorters = [SortDescriptor("someProperty", ascending: false)]
+        XCTAssertEqual(dataSource.allObjects.first?.someProperty, "someValue zzzz")
+    }
 }
