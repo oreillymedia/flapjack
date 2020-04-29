@@ -12,7 +12,7 @@ import Foundation
 // MARK: - DataContext
 
 /**
- One of the two prominantly-used objects in Flapjack, the `DataContext` protocol (and those that conform to it) preside
+ One of the two prominently-used objects in Flapjack, the `DataContext` protocol (and those that conform to it) preside
  over a modifiable and searchable "context" of model objects lifted from a backing store.
  */
 public protocol DataContext {
