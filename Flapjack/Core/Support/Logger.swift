@@ -7,9 +7,10 @@
 //
 
 import Foundation
-import os
+import os.log
 
 /// An enumeration describing the logging severity level used inside of Flapjack.
+@available(iOS 10.0, *)
 public enum LoggerLevel: Int, CustomStringConvertible {
     case debug = 0
     case info
@@ -34,6 +35,7 @@ public enum LoggerLevel: Int, CustomStringConvertible {
 
 
 /// A logger object used for printing out relevant statements to `os_log`.
+@available(iOS 10.0, *)
 public final class Logger: NSObject {
     /// The minimum severity level to log; default is `.info`.
     public static var logLevel: LoggerLevel = .info

@@ -22,23 +22,33 @@ public extension UITableView {
      - parameter completion: A block to be called upon completion. The included boolean indicates if the animations
                              finished successfully.
      */
-    func performBatchUpdates(_ objectChanges: Set<DataSourceChange>, sectionChanges: Set<DataSourceSectionChange> = [], completion: ((Bool) -> Void)? = nil) {
+    func performBatchUpdates(_ objectChanges: [DataSourceChange], sectionChanges: [DataSourceSectionChange] = [], completion: ((Bool) -> Void)? = nil) {
         guard superview != nil, !objectChanges.isEmpty else {
             return
         }
-        let (inserts, deletes, moves, updates) = objectChanges.components
-        let (sectionInserts, sectionDeletes) = sectionChanges.components
 
-        performBatchUpdates({ [weak self] in
-            guard let `self` = self else {
-                return
+        performBatchUpdates({
+            for change in objectChanges {
+                switch change {
+                case .insert(let path):
+                    insertRows(at: [path], with: .automatic)
+                case .delete(let path):
+                    deleteRows(at: [path], with: .automatic)
+                case .move(let fromPath, let toPath):
+                    deleteRows(at: [fromPath], with: .automatic)
+                    insertRows(at: [toPath], with: .automatic)
+                case .update(let path):
+                    reloadRows(at: [path], with: .automatic)
+                }
             }
-            if !sectionDeletes.isEmpty { self.deleteSections(sectionDeletes, with: .automatic) }
-            if !sectionInserts.isEmpty { self.insertSections(sectionInserts, with: .automatic) }
-            if !deletes.isEmpty { self.deleteRows(at: deletes, with: .automatic) }
-            if !inserts.isEmpty { self.insertRows(at: inserts, with: .automatic) }
-            if !updates.isEmpty { self.reloadRows(at: updates, with: .automatic) }
-            moves.forEach { self.moveRow(at: $0, to: $1) }
+            for sectionChange in sectionChanges {
+                switch sectionChange {
+                case .insert(let section):
+                    insertSections(IndexSet(integer: section), with: .automatic)
+                case .delete(let section):
+                    deleteSections(IndexSet(integer: section), with: .automatic)
+                }
+            }
         }, completion: completion)
     }
 }
