@@ -30,7 +30,7 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
     public var onChange: OnChangeClosure?
 
     /// If a predicate is specified at initialization, return that value. Assigning to it changes the predicate associated
-    /// with the fetched results controller and will cause data to be reloaded, if a fetch has already been executed.
+    /// with the fetched results controller and will cause data to be reloaded, if a fetch has already been executed. However, the `onChange` handler will not be called.
     public var predicate: NSPredicate? {
         didSet {
             controller.fetchRequest.predicate = predicate
@@ -38,6 +38,9 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
         }
     }
 
+    /// Change the set of sort descriptors used to return the objects in this data source.
+    /// Will cause the fetched results controller to be reloaded if `startListening` had already been called,
+    /// but does not cause the `onChange` handler to be called.
     public var sorters: [SortDescriptor] = T.defaultSorters {
         didSet {
             controller.fetchRequest.sortDescriptors = sorters.asNSSortDescriptors
@@ -158,7 +161,7 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
             try controller.performFetch()
             hasExecuted = true
         } catch let error {
-            Logger.debug("Error fetching CoreDataSource<\(T.self)>: \(error)")
+            Logger.error("Error fetching CoreDataSource<\(T.self)>: \(error)")
         }
     }
 
@@ -266,13 +269,12 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
     }
 
     private func refetchIfNeeded() {
-        if hasExecuted {
-            do {
-                NSFetchedResultsController<NSManagedObject>.deleteCache(withName: cacheKey)
-                try controller.performFetch()
-            } catch let error {
-                Logger.debug("Error fetching CoreDataSource<\(T.self)>: \(error)")
-            }
+        guard hasExecuted else { return }
+        do {
+            NSFetchedResultsController<NSManagedObject>.deleteCache(withName: cacheKey)
+            try controller.performFetch()
+        } catch let error {
+            Logger.error("Error fetching CoreDataSource<\(T.self)>: \(error)")
         }
     }
 
