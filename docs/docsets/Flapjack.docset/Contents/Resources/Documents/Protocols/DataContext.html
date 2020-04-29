@@ -21,7 +21,7 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="../index.html">
-          Flapjack Docs
+          Flapjack 0.6.1 Docs
         </a>
          (93% documented)
       </p>
@@ -106,10 +106,25 @@
                 <a class="nav-group-task-link" href="../Extensions/Array.html">Array</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions.html#/s:10Foundation4DataV">Data</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions.html#/s:s5Int16V">Int16</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions.html#/s:s5Int32V">Int32</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions.html#/s:s5Int64V">Int64</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/NSFetchedResultsChangeType.html">NSFetchedResultsChangeType</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/NSManagedObjectContext.html">NSManagedObjectContext</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions.html#/c:objc(cs)NSManagedObjectID">NSManagedObjectID</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/NSMigrationManager.html">NSMigrationManager</a>
@@ -124,10 +139,19 @@
                 <a class="nav-group-task-link" href="../Extensions/Set.html">Set</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions.html#/s:SS">String</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/UICollectionView.html">UICollectionView</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/UITableView.html">UITableView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions.html#/s:10Foundation3URLV">URL</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions.html#/s:10Foundation4UUIDV">UUID</a>
               </li>
             </ul>
           </li>
@@ -176,7 +200,7 @@
       <article class="main-content">
 
         <section class="section">
-          <div class="section-content">
+          <div class="section-content top-matter">
             <h1>DataContext</h1>
               <div class="declaration">
                 <div class="language">
@@ -185,7 +209,7 @@
                 </div>
               </div>
             <p>One of the two prominently-used objects in Flapjack, the <code>DataContext</code> protocol (and those that conform to it) preside
-over a modifiable and searchable <q>context</q> of model objects lifted from a backing store.</p>
+over a modifiable and searchable &ldquo;context&rdquo; of model objects lifted from a backing store.</p>
 
           </div>
         </section>
@@ -229,7 +253,7 @@ over a modifiable and searchable <q>context</q> of model objects lifted from a b
                     <code>
                     <a name="/s:8Flapjack11DataContextP7performyyyAaB_pcF"></a>
                     <a name="//apple_ref/swift/Method/perform(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextP7performyyyAaB_pcF">perform(_:)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP7performyyyAaB_pcF">perform(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -278,7 +302,7 @@ over a modifiable and searchable <q>context</q> of model objects lifted from a b
                     <code>
                     <a name="/s:8Flapjack11DataContextP11performSyncyyyAaB_pcF"></a>
                     <a name="//apple_ref/swift/Method/performSync(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextP11performSyncyyyAaB_pcF">performSync(_:)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP11performSyncyyyAaB_pcF">performSync(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -359,7 +383,7 @@ include giving new objects unique identifiers, establishing relationships in an 
                     <code>
                     <a name="/s:8Flapjack11DataContextP7refreshyyqd__AA0B6ObjectRd__lF"></a>
                     <a name="//apple_ref/swift/Method/refresh(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextP7refreshyyqd__AA0B6ObjectRd__lF">refresh(_:)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP7refreshyyqd__AA0B6ObjectRd__lF">refresh(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -518,9 +542,11 @@ exist. Should guarantee a round trip to the backing store.</p>
               <div class="task-name-container">
                 <a name="/Collection%20fetch%20operations"></a>
                 <a name="//apple_ref/swift/Section/Collection fetch operations" class="dashAnchor"></a>
-                <a href="#/Collection%20fetch%20operations">
-                  <h3 class="section-name">Collection fetch operations</h3>
-                </a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Collection%20fetch%20operations"></a>
+                  <h3 class="section-name"><p>Collection fetch operations</p>
+</h3>
+                </div>
               </div>
               <ul class="item-container">
                 <li class="item">
@@ -528,7 +554,7 @@ exist. Should guarantee a round trip to the backing store.</p>
                     <code>
                     <a name="/s:8Flapjack11DataContextP7objects6ofType9predicate8prefetch6sortBy5limitSayqd__Gqd__m_So11NSPredicateCSgSaySSGSgSayAA14SortDescriptorVGSiSgtAA0B6ObjectRd__lF"></a>
                     <a name="//apple_ref/swift/Method/objects(ofType:predicate:prefetch:sortBy:limit:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextP7objects6ofType9predicate8prefetch6sortBy5limitSayqd__Gqd__m_So11NSPredicateCSgSaySSGSgSayAA14SortDescriptorVGSiSgtAA0B6ObjectRd__lF">objects(ofType:predicate:prefetch:sortBy:limit:)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP7objects6ofType9predicate8prefetch6sortBy5limitSayqd__Gqd__m_So11NSPredicateCSgSaySSGSgSayAA14SortDescriptorVGSiSgtAA0B6ObjectRd__lF">objects(ofType:<wbr>predicate:<wbr>prefetch:<wbr>sortBy:<wbr>limit:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -631,7 +657,7 @@ count of matches returned.</p>
                     <code>
                     <a name="/s:8Flapjack11DataContextP7objects6ofType10attributes8prefetch6sortBy5limitSayqd__Gqd__m_SDySSypGSaySSGSgSayAA14SortDescriptorVGSiSgtAA0B6ObjectRd__lF"></a>
                     <a name="//apple_ref/swift/Method/objects(ofType:attributes:prefetch:sortBy:limit:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextP7objects6ofType10attributes8prefetch6sortBy5limitSayqd__Gqd__m_SDySSypGSaySSGSgSayAA14SortDescriptorVGSiSgtAA0B6ObjectRd__lF">objects(ofType:attributes:prefetch:sortBy:limit:)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP7objects6ofType10attributes8prefetch6sortBy5limitSayqd__Gqd__m_SDySSypGSaySSGSgSayAA14SortDescriptorVGSiSgtAA0B6ObjectRd__lF">objects(ofType:<wbr>attributes:<wbr>prefetch:<wbr>sortBy:<wbr>limit:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -744,7 +770,7 @@ count of matches returned.</p>
                     <code>
                     <a name="/s:8Flapjack11DataContextP7objects6ofType9objectIDs8prefetch6sortBy5limitSayqd__Gqd__m_SayAA0B8ObjectID_pGSaySSGSgSayAA14SortDescriptorVGSiSgtAA0bM0Rd__lF"></a>
                     <a name="//apple_ref/swift/Method/objects(ofType:objectIDs:prefetch:sortBy:limit:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextP7objects6ofType9objectIDs8prefetch6sortBy5limitSayqd__Gqd__m_SayAA0B8ObjectID_pGSaySSGSgSayAA14SortDescriptorVGSiSgtAA0bM0Rd__lF">objects(ofType:objectIDs:prefetch:sortBy:limit:)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP7objects6ofType9objectIDs8prefetch6sortBy5limitSayqd__Gqd__m_SayAA0B8ObjectID_pGSaySSGSgSayAA14SortDescriptorVGSiSgtAA0bM0Rd__lF">objects(ofType:<wbr>objectIDs:<wbr>prefetch:<wbr>sortBy:<wbr>limit:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -848,7 +874,7 @@ records returned.</p>
                     <code>
                     <a name="/s:8Flapjack11DataContextP7objects6ofType11primaryKeys8prefetch6sortBy5limitSayqd__Gqd__m_SayAA10PrimaryKey_pGSaySSGSgSayAA14SortDescriptorVGSiSgtAA0B6ObjectRd__lF"></a>
                     <a name="//apple_ref/swift/Method/objects(ofType:primaryKeys:prefetch:sortBy:limit:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextP7objects6ofType11primaryKeys8prefetch6sortBy5limitSayqd__Gqd__m_SayAA10PrimaryKey_pGSaySSGSgSayAA14SortDescriptorVGSiSgtAA0B6ObjectRd__lF">objects(ofType:primaryKeys:prefetch:sortBy:limit:)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP7objects6ofType11primaryKeys8prefetch6sortBy5limitSayqd__Gqd__m_SayAA10PrimaryKey_pGSaySSGSgSayAA14SortDescriptorVGSiSgtAA0B6ObjectRd__lF">objects(ofType:<wbr>primaryKeys:<wbr>prefetch:<wbr>sortBy:<wbr>limit:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -962,7 +988,7 @@ records returned.</p>
                     <code>
                     <a name="/s:8Flapjack11DataContextP15numberOfObjects6ofType9predicateSiqd__m_So11NSPredicateCSgtAA0B6ObjectRd__lF"></a>
                     <a name="//apple_ref/swift/Method/numberOfObjects(ofType:predicate:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextP15numberOfObjects6ofType9predicateSiqd__m_So11NSPredicateCSgtAA0B6ObjectRd__lF">numberOfObjects(ofType:predicate:)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP15numberOfObjects6ofType9predicateSiqd__m_So11NSPredicateCSgtAA0B6ObjectRd__lF">numberOfObjects(ofType:<wbr>predicate:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1029,9 +1055,11 @@ returning an integer count instead of an entire record set.</p>
               <div class="task-name-container">
                 <a name="/Single%20fetch%20operations"></a>
                 <a name="//apple_ref/swift/Section/Single fetch operations" class="dashAnchor"></a>
-                <a href="#/Single%20fetch%20operations">
-                  <h3 class="section-name">Single fetch operations</h3>
-                </a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Single%20fetch%20operations"></a>
+                  <h3 class="section-name"><p>Single fetch operations</p>
+</h3>
+                </div>
               </div>
               <ul class="item-container">
                 <li class="item">
@@ -1039,7 +1067,7 @@ returning an integer count instead of an entire record set.</p>
                     <code>
                     <a name="/s:8Flapjack11DataContextP6object6ofType9predicate8prefetch6sortByqd__Sgqd__m_So11NSPredicateCSgSaySSGSgSayAA14SortDescriptorVGtAA0B6ObjectRd__lF"></a>
                     <a name="//apple_ref/swift/Method/object(ofType:predicate:prefetch:sortBy:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextP6object6ofType9predicate8prefetch6sortByqd__Sgqd__m_So11NSPredicateCSgSaySSGSgSayAA14SortDescriptorVGtAA0B6ObjectRd__lF">object(ofType:predicate:prefetch:sortBy:)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP6object6ofType9predicate8prefetch6sortByqd__Sgqd__m_So11NSPredicateCSgSaySSGSgSayAA14SortDescriptorVGtAA0B6ObjectRd__lF">object(ofType:<wbr>predicate:<wbr>prefetch:<wbr>sortBy:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1131,7 +1159,7 @@ used to sort the results, and the first object will be returned.</p>
                     <code>
                     <a name="/s:8Flapjack11DataContextP6object6ofType10attributes8prefetch6sortByqd__Sgqd__m_SDySSypGSaySSGSgSayAA14SortDescriptorVGtAA0B6ObjectRd__lF"></a>
                     <a name="//apple_ref/swift/Method/object(ofType:attributes:prefetch:sortBy:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextP6object6ofType10attributes8prefetch6sortByqd__Sgqd__m_SDySSypGSaySSGSgSayAA14SortDescriptorVGtAA0B6ObjectRd__lF">object(ofType:attributes:prefetch:sortBy:)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP6object6ofType10attributes8prefetch6sortByqd__Sgqd__m_SDySSypGSaySSGSgSayAA14SortDescriptorVGtAA0B6ObjectRd__lF">object(ofType:<wbr>attributes:<wbr>prefetch:<wbr>sortBy:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -1233,7 +1261,7 @@ the results, and the first object will be returned.</p>
                     <code>
                     <a name="/s:8Flapjack11DataContextP6object6ofType0D2IDqd__Sgqd__m_AA0b6ObjectG0_ptAA0bH0Rd__lF"></a>
                     <a name="//apple_ref/swift/Method/object(ofType:objectID:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextP6object6ofType0D2IDqd__Sgqd__m_AA0b6ObjectG0_ptAA0bH0Rd__lF">object(ofType:objectID:)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP6object6ofType0D2IDqd__Sgqd__m_AA0b6ObjectG0_ptAA0bH0Rd__lF">object(ofType:<wbr>objectID:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1298,7 +1326,7 @@ the results, and the first object will be returned.</p>
                     <code>
                     <a name="/s:8Flapjack11DataContextP7refetchyqd__Sgqd__AA0B6ObjectRd__lF"></a>
                     <a name="//apple_ref/swift/Method/refetch(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextP7refetchyqd__Sgqd__AA0B6ObjectRd__lF">refetch(_:)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP7refetchyqd__Sgqd__AA0B6ObjectRd__lF">refetch(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1352,9 +1380,11 @@ the results, and the first object will be returned.</p>
               <div class="task-name-container">
                 <a name="/Creation%20operations"></a>
                 <a name="//apple_ref/swift/Section/Creation operations" class="dashAnchor"></a>
-                <a href="#/Creation%20operations">
-                  <h3 class="section-name">Creation operations</h3>
-                </a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Creation%20operations"></a>
+                  <h3 class="section-name"><p>Creation operations</p>
+</h3>
+                </div>
               </div>
               <ul class="item-container">
                 <li class="item">
@@ -1362,7 +1392,7 @@ the results, and the first object will be returned.</p>
                     <code>
                     <a name="/s:8Flapjack11DataContextP6createyqd__qd__mAA0B6ObjectRd__lF"></a>
                     <a name="//apple_ref/swift/Method/create(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextP6createyqd__qd__mAA0B6ObjectRd__lF">create(_:)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP6createyqd__qd__mAA0B6ObjectRd__lF">create(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1415,7 +1445,7 @@ the results, and the first object will be returned.</p>
                     <code>
                     <a name="/s:8Flapjack11DataContextP6create_10attributesqd__qd__m_SDySSypGtAA0B6ObjectRd__lF"></a>
                     <a name="//apple_ref/swift/Method/create(_:attributes:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextP6create_10attributesqd__qd__m_SDySSypGtAA0B6ObjectRd__lF">create(_:attributes:)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP6create_10attributesqd__qd__m_SDySSypGtAA0B6ObjectRd__lF">create(_:<wbr>attributes:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1482,9 +1512,11 @@ attributes as properties.</p>
               <div class="task-name-container">
                 <a name="/Destruction%20operations"></a>
                 <a name="//apple_ref/swift/Section/Destruction operations" class="dashAnchor"></a>
-                <a href="#/Destruction%20operations">
-                  <h3 class="section-name">Destruction operations</h3>
-                </a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Destruction%20operations"></a>
+                  <h3 class="section-name"><p>Destruction operations</p>
+</h3>
+                </div>
               </div>
               <ul class="item-container">
                 <li class="item">
@@ -1492,7 +1524,7 @@ attributes as properties.</p>
                     <code>
                     <a name="/s:8Flapjack11DataContextP7destroy6objectyqd__Sg_tAA0B6ObjectRd__lF"></a>
                     <a name="//apple_ref/swift/Method/destroy(object:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextP7destroy6objectyqd__Sg_tAA0B6ObjectRd__lF">destroy(object:)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP7destroy6objectyqd__Sg_tAA0B6ObjectRd__lF">destroy(object:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1522,7 +1554,7 @@ attributes as properties.</p>
                     <code>
                     <a name="/s:8Flapjack11DataContextP7destroy7objectsySayqd__G_tAA0B6ObjectRd__lF"></a>
                     <a name="//apple_ref/swift/Method/destroy(objects:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextP7destroy7objectsySayqd__G_tAA0B6ObjectRd__lF">destroy(objects:)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP7destroy7objectsySayqd__G_tAA0B6ObjectRd__lF">destroy(objects:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -1581,9 +1613,11 @@ Concrete implementations may wish to provide a more performant version, if neces
               <div class="task-name-container">
                 <a name="/Collection%20fetch%20operations2"></a>
                 <a name="//apple_ref/swift/Section/Collection fetch operations" class="dashAnchor"></a>
-                <a href="#/Collection%20fetch%20operations2">
-                  <h3 class="section-name">Collection fetch operations</h3>
-                </a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Collection%20fetch%20operations2"></a>
+                  <h3 class="section-name"><p>Collection fetch operations</p>
+</h3>
+                </div>
               </div>
               <ul class="item-container">
                 <li class="item">
@@ -1591,7 +1625,7 @@ Concrete implementations may wish to provide a more performant version, if neces
                     <code>
                     <a name="/s:8Flapjack11DataContextPAAE7objects6ofTypeSayqd__Gqd__m_tAA0B6ObjectRd__lF"></a>
                     <a name="//apple_ref/swift/Method/objects(ofType:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextPAAE7objects6ofTypeSayqd__Gqd__m_tAA0B6ObjectRd__lF">objects(ofType:)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE7objects6ofTypeSayqd__Gqd__m_tAA0B6ObjectRd__lF">objects(ofType:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -1647,7 +1681,7 @@ Concrete implementations may wish to provide a more performant version, if neces
                     <code>
                     <a name="/s:8Flapjack11DataContextPAAE7objects6ofType9predicateSayqd__Gqd__m_So11NSPredicateCSgtAA0B6ObjectRd__lF"></a>
                     <a name="//apple_ref/swift/Method/objects(ofType:predicate:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextPAAE7objects6ofType9predicateSayqd__Gqd__m_So11NSPredicateCSgtAA0B6ObjectRd__lF">objects(ofType:predicate:)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE7objects6ofType9predicateSayqd__Gqd__m_So11NSPredicateCSgtAA0B6ObjectRd__lF">objects(ofType:<wbr>predicate:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -1715,7 +1749,7 @@ Concrete implementations may wish to provide a more performant version, if neces
                     <code>
                     <a name="/s:8Flapjack11DataContextPAAE7objects6ofType9predicate8prefetchSayqd__Gqd__m_So11NSPredicateCSgSaySSGSgtAA0B6ObjectRd__lF"></a>
                     <a name="//apple_ref/swift/Method/objects(ofType:predicate:prefetch:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextPAAE7objects6ofType9predicate8prefetchSayqd__Gqd__m_So11NSPredicateCSgSaySSGSgtAA0B6ObjectRd__lF">objects(ofType:predicate:prefetch:)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE7objects6ofType9predicate8prefetchSayqd__Gqd__m_So11NSPredicateCSgSaySSGSgtAA0B6ObjectRd__lF">objects(ofType:<wbr>predicate:<wbr>prefetch:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -1796,7 +1830,7 @@ Concrete implementations may wish to provide a more performant version, if neces
                     <code>
                     <a name="/s:8Flapjack11DataContextPAAE7objects6ofType10attributesSayqd__Gqd__m_SDySSypGtAA0B6ObjectRd__lF"></a>
                     <a name="//apple_ref/swift/Method/objects(ofType:attributes:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextPAAE7objects6ofType10attributesSayqd__Gqd__m_SDySSypGtAA0B6ObjectRd__lF">objects(ofType:attributes:)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE7objects6ofType10attributesSayqd__Gqd__m_SDySSypGtAA0B6ObjectRd__lF">objects(ofType:<wbr>attributes:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -1864,7 +1898,7 @@ Concrete implementations may wish to provide a more performant version, if neces
                     <code>
                     <a name="/s:8Flapjack11DataContextPAAE7objects6ofType10attributes8prefetchSayqd__Gqd__m_SDySSypGSaySSGSgtAA0B6ObjectRd__lF"></a>
                     <a name="//apple_ref/swift/Method/objects(ofType:attributes:prefetch:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextPAAE7objects6ofType10attributes8prefetchSayqd__Gqd__m_SDySSypGSaySSGSgtAA0B6ObjectRd__lF">objects(ofType:attributes:prefetch:)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE7objects6ofType10attributes8prefetchSayqd__Gqd__m_SDySSypGSaySSGSgtAA0B6ObjectRd__lF">objects(ofType:<wbr>attributes:<wbr>prefetch:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -1945,7 +1979,7 @@ Concrete implementations may wish to provide a more performant version, if neces
                     <code>
                     <a name="/s:8Flapjack11DataContextPAAE7objects6ofType9objectIDsSayqd__Gqd__m_SayAA0B8ObjectID_pGtAA0bI0Rd__lF"></a>
                     <a name="//apple_ref/swift/Method/objects(ofType:objectIDs:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextPAAE7objects6ofType9objectIDsSayqd__Gqd__m_SayAA0B8ObjectID_pGtAA0bI0Rd__lF">objects(ofType:objectIDs:)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE7objects6ofType9objectIDsSayqd__Gqd__m_SayAA0B8ObjectID_pGtAA0bI0Rd__lF">objects(ofType:<wbr>objectIDs:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -2014,7 +2048,7 @@ Concrete implementations may wish to provide a more performant version, if neces
                     <code>
                     <a name="/s:8Flapjack11DataContextPAAE7objects6ofType9objectIDs8prefetchSayqd__Gqd__m_SayAA0B8ObjectID_pGSaySSGSgtAA0bJ0Rd__lF"></a>
                     <a name="//apple_ref/swift/Method/objects(ofType:objectIDs:prefetch:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextPAAE7objects6ofType9objectIDs8prefetchSayqd__Gqd__m_SayAA0B8ObjectID_pGSaySSGSgtAA0bJ0Rd__lF">objects(ofType:objectIDs:prefetch:)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE7objects6ofType9objectIDs8prefetchSayqd__Gqd__m_SayAA0B8ObjectID_pGSaySSGSgtAA0bJ0Rd__lF">objects(ofType:<wbr>objectIDs:<wbr>prefetch:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -2096,7 +2130,7 @@ parameter for eagerly fetching related records.</p>
                     <code>
                     <a name="/s:8Flapjack11DataContextPAAE7objects6ofType11primaryKeysSayqd__Gqd__m_SayAA10PrimaryKey_pGtAA0B6ObjectRd__lF"></a>
                     <a name="//apple_ref/swift/Method/objects(ofType:primaryKeys:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextPAAE7objects6ofType11primaryKeysSayqd__Gqd__m_SayAA10PrimaryKey_pGtAA0B6ObjectRd__lF">objects(ofType:primaryKeys:)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE7objects6ofType11primaryKeysSayqd__Gqd__m_SayAA10PrimaryKey_pGtAA0B6ObjectRd__lF">objects(ofType:<wbr>primaryKeys:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -2165,7 +2199,7 @@ parameter for eagerly fetching related records.</p>
                     <code>
                     <a name="/s:8Flapjack11DataContextPAAE7objects6ofType11primaryKeys8prefetchSayqd__Gqd__m_SayAA10PrimaryKey_pGSaySSGSgtAA0B6ObjectRd__lF"></a>
                     <a name="//apple_ref/swift/Method/objects(ofType:primaryKeys:prefetch:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextPAAE7objects6ofType11primaryKeys8prefetchSayqd__Gqd__m_SayAA10PrimaryKey_pGSaySSGSgtAA0B6ObjectRd__lF">objects(ofType:primaryKeys:prefetch:)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE7objects6ofType11primaryKeys8prefetchSayqd__Gqd__m_SayAA10PrimaryKey_pGSaySSGSgtAA0B6ObjectRd__lF">objects(ofType:<wbr>primaryKeys:<wbr>prefetch:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -2248,9 +2282,11 @@ parameter for eagerly fetching related records.</p>
               <div class="task-name-container">
                 <a name="/Single%20fetch%20operations2"></a>
                 <a name="//apple_ref/swift/Section/Single fetch operations" class="dashAnchor"></a>
-                <a href="#/Single%20fetch%20operations2">
-                  <h3 class="section-name">Single fetch operations</h3>
-                </a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Single%20fetch%20operations2"></a>
+                  <h3 class="section-name"><p>Single fetch operations</p>
+</h3>
+                </div>
               </div>
               <ul class="item-container">
                 <li class="item">
@@ -2258,7 +2294,7 @@ parameter for eagerly fetching related records.</p>
                     <code>
                     <a name="/s:8Flapjack11DataContextPAAE6object6ofType9predicateqd__Sgqd__m_So11NSPredicateCSgtAA0B6ObjectRd__lF"></a>
                     <a name="//apple_ref/swift/Method/object(ofType:predicate:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextPAAE6object6ofType9predicateqd__Sgqd__m_So11NSPredicateCSgtAA0B6ObjectRd__lF">object(ofType:predicate:)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE6object6ofType9predicateqd__Sgqd__m_So11NSPredicateCSgtAA0B6ObjectRd__lF">object(ofType:<wbr>predicate:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -2327,7 +2363,7 @@ parameter for eagerly fetching related records.</p>
                     <code>
                     <a name="/s:8Flapjack11DataContextPAAE6object6ofType10attributesqd__Sgqd__m_SDySSypGtAA0B6ObjectRd__lF"></a>
                     <a name="//apple_ref/swift/Method/object(ofType:attributes:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextPAAE6object6ofType10attributesqd__Sgqd__m_SDySSypGtAA0B6ObjectRd__lF">object(ofType:attributes:)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE6object6ofType10attributesqd__Sgqd__m_SDySSypGtAA0B6ObjectRd__lF">object(ofType:<wbr>attributes:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -2396,7 +2432,7 @@ parameter for eagerly fetching related records.</p>
                     <code>
                     <a name="/s:8Flapjack11DataContextPAAE6object6ofType10primaryKeyqd__Sgqd__m_AA07PrimaryH0_pSgtAA0B6ObjectRd__lF"></a>
                     <a name="//apple_ref/swift/Method/object(ofType:primaryKey:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextPAAE6object6ofType10primaryKeyqd__Sgqd__m_AA07PrimaryH0_pSgtAA0B6ObjectRd__lF">object(ofType:primaryKey:)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE6object6ofType10primaryKeyqd__Sgqd__m_AA07PrimaryH0_pSgtAA0B6ObjectRd__lF">object(ofType:<wbr>primaryKey:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -2465,9 +2501,11 @@ parameter for eagerly fetching related records.</p>
               <div class="task-name-container">
                 <a name="/Creation%20operations2"></a>
                 <a name="//apple_ref/swift/Section/Creation operations" class="dashAnchor"></a>
-                <a href="#/Creation%20operations2">
-                  <h3 class="section-name">Creation operations</h3>
-                </a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Creation%20operations2"></a>
+                  <h3 class="section-name"><p>Creation operations</p>
+</h3>
+                </div>
               </div>
               <ul class="item-container">
                 <li class="item">
@@ -2475,7 +2513,7 @@ parameter for eagerly fetching related records.</p>
                     <code>
                     <a name="/s:8Flapjack11DataContextPAAE12findOrCreate_10primaryKeyqd__6object_Sb5isNewtSgqd__m_AA07PrimaryH0_pSgtAA0B6ObjectRd__lF"></a>
                     <a name="//apple_ref/swift/Method/findOrCreate(_:primaryKey:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextPAAE12findOrCreate_10primaryKeyqd__6object_Sb5isNewtSgqd__m_AA07PrimaryH0_pSgtAA0B6ObjectRd__lF">findOrCreate(_:primaryKey:)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE12findOrCreate_10primaryKeyqd__6object_Sb5isNewtSgqd__m_AA07PrimaryH0_pSgtAA0B6ObjectRd__lF">findOrCreate(_:<wbr>primaryKey:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -2545,7 +2583,7 @@ including the <code>object</code> and whether or not the object <code>isNew</cod
                     <code>
                     <a name="/s:8Flapjack11DataContextPAAE12findOrCreate_10attributesqd__6object_Sb5isNewtqd__m_SDySSypGtAA0B6ObjectRd__lF"></a>
                     <a name="//apple_ref/swift/Method/findOrCreate(_:attributes:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextPAAE12findOrCreate_10attributesqd__6object_Sb5isNewtqd__m_SDySSypGtAA0B6ObjectRd__lF">findOrCreate(_:attributes:)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE12findOrCreate_10attributesqd__6object_Sb5isNewtqd__m_SDySSypGtAA0B6ObjectRd__lF">findOrCreate(_:<wbr>attributes:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -2618,8 +2656,8 @@ including the <code>object</code> and whether or not the object <code>isNew</cod
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://oreilly.com" target="_blank" rel="external">O&#39;Reilly Media, Inc.</a>. All rights reserved. (Last updated: 2019-03-27)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2020 <a class="link" href="https://oreilly.com" target="_blank" rel="external">O&#39;Reilly Media, Inc.</a>. All rights reserved. (Last updated: 2020-04-29)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

@@ -21,7 +21,7 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="../index.html">
-          Flapjack Docs
+          Flapjack 0.6.1 Docs
         </a>
          (93% documented)
       </p>
@@ -106,10 +106,25 @@
                 <a class="nav-group-task-link" href="../Extensions/Array.html">Array</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions.html#/s:10Foundation4DataV">Data</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions.html#/s:s5Int16V">Int16</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions.html#/s:s5Int32V">Int32</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions.html#/s:s5Int64V">Int64</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/NSFetchedResultsChangeType.html">NSFetchedResultsChangeType</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/NSManagedObjectContext.html">NSManagedObjectContext</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions.html#/c:objc(cs)NSManagedObjectID">NSManagedObjectID</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/NSMigrationManager.html">NSMigrationManager</a>
@@ -124,10 +139,19 @@
                 <a class="nav-group-task-link" href="../Extensions/Set.html">Set</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions.html#/s:SS">String</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/UICollectionView.html">UICollectionView</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/UITableView.html">UITableView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions.html#/s:10Foundation3URLV">URL</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions.html#/s:10Foundation4UUIDV">UUID</a>
               </li>
             </ul>
           </li>
@@ -176,7 +200,7 @@
       <article class="main-content">
 
         <section class="section">
-          <div class="section-content">
+          <div class="section-content top-matter">
             <h1>DataSource</h1>
               <div class="declaration">
                 <div class="language">
@@ -216,7 +240,7 @@ section changes in the matched data set.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">OnChangeClosure</span> <span class="o">=</span> <span class="p">(</span><span class="kt">Set</span><span class="o">&lt;</span><span class="kt"><a href="../Enums/DataSourceChange.html">DataSourceChange</a></span><span class="o">&gt;</span><span class="p">,</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt"><a href="../Enums/DataSourceSectionChange.html">DataSourceSectionChange</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">OnChangeClosure</span> <span class="o">=</span> <span class="p">([</span><span class="kt"><a href="../Enums/DataSourceChange.html">DataSourceChange</a></span><span class="p">],</span> <span class="p">[</span><span class="kt"><a href="../Enums/DataSourceSectionChange.html">DataSourceSectionChange</a></span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
 
                         </div>
                       </div>
@@ -441,9 +465,9 @@ section changes in the matched data set.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Flapjack10DataSourceP8onChangeyShyAA0bcE0OG_ShyAA0bc7SectionE0OGtcSgvp"></a>
+                    <a name="/s:8Flapjack10DataSourceP8onChangeySayAA0bcE0OG_SayAA0bc7SectionE0OGtcSgvp"></a>
                     <a name="//apple_ref/swift/Property/onChange" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack10DataSourceP8onChangeyShyAA0bcE0OG_ShyAA0bc7SectionE0OGtcSgvp">onChange</a>
+                    <a class="token" href="#/s:8Flapjack10DataSourceP8onChangeySayAA0bcE0OG_SayAA0bc7SectionE0OGtcSgvp">onChange</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -503,7 +527,7 @@ section changes in the matched data set.</p>
                     <code>
                     <a name="/s:8Flapjack10DataSourceP15numberOfObjects2inS2i_tF"></a>
                     <a name="//apple_ref/swift/Method/numberOfObjects(in:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack10DataSourceP15numberOfObjects2inS2i_tF">numberOfObjects(in:)</a>
+                    <a class="token" href="#/s:8Flapjack10DataSourceP15numberOfObjects2inS2i_tF">numberOfObjects(in:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -565,7 +589,7 @@ exceeds the known bounds of possible sections, <code>0</code> should be returned
                     <code>
                     <a name="/s:8Flapjack10DataSourceP6object2at9ModelTypeQzSg10Foundation9IndexPathV_tF"></a>
                     <a name="//apple_ref/swift/Method/object(at:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack10DataSourceP6object2at9ModelTypeQzSg10Foundation9IndexPathV_tF">object(at:)</a>
+                    <a class="token" href="#/s:8Flapjack10DataSourceP6object2at9ModelTypeQzSg10Foundation9IndexPathV_tF">object(at:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -626,7 +650,7 @@ exceeds the known bounds of possible sections, <code>0</code> should be returned
                     <code>
                     <a name="/s:8Flapjack10DataSourceP9indexPath3for10Foundation05IndexE0VSg9ModelTypeQzSg_tF"></a>
                     <a name="//apple_ref/swift/Method/indexPath(for:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack10DataSourceP9indexPath3for10Foundation05IndexE0VSg9ModelTypeQzSg_tF">indexPath(for:)</a>
+                    <a class="token" href="#/s:8Flapjack10DataSourceP9indexPath3for10Foundation05IndexE0VSg9ModelTypeQzSg_tF">indexPath(for:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -688,7 +712,7 @@ should return <code>nil</code>.</p>
                     <code>
                     <a name="/s:8Flapjack10DataSourceP11firstObject8matching9ModelTypeQzSgSbAGXE_tF"></a>
                     <a name="//apple_ref/swift/Method/firstObject(matching:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack10DataSourceP11firstObject8matching9ModelTypeQzSgSbAGXE_tF">firstObject(matching:)</a>
+                    <a class="token" href="#/s:8Flapjack10DataSourceP11firstObject8matching9ModelTypeQzSgSbAGXE_tF">firstObject(matching:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -750,7 +774,7 @@ This function should short circuit and return immediately as soon as a result is
                     <code>
                     <a name="/s:8Flapjack10DataSourceP10allObjects8matchingSay9ModelTypeQzGSbAGXE_tF"></a>
                     <a name="//apple_ref/swift/Method/allObjects(matching:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack10DataSourceP10allObjects8matchingSay9ModelTypeQzGSbAGXE_tF">allObjects(matching:)</a>
+                    <a class="token" href="#/s:8Flapjack10DataSourceP10allObjects8matchingSay9ModelTypeQzGSbAGXE_tF">allObjects(matching:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -815,8 +839,8 @@ array.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://oreilly.com" target="_blank" rel="external">O&#39;Reilly Media, Inc.</a>. All rights reserved. (Last updated: 2019-03-27)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2020 <a class="link" href="https://oreilly.com" target="_blank" rel="external">O&#39;Reilly Media, Inc.</a>. All rights reserved. (Last updated: 2020-04-29)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

@@ -21,7 +21,7 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="../index.html">
-          Flapjack Docs
+          Flapjack 0.6.1 Docs
         </a>
          (93% documented)
       </p>
@@ -106,10 +106,25 @@
                 <a class="nav-group-task-link" href="../Extensions/Array.html">Array</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions.html#/s:10Foundation4DataV">Data</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions.html#/s:s5Int16V">Int16</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions.html#/s:s5Int32V">Int32</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions.html#/s:s5Int64V">Int64</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/NSFetchedResultsChangeType.html">NSFetchedResultsChangeType</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/NSManagedObjectContext.html">NSManagedObjectContext</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions.html#/c:objc(cs)NSManagedObjectID">NSManagedObjectID</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/NSMigrationManager.html">NSMigrationManager</a>
@@ -124,10 +139,19 @@
                 <a class="nav-group-task-link" href="../Extensions/Set.html">Set</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions.html#/s:SS">String</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/UICollectionView.html">UICollectionView</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/UITableView.html">UITableView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions.html#/s:10Foundation3URLV">URL</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions.html#/s:10Foundation4UUIDV">UUID</a>
               </li>
             </ul>
           </li>
@@ -176,11 +200,11 @@
       <article class="main-content">
 
         <section class="section">
-          <div class="section-content">
+          <div class="section-content top-matter">
             <h1>NSManagedObjectContext</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">NSManagedObjectContext</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">NSCoding</span><span class="p">,</span> <span class="kt">NSLocking</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">NSManagedObjectContext</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataContext.html">DataContext</a></span></code></pre>
 
                 </div>
               </div>
@@ -197,7 +221,7 @@
                     <code>
                     <a name="/s:So22NSManagedObjectContextC8FlapjackE7performyyyAC04DataC0_pcF"></a>
                     <a name="//apple_ref/swift/Method/perform(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE7performyyyAC04DataC0_pcF">perform(_:)</a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE7performyyyAC04DataC0_pcF">perform(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -247,7 +271,7 @@
                     <code>
                     <a name="/s:So22NSManagedObjectContextC8FlapjackE11performSyncyyyAC04DataC0_pcF"></a>
                     <a name="//apple_ref/swift/Method/performSync(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE11performSyncyyyAC04DataC0_pcF">performSync(_:)</a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE11performSyncyyyAC04DataC0_pcF">performSync(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -298,7 +322,7 @@ Wraps <code>NSManagedObjectContext.performAndWait(_:)</code>.</p>
                     <code>
                     <a name="/s:So22NSManagedObjectContextC8FlapjackE7refreshyyxAC04DataB0RzlF"></a>
                     <a name="//apple_ref/swift/Method/refresh(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE7refreshyyxAC04DataB0RzlF">refresh(_:)</a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE7refreshyyxAC04DataB0RzlF">refresh(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -453,9 +477,11 @@ round trip to the backing store.</p>
               <div class="task-name-container">
                 <a name="/Collection%20fetch%20operations"></a>
                 <a name="//apple_ref/swift/Section/Collection fetch operations" class="dashAnchor"></a>
-                <a href="#/Collection%20fetch%20operations">
-                  <h3 class="section-name">Collection fetch operations</h3>
-                </a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Collection%20fetch%20operations"></a>
+                  <h3 class="section-name"><p>Collection fetch operations</p>
+</h3>
+                </div>
               </div>
               <ul class="item-container">
                 <li class="item">
@@ -463,7 +489,7 @@ round trip to the backing store.</p>
                     <code>
                     <a name="/s:So22NSManagedObjectContextC8FlapjackE7objects6ofType9predicate8prefetch6sortBy5limitSayxGxm_So11NSPredicateCSgSaySSGSgSayAC14SortDescriptorVGSiSgtAC04DataB0RzlF"></a>
                     <a name="//apple_ref/swift/Method/objects(ofType:predicate:prefetch:sortBy:limit:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE7objects6ofType9predicate8prefetch6sortBy5limitSayxGxm_So11NSPredicateCSgSaySSGSgSayAC14SortDescriptorVGSiSgtAC04DataB0RzlF">objects(ofType:predicate:prefetch:sortBy:limit:)</a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE7objects6ofType9predicate8prefetch6sortBy5limitSayxGxm_So11NSPredicateCSgSaySSGSgSayAC14SortDescriptorVGSiSgtAC04DataB0RzlF">objects(ofType:<wbr>predicate:<wbr>prefetch:<wbr>sortBy:<wbr>limit:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -566,7 +592,7 @@ count of matches returned.</p>
                     <code>
                     <a name="/s:So22NSManagedObjectContextC8FlapjackE7objects6ofType9objectIDs8prefetch6sortBy5limitSayxGxm_SayAC04DataB2ID_pGSaySSGSgSayAC14SortDescriptorVGSiSgtAC0nB0RzlF"></a>
                     <a name="//apple_ref/swift/Method/objects(ofType:objectIDs:prefetch:sortBy:limit:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE7objects6ofType9objectIDs8prefetch6sortBy5limitSayxGxm_SayAC04DataB2ID_pGSaySSGSgSayAC14SortDescriptorVGSiSgtAC0nB0RzlF">objects(ofType:objectIDs:prefetch:sortBy:limit:)</a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE7objects6ofType9objectIDs8prefetch6sortBy5limitSayxGxm_SayAC04DataB2ID_pGSaySSGSgSayAC14SortDescriptorVGSiSgtAC0nB0RzlF">objects(ofType:<wbr>objectIDs:<wbr>prefetch:<wbr>sortBy:<wbr>limit:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -670,7 +696,7 @@ records returned.</p>
                     <code>
                     <a name="/s:So22NSManagedObjectContextC8FlapjackE15numberOfObjects6ofType9predicateSixm_So11NSPredicateCSgtAC04DataB0RzlF"></a>
                     <a name="//apple_ref/swift/Method/numberOfObjects(ofType:predicate:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE15numberOfObjects6ofType9predicateSixm_So11NSPredicateCSgtAC04DataB0RzlF">numberOfObjects(ofType:predicate:)</a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE15numberOfObjects6ofType9predicateSixm_So11NSPredicateCSgtAC04DataB0RzlF">numberOfObjects(ofType:<wbr>predicate:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -737,9 +763,11 @@ integer count instead of an entire record set.</p>
               <div class="task-name-container">
                 <a name="/Single%20fetch%20operations"></a>
                 <a name="//apple_ref/swift/Section/Single fetch operations" class="dashAnchor"></a>
-                <a href="#/Single%20fetch%20operations">
-                  <h3 class="section-name">Single fetch operations</h3>
-                </a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Single%20fetch%20operations"></a>
+                  <h3 class="section-name"><p>Single fetch operations</p>
+</h3>
+                </div>
               </div>
               <ul class="item-container">
                 <li class="item">
@@ -747,7 +775,7 @@ integer count instead of an entire record set.</p>
                     <code>
                     <a name="/s:So22NSManagedObjectContextC8FlapjackE6object6ofType9predicate8prefetch6sortByxSgxm_So11NSPredicateCSgSaySSGSgSayAC14SortDescriptorVGtAC04DataB0RzlF"></a>
                     <a name="//apple_ref/swift/Method/object(ofType:predicate:prefetch:sortBy:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE6object6ofType9predicate8prefetch6sortByxSgxm_So11NSPredicateCSgSaySSGSgSayAC14SortDescriptorVGtAC04DataB0RzlF">object(ofType:predicate:prefetch:sortBy:)</a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE6object6ofType9predicate8prefetch6sortByxSgxm_So11NSPredicateCSgSaySSGSgSayAC14SortDescriptorVGtAC04DataB0RzlF">object(ofType:<wbr>predicate:<wbr>prefetch:<wbr>sortBy:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -839,7 +867,7 @@ used to sort the results, and the first object will be returned.</p>
                     <code>
                     <a name="/s:So22NSManagedObjectContextC8FlapjackE6object6ofType0E2IDxSgxm_AC04DatabH0_ptAC0iB0RzlF"></a>
                     <a name="//apple_ref/swift/Method/object(ofType:objectID:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE6object6ofType0E2IDxSgxm_AC04DatabH0_ptAC0iB0RzlF">object(ofType:objectID:)</a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE6object6ofType0E2IDxSgxm_AC04DatabH0_ptAC0iB0RzlF">object(ofType:<wbr>objectID:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -904,7 +932,7 @@ used to sort the results, and the first object will be returned.</p>
                     <code>
                     <a name="/s:So22NSManagedObjectContextC8FlapjackE7refetchyxSgxAC04DataB0RzlF"></a>
                     <a name="//apple_ref/swift/Method/refetch(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE7refetchyxSgxAC04DataB0RzlF">refetch(_:)</a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE7refetchyxSgxAC04DataB0RzlF">refetch(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -958,9 +986,11 @@ used to sort the results, and the first object will be returned.</p>
               <div class="task-name-container">
                 <a name="/Creation%20operations"></a>
                 <a name="//apple_ref/swift/Section/Creation operations" class="dashAnchor"></a>
-                <a href="#/Creation%20operations">
-                  <h3 class="section-name">Creation operations</h3>
-                </a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Creation%20operations"></a>
+                  <h3 class="section-name"><p>Creation operations</p>
+</h3>
+                </div>
               </div>
               <ul class="item-container">
                 <li class="item">
@@ -968,7 +998,7 @@ used to sort the results, and the first object will be returned.</p>
                     <code>
                     <a name="/s:So22NSManagedObjectContextC8FlapjackE6createyxxmAC04DataB0RzlF"></a>
                     <a name="//apple_ref/swift/Method/create(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE6createyxxmAC04DataB0RzlF">create(_:)</a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE6createyxxmAC04DataB0RzlF">create(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1021,7 +1051,7 @@ used to sort the results, and the first object will be returned.</p>
                     <code>
                     <a name="/s:So22NSManagedObjectContextC8FlapjackE6create_10attributesxxm_SDySSypGtAC04DataB0RzlF"></a>
                     <a name="//apple_ref/swift/Method/create(_:attributes:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE6create_10attributesxxm_SDySSypGtAC04DataB0RzlF">create(_:attributes:)</a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE6create_10attributesxxm_SDySSypGtAC04DataB0RzlF">create(_:<wbr>attributes:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1088,9 +1118,11 @@ attributes as properties.</p>
               <div class="task-name-container">
                 <a name="/Destruction%20operations"></a>
                 <a name="//apple_ref/swift/Section/Destruction operations" class="dashAnchor"></a>
-                <a href="#/Destruction%20operations">
-                  <h3 class="section-name">Destruction operations</h3>
-                </a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Destruction%20operations"></a>
+                  <h3 class="section-name"><p>Destruction operations</p>
+</h3>
+                </div>
               </div>
               <ul class="item-container">
                 <li class="item">
@@ -1098,7 +1130,7 @@ attributes as properties.</p>
                     <code>
                     <a name="/s:So22NSManagedObjectContextC8FlapjackE7destroy6objectyxSg_tAC04DataB0RzlF"></a>
                     <a name="//apple_ref/swift/Method/destroy(object:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE7destroy6objectyxSg_tAC04DataB0RzlF">destroy(object:)</a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE7destroy6objectyxSg_tAC04DataB0RzlF">destroy(object:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1148,9 +1180,11 @@ attributes as properties.</p>
               <div class="task-name-container">
                 <a name="/Fetch%20request%20helpers"></a>
                 <a name="//apple_ref/swift/Section/Fetch request helpers" class="dashAnchor"></a>
-                <a href="#/Fetch%20request%20helpers">
-                  <h3 class="section-name">Fetch request helpers</h3>
-                </a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Fetch%20request%20helpers"></a>
+                  <h3 class="section-name"><p>Fetch request helpers</p>
+</h3>
+                </div>
               </div>
               <ul class="item-container">
                 <li class="item">
@@ -1158,7 +1192,7 @@ attributes as properties.</p>
                     <code>
                     <a name="/s:So22NSManagedObjectContextC8FlapjackE12fetchRequest3for9predicate8prefetch6sortBy5limitSo07NSFetchF0CySo0aB0CGxm_So11NSPredicateCSgSaySSGSayAC14SortDescriptorVGSiSgtAC04DataB0RzlF"></a>
                     <a name="//apple_ref/swift/Method/fetchRequest(for:predicate:prefetch:sortBy:limit:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE12fetchRequest3for9predicate8prefetch6sortBy5limitSo07NSFetchF0CySo0aB0CGxm_So11NSPredicateCSgSaySSGSayAC14SortDescriptorVGSiSgtAC04DataB0RzlF">fetchRequest(for:predicate:prefetch:sortBy:limit:)</a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE12fetchRequest3for9predicate8prefetch6sortBy5limitSo07NSFetchF0CySo0aB0CGxm_So11NSPredicateCSgSaySSGSayAC14SortDescriptorVGSiSgtAC04DataB0RzlF">fetchRequest(for:<wbr>predicate:<wbr>prefetch:<wbr>sortBy:<wbr>limit:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1255,10 +1289,6 @@ a <code>fetchBatchSize</code> of 50.</p>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
@@ -1325,7 +1355,7 @@ a <code>fetchBatchSize</code> of 50.</p>
                     <code>
                     <a name="/s:So22NSManagedObjectContextC8FlapjackE13objectIDsFrom12notificationShySo0aB2IDCG9refreshes_AH7insertsAH7updatesAH7deletest10Foundation12NotificationV_tFZ"></a>
                     <a name="//apple_ref/swift/Method/objectIDsFrom(notification:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE13objectIDsFrom12notificationShySo0aB2IDCG9refreshes_AH7insertsAH7updatesAH7deletest10Foundation12NotificationV_tFZ">objectIDsFrom(notification:)</a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE13objectIDsFrom12notificationShySo0aB2IDCG9refreshes_AH7insertsAH7updatesAH7deletest10Foundation12NotificationV_tFZ">objectIDsFrom(notification:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1380,7 +1410,7 @@ context-did-save notification.</p>
                     <code>
                     <a name="/s:So22NSManagedObjectContextC8FlapjackE11objectsFrom12notification6ofTypeShyxG9refreshes_AG7insertsAG7updatesAG7deletest10Foundation12NotificationV_xmtAC04DataB0RzSHRzlFZ"></a>
                     <a name="//apple_ref/swift/Method/objectsFrom(notification:ofType:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE11objectsFrom12notification6ofTypeShyxG9refreshes_AG7insertsAG7updatesAG7deletest10Foundation12NotificationV_xmtAC04DataB0RzSHRzlFZ">objectsFrom(notification:ofType:)</a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE11objectsFrom12notification6ofTypeShyxG9refreshes_AG7insertsAG7updatesAG7deletest10Foundation12NotificationV_xmtAC04DataB0RzSHRzlFZ">objectsFrom(notification:<wbr>ofType:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1447,7 +1477,7 @@ context-did-save notification matching a given type.</p>
                     <code>
                     <a name="/s:So22NSManagedObjectContextC8FlapjackE010referencedB03for4type2in7refetchx6object_Sb7deletedtSgSo0aB2IDC_xm10Foundation12NotificationVSbtAC04DataB0RzSHRzlFZ"></a>
                     <a name="//apple_ref/swift/Method/referencedObject(for:type:in:refetch:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE010referencedB03for4type2in7refetchx6object_Sb7deletedtSgSo0aB2IDC_xm10Foundation12NotificationVSbtAC04DataB0RzSHRzlFZ">referencedObject(for:type:in:refetch:)</a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE010referencedB03for4type2in7refetchx6object_Sb7deletedtSgSo0aB2IDC_xm10Foundation12NotificationVSbtAC04DataB0RzSHRzlFZ">referencedObject(for:<wbr>type:<wbr>in:<wbr>refetch:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1539,7 +1569,7 @@ based on that object&rsquo;s <code>NSManagedObjectID</code>.</p>
                     <code>
                     <a name="/s:So22NSManagedObjectContextC8FlapjackE02isB0_12referencedInSbSo0aB0C_10Foundation12NotificationVtFZ"></a>
                     <a name="//apple_ref/swift/Method/isObject(_:referencedIn:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE02isB0_12referencedInSbSo0aB0C_10Foundation12NotificationVtFZ">isObject(_:referencedIn:)</a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE02isB0_12referencedInSbSo0aB0C_10Foundation12NotificationVtFZ">isObject(_:<wbr>referencedIn:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1609,8 +1639,8 @@ based on that object&rsquo;s <code>NSManagedObjectID</code>.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://oreilly.com" target="_blank" rel="external">O&#39;Reilly Media, Inc.</a>. All rights reserved. (Last updated: 2019-03-27)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2020 <a class="link" href="https://oreilly.com" target="_blank" rel="external">O&#39;Reilly Media, Inc.</a>. All rights reserved. (Last updated: 2020-04-29)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>
