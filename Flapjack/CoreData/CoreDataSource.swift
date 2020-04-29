@@ -29,6 +29,25 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
     /// A retained closure that is invoked when section and/or object changes are detected in the matched data set.
     public var onChange: OnChangeClosure?
 
+    /// If a predicate is specified at initialization, return that value. Assigning to it changes the predicate associated
+    /// with the fetched results controller and will cause data to be reloaded, if a fetch has already been executed. However, the `onChange` handler will not be called.
+    public var predicate: NSPredicate? {
+        didSet {
+            controller.fetchRequest.predicate = predicate
+            refetchIfNeeded()
+        }
+    }
+
+    /// Change the set of sort descriptors used to return the objects in this data source.
+    /// Will cause the fetched results controller to be reloaded if `startListening` had already been called,
+    /// but does not cause the `onChange` handler to be called.
+    public var sorters: [SortDescriptor] = T.defaultSorters {
+        didSet {
+            controller.fetchRequest.sortDescriptors = sorters.asNSSortDescriptors
+            refetchIfNeeded()
+        }
+    }
+
     private var controller: NSFetchedResultsController<NSManagedObject>
     private var pendingSectionChanges = [DataSourceSectionChange]()
     private var pendingItemChanges = [DataSourceChange]()
@@ -83,6 +102,8 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
             cacheKey = type(of: self).cacheName(type: T.self, fetchRequest: fetchRequest)
         }
         self.limit = limit
+        self.predicate = predicate
+        self.sorters = sorters
         NSFetchedResultsController<NSManagedObject>.deleteCache(withName: cacheKey)
         controller = NSFetchedResultsController<NSManagedObject>(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: sectionProperty, cacheName: cacheKey)
         super.init()
@@ -140,7 +161,7 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
             try controller.performFetch()
             hasExecuted = true
         } catch let error {
-            Logger.debug("Error fetching CoreDataSource<\(T.self)>: \(error)")
+            Logger.error("Error fetching CoreDataSource<\(T.self)>: \(error)")
         }
     }
 
@@ -245,6 +266,16 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
 
     private func sectionInfo(for index: Int) -> NSFetchedResultsSectionInfo? {
         return controller.sections?[safe: index]
+    }
+
+    private func refetchIfNeeded() {
+        guard hasExecuted else { return }
+        do {
+            NSFetchedResultsController<NSManagedObject>.deleteCache(withName: cacheKey)
+            try controller.performFetch()
+        } catch let error {
+            Logger.error("Error fetching CoreDataSource<\(T.self)>: \(error)")
+        }
     }
 
 
