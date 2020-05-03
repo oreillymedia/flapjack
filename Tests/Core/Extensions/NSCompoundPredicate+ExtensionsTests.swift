@@ -38,4 +38,9 @@ class NSCompoundPredicateExtensionsTests: XCTestCase {
         XCTAssertTrue(predicates.contains { $0.predicateFormat == "one == \"two\"" })
         XCTAssertTrue(predicates.contains { $0.predicateFormat == "three == 4" })
     }
+
+    func testInitializeFromNull() {
+        XCTAssertEqual(NSPredicate(key: "keypath", value: nil).predicateFormat, "keypath == nil")
+        XCTAssertEqual(NSPredicate(key: "self", value: nil).predicateFormat, "SELF == nil")
+    }
 }
