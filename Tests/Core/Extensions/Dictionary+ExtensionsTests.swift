@@ -14,10 +14,13 @@ import XCTest
 class DictionaryExtensionsTests: XCTestCase {
     func testCacheKeyGeneration() {
         // Sorts keys and then spits out a key
-        let source: [String: Any] = ["this": "should", "produce": true, "aCacheKey": 42]
+        let source: [String: Any?] = ["this": "should", "produce": true, "aCacheKey": 42]
         XCTAssertEqual(source.cacheKey, "aCacheKey.42-produce.true-this.should")
 
-        let empty = [String: Any]()
+        let empty = [String: Any?]()
         XCTAssertEqual(empty.cacheKey, "")
+
+        let withNil: [String: Any?] = ["this": "should", "appear": nil]
+        XCTAssertEqual(withNil.cacheKey, "appear.nil-this.should")
     }
 }

@@ -9,13 +9,20 @@
 import Foundation
 
 internal extension NSPredicate {
-    class func fromConditions(_ dictionary: [String: Any]) -> [NSPredicate] {
+    class func fromConditions(_ dictionary: [String: Any?]) -> [NSPredicate] {
         return dictionary.compactMap { NSPredicate(key: $0, value: $1) }
     }
 
-    convenience init(key: String, value: Any) {
+    convenience init(key: String, value: Any?) {
         let keyPath = key.hasPrefix("self") ? key : "%K"
-        var args: [Any] = key.hasPrefix("self") ? [value] : [key, value]
+        var args: [Any] = key.hasPrefix("self") ? [] : [key]
+
+        guard let value = value else {
+            self.init(format: "\(keyPath) == nil", argumentArray: args)
+            return
+        }
+
+        args.append(value)
 
         switch value {
         case is [Any], is [AnyHashable], is Set<AnyHashable>:
@@ -54,11 +61,11 @@ internal extension NSPredicate {
 }
 
 internal extension NSCompoundPredicate {
-    convenience init(andPredicateFrom dictionary: [String: Any]) {
+    convenience init(andPredicateFrom dictionary: [String: Any?]) {
         self.init(andPredicateWithSubpredicates: NSPredicate.fromConditions(dictionary))
     }
 
-    convenience init(orPredicateFrom dictionary: [String: Any]) {
+    convenience init(orPredicateFrom dictionary: [String: Any?]) {
         self.init(orPredicateWithSubpredicates: NSPredicate.fromConditions(dictionary))
     }
 }

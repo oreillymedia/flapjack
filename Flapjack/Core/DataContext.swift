@@ -17,7 +17,7 @@ import Foundation
  */
 public protocol DataContext {
     /// A generic alias for searchable criteria (this often gets converted into an `NSPredicate` under the hood).
-    typealias Attributes = [String: Any]
+    typealias Attributes = [String: Any?]
 
     /**
      Asks the context to perform an operation against itself on an isolated thread or queue.
