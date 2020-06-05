@@ -165,4 +165,21 @@ class SingleCoreDataSourceTests: XCTestCase {
         waitForExpectations(timeout: 0.5) { XCTAssertNil($0) }
         XCTAssertEqual(dataSource.object, newEntity)
     }
+
+    func testObjectDidChangeBlockFiresTwiceWhenOldObjectIsDeletedAndNewOneCreated() {
+        let expect = expectation(description: "did change block")
+        expect.expectedFulfillmentCount = 3
+        dataSource.onChange = { object in
+            expect.fulfill()
+        }
+        dataSource.startListening()
+
+        let newEntity = dataAccess.mainContext.create(MockEntity.self, attributes: attributes)
+        newEntity.someProperty = attributes["someProperty"]
+        dataAccess.mainContext.destroy(object: entity)
+        dataAccess.mainContext.persist()
+
+        waitForExpectations(timeout: 0.5) { XCTAssertNil($0) }
+        XCTAssertEqual(dataSource.object, newEntity)
+    }
 }

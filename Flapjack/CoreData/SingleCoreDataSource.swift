@@ -126,7 +126,6 @@ public class SingleCoreDataSource<T: NSManagedObject & DataObject>: NSObject, Si
             hasFetched = true
             object = nil
             onChange?(nil)
-            return
         }
 
         let theRest = inserts.union(updates).union(refreshes)
