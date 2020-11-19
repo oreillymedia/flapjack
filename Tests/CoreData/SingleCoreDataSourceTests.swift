@@ -53,7 +53,7 @@ class SingleCoreDataSourceTests: XCTestCase {
     func testCoreDataNotificationNotPickedUpBeforestartListening() {
         let expect = expectation(description: "did change block")
         expect.isInverted = true
-        dataSource.onChange = { object in
+        dataSource.onChange = { _ in
             expect.fulfill()
         }
         // Should not fire the expectation
@@ -65,7 +65,7 @@ class SingleCoreDataSourceTests: XCTestCase {
     func testExecutionSubscribesToNotificationAndDidChangeFiresRightAway() {
         let expect = expectation(description: "did change block")
         expect.expectedFulfillmentCount = 1
-        dataSource.onChange = { object in
+        dataSource.onChange = { _ in
             expect.fulfill()
         }
         dataSource.startListening()
@@ -74,7 +74,7 @@ class SingleCoreDataSourceTests: XCTestCase {
 
     func testObjectDidChangeBlockFiresForSavesInvolvingObject() {
         let expect = expectation(description: "did change block")
-        dataSource.onChange = { object in
+        dataSource.onChange = { _ in
             expect.fulfill()
         }
         dataSource.startListening()
@@ -85,7 +85,7 @@ class SingleCoreDataSourceTests: XCTestCase {
 
     func testObjectDidChangeBlockFiresForChangeProcessesInvolvingObject() {
         let expect = expectation(description: "did change block")
-        dataSource.onChange = { object in
+        dataSource.onChange = { _ in
             expect.fulfill()
         }
         dataSource.startListening()
@@ -99,7 +99,7 @@ class SingleCoreDataSourceTests: XCTestCase {
         dataAccess.mainContext.persist()
 
         let expect = expectation(description: "did change block")
-        dataSource.onChange = { object in
+        dataSource.onChange = { _ in
             expect.fulfill()
         }
         dataSource.startListening()
@@ -120,7 +120,7 @@ class SingleCoreDataSourceTests: XCTestCase {
     func testDidChangeIsCalledWithNilIfDestroyed() {
         let expect = expectation(description: "did change block")
         expect.expectedFulfillmentCount = 2
-        dataSource.onChange = { object in
+        dataSource.onChange = { _ in
             expect.fulfill()
         }
         dataSource.startListening()
@@ -135,7 +135,7 @@ class SingleCoreDataSourceTests: XCTestCase {
 
         let expect = expectation(description: "did change block")
         expect.expectedFulfillmentCount = 2
-        dataSource.onChange = { object in
+        dataSource.onChange = { _ in
             expect.fulfill()
         }
         dataSource.startListening()
@@ -153,7 +153,7 @@ class SingleCoreDataSourceTests: XCTestCase {
 
         let expect = expectation(description: "did change block")
         expect.expectedFulfillmentCount = 2
-        dataSource.onChange = { object in
+        dataSource.onChange = { _ in
             expect.fulfill()
         }
         dataSource.startListening()
@@ -169,7 +169,7 @@ class SingleCoreDataSourceTests: XCTestCase {
     func testObjectDidChangeBlockFiresTwiceWhenOldObjectIsDeletedAndNewOneCreated() {
         let expect = expectation(description: "did change block")
         expect.expectedFulfillmentCount = 3
-        dataSource.onChange = { object in
+        dataSource.onChange = { _ in
             expect.fulfill()
         }
         dataSource.startListening()

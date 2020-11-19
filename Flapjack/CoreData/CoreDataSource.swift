@@ -294,7 +294,8 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
 
     // MARK: Notification handlers
 
-    @objc private func contextWasCreated(_ notification: Notification) {
+    @objc
+    private func contextWasCreated(_ notification: Notification) {
         guard isContextAZombie else { return }
         guard let context = notification.object as? NSManagedObjectContext else { return }
         isContextAZombie = false
@@ -302,7 +303,8 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
         refetchIfNeeded()
     }
 
-    @objc private func contextWillBeDestroyed(_ notification: Notification) {
+    @objc
+    private func contextWillBeDestroyed(_ notification: Notification) {
         guard controller.managedObjectContext === notification.object as? NSManagedObjectContext else { return }
 
         // Make sure our listener knows our objects are going away

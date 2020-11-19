@@ -70,7 +70,7 @@ class CoreDataSourceTests: XCTestCase {
         let dataSource = CoreDataSource<MockEntity>(dataAccess: dataAccess)
         let expect = expectation(description: "on change")
         expect.isInverted = true
-        dataSource.onChange = { items, sections in
+        dataSource.onChange = { _, _ in
             expect.fulfill()
         }
         _ = dataAccess.mainContext.create(MockEntity.self, attributes: ["someProperty": "someValue alpha"])
@@ -112,7 +112,7 @@ class CoreDataSourceTests: XCTestCase {
         dataSource.endListening()
         let expect2 = expectation(description: "on change")
         expect2.isInverted = true
-        dataSource.onChange = { items, sections in
+        dataSource.onChange = { _, _ in
             expect2.fulfill()
         }
         _ = dataAccess.mainContext.create(MockEntity.self, attributes: ["someProperty": "someValue alpha"])
@@ -203,7 +203,7 @@ class CoreDataSourceTests: XCTestCase {
 
         let expect = expectation(description: "on change")
         expect.expectedFulfillmentCount = 1
-        dataSource.onChange = { items, sections in
+        dataSource.onChange = { _, sections in
             expect.fulfill()
             // One section renamed, one inserted, one moved due to reordering
             XCTAssertEqual(sections.count, 3)

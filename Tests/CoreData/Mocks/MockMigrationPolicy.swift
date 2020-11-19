@@ -21,7 +21,7 @@ class MockMigrationPolicy: MigrationPolicy {
     }
 
     private var entityMigration: MigrationOperation {
-        return { manager, source, destination in
+        return { _, source, destination in
             if let sourceValue = source.value(forKey: "renamedProperty") as? Int32 {
                 destination?.setValue(String(sourceValue), forKey: "convertedProperty")
             }
