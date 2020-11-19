@@ -120,15 +120,12 @@ public final class CoreDataAccess: DataAccess {
                 return
             }
 
-            self.addDefaultPersistentStores(async: asynchronously) { [weak self] fatalError in
-                guard let self = self, fatalError == nil else {
+            self.addDefaultPersistentStores(async: asynchronously) { fatalError in
+                guard fatalError == nil else {
                     completion(fatalError)
                     return
                 }
 
-                self.container.viewContext.automaticallyMergesChangesFromParent = true
-                self.isStackReady = true
-                NotificationCenter.default.post(name: type(of: self).didCreateNewMainContextNotification, object: self.mainContext)
                 completion(nil)
             }
         }
@@ -276,12 +273,21 @@ public final class CoreDataAccess: DataAccess {
             group.leave()
         }
 
+        let finally: ([DataAccessError]) -> Void = { [weak self] errors in
+            if errors.isEmpty, let self = self {
+                self.container.viewContext.automaticallyMergesChangesFromParent = true
+                self.isStackReady = true
+                NotificationCenter.default.post(name: type(of: self).didCreateNewMainContextNotification, object: self.mainContext)
+            }
+            completion(errors.first)
+        }
+
         if async {
             group.notify(queue: .main) {
-                completion(errors.first)
+                finally(errors)
             }
         } else {
-            completion(errors.first)
+            finally(errors)
         }
     }
 }
