@@ -21,7 +21,7 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="../index.html">
-          Flapjack 0.6.2 Docs
+          Flapjack 0.7.0 Docs
         </a>
          (93% documented)
       </p>
@@ -204,6 +204,7 @@
             <h1>CoreDataSource</h1>
               <div class="declaration">
                 <div class="language">
+                  
                   <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">CoreDataSource</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">NSFetchedResultsControllerDelegate</span><span class="p">,</span> <span class="kt"><a href="../Protocols/DataSource.html">DataSource</a></span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">NSManagedObject</span><span class="p">,</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
 
                 </div>
@@ -213,6 +214,9 @@ series of objects described by a set of <code>attributes</code>. Invokes the <co
 lookup change, get deleted, or when new objects are added that match the attributes. Powered by an
 <code>NSFetchedResultsController</code>.</p>
 
+              <div class="slightly-smaller">
+                <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L28-L377">Show on GitHub</a>
+              </div>
           </div>
         </section>
 
@@ -333,7 +337,7 @@ but does not cause the <code><a href="../Classes/CoreDataSource.html#/s:8Flapjac
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">dataAccess</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataAccess.html">DataAccess</a></span><span class="p">,</span> <span class="nv">attributes</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataContext.html">DataContext</a></span><span class="o">.</span><span class="kt">Attributes</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span> <span class="nv">sorters</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/SortDescriptor.html">SortDescriptor</a></span><span class="p">]</span> <span class="o">=</span> <span class="kt">T</span><span class="o">.</span><span class="n">defaultSorters</span><span class="p">,</span> <span class="nv">sectionProperty</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">batchSize</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">25</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">dataAccess</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataAccess.html">DataAccess</a></span><span class="p">,</span> <span class="nv">attributes</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DataContext.html">DataContext</a></span><span class="o">.</span><span class="kt">Attributes</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span> <span class="nv">sorters</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/SortDescriptor.html">SortDescriptor</a></span><span class="p">]</span> <span class="o">=</span> <span class="kt">T</span><span class="o">.</span><span class="n">defaultSorters</span><span class="p">,</span> <span class="nv">sectionProperty</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">batchSize</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">25</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -429,7 +433,7 @@ but does not cause the <code><a href="../Classes/CoreDataSource.html#/s:8Flapjac
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L69-L77">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L73-L81">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -563,7 +567,7 @@ but does not cause the <code><a href="../Classes/CoreDataSource.html#/s:8Flapjac
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L92-L110">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L96-L118">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -606,7 +610,7 @@ but does not cause the <code><a href="../Classes/CoreDataSource.html#/s:8Flapjac
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L116-L121">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L124-L129">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -636,7 +640,7 @@ but does not cause the <code><a href="../Classes/CoreDataSource.html#/s:8Flapjac
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L124-L132">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L132-L140">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -666,7 +670,7 @@ but does not cause the <code><a href="../Classes/CoreDataSource.html#/s:8Flapjac
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L135-L137">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L143-L145">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -696,7 +700,7 @@ but does not cause the <code><a href="../Classes/CoreDataSource.html#/s:8Flapjac
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L140-L142">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L148-L150">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -726,7 +730,7 @@ but does not cause the <code><a href="../Classes/CoreDataSource.html#/s:8Flapjac
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L145-L147">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L153-L155">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -757,7 +761,7 @@ come about matching our supplied predicate. If a fetch has already been executed
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L153-L166">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L161-L177">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -787,7 +791,7 @@ come about matching our supplied predicate. If a fetch has already been executed
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L168-L172">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L179-L185">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -841,7 +845,7 @@ exceeds the known bounds of possible sections, returns <code>0</code></p>
                         <p>The number of objects in that given section.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L181-L183">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L194-L196">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -894,7 +898,7 @@ exceeds the known bounds of possible sections, returns <code>0</code></p>
                         <p>The object, if one is found at the given index path.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L191-L206">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L204-L219">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -947,7 +951,7 @@ exceeds the known bounds of possible sections, returns <code>0</code></p>
                         <p>The index path, if found for the given object.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L214-L219">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L227-L232">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1001,7 +1005,7 @@ return immediately as soon as a result is found.</p>
                         <p>The first object matching the query, if one as found.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L228-L230">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L241-L243">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1054,7 +1058,7 @@ return immediately as soon as a result is found.</p>
                         <p>All objects matching the query, if any as found.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L238-L240">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L251-L253">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1097,7 +1101,7 @@ return immediately as soon as a result is found.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L284-L290">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L323-L329">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1127,7 +1131,7 @@ return immediately as soon as a result is found.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L292-L303">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L331-L342">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1157,7 +1161,7 @@ return immediately as soon as a result is found.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L305-L325">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L344-L364">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1187,7 +1191,7 @@ return immediately as soon as a result is found.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L327-L337">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/CoreDataSource.swift#L366-L376">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1200,8 +1204,8 @@ return immediately as soon as a result is found.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://oreilly.com" target="_blank" rel="external">O&#39;Reilly Media, Inc.</a>. All rights reserved. (Last updated: 2020-06-05)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2020 <a class="link" href="https://oreilly.com" target="_blank" rel="external">O&#39;Reilly Media, Inc.</a>. All rights reserved. (Last updated: 2020-11-23)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>
