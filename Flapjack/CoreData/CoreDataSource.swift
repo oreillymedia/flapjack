@@ -52,7 +52,11 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
     private var pendingSectionChanges = [DataSourceSectionChange]()
     private var pendingItemChanges = [DataSourceChange]()
     private var hasExecuted: Bool = false
+    /// If this is true, our context has been deleted and we're waiting for a new one.
+    private var isContextAZombie: Bool = false
     private var cacheKey: String
+    private var sectionProperty: String?
+    private var fetchRequest: NSFetchRequest<NSManagedObject>
     private var limit: Int?
 
     /**
@@ -94,8 +98,11 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
             fatalError("Must be used with an NSManagedObjectContext.")
         }
 
-        let fetchRequest = context.fetchRequest(for: T.self, predicate: predicate, prefetch: prefetch, sortBy: sorters, limit: limit)
-        fetchRequest.fetchBatchSize = min(limit ?? batchSize, batchSize)
+        fetchRequest = {
+            let request = context.fetchRequest(for: T.self, predicate: predicate, prefetch: prefetch, sortBy: sorters, limit: limit)
+            request.fetchBatchSize = min(limit ?? batchSize, batchSize)
+            return request
+        }()
         if let cacheName = cacheName {
             cacheKey = cacheName
         } else {
@@ -104,6 +111,7 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
         self.limit = limit
         self.predicate = predicate
         self.sorters = sorters
+        self.sectionProperty = sectionProperty
         NSFetchedResultsController<NSManagedObject>.deleteCache(withName: cacheKey)
         controller = NSFetchedResultsController<NSManagedObject>(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: sectionProperty, cacheName: cacheKey)
         super.init()
@@ -155,6 +163,9 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
             return
         }
 
+        NotificationCenter.default.addObserver(self, selector: #selector(contextWasCreated(_:)), name: CoreDataAccess.didCreateNewMainContextNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(contextWillBeDestroyed(_:)), name: CoreDataAccess.willDestroyMainContextNotification, object: nil)
+
         do {
             Logger.debug("Fetching cache key \"\(cacheKey)\"")
             controller.delegate = self
@@ -168,6 +179,8 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
     public func endListening() {
         guard hasExecuted else { return }
         controller.delegate = nil
+        NotificationCenter.default.removeObserver(self, name: CoreDataAccess.didCreateNewMainContextNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: CoreDataAccess.willDestroyMainContextNotification, object: nil)
         hasExecuted = false
     }
 
@@ -276,6 +289,32 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
         } catch let error {
             Logger.error("Error fetching CoreDataSource<\(T.self)>: \(error)")
         }
+    }
+
+
+    // MARK: Notification handlers
+
+    @objc
+    private func contextWasCreated(_ notification: Notification) {
+        guard isContextAZombie else { return }
+        guard let context = notification.object as? NSManagedObjectContext else { return }
+        isContextAZombie = false
+        controller = NSFetchedResultsController<NSManagedObject>(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: sectionProperty, cacheName: cacheKey)
+        refetchIfNeeded()
+    }
+
+    @objc
+    private func contextWillBeDestroyed(_ notification: Notification) {
+        guard controller.managedObjectContext === notification.object as? NSManagedObjectContext else { return }
+
+        // Make sure our listener knows our objects are going away
+        if hasExecuted, let onChangeBlock = onChange, let fetchedObjects = fetchedObjects, !fetchedObjects.isEmpty {
+            let itemRemovals: [DataSourceChange] = fetchedObjects.compactMap { indexPath(for: $0) }.map { .delete(path: $0) }
+            let sectionRemovals: [DataSourceSectionChange] = (0..<numberOfSections).map { .delete(section: $0) }
+            onChangeBlock(itemRemovals, sectionRemovals)
+        }
+
+        isContextAZombie = true
     }
 
 
