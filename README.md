@@ -16,11 +16,11 @@ It lets you _skip_ the boilerplate commonly associated with database layers like
 Flapjack will soon be available through [CocoaPods][cpd]. To install it for now, simply add the following line to your Podfile:
 
 ```ruby
-pod 'Flapjack', git: 'https://github.com/oreillymedia/flapjack.git', tag: '0.6.1'
+pod 'Flapjack', git: 'https://github.com/oreillymedia/flapjack.git', tag: '0.7.1'
 # If you're using Core Data...
-pod 'Flapjack/CoreData', git: 'https://github.com/oreillymedia/flapjack.git', tag: '0.6.1'
+pod 'Flapjack/CoreData', git: 'https://github.com/oreillymedia/flapjack.git', tag: '0.7.1'
 # If you're targeting iOS and want some helpers...
-pod 'Flapjack/UIKit', git: 'https://github.com/oreillymedia/flapjack.git', tag: '0.6.1'
+pod 'Flapjack/UIKit', git: 'https://github.com/oreillymedia/flapjack.git', tag: '0.7.1'
 ```
 
 And run `pod install` at the command line.
