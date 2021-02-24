@@ -57,6 +57,7 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
     private var cacheKey: String
     private var sectionProperty: String?
     private var fetchRequest: NSFetchRequest<NSManagedObject>
+    private var predicateToSurviveContextWipe: NSPredicate?
     private var limit: Int?
 
     /**
@@ -282,7 +283,7 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
     }
 
     private func refetchIfNeeded() {
-        guard hasExecuted else { return }
+        guard hasExecuted, !isContextAZombie else { return }
         do {
             NSFetchedResultsController<NSManagedObject>.deleteCache(withName: cacheKey)
             try controller.performFetch()
@@ -298,8 +299,12 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
     private func contextWasCreated(_ notification: Notification) {
         guard isContextAZombie else { return }
         guard let context = notification.object as? NSManagedObjectContext else { return }
+        // Restore our predicate, if we had one to restore (from blanking out our FRC with a FALSEPREDICATE).
+        predicate = predicateToSurviveContextWipe
+        predicateToSurviveContextWipe = nil
         isContextAZombie = false
         controller = NSFetchedResultsController<NSManagedObject>(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: sectionProperty, cacheName: cacheKey)
+        controller.delegate = self
         refetchIfNeeded()
     }
 
@@ -308,10 +313,19 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
         guard controller.managedObjectContext === notification.object as? NSManagedObjectContext else { return }
 
         // Make sure our listener knows our objects are going away
-        if hasExecuted, let onChangeBlock = onChange, let fetchedObjects = fetchedObjects, !fetchedObjects.isEmpty {
-            let itemRemovals: [DataSourceChange] = fetchedObjects.compactMap { indexPath(for: $0) }.map { .delete(path: $0) }
-            let sectionRemovals: [DataSourceSectionChange] = (0..<numberOfSections).map { .delete(section: $0) }
-            onChangeBlock(itemRemovals, sectionRemovals)
+        if hasExecuted {
+            if let onChangeBlock = onChange, let fetchedObjects = fetchedObjects, !fetchedObjects.isEmpty {
+                let itemRemovals: [DataSourceChange] = fetchedObjects.compactMap { indexPath(for: $0) }.map { .delete(path: $0) }
+                let sectionRemovals: [DataSourceSectionChange] = (0..<numberOfSections).map { .delete(section: $0) }
+                onChangeBlock(itemRemovals, sectionRemovals)
+            }
+
+            // Give our controller a stub predicate and ask it to fetch, so that it will clear out its fetchedResults.
+            //   This will kick off a new fetch. The old predicate is backed up to `predicateToSurviveContextWipe`, to
+            //   be... well, restored after the context wipe. Note that a `nil` predicate here is still important,
+            //   because no matter what we want to undo this FALSEPREDICATE.
+            predicateToSurviveContextWipe = predicate
+            predicate = NSPredicate(value: false)
         }
 
         isContextAZombie = true

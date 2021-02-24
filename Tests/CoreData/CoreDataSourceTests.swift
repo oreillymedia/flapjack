@@ -271,11 +271,70 @@ class CoreDataSourceTests: XCTestCase {
     }
 
     // MARK: Change sorters
+
     func testChangeSorters() {
         let dataSource = CoreDataSource<MockEntity>(dataAccess: dataAccess, sorters: [SortDescriptor("someProperty", ascending: true)])
         dataSource.startListening()
         XCTAssertEqual(dataSource.allObjects.first?.someProperty, "someValue aaaa")
         dataSource.sorters = [SortDescriptor("someProperty", ascending: false)]
         XCTAssertEqual(dataSource.allObjects.first?.someProperty, "someValue zzzz")
+    }
+
+    // MARK: Test context destruction
+
+    func testContextDestruction() {
+        let dataSource = CoreDataSource<MockEntity>(dataAccess: dataAccess)
+        let indexPath = IndexPath(row: 0, section: 0)
+        dataSource.startListening()
+        XCTAssertNotNil(dataSource.object(at: indexPath))
+
+        let callback = expectation(description: "callback")
+        dataAccess.deleteDatabase(rebuild: false) { (_) in
+            callback.fulfill()
+        }
+        wait(for: [callback], timeout: 1.0)
+
+        XCTAssertNil(dataSource.object(at: indexPath))
+        XCTAssertEqual(dataSource.numberOfObjects, 0)
+    }
+
+    func testContextRecreation() {
+        let dataSource = CoreDataSource<MockEntity>(dataAccess: dataAccess, attributes: ["someProperty": "someValue alpha"])
+        let indexPath = IndexPath(row: 0, section: 0)
+        dataSource.startListening()
+        XCTAssertNotNil(dataSource.object(at: indexPath))
+
+        let callback = expectation(description: "callback")
+        dataAccess.deleteDatabase(rebuild: true) { (_) in
+            callback.fulfill()
+        }
+        wait(for: [callback], timeout: 1.0)
+
+        _ = dataAccess.mainContext.create(MockEntity.self, attributes: ["someProperty": "someValue alpha"])
+        _ = dataAccess.mainContext.create(MockEntity.self, attributes: ["someProperty": "someValue beta"])
+        dataAccess.mainContext.persist()
+
+        // We're ensuring that the `predicateToSurviveContextWipe` got restored
+        XCTAssertEqual(dataSource.numberOfObjects, 1)
+    }
+
+    func testContextRecreation_WithoutPredicate() {
+        let dataSource = CoreDataSource<MockEntity>(dataAccess: dataAccess)
+        let indexPath = IndexPath(row: 0, section: 0)
+        dataSource.startListening()
+        XCTAssertNotNil(dataSource.object(at: indexPath))
+
+        let callback = expectation(description: "callback")
+        dataAccess.deleteDatabase(rebuild: true) { (_) in
+            callback.fulfill()
+        }
+        wait(for: [callback], timeout: 1.0)
+
+        _ = dataAccess.mainContext.create(MockEntity.self, attributes: ["someProperty": "someValue alpha"])
+        _ = dataAccess.mainContext.create(MockEntity.self, attributes: ["someProperty": "someValue beta"])
+        dataAccess.mainContext.persist()
+
+        // We're ensuring that the `predicateToSurviveContextWipe` got restored, even if it was `nil`
+        XCTAssertEqual(dataSource.numberOfObjects, 2)
     }
 }
