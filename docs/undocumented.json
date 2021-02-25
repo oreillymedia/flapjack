@@ -716,105 +716,105 @@
     },
     {
       "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSource.swift",
-      "line": 179,
+      "line": 180,
       "symbol": "CoreDataSource.endListening()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSource.swift",
-      "line": 179,
+      "line": 180,
       "symbol": "CoreDataSource.endListening()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSource.swift",
-      "line": 179,
+      "line": 180,
       "symbol": "CoreDataSource.endListening()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSource.swift",
-      "line": 323,
+      "line": 337,
       "symbol": "CoreDataSource.controllerWillChangeContent(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSource.swift",
-      "line": 323,
+      "line": 337,
       "symbol": "CoreDataSource.controllerWillChangeContent(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSource.swift",
-      "line": 323,
+      "line": 337,
       "symbol": "CoreDataSource.controllerWillChangeContent(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSource.swift",
-      "line": 331,
+      "line": 345,
       "symbol": "CoreDataSource.controller(_:didChange:atSectionIndex:for:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSource.swift",
-      "line": 331,
+      "line": 345,
       "symbol": "CoreDataSource.controller(_:didChange:atSectionIndex:for:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSource.swift",
-      "line": 331,
+      "line": 345,
       "symbol": "CoreDataSource.controller(_:didChange:atSectionIndex:for:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSource.swift",
-      "line": 344,
+      "line": 358,
       "symbol": "CoreDataSource.controller(_:didChange:at:for:newIndexPath:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSource.swift",
-      "line": 344,
+      "line": 358,
       "symbol": "CoreDataSource.controller(_:didChange:at:for:newIndexPath:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSource.swift",
-      "line": 344,
+      "line": 358,
       "symbol": "CoreDataSource.controller(_:didChange:at:for:newIndexPath:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSource.swift",
-      "line": 366,
+      "line": 380,
       "symbol": "CoreDataSource.controllerDidChangeContent(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSource.swift",
-      "line": 366,
+      "line": 380,
       "symbol": "CoreDataSource.controllerDidChangeContent(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSource.swift",
-      "line": 366,
+      "line": 380,
       "symbol": "CoreDataSource.controllerDidChangeContent(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
