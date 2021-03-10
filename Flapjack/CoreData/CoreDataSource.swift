@@ -48,10 +48,11 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
         }
     }
 
+    /// False until fetched results controller has performed at least one fetch.
+    private(set) public var hasExecuted: Bool = false
     private var controller: NSFetchedResultsController<NSManagedObject>
     private var pendingSectionChanges = [DataSourceSectionChange]()
     private var pendingItemChanges = [DataSourceChange]()
-    private var hasExecuted: Bool = false
     /// If this is true, our context has been deleted and we're waiting for a new one.
     private var isContextAZombie: Bool = false
     private var cacheKey: String
