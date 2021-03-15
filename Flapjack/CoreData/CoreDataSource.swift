@@ -124,6 +124,9 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
 
     /// A number of all objects matched in the data set, if fetched. Otherwise is 0.
     public var numberOfObjects: Int {
+        guard !isContextAZombie else {
+            return 0
+        }
         if let limit = limit {
             return min(limit, controller.fetchedObjects?.count ?? 0)
         }
@@ -143,16 +146,25 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
 
     /// Any full section titles for the sections found in the data set, if grouped.
     public var sectionNames: [String] {
+        guard !isContextAZombie else {
+            return []
+        }
         return controller.sections?.compactMap { $0.name } ?? []
     }
 
     /// Any abbreviated section titles for the sections found in the data set, if grouped.
     public var sectionIndexTitles: [String] {
+        guard !isContextAZombie else {
+            return []
+        }
         return controller.sections?.compactMap { $0.indexTitle } ?? []
     }
 
     /// The number of sections detected in the matched data set, if grouped by section. Otherwise, this is `1`.
     public var numberOfSections: Int {
+        guard !isContextAZombie else {
+            return 0
+        }
         return controller.sections?.count ?? 0
     }
 
@@ -194,11 +206,18 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
      - returns: The number of objects in that given section.
      */
     public func numberOfObjects(in section: Int) -> Int {
+        guard !isContextAZombie else {
+            return 0
+        }
         return sectionInfo(for: section)?.numberOfObjects ?? 0
     }
 
     /**
      Provides the object matching the given index path, if found.
+
+     This function will still lookup and return object info even when context is about to be
+     deleted, because it is generally not required for table / collection view summation delegate
+     functions (number of sections, number of items per section, etc.).
 
      - parameter indexPath: The index path to use in the lookup.
      - returns: The object, if one is found at the given index path.
@@ -274,6 +293,9 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
     }
 
     private var fetchedObjects: [T]? {
+        guard !isContextAZombie else {
+            return []
+        }
         // To keep Core Data type info out of Flapjack core, `DataObject` doesn't explicitly conform to
         //   `NSFetchRequestResult`, although if `NSManagedObject`s conform to `DataObject`, everything should work.
         return controller.fetchedObjects as? [T]
@@ -313,23 +335,36 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
     private func contextWillBeDestroyed(_ notification: Notification) {
         guard controller.managedObjectContext === notification.object as? NSManagedObjectContext else { return }
 
+        // Flag ourselves as existing under a zombie context (one about to be fully banished) so
+        //   that when we invoke an on-change block, any objects listening to us that _ask_ us for
+        //   our number of objects or our array of objects will get back empty ones (so as to
+        //   preserve data source functional integrity for collection/table view data sources).
+        // If an object needs to get a specific element from us based on these indices, that object
+        //   can still get it before it fully goes away using `object(at:)` inside of the change
+        //   block. After that invocation of the change block though, the objects are cleared from
+        //   the fetched results controller as well.
+        isContextAZombie = true
+
         // Make sure our listener knows our objects are going away
         if hasExecuted {
-            if let onChangeBlock = onChange, let fetchedObjects = fetchedObjects, !fetchedObjects.isEmpty {
+            if let onChangeBlock = onChange, let fetchedObjects = controller.fetchedObjects as? [T], !fetchedObjects.isEmpty {
                 let itemRemovals: [DataSourceChange] = fetchedObjects.compactMap { indexPath(for: $0) }.map { .delete(path: $0) }
-                let sectionRemovals: [DataSourceSectionChange] = (0..<numberOfSections).map { .delete(section: $0) }
+                let numberOfControllerSections = controller.sections?.count ?? 0
+                let sectionRemovals: [DataSourceSectionChange] = (0..<numberOfControllerSections).map { .delete(section: $0) }
                 onChangeBlock(itemRemovals, sectionRemovals)
             }
 
-            // Give our controller a stub predicate and ask it to fetch, so that it will clear out its fetchedResults.
-            //   This will kick off a new fetch. The old predicate is backed up to `predicateToSurviveContextWipe`, to
-            //   be... well, restored after the context wipe. Note that a `nil` predicate here is still important,
-            //   because no matter what we want to undo this FALSEPREDICATE.
+            // Give our controller a stub predicate and ask it to fetch, so that it will clear out
+            //   its fetchedResults. The old one is backed up to `predicateToSurviveContextWipe`, to
+            //   be... well, restored after the context wipe. Note that a `nil` predicate here is
+            //   still important, because no matter what we want to undo this FALSEPREDICATE.
             predicateToSurviveContextWipe = predicate
             predicate = NSPredicate(value: false)
+            // Call this here instead of relying on `predicate.didSet` which is a no-op if the
+            //   context is marked as a zombie.
+            NSFetchedResultsController<NSManagedObject>.deleteCache(withName: cacheKey)
+            try? controller.performFetch()
         }
-
-        isContextAZombie = true
     }
 
 

@@ -12,7 +12,7 @@ import Foundation
  Describes a change in position for a section grouping of content observed by a data source. This can be an insertion or
  a deletion. Each case comes with the relevant section index information.
  */
-public enum DataSourceSectionChange: CustomStringConvertible, Hashable {
+public enum DataSourceSectionChange: CustomStringConvertible, Hashable, Equatable {
     /// Describes an insertion of a new section into the data source's grouped object set.
     case insert(section: Int)
     /// Describes a deletion of an existing section from the data source's grouped object set.

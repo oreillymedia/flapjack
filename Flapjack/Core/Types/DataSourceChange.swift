@@ -12,7 +12,7 @@ import Foundation
  Describes a change in position for an element observed by a data source. This can be an insertion, a deletion, a move,
  or an update-in-place. Each case comes with the relevant index path information.
  */
-public enum DataSourceChange: CustomStringConvertible, Hashable {
+public enum DataSourceChange: CustomStringConvertible, Hashable, Equatable {
     /// Describes an insertion into the data source's object set at a given index path.
     case insert(path: IndexPath)
     /// Describes a deletion from the data source's object set at a given index path.
