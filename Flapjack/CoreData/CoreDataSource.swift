@@ -124,6 +124,9 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
 
     /// A number of all objects matched in the data set, if fetched. Otherwise is 0.
     public var numberOfObjects: Int {
+        guard !isContextAZombie else {
+            return 0
+        }
         if let limit = limit {
             return min(limit, controller.fetchedObjects?.count ?? 0)
         }
@@ -274,6 +277,9 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
     }
 
     private var fetchedObjects: [T]? {
+        guard !isContextAZombie else {
+            return []
+        }
         // To keep Core Data type info out of Flapjack core, `DataObject` doesn't explicitly conform to
         //   `NSFetchRequestResult`, although if `NSManagedObject`s conform to `DataObject`, everything should work.
         return controller.fetchedObjects as? [T]
@@ -313,9 +319,17 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
     private func contextWillBeDestroyed(_ notification: Notification) {
         guard controller.managedObjectContext === notification.object as? NSManagedObjectContext else { return }
 
+        // Flag ourselves as existing under a zombie context (one about to be fully banished) so
+        //   that when we invoke an on-change block, any objects listening to us that _ask_ us for
+        //   our number of objects or our array of objects will get back empty ones (so as to
+        //   preserve data source functional integrity for collection/table view data sources).
+        // If an object needs to get a specific element from us based on these indices, that object
+        //   can still get it before it fully goes away using `object(at:)`.
+        isContextAZombie = true
+
         // Make sure our listener knows our objects are going away
         if hasExecuted {
-            if let onChangeBlock = onChange, let fetchedObjects = fetchedObjects, !fetchedObjects.isEmpty {
+            if let onChangeBlock = onChange, let fetchedObjects = controller.fetchedObjects as? [T], !fetchedObjects.isEmpty {
                 let itemRemovals: [DataSourceChange] = fetchedObjects.compactMap { indexPath(for: $0) }.map { .delete(path: $0) }
                 let sectionRemovals: [DataSourceSectionChange] = (0..<numberOfSections).map { .delete(section: $0) }
                 onChangeBlock(itemRemovals, sectionRemovals)
