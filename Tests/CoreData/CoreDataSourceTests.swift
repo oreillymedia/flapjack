@@ -337,4 +337,37 @@ class CoreDataSourceTests: XCTestCase {
         // We're ensuring that the `predicateToSurviveContextWipe` got restored, even if it was `nil`
         XCTAssertEqual(dataSource.numberOfObjects, 2)
     }
+
+    func testOnChangeBlock_FiresWithDeletions_OnContextDestruction() {
+        let dataSource = CoreDataSource<MockEntity>(dataAccess: dataAccess)
+
+        let indexPaths = (0..<5).map { IndexPath(row: $0, section: 0) }
+
+        let callback = expectation(description: "callback")
+        dataSource.onChange = { itemChanges, sectionChanges in
+            let expected: [DataSourceChange] = indexPaths.map { .delete(path: $0) }
+            XCTAssertEqual(itemChanges, expected)
+            XCTAssertEqual(sectionChanges, [.delete(section: 0)])
+            XCTAssertEqual(dataSource.numberOfSections, 0)
+            XCTAssertEqual(dataSource.numberOfObjects, 0)
+            XCTAssertEqual(dataSource.numberOfObjects(in: 0), 0)
+            // The objects still exist when direct lookup is used
+            indexPaths.forEach { path in
+                XCTAssertNotNil(dataSource.object(at: path), "Object at \(path) was supposed to be non-nil")
+            }
+            callback.fulfill()
+        }
+        dataSource.startListening()
+
+        let deleteCallback = expectation(description: "callback")
+        dataAccess.deleteDatabase(rebuild: false) { (_) in
+            deleteCallback.fulfill()
+        }
+        wait(for: [callback, deleteCallback], timeout: 1.0)
+
+        // After deletion completes, objects are definitely gone
+        indexPaths.forEach { path in
+            XCTAssertNil(dataSource.object(at: path), "Object at \(path) was supposed to be nil")
+        }
+    }
 }
