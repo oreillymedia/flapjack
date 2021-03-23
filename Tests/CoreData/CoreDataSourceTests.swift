@@ -284,7 +284,7 @@ class CoreDataSourceTests: XCTestCase {
 
     func testContextDestruction() {
         let dataSource = CoreDataSource<MockEntity>(dataAccess: dataAccess)
-        let indexPath = IndexPath(row: 0, section: 0)
+        let indexPath = IndexPath(item: 0, section: 0)
         dataSource.startListening()
         XCTAssertNotNil(dataSource.object(at: indexPath))
 
@@ -300,7 +300,7 @@ class CoreDataSourceTests: XCTestCase {
 
     func testContextRecreation() {
         let dataSource = CoreDataSource<MockEntity>(dataAccess: dataAccess, attributes: ["someProperty": "someValue alpha"])
-        let indexPath = IndexPath(row: 0, section: 0)
+        let indexPath = IndexPath(item: 0, section: 0)
         dataSource.startListening()
         XCTAssertNotNil(dataSource.object(at: indexPath))
 
@@ -320,7 +320,7 @@ class CoreDataSourceTests: XCTestCase {
 
     func testContextRecreation_WithoutPredicate() {
         let dataSource = CoreDataSource<MockEntity>(dataAccess: dataAccess)
-        let indexPath = IndexPath(row: 0, section: 0)
+        let indexPath = IndexPath(item: 0, section: 0)
         dataSource.startListening()
         XCTAssertNotNil(dataSource.object(at: indexPath))
 
@@ -341,7 +341,7 @@ class CoreDataSourceTests: XCTestCase {
     func testOnChangeBlock_FiresWithDeletions_OnContextDestruction() {
         let dataSource = CoreDataSource<MockEntity>(dataAccess: dataAccess)
 
-        let indexPaths = (0..<5).map { IndexPath(row: $0, section: 0) }
+        let indexPaths = (0..<5).map { IndexPath(item: $0, section: 0) }
 
         let callback = expectation(description: "callback")
         dataSource.onChange = { itemChanges, sectionChanges in
