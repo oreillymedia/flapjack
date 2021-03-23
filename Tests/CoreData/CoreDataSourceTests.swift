@@ -289,7 +289,7 @@ class CoreDataSourceTests: XCTestCase {
         XCTAssertNotNil(dataSource.object(at: indexPath))
 
         let callback = expectation(description: "callback")
-        dataAccess.deleteDatabase(rebuild: false) { (_) in
+        dataAccess.deleteDatabase(rebuild: false) { _ in
             callback.fulfill()
         }
         wait(for: [callback], timeout: 1.0)
@@ -305,7 +305,7 @@ class CoreDataSourceTests: XCTestCase {
         XCTAssertNotNil(dataSource.object(at: indexPath))
 
         let callback = expectation(description: "callback")
-        dataAccess.deleteDatabase(rebuild: true) { (_) in
+        dataAccess.deleteDatabase(rebuild: true) { _ in
             callback.fulfill()
         }
         wait(for: [callback], timeout: 1.0)
@@ -325,7 +325,7 @@ class CoreDataSourceTests: XCTestCase {
         XCTAssertNotNil(dataSource.object(at: indexPath))
 
         let callback = expectation(description: "callback")
-        dataAccess.deleteDatabase(rebuild: true) { (_) in
+        dataAccess.deleteDatabase(rebuild: true) { _ in
             callback.fulfill()
         }
         wait(for: [callback], timeout: 1.0)
@@ -360,7 +360,7 @@ class CoreDataSourceTests: XCTestCase {
         dataSource.startListening()
 
         let deleteCallback = expectation(description: "callback")
-        dataAccess.deleteDatabase(rebuild: false) { (_) in
+        dataAccess.deleteDatabase(rebuild: false) { _ in
             deleteCallback.fulfill()
         }
         wait(for: [callback, deleteCallback], timeout: 1.0)

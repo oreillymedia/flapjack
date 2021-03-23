@@ -49,7 +49,7 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
     }
 
     /// False until fetched results controller has performed at least one fetch.
-    private(set) public var hasExecuted: Bool = false
+    public private(set) var hasExecuted: Bool = false
     private var controller: NSFetchedResultsController<NSManagedObject>
     private var pendingSectionChanges = [DataSourceSectionChange]()
     private var pendingItemChanges = [DataSourceChange]()
