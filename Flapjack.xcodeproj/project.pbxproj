@@ -62,6 +62,7 @@
 		C31FD25421B0A423007A84F9 /* NSManagedObjectContextDataContextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD24621B0A423007A84F9 /* NSManagedObjectContextDataContextTests.swift */; };
 		C31FD25521B0A423007A84F9 /* CoreDataAccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD24721B0A423007A84F9 /* CoreDataAccessTests.swift */; };
 		C31FD25721B0A477007A84F9 /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C31FD24221B0A423007A84F9 /* TestModel.xcdatamodeld */; };
+		C33EBEB7260B85550026E779 /* Flapjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C37325D42230923D003C9E48 /* Flapjack.framework */; };
 		C33F37BE21C9845E006F0E8E /* MockMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33F37BD21C9845E006F0E8E /* MockMigrator.swift */; };
 		C33F37C021C9852A006F0E8E /* MockDataAccessDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33F37BF21C9852A006F0E8E /* MockDataAccessDelegate.swift */; };
 		C33F37C121C9A777006F0E8E /* NSCompoundPredicate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD16C21B095DE007A84F9 /* NSCompoundPredicate+Extensions.swift */; };
@@ -102,13 +103,11 @@
 		C37325E922309245003C9E48 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17F21B095DE007A84F9 /* NSManagedObjectContext+Extensions.swift */; };
 		C37325EA22309245003C9E48 /* CoreDataSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD18421B095DE007A84F9 /* CoreDataSourceFactory.swift */; };
 		C37325EB22309245003C9E48 /* CoreDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD18521B095DE007A84F9 /* CoreDataSource.swift */; };
-		C37325ED22309245003C9E48 /* Flapjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C31FD13621B092FF007A84F9 /* Flapjack.framework */; };
 		C37325F7223092DD003C9E48 /* FlapjackUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C31FD21D21B09F54007A84F9 /* FlapjackUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C37325F9223092DD003C9E48 /* Set+DataSourceChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FDECB221CC4D9600E0E95A /* Set+DataSourceChange.swift */; };
 		C37325FA223092DD003C9E48 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17A21B095DE007A84F9 /* UICollectionView+Extensions.swift */; };
 		C37325FB223092DD003C9E48 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD17921B095DE007A84F9 /* UITableView+Extensions.swift */; };
 		C37325FD223092DD003C9E48 /* Flapjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C31FD13621B092FF007A84F9 /* Flapjack.framework */; };
-		C373261C22309346003C9E48 /* Flapjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C37325D42230923D003C9E48 /* Flapjack.framework */; };
 		C3732622223093BA003C9E48 /* DataContextErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD23521B0A423007A84F9 /* DataContextErrorTests.swift */; };
 		C3732623223093BA003C9E48 /* SortDescriptorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD23621B0A423007A84F9 /* SortDescriptorTests.swift */; };
 		C3732624223093BA003C9E48 /* DataAccessErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31FD23721B0A423007A84F9 /* DataAccessErrorTests.swift */; };
@@ -237,12 +236,12 @@
 			remoteGlobalIDString = C31FD1C521B0996F007A84F9;
 			remoteInfo = FlapjackCoreData;
 		};
-		C37325D822309245003C9E48 /* PBXContainerItemProxy */ = {
+		C33EBEB9260B85550026E779 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C31FD13521B092FF007A84F9;
-			remoteInfo = "Flapjack-iOS";
+			remoteGlobalIDString = C37325B82230923D003C9E48;
+			remoteInfo = "Flapjack-tvOS";
 		};
 		C373261D22309346003C9E48 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -448,7 +447,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C37325ED22309245003C9E48 /* Flapjack.framework in Frameworks */,
+				C33EBEB7260B85550026E779 /* Flapjack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,14 +456,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C37325FD223092DD003C9E48 /* Flapjack.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C373261422309346003C9E48 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C373261C22309346003C9E48 /* Flapjack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -959,7 +950,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				C37325D722309245003C9E48 /* PBXTargetDependency */,
+				C33EBEBA260B85550026E779 /* PBXTargetDependency */,
 			);
 			name = "FlapjackCoreData-tvOS";
 			productName = FlapjackCoreData;
@@ -1696,10 +1687,10 @@
 			target = C31FD1C521B0996F007A84F9 /* FlapjackCoreData-iOS */;
 			targetProxy = C31FD25821B0A49C007A84F9 /* PBXContainerItemProxy */;
 		};
-		C37325D722309245003C9E48 /* PBXTargetDependency */ = {
+		C33EBEBA260B85550026E779 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C31FD13521B092FF007A84F9 /* Flapjack-iOS */;
-			targetProxy = C37325D822309245003C9E48 /* PBXContainerItemProxy */;
+			target = C37325B82230923D003C9E48 /* Flapjack-tvOS */;
+			targetProxy = C33EBEB9260B85550026E779 /* PBXContainerItemProxy */;
 		};
 		C373261E22309346003C9E48 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2337,7 +2328,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -2364,7 +2355,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 5XJYJPRTH5;
