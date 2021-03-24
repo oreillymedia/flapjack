@@ -6,8 +6,8 @@ disabled_rules:
   - cyclomatic_complexity  # Disabled because we've got methods with lots of if nil checks
   - file_name
   - function_body_length
-  - function_parameter_count 
-  - line_length  
+  - function_parameter_count
+  - line_length
   - no_fallthrough_only
   - notification_center_detachment
   - type_body_length
@@ -24,7 +24,7 @@ disabled_rules:
   - todo  # I'd like to enable this someday
   - unavailable_function  # I'd like to enable this someday
   - xctfail_message  # I'd like to enable this someday
-opt_in_rules: 
+opt_in_rules:
   # Enable rules not in the default set
   - anyobject_protocol
   - array_init
@@ -65,10 +65,7 @@ conditional_returns_on_newline:
   # applies only to if-statements
   if_only: true
 
-cyclomatic_complexity:
-  warning: 12
-
-file_length: 
+file_length:
   warning: 1000
   error: 5000
 
