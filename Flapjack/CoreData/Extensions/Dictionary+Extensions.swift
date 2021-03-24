@@ -8,13 +8,18 @@
 
 import Foundation
 
-internal extension Dictionary where Key == String, Value == Any {
+internal extension Dictionary where Key == String, Value == Any? {
     var cacheKey: String {
         return self.keys.sorted().compactMap { key in
             guard let value = self[key] else {
                 return nil
             }
-            return "\(key).\(String(describing: value))"
+            switch value {
+            case .some(let inner):
+            return "\(key).\(String(describing: inner))"
+            case .none:
+                return "\(key).nil"
+            }
         }.joined(separator: "-")
     }
 }
