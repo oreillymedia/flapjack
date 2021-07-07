@@ -35,18 +35,18 @@ like what you see, perhaps you will too.
 
   s.subspec 'Core' do |core|
     core.frameworks = 'CoreData'
-    core.source_files = 'Flapjack/Core/**/*.swift'
+    core.source_files = 'Sources/Core/**/*.swift'
   end
 
   s.subspec 'CoreData' do |core_data|
     core_data.dependency 'Flapjack/Core'
     core_data.frameworks = 'CoreData'
-    core_data.source_files = 'Flapjack/CoreData/**/*'
+    core_data.source_files = 'Sources/CoreData/**/*'
   end
 
   s.subspec 'UIKit' do |uikit|
     uikit.dependency 'Flapjack/Core'
     uikit.ios.frameworks = 'UIKit'
-    uikit.ios.source_files = 'Flapjack/UIKit/**/*'
+    uikit.ios.source_files = 'Sources/UIKit/**/*'
   end
 end
