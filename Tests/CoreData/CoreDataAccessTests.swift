@@ -45,20 +45,28 @@ class CoreDataAccessTests: XCTestCase {
     private var dataAccess: CoreDataAccess!
     private var model: NSManagedObjectModel!
     private var delegate: MockDataAccessDelegate! // swiftlint:disable:this weak_delegate
+    private var bundle: Bundle {
+        #if COCOAPODS
+        return Bundle(for: type(of: self))
+        #else
+        return Bundle.module
+        #endif
+    }
 
-    override func setUp() {
-        super.setUp()
+    override func setUpWithError() throws {
+        try super.setUpWithError()
 
         delegate = MockDataAccessDelegate()
-        model = NSManagedObjectModel(contentsOf: Bundle(for: type(of: self)).url(forResource: "TestModel", withExtension: "momd")!)
+        let modelPath = try XCTUnwrap(bundle.url(forResource: "TestModel", withExtension: "momd"), "Unable to find TestModel.momd")
+        model = NSManagedObjectModel(contentsOf: modelPath)
         dataAccess = CoreDataAccess(name: "TestModel", type: .memory, model: model, delegate: delegate)
     }
 
-    override func tearDown() {
+    override func tearDownWithError() throws {
         delegate = nil
         dataAccess = nil
         model = nil
-        super.tearDown()
+        try super.tearDownWithError()
     }
 
     func testStackPreparation() {
@@ -118,13 +126,13 @@ class CoreDataAccessTests: XCTestCase {
         XCTAssertFalse(delegate.wantsMigratorForStoreAtCalled.called)
         let expect = expectation(description: "completion")
         dataAccess.prepareStack(asynchronously: true) { [weak self] error in
+            defer { expect.fulfill() }
             guard let self = self else {
                 return XCTFail("Expected self.")
             }
             XCTAssertNil(error)
             XCTAssertTrue(self.dataAccess.isStackReady)
             XCTAssertTrue(self.delegate.wantsMigratorForStoreAtCalled.called)
-            expect.fulfill()
         }
         XCTAssertFalse(dataAccess.isStackReady)
         waitForExpectations(timeout: 1.0) { XCTAssertNil($0) }
@@ -168,7 +176,7 @@ class CoreDataAccessTests: XCTestCase {
         delegate.migrator = migrator
         let expect = expectation(description: "completion")
         dataAccess.prepareStack(asynchronously: true) { error in
-            expect.fulfill()
+            defer { expect.fulfill() }
             switch error {
             case .preparationError(let innerError)?:
                 switch innerError as? MigratorError {
@@ -187,12 +195,12 @@ class CoreDataAccessTests: XCTestCase {
     func testPerformInBackgroundContext() {
         let expect = expectation(description: "operation")
         dataAccess.performInBackground { context in
+            defer { expect.fulfill() }
             guard let mergePolicy = (context as? NSManagedObjectContext)?.mergePolicy as? NSObject else {
                 XCTFail("Couldn't get mergePolicy which is bad.")
                 return
             }
             XCTAssertEqual(mergePolicy, NSMergeByPropertyStoreTrumpMergePolicy as? NSObject)
-            expect.fulfill()
         }
         waitForExpectations(timeout: 1.0) { XCTAssertNil($0) }
     }
@@ -213,24 +221,33 @@ class CoreDataAccessWithSQLFileTests: XCTestCase {
     private var dataAccess: CoreDataAccess!
     private var storeType: CoreDataAccess.StoreType!
     private var model: NSManagedObjectModel!
+    private var bundle: Bundle {
+        #if COCOAPODS
+        return Bundle(for: type(of: self))
+        #else
+        return Bundle.module
+        #endif
+    }
+
     private var storeURL: URL! {
         return storeType.url
     }
 
-    override func setUp() {
-        super.setUp()
+    override func setUpWithError() throws {
+        try super.setUpWithError()
 
-        model = NSManagedObjectModel(contentsOf: Bundle(for: type(of: self)).url(forResource: "TestModel", withExtension: "momd")!)
+        let modelPath = try XCTUnwrap(bundle.url(forResource: "TestModel", withExtension: "momd"), "Unable to find TestModel.momd")
+        model = NSManagedObjectModel(contentsOf: modelPath)
         storeType = .sql(filename: UUID().uuidString + ".sqlite")
         dataAccess = CoreDataAccess(name: "TestModel", type: storeType, model: model)
         XCTAssertFalse(FileManager.default.fileExists(atPath: storeURL.path, isDirectory: nil))
     }
 
-    override func tearDown() {
+    override func tearDownWithError() throws {
         dataAccess = nil
         model = nil
         storeType = nil
-        super.tearDown()
+        try super.tearDownWithError()
     }
 
     func testDeleteDatabaseAndNoRebuild() {

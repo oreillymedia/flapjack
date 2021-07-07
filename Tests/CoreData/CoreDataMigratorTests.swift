@@ -17,7 +17,11 @@ class CoreDataMigratorTests: XCTestCase {
     private var urlsToCleanup = [URL]()
     private let modelName = "TestMigrationModel"
     private var bundle: Bundle {
+        #if COCOAPODS
         return Bundle(for: type(of: self))
+        #else
+        return Bundle.module
+        #endif
     }
     private var compiledModelURL: URL {
         return bundle.url(forResource: modelName, withExtension: "momd")!
@@ -51,19 +55,19 @@ class CoreDataMigratorTests: XCTestCase {
 
     // MARK: storeIsUpToDate
 
-    func testStateWithFreshDatabase() {
-        let (storeURL, filename, _) = persistentStoreContainer(version: currentVersion)
+    func testStateWithFreshDatabase() throws {
+        let (storeURL, filename, _) = try persistentStoreContainer(version: currentVersion)
         urlsToCleanup.append(storeURL)
-        let migrator = CoreDataMigrator(storeURL: storeURL, bundle: Bundle(for: type(of: self)), modelName: "TestMigrationModel", storeType: .sql(filename: filename))
+        let migrator = CoreDataMigrator(storeURL: storeURL, bundle: bundle, modelName: "TestMigrationModel", storeType: .sql(filename: filename))
         XCTAssertTrue(migrator.storeIsUpToDate)
     }
 
-    func testWithStaleDatabases() {
-        knownVersions.forEach { versionString in
+    func testWithStaleDatabases() throws {
+        try knownVersions.forEach { versionString in
             guard versionString != currentVersion else { return }
-            let (storeURL, filename, _) = persistentStoreContainer(version: versionString)
+            let (storeURL, filename, _) = try persistentStoreContainer(version: versionString)
             urlsToCleanup.append(storeURL)
-            let migrator = CoreDataMigrator(storeURL: storeURL, bundle: Bundle(for: type(of: self)), modelName: "TestMigrationModel", storeType: .sql(filename: filename))
+            let migrator = CoreDataMigrator(storeURL: storeURL, bundle: bundle, modelName: "TestMigrationModel", storeType: .sql(filename: filename))
             XCTAssertFalse(migrator.storeIsUpToDate, "\(versionString) should be stale.")
         }
     }
@@ -71,11 +75,11 @@ class CoreDataMigratorTests: XCTestCase {
 
     // MARK: migrate() throws
 
-    func testMigrateEmptyDataStoreFromOriginalVersion() {
+    func testMigrateEmptyDataStoreFromOriginalVersion() throws {
         let original = knownVersions[0]
-        let (storeURL, filename, _) = persistentStoreContainer(version: original)
+        let (storeURL, filename, _) = try persistentStoreContainer(version: original)
         urlsToCleanup.append(storeURL)
-        let migrator = CoreDataMigrator(storeURL: storeURL, bundle: Bundle(for: type(of: self)), modelName: "TestMigrationModel", storeType: .sql(filename: filename))
+        let migrator = CoreDataMigrator(storeURL: storeURL, bundle: bundle, modelName: "TestMigrationModel", storeType: .sql(filename: filename))
 
         do {
             let success = try migrator.migrate()
@@ -85,19 +89,19 @@ class CoreDataMigratorTests: XCTestCase {
         }
     }
 
-    func testMigratePopulatedDataStoreFromOriginalVersion() {
+    func testMigratePopulatedDataStoreFromOriginalVersion() throws {
         let original = knownVersions[0]
-        let (storeURL, filename, oldContainer) = persistentStoreContainer(version: original)
+        let (storeURL, filename, oldContainer) = try persistentStoreContainer(version: original)
         urlsToCleanup.append(storeURL)
         prepareContainer(oldContainer)
 
-        let migrator = CoreDataMigrator(storeURL: storeURL, bundle: Bundle(for: type(of: self)), modelName: "TestMigrationModel", storeType: .sql(filename: filename))
+        let migrator = CoreDataMigrator(storeURL: storeURL, bundle: bundle, modelName: "TestMigrationModel", storeType: .sql(filename: filename))
 
         do {
             let success = try migrator.migrate()
             XCTAssertTrue(success)
 
-            let (url, _, container) = persistentStoreContainer(version: knownVersions.last!, filename: filename)
+            let (url, _, container) = try persistentStoreContainer(version: knownVersions.last!, filename: filename)
             urlsToCleanup.append(url)
             guard let entityDescription = NSEntityDescription.entity(forEntityName: "MigratedEntity", in: container.viewContext) else {
                 XCTFail("Couldn't get MigratedEntity NSEntityDescription.")
@@ -117,8 +121,8 @@ class CoreDataMigratorTests: XCTestCase {
 
     // MARK: - Private functions
 
-    private func persistentStoreContainer(version: String, filename: String? = nil) -> (onDiskURL: URL, filename: String, container: NSPersistentContainer) {
-        let modelURL = Bundle(for: type(of: self)).url(forResource: version, withExtension: "mom", subdirectory: "TestMigrationModel.momd")!
+    private func persistentStoreContainer(version: String, filename: String? = nil) throws -> (onDiskURL: URL, filename: String, container: NSPersistentContainer) {
+        let modelURL = try XCTUnwrap(bundle.url(forResource: version, withExtension: "mom", subdirectory: "TestMigrationModel.momd"), "Unable to load \(version).mom")
         let model = NSManagedObjectModel(contentsOf: modelURL)!
         let filenameToUse = filename ?? "\(UUID().uuidString).sqlite"
         let storeURL = NSPersistentContainer.defaultDirectoryURL().appendingPathComponent(filenameToUse)

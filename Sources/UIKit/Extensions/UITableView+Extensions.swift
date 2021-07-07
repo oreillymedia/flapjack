@@ -6,6 +6,7 @@
 //  Copyright (c) 2018 O'Reilly Media, Inc. All rights reserved.
 //
 
+#if canImport(UIKit)
 import Foundation
 import UIKit
 #if !COCOAPODS
@@ -52,3 +53,4 @@ public extension UITableView {
         }, completion: completion)
     }
 }
+#endif
