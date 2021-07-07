@@ -7,7 +7,9 @@
 //
 
 import Foundation
+#if !COCOAPODS
 import Flapjack
+#endif
 
 internal extension Set where Element == DataSourceChange {
     var components: (inserts: [IndexPath], deletes: [IndexPath], moves: [(from: IndexPath, to: IndexPath)], updates: [IndexPath]) {

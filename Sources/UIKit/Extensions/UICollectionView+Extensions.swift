@@ -9,7 +9,9 @@
 #if canImport(UIKit)
 import Foundation
 import UIKit
+#if !COCOAPODS
 import Flapjack
+#endif
 
 public extension UICollectionView {
     /**
