@@ -8,7 +8,9 @@
 
 import Foundation
 import CoreData
+#if !COCOAPODS
 import Flapjack
+#endif
 
 /**
  Presides over the setup and management of the entire Core Data stack, along with managing the lifecycle of background

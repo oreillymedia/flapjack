@@ -8,7 +8,9 @@
 
 import Foundation
 import CoreData
+#if !COCOAPODS
 import Flapjack
+#endif
 
 // For proper IndexPath support. Not sure what to do without these.
 #if os(iOS) || os(watchOS) || os(tvOS)

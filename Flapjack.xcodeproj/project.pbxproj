@@ -1766,7 +1766,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_SWIFT_FLAGS = "-DCOCOAPODS";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1819,7 +1818,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_SWIFT_FLAGS = "-DCOCOAPODS";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
@@ -2014,6 +2012,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
+				OTHER_SWIFT_FLAGS = "-DCOCOAPODS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oreillymedia.FlapjackTests-iOS";
 				PRODUCT_MODULE_NAME = Tests;
 				PRODUCT_NAME = Tests;
@@ -2038,6 +2037,7 @@
 				INFOPLIST_FILE = "Tests/Info-iOS.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
+				OTHER_SWIFT_FLAGS = "-DCOCOAPODS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oreillymedia.FlapjackTests-iOS";
 				PRODUCT_MODULE_NAME = Tests;
 				PRODUCT_NAME = Tests;
@@ -2269,7 +2269,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				OTHER_SWIFT_FLAGS = "";
+				OTHER_SWIFT_FLAGS = "-DCOCOAPODS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oreillymedia.FlapjackTests-tvOS";
 				PRODUCT_NAME = Tests;
 				SDKROOT = appletvos;
@@ -2295,7 +2295,7 @@
 				INFOPLIST_FILE = "Tests/Info-tvOS.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
-				OTHER_SWIFT_FLAGS = "";
+				OTHER_SWIFT_FLAGS = "-DCOCOAPODS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oreillymedia.FlapjackTests-tvOS";
 				PRODUCT_NAME = Tests;
 				SDKROOT = appletvos;
@@ -2324,6 +2324,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
+				OTHER_SWIFT_FLAGS = "-DCOCOAPODS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oreillymedia.FlapjackTests-macOS";
 				PRODUCT_NAME = Tests;
 				SDKROOT = macosx;
@@ -2350,6 +2351,7 @@
 				INFOPLIST_FILE = "Tests/Info-macOS.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MTL_FAST_MATH = YES;
+				OTHER_SWIFT_FLAGS = "-DCOCOAPODS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oreillymedia.FlapjackTests-macOS";
 				PRODUCT_NAME = Tests;
 				SDKROOT = macosx;

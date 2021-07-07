@@ -8,7 +8,9 @@
 
 import Foundation
 import CoreData
+#if !COCOAPODS
 import Flapjack
+#endif
 
 /**
  Determines if content should be migrated, and supplies Core Data-centric mechanisms for doing so.
