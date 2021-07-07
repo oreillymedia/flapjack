@@ -8,9 +8,7 @@
 
 import Foundation
 import CoreData
-#if !COCOAPODS
 import Flapjack
-#endif
 
 extension NSManagedObjectContext: DataContext {
     /**

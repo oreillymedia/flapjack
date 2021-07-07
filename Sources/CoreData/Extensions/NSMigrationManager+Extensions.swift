@@ -8,9 +8,7 @@
 
 import Foundation
 import CoreData
-#if !COCOAPODS
 import Flapjack
-#endif
 
 public extension NSMigrationManager {
     /// A convenience enum for picking either the source managed object context or the destination one.

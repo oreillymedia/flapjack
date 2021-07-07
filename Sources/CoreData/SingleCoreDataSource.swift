@@ -8,9 +8,7 @@
 
 import Foundation
 import CoreData
-#if !COCOAPODS
 import Flapjack
-#endif
 
 /**
  Listens for changes in an `NSManagedObjectContext` based on the `NSManagedObjectContextDidChange` notification for a
