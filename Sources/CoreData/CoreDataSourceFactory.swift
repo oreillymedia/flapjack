@@ -7,7 +7,9 @@
 //
 
 import Foundation
+#if !COCOAPODS
 import Flapjack
+#endif
 
 
 // MARK: - CoreDataSourceFactory
