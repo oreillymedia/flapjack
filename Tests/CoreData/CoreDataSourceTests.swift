@@ -20,10 +20,19 @@ class CoreDataSourceTests: XCTestCase {
     private var entityThree: MockEntity!
     private var entityFour: MockEntity!
     private var entityFive: MockEntity!
+    private var bundle: Bundle {
+        #if COCOAPODS
+        return Bundle(for: type(of: self))
+        #else
+        return Bundle.module
+        #endif
+    }
 
-    override func setUp() {
-        super.setUp()
-        let model = NSManagedObjectModel(contentsOf: Bundle(for: type(of: self)).url(forResource: "TestModel", withExtension: "momd")!)
+
+    override func setUpWithError() throws {
+        try super.setUpWithError()
+        let modelFile = try XCTUnwrap(bundle.url(forResource: "TestModel", withExtension: "momd"), "Unable to load TestModel.momd")
+        let model = NSManagedObjectModel(contentsOf: modelFile)
         dataAccess = CoreDataAccess(name: "TestModel", type: .memory, model: model)
         dataAccess.prepareStack(asynchronously: false, completion: { _ in })
 
@@ -36,12 +45,12 @@ class CoreDataSourceTests: XCTestCase {
         dataAccess.mainContext.persist()
     }
 
-    override func tearDown() {
+    override func tearDownWithError() throws {
         dataAccess = nil
         entityOne = nil
         entityTwo = nil
         entityThree = nil
-        super.tearDown()
+        try super.tearDownWithError()
     }
 
 

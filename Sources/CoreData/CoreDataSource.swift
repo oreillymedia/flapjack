@@ -232,11 +232,11 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
             Logger.error("Couldn't find objects for section \(indexPath.section), section info \(info).")
             return nil
         }
-        guard let found = objects[safe: indexPath.item] else {
+        guard indexPath.item < objects.count else {
             Logger.error("Couldn't find object at given index \(indexPath.item), section \(indexPath.section) among \(objects.count) objects.")
             return nil
         }
-        return found as? T
+        return objects[indexPath.item] as? T
     }
 
     /**
@@ -302,7 +302,8 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
     }
 
     private func sectionInfo(for index: Int) -> NSFetchedResultsSectionInfo? {
-        return controller.sections?[safe: index]
+        guard let sections = controller.sections, index < sections.count else { return nil }
+        return sections[index]
     }
 
     private func refetchIfNeeded() {

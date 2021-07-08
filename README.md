@@ -10,42 +10,34 @@ It lets you _skip_ the boilerplate commonly associated with database layers like
 
 ## Getting started
 
+### Swift Package Manager
+
+Swift Package Manager is the preferred way to use Flapjack. Add the following as a dependency to the `dependencies` array in your `Package.swift` file:
+
+```swift
+.package(name: "Flapjack", url: "https://github.com/oreillymedia/flapjack.git", .upToNextMajor(from: "0.8.0"))
+```
+
+Then you'll specify `Flapjack` as a dependency of the target in which you wish to use it. You can also import `FlapjackCoreData` and `FlapjackUIKit`.
+
+```swift
+.package(name: "FlapjackCoreData", url: "https://github.com/oreillymedia/flapjack.git", .upToNextMajor(from: "0.8.0"))
+.package(name: "FlapjackUIKit", url: "https://github.com/oreillymedia/flapjack.git", .upToNextMajor(from: "0.8.0"))
+```
 
 ### CocoaPods
 
-Flapjack will soon be available through [CocoaPods][cpd]. To install it for now, simply add the following line to your Podfile:
+Flapjack is also available through [CocoaPods][cpd]. To install it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'Flapjack', git: 'https://github.com/oreillymedia/flapjack.git', tag: '0.7.1'
+pod 'Flapjack', '0.8.0'
 # If you're using Core Data...
-pod 'Flapjack/CoreData', git: 'https://github.com/oreillymedia/flapjack.git', tag: '0.7.1'
+pod 'Flapjack/CoreData', '0.8.0'
 # If you're targeting iOS and want some helpers...
-pod 'Flapjack/UIKit', git: 'https://github.com/oreillymedia/flapjack.git', tag: '0.7.1'
+pod 'Flapjack/UIKit', '0.8.0'
 ```
 
 And run `pod install` at the command line.
-
-
-### Carthage
-
-Make the following entry in your Cartfile:
-
-```
-github "oreillymedia/flapjack"
-```
-
-Then run `carthage update`. If this is your first time using Carthage in the project, you'll need to go through some additional steps as explained [over at Carthage][car]. Carthage will build three frameworks: `Flapjack`, `FlapjackCoreData`, and `FlapjackUIKit`. You'll need `Flapjack` as a base framework, and if you're using it with Core Data and/or UIKit, you'll want to bring in those frameworks as well (and reference those in your import statements where necessary).
-
-
-### Swift Package Manager
-
-Support for [Swift Package Manager][spm] is in its initial stage; the project does not build with support for Core Data or UIKit, since those frameworks are not packaged or available for Swift Package Manager (since [SPM only builds for the host platform](https://stackoverflow.com/a/34779231/194869), UIKit is currently impossible to use as a dependency for `FlapjackUIKit`). In order to use `Flapjack` by itself, add the following as a dependency to the `dependencies` array in your `Package.swift` file:
-
-```swift
-.package(url: "https://github.com/oreillymedia/flapjack.git", .upToNextMajor(from: "0.4.5"))
-```
-
-Then you'll specify `Flapjack` as a dependency of the target in which you wish to use it.
 
 
 ## Usage
@@ -181,7 +173,10 @@ Support for "easier" Core Data migrations is currently evolving, but here's what
 
 ## Authors
 
+- Matt Blackmon ([@mblackmon][mbl])
+- Laura Dickey ([@lj-dickey][ljd])
 - Ben Kreeger ([@kreeger][krg])
+- Scott Starr ([@awaltzforvenus][sst])
 
 
 ## License
@@ -194,7 +189,9 @@ Flapjack is available under the MIT license. See [LICENSE][lic] file for more in
 [pcm]:     https://github.com/oreillymedia/flapjack/blob/master/Example/Flapjack/Core%20Data/Pancake.swift
 [avc]:     https://github.com/oreillymedia/flapjack/blob/master/Example/Flapjack/AutomaticViewController.swift
 [mvc]:     https://github.com/oreillymedia/flapjack/blob/master/Example/Flapjack/ManualViewController.swift
+[mbl]:     https://github.com/mblackmon
+[ljd]:     https://github.com/lj-dickey
 [krg]:     https://github.com/kreeger
+[sst]:     https://github.com/awaltzforvenus
 [lic]:     https://github.com/oreillymedia/flapjack/blob/master/LICENSE
-[car]:     https://github.com/Carthage/Carthage#adding-frameworks-to-an-application
 [spm]:     https://swift.org/package-manager/

@@ -12,20 +12,29 @@ import CoreData
 @testable import FlapjackCoreData
 
 class NSManagedObjectContextDataContextTests: XCTestCase {
+    private var bundle: Bundle {
+        #if COCOAPODS
+        return Bundle(for: type(of: self))
+        #else
+        return Bundle.module
+        #endif
+    }
+
     private var context: NSManagedObjectContext!
 
-    override func setUp() {
-        super.setUp()
+    override func setUpWithError() throws {
+        try super.setUpWithError()
 
-        let model = NSManagedObjectModel(contentsOf: Bundle(for: type(of: self)).url(forResource: "TestModel", withExtension: "momd")!)
+        let modelFile = try XCTUnwrap(bundle.url(forResource: "TestModel", withExtension: "momd"), "Unable to load TestModel.momd")
+        let model = NSManagedObjectModel(contentsOf: modelFile)
         let dataAccess = CoreDataAccess(name: "TestModel", type: .memory, model: model)
         dataAccess.prepareStack(asynchronously: false) { _ in }
         context = dataAccess.mainContext as? NSManagedObjectContext
     }
 
-    override func tearDown() {
+    override func tearDownWithError() throws {
         context = nil
-        super.tearDown()
+        try super.tearDownWithError()
     }
 
 
