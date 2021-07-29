@@ -39,11 +39,11 @@ extension Pancake: DataObject {
     public typealias PrimaryKeyType = String
     public static var representedName: String { return "Pancake" }
     public static var primaryKeyPath: String { return #keyPath(identifier) }
-    public static var defaultSorters: [SortDescriptor] {
+    public static var defaultSorters: [Flapjack.SortDescriptor] {
         return [
-            SortDescriptor(#keyPath(flavor), ascending: true, caseInsensitive: true),
-            SortDescriptor(#keyPath(radius), ascending: false),
-            SortDescriptor(#keyPath(height), ascending: false)
+            Flapjack.SortDescriptor(#keyPath(flavor), ascending: true, caseInsensitive: true),
+            Flapjack.SortDescriptor(#keyPath(radius), ascending: false),
+            Flapjack.SortDescriptor(#keyPath(height), ascending: false)
         ]
     }
 }

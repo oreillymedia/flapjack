@@ -41,7 +41,7 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
     /// Change the set of sort descriptors used to return the objects in this data source.
     /// Will cause the fetched results controller to be reloaded if `startListening` had already been called,
     /// but does not cause the `onChange` handler to be called.
-    public var sorters: [SortDescriptor] = T.defaultSorters {
+    public var sorters: [Flapjack.SortDescriptor] = T.defaultSorters {
         didSet {
             controller.fetchRequest.sortDescriptors = sorters.asNSSortDescriptors
             refetchIfNeeded()
@@ -72,7 +72,7 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
      - parameter limit: An optional limit to be applied to the results.
      - parameter batchSize: The size of the batch of results to be fetched at a time; default is 25.
      */
-    public convenience init(dataAccess: DataAccess, attributes: DataContext.Attributes? = nil, prefetch: [String] = [], sorters: [SortDescriptor] = T.defaultSorters, sectionProperty: String? = nil, limit: Int? = nil, batchSize: Int = 25) {
+    public convenience init(dataAccess: DataAccess, attributes: DataContext.Attributes? = nil, prefetch: [String] = [], sorters: [Flapjack.SortDescriptor] = T.defaultSorters, sectionProperty: String? = nil, limit: Int? = nil, batchSize: Int = 25) {
         var predicate: NSPredicate?
         var cacheKey: String = "\(sorters.cacheKey)-\(limit ?? 0)"
         if let attributes = attributes {
@@ -95,7 +95,7 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
      - parameter cacheName: An optional string cache key to be given to the fetched results controller; if not supplied,
                             a unique cache key will be formulated based on the other parameters to this initializer.
      */
-    public init(dataAccess: DataAccess, predicate: NSPredicate?, prefetch: [String] = [], sorters: [SortDescriptor] = T.defaultSorters, sectionProperty: String? = nil, limit: Int? = nil, batchSize: Int = 25, cacheName: String? = nil) {
+    public init(dataAccess: DataAccess, predicate: NSPredicate?, prefetch: [String] = [], sorters: [Flapjack.SortDescriptor] = T.defaultSorters, sectionProperty: String? = nil, limit: Int? = nil, batchSize: Int = 25, cacheName: String? = nil) {
         guard let context = dataAccess.mainContext as? NSManagedObjectContext else {
             fatalError("Must be used with an NSManagedObjectContext.")
         }
