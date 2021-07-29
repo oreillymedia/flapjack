@@ -107,7 +107,7 @@ extension NSManagedObjectContext: DataContext {
      - parameter limit: An optional limit to be applied to the results.
      - returns: An array of any found objects. If none are found, an empty array is returned.
      */
-    public func objects<T: DataObject>(ofType type: T.Type, predicate: NSPredicate?, prefetch: [String]?, sortBy sorters: [SortDescriptor], limit: Int?) -> [T] {
+    public func objects<T: DataObject>(ofType type: T.Type, predicate: NSPredicate?, prefetch: [String]?, sortBy sorters: [Flapjack.SortDescriptor], limit: Int?) -> [T] {
         do {
             return try fetchObjects(ofType: type, predicate: predicate, prefetch: prefetch ?? [], sortBy: sorters, limit: limit)
         } catch let error {
@@ -129,7 +129,7 @@ extension NSManagedObjectContext: DataContext {
      - returns: An array of objects matching the `DataObjectID`s given, if any. If none are found, an empty array is
                 returned.
      */
-    public func objects<T: DataObject>(ofType type: T.Type, objectIDs: [DataObjectID], prefetch: [String]?, sortBy sorters: [SortDescriptor], limit: Int?) -> [T] {
+    public func objects<T: DataObject>(ofType type: T.Type, objectIDs: [DataObjectID], prefetch: [String]?, sortBy sorters: [Flapjack.SortDescriptor], limit: Int?) -> [T] {
         return objects(ofType: type, attributes: ["self": objectIDs], prefetch: prefetch, sortBy: sorters, limit: limit)
     }
 
@@ -166,7 +166,7 @@ extension NSManagedObjectContext: DataContext {
      - returns: A matched object, if found. If multiple records match the given criteria, `sorters` will be used to sort
                 the results, and the first object will be returned.
      */
-    public func object<T: DataObject>(ofType type: T.Type, predicate: NSPredicate?, prefetch: [String]?, sortBy sorters: [SortDescriptor]) -> T? {
+    public func object<T: DataObject>(ofType type: T.Type, predicate: NSPredicate?, prefetch: [String]?, sortBy sorters: [Flapjack.SortDescriptor]) -> T? {
         do {
             return try fetchObject(ofType: type, predicate: predicate, prefetch: prefetch ?? [], sortBy: sorters)
         } catch let error {
@@ -273,7 +273,7 @@ extension NSManagedObjectContext: DataContext {
      - parameter limit: An optional limit to be applied to the fetch request.
      - returns: A formulated `NSFetchRequest` with the given parameters.
      */
-    public func fetchRequest<T: DataObject>(for type: T.Type, predicate: NSPredicate? = nil, prefetch: [String] = [], sortBy sorters: [SortDescriptor] = [], limit: Int? = nil) -> NSFetchRequest<NSManagedObject> {
+    public func fetchRequest<T: DataObject>(for type: T.Type, predicate: NSPredicate? = nil, prefetch: [String] = [], sortBy sorters: [Flapjack.SortDescriptor] = [], limit: Int? = nil) -> NSFetchRequest<NSManagedObject> {
         let request = NSFetchRequest<NSManagedObject>(entityName: type.representedName)
         request.predicate = predicate
         if sorters.isEmpty {
@@ -297,7 +297,7 @@ extension NSManagedObjectContext: DataContext {
         return !insertedObjects.isEmpty || !deletedObjects.isEmpty || updatedObjects.contains(where: { $0.hasPersistentChangedValues })
     }
 
-    private func fetchObject<T: DataObject>(ofType type: T.Type, predicate: NSPredicate?, prefetch: [String], sortBy sorters: [SortDescriptor]) throws -> T? {
+    private func fetchObject<T: DataObject>(ofType type: T.Type, predicate: NSPredicate?, prefetch: [String], sortBy sorters: [Flapjack.SortDescriptor]) throws -> T? {
         let preregistered: T? = registeredObjects.sortedArray(using: sorters).first { obj in
             guard !obj.isFault, !obj.isDeleted, let obj = obj as? T else {
                 return false
@@ -315,7 +315,7 @@ extension NSManagedObjectContext: DataContext {
         return try fetchObjects(ofType: type, predicate: predicate, prefetch: prefetch, sortBy: sorters, limit: 1).first
     }
 
-    private func fetchObjects<T: DataObject>(ofType type: T.Type, predicate: NSPredicate?, prefetch: [String], sortBy sorters: [SortDescriptor], limit: Int?) throws -> [T] {
+    private func fetchObjects<T: DataObject>(ofType type: T.Type, predicate: NSPredicate?, prefetch: [String], sortBy sorters: [Flapjack.SortDescriptor], limit: Int?) throws -> [T] {
         let request = fetchRequest(for: type, predicate: predicate, prefetch: prefetch, sortBy: sorters, limit: limit)
         let results = try fetch(request)
 

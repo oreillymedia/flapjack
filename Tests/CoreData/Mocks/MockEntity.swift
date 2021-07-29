@@ -36,7 +36,7 @@ extension MockEntity: DataObject {
         return #keyPath(MockEntity.identifier)
     }
 
-    public static var defaultSorters: [SortDescriptor] {
+    public static var defaultSorters: [Flapjack.SortDescriptor] {
         return [SortDescriptor(#keyPath(MockEntity.identifier))]
     }
 }
