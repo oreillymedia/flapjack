@@ -15,14 +15,14 @@ It lets you _skip_ the boilerplate commonly associated with database layers like
 Swift Package Manager is the preferred way to use Flapjack. Add the following as a dependency to the `dependencies` array in your `Package.swift` file:
 
 ```swift
-.package(name: "Flapjack", url: "https://github.com/oreillymedia/flapjack.git", .upToNextMajor(from: "0.8.0"))
+.package(name: "Flapjack", url: "https://github.com/oreillymedia/flapjack.git", .upToNextMajor(from: "0.8.1"))
 ```
 
 Then you'll specify `Flapjack` as a dependency of the target in which you wish to use it. You can also import `FlapjackCoreData` and `FlapjackUIKit`.
 
 ```swift
-.package(name: "FlapjackCoreData", url: "https://github.com/oreillymedia/flapjack.git", .upToNextMajor(from: "0.8.0"))
-.package(name: "FlapjackUIKit", url: "https://github.com/oreillymedia/flapjack.git", .upToNextMajor(from: "0.8.0"))
+.package(name: "FlapjackCoreData", url: "https://github.com/oreillymedia/flapjack.git", .upToNextMajor(from: "0.8.1"))
+.package(name: "FlapjackUIKit", url: "https://github.com/oreillymedia/flapjack.git", .upToNextMajor(from: "0.8.1"))
 ```
 
 ### CocoaPods
@@ -30,11 +30,11 @@ Then you'll specify `Flapjack` as a dependency of the target in which you wish t
 Flapjack is also available through [CocoaPods][cpd]. To install it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'Flapjack', '0.8.0'
+pod 'Flapjack', '0.8.1'
 # If you're using Core Data...
-pod 'Flapjack/CoreData', '0.8.0'
+pod 'Flapjack/CoreData', '0.8.1'
 # If you're targeting iOS and want some helpers...
-pod 'Flapjack/UIKit', '0.8.0'
+pod 'Flapjack/UIKit', '0.8.1'
 ```
 
 And run `pod install` at the command line.
