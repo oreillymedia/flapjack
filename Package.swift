@@ -8,7 +8,7 @@ let package = Package(
     platforms: [
         .macOS(.v10_15),
         .iOS(.v13),
-        .tvOS(.v12)
+        .tvOS(.v13)
     ],
     products: [
         .library(name: "Flapjack", targets: ["Flapjack"]),
