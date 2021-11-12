@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import Combine
 #if !COCOAPODS
 import Flapjack
 #endif
@@ -48,6 +49,8 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
         }
     }
 
+    public var objects: AnyPublisher<[T], Never> { onObjectsChange.eraseToAnyPublisher() }
+
     /// False until fetched results controller has performed at least one fetch.
     public private(set) var hasExecuted: Bool = false
     private var controller: NSFetchedResultsController<NSManagedObject>
@@ -60,6 +63,7 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
     private var fetchRequest: NSFetchRequest<NSManagedObject>
     private var predicateToSurviveContextWipe: NSPredicate?
     private var limit: Int?
+    private let onObjectsChange = CurrentValueSubject<[T], Never>([])
 
     /**
      Creates and returns an instance of this data source, but does not execute any fetch operations.
@@ -184,6 +188,7 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
             Logger.debug("Fetching cache key \"\(cacheKey)\"")
             controller.delegate = self
             try controller.performFetch()
+            sendCurrentObjects()
             hasExecuted = true
         } catch let error {
             Logger.error("Error fetching CoreDataSource<\(T.self)>: \(error)")
@@ -311,11 +316,15 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
         do {
             NSFetchedResultsController<NSManagedObject>.deleteCache(withName: cacheKey)
             try controller.performFetch()
+            sendCurrentObjects()
         } catch let error {
             Logger.error("Error fetching CoreDataSource<\(T.self)>: \(error)")
         }
     }
 
+    private func sendCurrentObjects() {
+        onObjectsChange.send(fetchedObjects ?? [])
+    }
 
     // MARK: Notification handlers
 
@@ -418,6 +427,7 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
         guard controller === controller else {
             return
         }
+        sendCurrentObjects()
         guard let onChange = onChange, !pendingItemChanges.isEmpty || !pendingSectionChanges.isEmpty else {
             return
         }
