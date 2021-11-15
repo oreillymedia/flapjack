@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Combine
 
 /**
  A protocol describing a type that listens for changes in an underlying data set (powered by a `DataContext`) that match
@@ -27,6 +28,8 @@ public protocol DataSource {
     var numberOfObjects: Int { get }
     /// An array of all objects in the matched data set, if fetched. Otherwise this should be empty.
     var allObjects: [ModelType] { get }
+    /// Combine publisher of the current array of objects
+    var objects: AnyPublisher<[ModelType], Never> { get }
     /// The number of sections detected in the matched data set, if grouped by section. Otherwise, this should be `1`.
     var numberOfSections: Int { get }
     /// Any full section titles for the sections found in the data set, if relevant.

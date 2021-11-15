@@ -9,6 +9,7 @@
 import Foundation
 import XCTest
 import CoreData
+import Combine
 
 @testable import Flapjack
 @testable import FlapjackCoreData
@@ -378,5 +379,52 @@ class CoreDataSourceTests: XCTestCase {
         indexPaths.forEach { path in
             XCTAssertNil(dataSource.object(at: path), "Object at \(path) was supposed to be nil")
         }
+    }
+
+    func testPublisher() {
+        let dataSource = CoreDataSource<MockEntity>(dataAccess: dataAccess)
+        let expect = expectation(description: "sink")
+        var savedSubs: Set<AnyCancellable> = []
+        dataSource.startListening()
+        dataSource.objects.sink { objects in
+            XCTAssertEqual(objects.count, 5)
+            expect.fulfill()
+        }.store(in: &savedSubs)
+        wait(for: [expect], timeout: 1.0)
+    }
+
+    func testPublisherChanges() {
+        let dataSource = CoreDataSource<MockEntity>(dataAccess: dataAccess)
+        let expect = expectation(description: "sink")
+        expect.expectedFulfillmentCount = 2
+        var savedSubs: Set<AnyCancellable> = []
+        var expectedValues = [5, 4]
+        dataSource.startListening()
+        dataSource.objects.sink { objects in
+            XCTAssertEqual(objects.count, expectedValues[0])
+            expectedValues.removeFirst()
+            expect.fulfill()
+        }.store(in: &savedSubs)
+        dataAccess.mainContext.destroy(object: entityOne)
+        dataAccess.mainContext.persist()
+        waitForExpectations(timeout: 0.5) { XCTAssertNil($0) }
+    }
+
+    func testPublisherUpdateFetchRequest() {
+        let dataSource = CoreDataSource<MockEntity>(dataAccess: dataAccess)
+        let expect = expectation(description: "sink")
+        expect.expectedFulfillmentCount = 3
+        var savedSubs: Set<AnyCancellable> = []
+        var expectedValues = [5, 1, 5]
+        dataSource.startListening()
+        dataSource.objects.sink { objects in
+            XCTAssertEqual(objects.count, expectedValues[0])
+            expectedValues.removeFirst()
+            expect.fulfill()
+        }.store(in: &savedSubs)
+        dataSource.predicate = NSPredicate(format: "someProperty contains \"zzzz\"")
+        dataSource.predicate = nil
+
+        waitForExpectations(timeout: 0.5) { XCTAssertNil($0) }
     }
 }

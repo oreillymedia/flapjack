@@ -6,9 +6,9 @@ import PackageDescription
 let package = Package(
     name: "Flapjack",
     platforms: [
-        .macOS(.v10_14),
-        .iOS(.v12),
-        .tvOS(.v12)
+        .macOS(.v10_15),
+        .iOS(.v13),
+        .tvOS(.v13)
     ],
     products: [
         .library(name: "Flapjack", targets: ["Flapjack"]),
