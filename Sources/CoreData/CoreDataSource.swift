@@ -112,15 +112,14 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
         if let cacheName = cacheName {
             cacheKey = cacheName
         } else {
-            //cacheKey = type(of: self).cacheName(type: T.self, fetchRequest: fetchRequest)
-            cacheKey = nil
+            cacheKey = type(of: self).cacheName(type: T.self, fetchRequest: fetchRequest)
         }
         self.limit = limit
         self.predicate = predicate
         self.sorters = sorters
         self.sectionProperty = sectionProperty
         NSFetchedResultsController<NSManagedObject>.deleteCache(withName: cacheKey)
-        controller = NSFetchedResultsController<NSManagedObject>(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: sectionProperty, cacheName: cacheKey)
+        controller = NSFetchedResultsController<NSManagedObject>(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: sectionProperty, cacheName: nil)
         super.init()
     }
 
@@ -337,7 +336,7 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
         predicate = predicateToSurviveContextWipe
         predicateToSurviveContextWipe = nil
         isContextAZombie = false
-        controller = NSFetchedResultsController<NSManagedObject>(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: sectionProperty, cacheName: cacheKey)
+        controller = NSFetchedResultsController<NSManagedObject>(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: sectionProperty, cacheName: nil)
         controller.delegate = self
         refetchIfNeeded()
     }
