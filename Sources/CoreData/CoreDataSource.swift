@@ -83,7 +83,7 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
             predicate = NSCompoundPredicate(andPredicateFrom: attributes)
             cacheKey += attributes.cacheKey
         }
-        self.init(dataAccess: dataAccess, predicate: predicate, prefetch: prefetch, sorters: sorters, sectionProperty: sectionProperty, limit: limit, batchSize: batchSize, cacheName: cacheKey)
+        self.init(dataAccess: dataAccess, predicate: predicate, prefetch: prefetch, sorters: sorters, sectionProperty: sectionProperty, limit: limit, batchSize: batchSize, cacheName: nil)
     }
 
     /**
@@ -112,7 +112,8 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
         if let cacheName = cacheName {
             cacheKey = cacheName
         } else {
-            cacheKey = type(of: self).cacheName(type: T.self, fetchRequest: fetchRequest)
+            //cacheKey = type(of: self).cacheName(type: T.self, fetchRequest: fetchRequest)
+            cacheKey = nil
         }
         self.limit = limit
         self.predicate = predicate
