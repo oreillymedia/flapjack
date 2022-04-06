@@ -63,8 +63,8 @@ public final class CoreDataAccess: DataAccess {
     public private(set) var isStackReady: Bool = false
     private let storeType: StoreType
     private let container: NSPersistentContainer
+    private var defaultContextPolicy: NSMergePolicy
     private var shouldLoadAsynchronously: Bool = false
-    private var defaultContextPolicy: NSMergePolicy = .error
     private lazy var dispatchQueue = DispatchQueue(label: "com.oreillymedia.flapjack.coreDataAccessQueue")
 
     public var managedObjectModel: NSManagedObjectModel {
@@ -141,8 +141,8 @@ public final class CoreDataAccess: DataAccess {
      - parameter operation: The actions to execute upon the background `DataContext`; will be passed said context.
      */
     public func performInBackground(operation: @escaping (_ context: DataContext) -> Void) {
-        container.performBackgroundTask { [weak self] context in
-            context.mergePolicy = self?.defaultContextPolicy ?? .error
+        container.performBackgroundTask { [defaultContextPolicy] context in
+            context.mergePolicy = defaultContextPolicy
             operation(context)
         }
     }
