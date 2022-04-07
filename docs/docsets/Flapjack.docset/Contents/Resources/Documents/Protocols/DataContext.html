@@ -21,20 +21,20 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="../index.html">
-          Flapjack 0.7.3 Docs
+          Flapjack 1.0.0 Docs
         </a>
-         (93% documented)
+         (91% documented)
       </p>
     
-      <p class="header-col--secondary">
+      <div class="header-col--secondary">
         <form role="search" action="../search.json">
           <input type="text" placeholder="Search documentation" data-typeahead>
         </form>
-      </p>
+      </div>
     
         <p class="header-col header-col--secondary">
           <a class="header-link" href="https://github.com/oreillymedia/flapjack">
-            <img class="header-icon" src="../img/gh.png"/>
+            <img class="header-icon" src="../img/gh.png" alt="GitHub"/>
             View on GitHub
           </a>
         </p>
@@ -43,7 +43,7 @@
 
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">Flapjack Reference</a>
-      <img class="carat" src="../img/carat.png" />
+      <img class="carat" src="../img/carat.png" alt=""/>
       DataContext Protocol Reference
     </p>
 
@@ -118,6 +118,9 @@
                 <a class="nav-group-task-link" href="../Extensions.html#/s:s5Int64V">Int64</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/NSCompoundPredicate.html">NSCompoundPredicate</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/NSFetchedResultsChangeType.html">NSFetchedResultsChangeType</a>
               </li>
               <li class="nav-group-task">
@@ -131,6 +134,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/NSMigrationManager/Layer.html">– Layer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/NSPredicate.html">NSPredicate</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/Sequence.html">Sequence</a>
@@ -213,7 +219,7 @@
 over a modifiable and searchable &ldquo;context&rdquo; of model objects lifted from a backing store.</p>
 
               <div class="slightly-smaller">
-                <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L18-L230">Show on GitHub</a>
+                <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L18-L230">Show on GitHub</a>
               </div>
           </div>
         </section>
@@ -242,12 +248,12 @@ over a modifiable and searchable &ldquo;context&rdquo; of model objects lifted f
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">Attributes</span> <span class="o">=</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">Attributes</span> <span class="o">=</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">?]</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L20">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L20">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -296,7 +302,7 @@ over a modifiable and searchable &ldquo;context&rdquo; of model objects lifted f
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L27">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L27">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -346,7 +352,7 @@ thread while doing so.</p>
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L35">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L35">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -377,7 +383,7 @@ include giving new objects unique identifiers, establishing relationships in an 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L41">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L41">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -427,7 +433,7 @@ potentially-cached version).</p>
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L49">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L49">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -463,7 +469,7 @@ not invoke an unnecessary save.</p>
                         <p>An error if one occurred while saving.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L58">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L58">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -499,7 +505,7 @@ a rollback and return whether or not the save succeeded.</p>
                         <p><code>true</code> if the persist operation was successful; <code>false</code> if it had to roll back.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L67">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L67">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -535,7 +541,7 @@ exist. Should guarantee a round trip to the backing store.</p>
                         <p>An error if one occurred while saving.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L76">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L76">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -548,7 +554,7 @@ exist. Should guarantee a round trip to the backing store.</p>
                 <a name="//apple_ref/swift/Section/Collection fetch operations" class="dashAnchor"></a>
                 <div class="section-name-container">
                   <a class="section-name-link" href="#/Collection%20fetch%20operations"></a>
-                  <h3 class="section-name"><p>Collection fetch operations</p>
+                  <h3 class="section-name"><span>Collection fetch operations</span>
 </h3>
                 </div>
               </div>
@@ -651,7 +657,7 @@ count of matches returned.</p>
                         <p>An array of any found objects. If none are found, an empty array is returned.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L93">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L93">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -659,9 +665,9 @@ count of matches returned.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Flapjack11DataContextP7objects6ofType10attributes8prefetch6sortBy5limitSayqd__Gqd__m_SDySSypGSaySSGSgSayAA14SortDescriptorVGSiSgtAA0B6ObjectRd__lF"></a>
+                    <a name="/s:8Flapjack11DataContextP7objects6ofType10attributes8prefetch6sortBy5limitSayqd__Gqd__m_SDySSypSgGSaySSGSgSayAA14SortDescriptorVGSiSgtAA0B6ObjectRd__lF"></a>
                     <a name="//apple_ref/swift/Method/objects(ofType:attributes:prefetch:sortBy:limit:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextP7objects6ofType10attributes8prefetch6sortBy5limitSayqd__Gqd__m_SDySSypGSaySSGSgSayAA14SortDescriptorVGSiSgtAA0B6ObjectRd__lF">objects(ofType:<wbr>attributes:<wbr>prefetch:<wbr>sortBy:<wbr>limit:<wbr>)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP7objects6ofType10attributes8prefetch6sortBy5limitSayqd__Gqd__m_SDySSypSgGSaySSGSgSayAA14SortDescriptorVGSiSgtAA0B6ObjectRd__lF">objects(ofType:<wbr>attributes:<wbr>prefetch:<wbr>sortBy:<wbr>limit:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -764,7 +770,7 @@ count of matches returned.</p>
                         <p>An array of any found objects. If none are found, an empty array is returned.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L107">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L107">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -868,7 +874,7 @@ records returned.</p>
        returned.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L122">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L122">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -982,7 +988,7 @@ records returned.</p>
        returned.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L137">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L137">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1048,7 +1054,7 @@ returning an integer count instead of an entire record set.</p>
                         <p>An integer representing the number of objects that match the query.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L147">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L147">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1061,7 +1067,7 @@ returning an integer count instead of an entire record set.</p>
                 <a name="//apple_ref/swift/Section/Single fetch operations" class="dashAnchor"></a>
                 <div class="section-name-container">
                   <a class="section-name-link" href="#/Single%20fetch%20operations"></a>
-                  <h3 class="section-name"><p>Single fetch operations</p>
+                  <h3 class="section-name"><span>Single fetch operations</span>
 </h3>
                 </div>
               </div>
@@ -1153,7 +1159,7 @@ used to sort the results, and the first object will be returned.</p>
        the results, and the first object will be returned.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L164">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L164">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1161,9 +1167,9 @@ used to sort the results, and the first object will be returned.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Flapjack11DataContextP6object6ofType10attributes8prefetch6sortByqd__Sgqd__m_SDySSypGSaySSGSgSayAA14SortDescriptorVGtAA0B6ObjectRd__lF"></a>
+                    <a name="/s:8Flapjack11DataContextP6object6ofType10attributes8prefetch6sortByqd__Sgqd__m_SDySSypSgGSaySSGSgSayAA14SortDescriptorVGtAA0B6ObjectRd__lF"></a>
                     <a name="//apple_ref/swift/Method/object(ofType:attributes:prefetch:sortBy:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextP6object6ofType10attributes8prefetch6sortByqd__Sgqd__m_SDySSypGSaySSGSgSayAA14SortDescriptorVGtAA0B6ObjectRd__lF">object(ofType:<wbr>attributes:<wbr>prefetch:<wbr>sortBy:<wbr>)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP6object6ofType10attributes8prefetch6sortByqd__Sgqd__m_SDySSypSgGSaySSGSgSayAA14SortDescriptorVGtAA0B6ObjectRd__lF">object(ofType:<wbr>attributes:<wbr>prefetch:<wbr>sortBy:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -1255,7 +1261,7 @@ used to sort the results, and the first object will be returned.</p>
 the results, and the first object will be returned.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L178">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L178">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1320,7 +1326,7 @@ the results, and the first object will be returned.</p>
                         <p>A matched object, if found.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L187">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L187">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1373,7 +1379,7 @@ the results, and the first object will be returned.</p>
                         <p>A refreshed object, if it still exists in the persistent store.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L195">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L195">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1386,7 +1392,7 @@ the results, and the first object will be returned.</p>
                 <a name="//apple_ref/swift/Section/Creation operations" class="dashAnchor"></a>
                 <div class="section-name-container">
                   <a class="section-name-link" href="#/Creation%20operations"></a>
-                  <h3 class="section-name"><p>Creation operations</p>
+                  <h3 class="section-name"><span>Creation operations</span>
 </h3>
                 </div>
               </div>
@@ -1439,7 +1445,7 @@ the results, and the first object will be returned.</p>
                         <p>A newly added model, ready for modification and then later persistence to the context.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L206">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L206">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1447,9 +1453,9 @@ the results, and the first object will be returned.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Flapjack11DataContextP6create_10attributesqd__qd__m_SDySSypGtAA0B6ObjectRd__lF"></a>
+                    <a name="/s:8Flapjack11DataContextP6create_10attributesqd__qd__m_SDySSypSgGtAA0B6ObjectRd__lF"></a>
                     <a name="//apple_ref/swift/Method/create(_:attributes:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextP6create_10attributesqd__qd__m_SDySSypGtAA0B6ObjectRd__lF">create(_:<wbr>attributes:<wbr>)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextP6create_10attributesqd__qd__m_SDySSypSgGtAA0B6ObjectRd__lF">create(_:<wbr>attributes:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1505,7 +1511,7 @@ attributes as properties.</p>
                         <p>A newly added model, ready for modification and then later persistence to the context.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L216">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L216">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1518,7 +1524,7 @@ attributes as properties.</p>
                 <a name="//apple_ref/swift/Section/Destruction operations" class="dashAnchor"></a>
                 <div class="section-name-container">
                   <a class="section-name-link" href="#/Destruction%20operations"></a>
-                  <h3 class="section-name"><p>Destruction operations</p>
+                  <h3 class="section-name"><span>Destruction operations</span>
 </h3>
                 </div>
               </div>
@@ -1548,7 +1554,7 @@ attributes as properties.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L222">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1606,7 +1612,7 @@ Concrete implementations may wish to provide a more performant version, if neces
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L229">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L229">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1619,7 +1625,7 @@ Concrete implementations may wish to provide a more performant version, if neces
                 <a name="//apple_ref/swift/Section/Collection fetch operations" class="dashAnchor"></a>
                 <div class="section-name-container">
                   <a class="section-name-link" href="#/Collection%20fetch%20operations2"></a>
-                  <h3 class="section-name"><p>Collection fetch operations</p>
+                  <h3 class="section-name"><span>Collection fetch operations</span>
 </h3>
                 </div>
               </div>
@@ -1675,7 +1681,7 @@ Concrete implementations may wish to provide a more performant version, if neces
                         <p>An array of any found objects. If none are found, an empty array is returned.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L245-L247">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L245-L247">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1743,7 +1749,7 @@ Concrete implementations may wish to provide a more performant version, if neces
                         <p>An array of any found objects. If none are found, an empty array is returned.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L256-L258">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L256-L258">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1824,7 +1830,7 @@ Concrete implementations may wish to provide a more performant version, if neces
                         <p>An array of any found objects. If none are found, an empty array is returned.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L269-L271">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L269-L271">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1832,9 +1838,9 @@ Concrete implementations may wish to provide a more performant version, if neces
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Flapjack11DataContextPAAE7objects6ofType10attributesSayqd__Gqd__m_SDySSypGtAA0B6ObjectRd__lF"></a>
+                    <a name="/s:8Flapjack11DataContextPAAE7objects6ofType10attributesSayqd__Gqd__m_SDySSypSgGtAA0B6ObjectRd__lF"></a>
                     <a name="//apple_ref/swift/Method/objects(ofType:attributes:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextPAAE7objects6ofType10attributesSayqd__Gqd__m_SDySSypGtAA0B6ObjectRd__lF">objects(ofType:<wbr>attributes:<wbr>)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE7objects6ofType10attributesSayqd__Gqd__m_SDySSypSgGtAA0B6ObjectRd__lF">objects(ofType:<wbr>attributes:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -1892,7 +1898,7 @@ Concrete implementations may wish to provide a more performant version, if neces
                         <p>An array of any found objects. If none are found, an empty array is returned.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L280-L282">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L280-L282">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1900,9 +1906,9 @@ Concrete implementations may wish to provide a more performant version, if neces
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Flapjack11DataContextPAAE7objects6ofType10attributes8prefetchSayqd__Gqd__m_SDySSypGSaySSGSgtAA0B6ObjectRd__lF"></a>
+                    <a name="/s:8Flapjack11DataContextPAAE7objects6ofType10attributes8prefetchSayqd__Gqd__m_SDySSypSgGSaySSGSgtAA0B6ObjectRd__lF"></a>
                     <a name="//apple_ref/swift/Method/objects(ofType:attributes:prefetch:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextPAAE7objects6ofType10attributes8prefetchSayqd__Gqd__m_SDySSypGSaySSGSgtAA0B6ObjectRd__lF">objects(ofType:<wbr>attributes:<wbr>prefetch:<wbr>)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE7objects6ofType10attributes8prefetchSayqd__Gqd__m_SDySSypSgGSaySSGSgtAA0B6ObjectRd__lF">objects(ofType:<wbr>attributes:<wbr>prefetch:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -1973,7 +1979,7 @@ Concrete implementations may wish to provide a more performant version, if neces
                         <p>An array of any found objects. If none are found, an empty array is returned.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L293-L295">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L293-L295">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2042,7 +2048,7 @@ Concrete implementations may wish to provide a more performant version, if neces
        returned.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L321-L323">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L321-L323">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2124,7 +2130,7 @@ parameter for eagerly fetching related records.</p>
        returned.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L335-L337">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L335-L337">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2193,7 +2199,7 @@ parameter for eagerly fetching related records.</p>
        returned.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L347-L349">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L347-L349">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2275,7 +2281,7 @@ parameter for eagerly fetching related records.</p>
        returned.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L361-L363">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L361-L363">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2288,7 +2294,7 @@ parameter for eagerly fetching related records.</p>
                 <a name="//apple_ref/swift/Section/Single fetch operations" class="dashAnchor"></a>
                 <div class="section-name-container">
                   <a class="section-name-link" href="#/Single%20fetch%20operations2"></a>
-                  <h3 class="section-name"><p>Single fetch operations</p>
+                  <h3 class="section-name"><span>Single fetch operations</span>
 </h3>
                 </div>
               </div>
@@ -2357,7 +2363,7 @@ parameter for eagerly fetching related records.</p>
        the results, and the first object will be returned.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L396-L398">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L396-L398">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2365,9 +2371,9 @@ parameter for eagerly fetching related records.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Flapjack11DataContextPAAE6object6ofType10attributesqd__Sgqd__m_SDySSypGtAA0B6ObjectRd__lF"></a>
+                    <a name="/s:8Flapjack11DataContextPAAE6object6ofType10attributesqd__Sgqd__m_SDySSypSgGtAA0B6ObjectRd__lF"></a>
                     <a name="//apple_ref/swift/Method/object(ofType:attributes:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextPAAE6object6ofType10attributesqd__Sgqd__m_SDySSypGtAA0B6ObjectRd__lF">object(ofType:<wbr>attributes:<wbr>)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE6object6ofType10attributesqd__Sgqd__m_SDySSypSgGtAA0B6ObjectRd__lF">object(ofType:<wbr>attributes:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -2426,7 +2432,7 @@ parameter for eagerly fetching related records.</p>
        the results, and the first object will be returned.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L408-L410">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L408-L410">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2494,7 +2500,7 @@ parameter for eagerly fetching related records.</p>
                         <p>A matched object, if found.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L435-L440">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L435-L440">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2507,7 +2513,7 @@ parameter for eagerly fetching related records.</p>
                 <a name="//apple_ref/swift/Section/Creation operations" class="dashAnchor"></a>
                 <div class="section-name-container">
                   <a class="section-name-link" href="#/Creation%20operations2"></a>
-                  <h3 class="section-name"><p>Creation operations</p>
+                  <h3 class="section-name"><span>Creation operations</span>
 </h3>
                 </div>
               </div>
@@ -2577,7 +2583,7 @@ including the <code>object</code> and whether or not the object <code>isNew</cod
                         <p>A tuple of information including the <code>object</code> and whether or not the object <code>isNew</code>.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L454-L459">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L454-L459">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2585,9 +2591,9 @@ including the <code>object</code> and whether or not the object <code>isNew</cod
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Flapjack11DataContextPAAE12findOrCreate_10attributesqd__6object_Sb5isNewtqd__m_SDySSypGtAA0B6ObjectRd__lF"></a>
+                    <a name="/s:8Flapjack11DataContextPAAE12findOrCreate_10attributesqd__6object_Sb5isNewtqd__m_SDySSypSgGtAA0B6ObjectRd__lF"></a>
                     <a name="//apple_ref/swift/Method/findOrCreate(_:attributes:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack11DataContextPAAE12findOrCreate_10attributesqd__6object_Sb5isNewtqd__m_SDySSypGtAA0B6ObjectRd__lF">findOrCreate(_:<wbr>attributes:<wbr>)</a>
+                    <a class="token" href="#/s:8Flapjack11DataContextPAAE12findOrCreate_10attributesqd__6object_Sb5isNewtqd__m_SDySSypSgGtAA0B6ObjectRd__lF">findOrCreate(_:<wbr>attributes:<wbr>)</a>
                     </code>
                       <span class="declaration-note">
                         Extension method
@@ -2647,7 +2653,7 @@ including the <code>object</code> and whether or not the object <code>isNew</cod
                         <p>A tuple of information including the <code>object</code> and whether or not the object <code>isNew</code>.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/Core/DataContext.swift#L470-L475">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/DataContext.swift#L470-L475">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2660,9 +2666,8 @@ including the <code>object</code> and whether or not the object <code>isNew</cod
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2021 <a class="link" href="https://oreilly.com" target="_blank" rel="external">O&#39;Reilly Media, Inc.</a>. All rights reserved. (Last updated: 2021-03-15)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2022 <a class="link" href="https://oreilly.com" target="_blank" rel="external noopener">O&#39;Reilly Media, Inc.</a>. All rights reserved. (Last updated: 2022-04-07)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
     </section>
   </body>
-</div>
 </html>
