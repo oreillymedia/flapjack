@@ -63,6 +63,7 @@ public final class CoreDataAccess: DataAccess {
     public private(set) var isStackReady: Bool = false
     private let storeType: StoreType
     private let container: NSPersistentContainer
+    private var defaultContextPolicy: NSMergePolicy
     private var shouldLoadAsynchronously: Bool = false
     private lazy var dispatchQueue = DispatchQueue(label: "com.oreillymedia.flapjack.coreDataAccessQueue")
 
@@ -79,7 +80,7 @@ public final class CoreDataAccess: DataAccess {
 
     // MARK: Lifecycle
 
-    public init(name: String, type: StoreType, model: NSManagedObjectModel? = nil, delegate: DataAccessDelegate? = nil) {
+    public init(name: String, type: StoreType, model: NSManagedObjectModel? = nil, delegate: DataAccessDelegate? = nil, defaultPolicy: NSMergePolicy = .mergeByPropertyStoreTrump) {
         self.storeType = type
         if let model = model {
             self.container = NSPersistentContainer(name: name, managedObjectModel: model)
@@ -88,6 +89,8 @@ public final class CoreDataAccess: DataAccess {
         }
         self.container.persistentStoreDescriptions = [type.storeDescription]
         self.delegate = delegate
+        self.defaultContextPolicy = defaultPolicy
+        self.container.viewContext.mergePolicy = self.defaultContextPolicy
     }
 
 
@@ -138,8 +141,8 @@ public final class CoreDataAccess: DataAccess {
      - parameter operation: The actions to execute upon the background `DataContext`; will be passed said context.
      */
     public func performInBackground(operation: @escaping (_ context: DataContext) -> Void) {
-        container.performBackgroundTask { context in
-            context.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
+        container.performBackgroundTask { [defaultContextPolicy] context in
+            context.mergePolicy = defaultContextPolicy
             operation(context)
         }
     }
@@ -153,7 +156,7 @@ public final class CoreDataAccess: DataAccess {
     public func vendBackgroundContext() -> DataContext {
         let context = container.newBackgroundContext()
         context.persistentStoreCoordinator = container.persistentStoreCoordinator
-        context.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
+        context.mergePolicy = defaultContextPolicy
         return context
     }
 

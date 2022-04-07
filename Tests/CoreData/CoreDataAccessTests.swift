@@ -214,6 +214,41 @@ class CoreDataAccessTests: XCTestCase {
         XCTAssertEqual(context.persistentStoreCoordinator, (dataAccess.mainContext as? NSManagedObjectContext)?.persistentStoreCoordinator)
         XCTAssertNil(context.parent)
     }
+    
+    // MARK: - Context Propagation Testing
+    
+    func testMainContextGetsCorrectPolicy() {
+        dataAccess = CoreDataAccess(name: "TestModel", type: .memory, model: model, delegate: delegate, defaultPolicy: .rollback)
+        guard let mergePolicy = (dataAccess.mainContext as? NSManagedObjectContext)?.mergePolicy as? NSObject else {
+            XCTFail("Couldn't get mergePolicy which is bad.")
+            return
+        }
+        XCTAssertEqual(mergePolicy, NSRollbackMergePolicy as? NSObject)
+    }
+    
+    func testVendBackgroundContextGetsCorrectPolicy() {
+        dataAccess = CoreDataAccess(name: "TestModel", type: .memory, model: model, delegate: delegate, defaultPolicy: .overwrite)
+        guard let context = dataAccess.vendBackgroundContext() as? NSManagedObjectContext else {
+            XCTFail("Expected a managed object context.")
+            return
+        }
+        XCTAssertEqual(context.mergePolicy as? NSObject, NSOverwriteMergePolicy as? NSObject)
+    }
+    
+    func testPerformInBackgroundContextGetsCorrectPolicy() {
+        dataAccess = CoreDataAccess(name: "TestModel", type: .memory, model: model, delegate: delegate, defaultPolicy: .rollback)
+        let expect = expectation(description: "operation")
+        dataAccess.performInBackground { context in
+            defer { expect.fulfill() }
+            guard let mergePolicy = (context as? NSManagedObjectContext)?.mergePolicy as? NSObject else {
+                XCTFail("Couldn't get mergePolicy which is bad.")
+                return
+            }
+            XCTAssertEqual(mergePolicy, NSRollbackMergePolicy as? NSObject)
+        }
+        waitForExpectations(timeout: 1.0) { XCTAssertNil($0) }
+    }
+    
 }
 
 
