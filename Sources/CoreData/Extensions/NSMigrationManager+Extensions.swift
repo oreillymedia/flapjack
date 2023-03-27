@@ -53,7 +53,7 @@ public extension NSMigrationManager {
                 return try destinationContext.fetch(request)
             }
         } catch let error {
-            Logger.error(error.localizedDescription)
+            FJLogger.error(error.localizedDescription)
             return []
         }
     }

@@ -214,9 +214,9 @@ class CoreDataAccessTests: XCTestCase {
         XCTAssertEqual(context.persistentStoreCoordinator, (dataAccess.mainContext as? NSManagedObjectContext)?.persistentStoreCoordinator)
         XCTAssertNil(context.parent)
     }
-    
+
     // MARK: - Context Propagation Testing
-    
+
     func testMainContextGetsCorrectPolicy() {
         dataAccess = CoreDataAccess(name: "TestModel", type: .memory, model: model, delegate: delegate, defaultPolicy: .rollback)
         guard let mergePolicy = (dataAccess.mainContext as? NSManagedObjectContext)?.mergePolicy as? NSObject else {
@@ -225,7 +225,7 @@ class CoreDataAccessTests: XCTestCase {
         }
         XCTAssertEqual(mergePolicy, NSRollbackMergePolicy as? NSObject)
     }
-    
+
     func testVendBackgroundContextGetsCorrectPolicy() {
         dataAccess = CoreDataAccess(name: "TestModel", type: .memory, model: model, delegate: delegate, defaultPolicy: .overwrite)
         guard let context = dataAccess.vendBackgroundContext() as? NSManagedObjectContext else {
@@ -234,7 +234,7 @@ class CoreDataAccessTests: XCTestCase {
         }
         XCTAssertEqual(context.mergePolicy as? NSObject, NSOverwriteMergePolicy as? NSObject)
     }
-    
+
     func testPerformInBackgroundContextGetsCorrectPolicy() {
         dataAccess = CoreDataAccess(name: "TestModel", type: .memory, model: model, delegate: delegate, defaultPolicy: .rollback)
         let expect = expectation(description: "operation")
@@ -248,7 +248,6 @@ class CoreDataAccessTests: XCTestCase {
         }
         waitForExpectations(timeout: 1.0) { XCTAssertNil($0) }
     }
-    
 }
 
 

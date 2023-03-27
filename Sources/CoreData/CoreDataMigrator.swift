@@ -32,7 +32,7 @@ class CoreDataMigrator: Migrator {
             let data = try Data(contentsOf: compiledModelURL.appendingPathComponent("VersionInfo.plist", isDirectory: false))
             return try PropertyListDecoder().decode(VersionInfo.self, from: data)
         } catch let error {
-            Logger.error("\(error)")
+            FJLogger.error("\(error)")
             return nil
         }
     }()
@@ -41,7 +41,7 @@ class CoreDataMigrator: Migrator {
         do {
             return try NSPersistentStoreCoordinator.metadataForPersistentStore(ofType: storeType.coreDataType, at: storeURL, options: nil)
         } catch let error {
-            Logger.error("\(error)")
+            FJLogger.error("\(error)")
             return nil
         }
     }()
@@ -100,10 +100,10 @@ class CoreDataMigrator: Migrator {
             if let url = tempURL {
                 do {
                     try FileManager.default.removeItem(at: url)
-                    Logger.debug("Successfully removed temporary store file.")
+                    FJLogger.debug("Successfully removed temporary store file.")
                 } catch let error {
                     // This is a non-critical error.
-                    Logger.error("Couldn't remove temporary store file: \(error.localizedDescription)")
+                    FJLogger.error("Couldn't remove temporary store file: \(error.localizedDescription)")
                 }
             }
         }
@@ -114,7 +114,7 @@ class CoreDataMigrator: Migrator {
             return false
         }
         if let first = modelsToMigrate.first?.version, let last = modelsToMigrate.last?.version {
-            Logger.debug("Core Data: need to migrate from version \(first) to version \(last).")
+            FJLogger.debug("Core Data: need to migrate from version \(first) to version \(last).")
         }
 
         var currentURLStore = storeURL
@@ -124,7 +124,7 @@ class CoreDataMigrator: Migrator {
                 let source = modelsToMigrate[idx]
                 let destination = modelsToMigrate[idx + 1]
 
-                Logger.debug("Migrating to \(destination.version).")
+                FJLogger.debug("Migrating to \(destination.version).")
                 let migratedURL = try migrateStore(at: currentURLStore, from: source, to: destination)
                 if idx > 0 {
                     try removeStore(at: currentURLStore)
@@ -141,9 +141,9 @@ class CoreDataMigrator: Migrator {
         do {
             try removeStore(at: storeURL)
             try FileManager.default.moveItem(at: currentURLStore, to: storeURL)
-            Logger.debug("Successfully migrated Core Data store and moved to \(storeURL)")
+            FJLogger.debug("Successfully migrated Core Data store and moved to \(storeURL)")
         } catch let error {
-            Logger.error("Successfully migrated Core Data store, but wasn't able to move to \(storeURL): \(error.localizedDescription)")
+            FJLogger.error("Successfully migrated Core Data store, but wasn't able to move to \(storeURL): \(error.localizedDescription)")
             throw MigratorError.cleanupError(error)
         }
 
@@ -239,7 +239,7 @@ class CoreDataMigrator: Migrator {
         //   model. Any specific mapping model classes are generated from (and referred to in) the
         //   Core Data schema file.
         if let explicitModel = NSMappingModel(from: [bundle], forSourceModel: source.model, destinationModel: destination.model) {
-            Logger.debug("Found concrete mapping model from source model \(source.version) to destination model \(destination.version).")
+            FJLogger.debug("Found concrete mapping model from source model \(source.version) to destination model \(destination.version).")
             return explicitModel
         }
         return try NSMappingModel.inferredMappingModel(forSourceModel: source.model, destinationModel: destination.model)
