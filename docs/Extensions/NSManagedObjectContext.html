@@ -21,20 +21,20 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="../index.html">
-          Flapjack 0.7.3 Docs
+          Flapjack 1.0.2 Docs
         </a>
-         (93% documented)
+         (91% documented)
       </p>
     
-      <p class="header-col--secondary">
+      <div class="header-col--secondary">
         <form role="search" action="../search.json">
           <input type="text" placeholder="Search documentation" data-typeahead>
         </form>
-      </p>
+      </div>
     
         <p class="header-col header-col--secondary">
           <a class="header-link" href="https://github.com/oreillymedia/flapjack">
-            <img class="header-icon" src="../img/gh.png"/>
+            <img class="header-icon" src="../img/gh.png" alt="GitHub"/>
             View on GitHub
           </a>
         </p>
@@ -43,7 +43,7 @@
 
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">Flapjack Reference</a>
-      <img class="carat" src="../img/carat.png" />
+      <img class="carat" src="../img/carat.png" alt=""/>
       NSManagedObjectContext Extension Reference
     </p>
 
@@ -66,7 +66,7 @@
                 <a class="nav-group-task-link" href="../Classes/CoreDataSourceFactory.html">CoreDataSourceFactory</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/Logger.html">Logger</a>
+                <a class="nav-group-task-link" href="../Classes/FJLogger.html">FJLogger</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/MigrationPolicy.html">MigrationPolicy</a>
@@ -118,6 +118,9 @@
                 <a class="nav-group-task-link" href="../Extensions.html#/s:s5Int64V">Int64</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/NSCompoundPredicate.html">NSCompoundPredicate</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/NSFetchedResultsChangeType.html">NSFetchedResultsChangeType</a>
               </li>
               <li class="nav-group-task">
@@ -131,6 +134,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/NSMigrationManager/Layer.html">– Layer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/NSPredicate.html">NSPredicate</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/Sequence.html">Sequence</a>
@@ -262,7 +268,7 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L22-L24">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L22-L24">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -313,7 +319,7 @@ Wraps <code>NSManagedObjectContext.performAndWait(_:)</code>.</p>
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L33-L35">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L33-L35">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -363,7 +369,7 @@ potentially-cached version).</p>
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L43-L48">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L43-L48">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -397,7 +403,7 @@ potentially-cached version).</p>
                         <p>An error if one occurred while saving.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L55-L60">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L55-L60">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -432,7 +438,7 @@ whether or not the save succeeded.</p>
                         <p><code>true</code> if the persist operation was successful; <code>false</code> if a rollback happened as a result of a failure.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L68-L75">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L68-L75">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -467,7 +473,7 @@ round trip to the backing store.</p>
                         <p>An error if one occurred while saving.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L83-L93">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L83-L93">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -480,7 +486,7 @@ round trip to the backing store.</p>
                 <a name="//apple_ref/swift/Section/Collection fetch operations" class="dashAnchor"></a>
                 <div class="section-name-container">
                   <a class="section-name-link" href="#/Collection%20fetch%20operations"></a>
-                  <h3 class="section-name"><p>Collection fetch operations</p>
+                  <h3 class="section-name"><span>Collection fetch operations</span>
 </h3>
                 </div>
               </div>
@@ -507,7 +513,7 @@ count of matches returned.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">objects</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">predicate</span><span class="p">:</span> <span class="kt">NSPredicate</span><span class="p">?,</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?,</span> <span class="n">sortBy</span> <span class="nv">sorters</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/SortDescriptor.html">SortDescriptor</a></span><span class="p">],</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">T</span><span class="p">]</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">objects</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">predicate</span><span class="p">:</span> <span class="kt">NSPredicate</span><span class="p">?,</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?,</span> <span class="n">sortBy</span> <span class="nv">sorters</span><span class="p">:</span> <span class="p">[</span><span class="kt">Flapjack</span><span class="o">.</span><span class="kt"><a href="../Structs/SortDescriptor.html">SortDescriptor</a></span><span class="p">],</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">T</span><span class="p">]</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
 
                         </div>
                       </div>
@@ -583,7 +589,7 @@ count of matches returned.</p>
                         <p>An array of any found objects. If none are found, an empty array is returned.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L110-L117">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L110-L117">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -610,7 +616,7 @@ records returned.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">objects</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">objectIDs</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Protocols.html#/s:8Flapjack12DataObjectIDP">DataObjectID</a></span><span class="p">],</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?,</span> <span class="n">sortBy</span> <span class="nv">sorters</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/SortDescriptor.html">SortDescriptor</a></span><span class="p">],</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">T</span><span class="p">]</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">objects</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">objectIDs</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Protocols.html#/s:8Flapjack12DataObjectIDP">DataObjectID</a></span><span class="p">],</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?,</span> <span class="n">sortBy</span> <span class="nv">sorters</span><span class="p">:</span> <span class="p">[</span><span class="kt">Flapjack</span><span class="o">.</span><span class="kt"><a href="../Structs/SortDescriptor.html">SortDescriptor</a></span><span class="p">],</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">T</span><span class="p">]</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
 
                         </div>
                       </div>
@@ -687,7 +693,7 @@ records returned.</p>
        returned.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L132-L134">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L132-L134">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -753,7 +759,7 @@ integer count instead of an entire record set.</p>
                         <p>An integer representing the number of objects that match the query.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L144-L152">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L144-L152">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -766,7 +772,7 @@ integer count instead of an entire record set.</p>
                 <a name="//apple_ref/swift/Section/Single fetch operations" class="dashAnchor"></a>
                 <div class="section-name-container">
                   <a class="section-name-link" href="#/Single%20fetch%20operations"></a>
-                  <h3 class="section-name"><p>Single fetch operations</p>
+                  <h3 class="section-name"><span>Single fetch operations</span>
 </h3>
                 </div>
               </div>
@@ -793,7 +799,7 @@ used to sort the results, and the first object will be returned.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">object</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">predicate</span><span class="p">:</span> <span class="kt">NSPredicate</span><span class="p">?,</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?,</span> <span class="n">sortBy</span> <span class="nv">sorters</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/SortDescriptor.html">SortDescriptor</a></span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">?</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">object</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ofType</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">predicate</span><span class="p">:</span> <span class="kt">NSPredicate</span><span class="p">?,</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?,</span> <span class="n">sortBy</span> <span class="nv">sorters</span><span class="p">:</span> <span class="p">[</span><span class="kt">Flapjack</span><span class="o">.</span><span class="kt"><a href="../Structs/SortDescriptor.html">SortDescriptor</a></span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">?</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
 
                         </div>
                       </div>
@@ -858,7 +864,7 @@ used to sort the results, and the first object will be returned.</p>
        the results, and the first object will be returned.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L169-L176">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L169-L176">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -923,7 +929,7 @@ used to sort the results, and the first object will be returned.</p>
                         <p>A matched object, if found.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L185-L203">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L185-L203">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -976,7 +982,7 @@ used to sort the results, and the first object will be returned.</p>
                         <p>A refreshed object, if it still exists in the persistent store.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L211-L216">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L211-L216">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -989,7 +995,7 @@ used to sort the results, and the first object will be returned.</p>
                 <a name="//apple_ref/swift/Section/Creation operations" class="dashAnchor"></a>
                 <div class="section-name-container">
                   <a class="section-name-link" href="#/Creation%20operations"></a>
-                  <h3 class="section-name"><p>Creation operations</p>
+                  <h3 class="section-name"><span>Creation operations</span>
 </h3>
                 </div>
               </div>
@@ -1042,7 +1048,7 @@ used to sort the results, and the first object will be returned.</p>
                         <p>A newly added model, ready for modification and then later persistence to our context.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L227-L230">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L227-L230">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1050,9 +1056,9 @@ used to sort the results, and the first object will be returned.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So22NSManagedObjectContextC8FlapjackE6create_10attributesxxm_SDySSypGtAC04DataB0RzlF"></a>
+                    <a name="/s:So22NSManagedObjectContextC8FlapjackE6create_10attributesxxm_SDySSypSgGtAC04DataB0RzlF"></a>
                     <a name="//apple_ref/swift/Method/create(_:attributes:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE6create_10attributesxxm_SDySSypGtAC04DataB0RzlF">create(_:<wbr>attributes:<wbr>)</a>
+                    <a class="token" href="#/s:So22NSManagedObjectContextC8FlapjackE6create_10attributesxxm_SDySSypSgGtAC04DataB0RzlF">create(_:<wbr>attributes:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1108,7 +1114,7 @@ attributes as properties.</p>
                         <p>A newly added model, ready for modification and then later persistence to our context.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L240-L245">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L240-L245">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1121,7 +1127,7 @@ attributes as properties.</p>
                 <a name="//apple_ref/swift/Section/Destruction operations" class="dashAnchor"></a>
                 <div class="section-name-container">
                   <a class="section-name-link" href="#/Destruction%20operations"></a>
-                  <h3 class="section-name"><p>Destruction operations</p>
+                  <h3 class="section-name"><span>Destruction operations</span>
 </h3>
                 </div>
               </div>
@@ -1170,7 +1176,7 @@ attributes as properties.</p>
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L255-L260">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L255-L260">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1183,7 +1189,7 @@ attributes as properties.</p>
                 <a name="//apple_ref/swift/Section/Fetch request helpers" class="dashAnchor"></a>
                 <div class="section-name-container">
                   <a class="section-name-link" href="#/Fetch%20request%20helpers"></a>
-                  <h3 class="section-name"><p>Fetch request helpers</p>
+                  <h3 class="section-name"><span>Fetch request helpers</span>
 </h3>
                 </div>
               </div>
@@ -1209,7 +1215,7 @@ a <code>fetchBatchSize</code> of 50.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">fetchRequest</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="k">for</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">predicate</span><span class="p">:</span> <span class="kt">NSPredicate</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span> <span class="n">sortBy</span> <span class="nv">sorters</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/SortDescriptor.html">SortDescriptor</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSFetchRequest</span><span class="o">&lt;</span><span class="kt">NSManagedObject</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">fetchRequest</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="k">for</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">predicate</span><span class="p">:</span> <span class="kt">NSPredicate</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">prefetch</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span> <span class="n">sortBy</span> <span class="nv">sorters</span><span class="p">:</span> <span class="p">[</span><span class="kt">Flapjack</span><span class="o">.</span><span class="kt"><a href="../Structs/SortDescriptor.html">SortDescriptor</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSFetchRequest</span><span class="o">&lt;</span><span class="kt">NSManagedObject</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DataObject.html">DataObject</a></span></code></pre>
 
                         </div>
                       </div>
@@ -1285,7 +1291,7 @@ a <code>fetchBatchSize</code> of 50.</p>
                         <p>A formulated <code>NSFetchRequest</code> with the given parameters.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L276-L290">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/CoreData/Extensions/NSManagedObjectContext+DataContext.swift#L276-L290">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1315,7 +1321,7 @@ a <code>fetchBatchSize</code> of 50.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+Extensions.swift#L19">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/CoreData/Extensions/NSManagedObjectContext+Extensions.swift#L19">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1346,7 +1352,7 @@ a <code>fetchBatchSize</code> of 50.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+Extensions.swift#L24">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/CoreData/Extensions/NSManagedObjectContext+Extensions.swift#L24">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1401,7 +1407,7 @@ context-did-save notification.</p>
                         <p>A tuple containing the object IDs from the notification.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+Extensions.swift#L34-L45">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/CoreData/Extensions/NSManagedObjectContext+Extensions.swift#L34-L45">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1468,7 +1474,7 @@ context-did-save notification matching a given type.</p>
                         <p>A tuple containing the object IDs from the notification.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+Extensions.swift#L56-L67">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/CoreData/Extensions/NSManagedObjectContext+Extensions.swift#L56-L67">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1560,7 +1566,7 @@ based on that object&rsquo;s <code>NSManagedObjectID</code>.</p>
                         <p>A tuple containing the object and whether or not it came through as a deletion, if found.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+Extensions.swift#L81-L113">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/CoreData/Extensions/NSManagedObjectContext+Extensions.swift#L81-L113">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1627,7 +1633,7 @@ based on that object&rsquo;s <code>NSManagedObjectID</code>.</p>
                         <p><code>true</code> if found.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Flapjack/CoreData/Extensions/NSManagedObjectContext+Extensions.swift#L124-L128">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/CoreData/Extensions/NSManagedObjectContext+Extensions.swift#L124-L128">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1640,9 +1646,8 @@ based on that object&rsquo;s <code>NSManagedObjectID</code>.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2021 <a class="link" href="https://oreilly.com" target="_blank" rel="external">O&#39;Reilly Media, Inc.</a>. All rights reserved. (Last updated: 2021-03-15)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2023 <a class="link" href="https://oreilly.com" target="_blank" rel="external noopener">O&#39;Reilly Media, Inc.</a>. All rights reserved. (Last updated: 2023-05-18)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
     </section>
   </body>
-</div>
 </html>

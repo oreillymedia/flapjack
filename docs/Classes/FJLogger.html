@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>DataAccessError Enumeration Reference</title>
+    <title>FJLogger Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Enum/DataAccessError" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Class/FJLogger" class="dashAnchor"></a>
 
-    <a title="DataAccessError Enumeration Reference"></a>
+    <a title="FJLogger Class Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">Flapjack Reference</a>
       <img class="carat" src="../img/carat.png" alt=""/>
-      DataAccessError Enumeration Reference
+      FJLogger Class Reference
     </p>
 
     <div class="content-wrapper">
@@ -207,18 +207,19 @@
 
         <section class="section">
           <div class="section-content top-matter">
-            <h1>DataAccessError</h1>
+            <h1>FJLogger</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">DataAccessError</span> <span class="p">:</span> <span class="kt">LocalizedError</span><span class="p">,</span> <span class="kt">CustomStringConvertible</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">@available(iOS 10.0, *)</span>
+<span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">FJLogger</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
 
                 </div>
               </div>
-            <p>Encapsulates error state when thrown by the <code><a href="../Protocols/DataAccess.html">DataAccess</a></code> object. Generally this is related to stack preparation.</p>
+            <p>A logger object used for printing out relevant statements to <code>os_log</code>.</p>
 
               <div class="slightly-smaller">
-                <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/Types/DataAccessError.swift#L14-L34">Show on GitHub</a>
+                <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/Support/Logger.swift#L39-L85">Show on GitHub</a>
               </div>
           </div>
         </section>
@@ -230,9 +231,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Flapjack15DataAccessErrorO011preparationD0yACs0D0_pcACmF"></a>
-                    <a name="//apple_ref/swift/Element/preparationError(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack15DataAccessErrorO011preparationD0yACs0D0_pcACmF">preparationError(_:<wbr>)</a>
+                    <a name="/s:8Flapjack8FJLoggerC8logLevelAA06LoggerD0OvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/logLevel" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack8FJLoggerC8logLevelAA06LoggerD0OvpZ">logLevel</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -240,19 +241,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Indicates an error was thrown while preparing the stack; includes the underlying error.</p>
+                        <p>The minimum severity level to log; default is <code>.info</code>.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">preparationError</span><span class="p">(</span><span class="kt">Error</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">logLevel</span><span class="p">:</span> <span class="kt"><a href="../Enums/LoggerLevel.html">LoggerLevel</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/Types/DataAccessError.swift#L16">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/Support/Logger.swift#L41">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -260,9 +261,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:s23CustomStringConvertibleP11descriptionSSvp"></a>
-                    <a name="//apple_ref/swift/Property/description" class="dashAnchor"></a>
-                    <a class="token" href="#/s:s23CustomStringConvertibleP11descriptionSSvp">description</a>
+                    <a name="/s:8Flapjack8FJLoggerC5osLogSo03OS_C4_logCvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/osLog" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack8FJLoggerC5osLogSo03OS_C4_logCvpZ">osLog</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -270,18 +271,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>The <code>OSLog</code> to which statements are delivered.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">osLog</span><span class="p">:</span> <span class="kt">OSLog</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/Types/DataAccessError.swift#L18-L23">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/Support/Logger.swift#L43">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -289,9 +291,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:8Flapjack15DataAccessErrorO20localizedDescriptionSSvp"></a>
-                    <a name="//apple_ref/swift/Property/localizedDescription" class="dashAnchor"></a>
-                    <a class="token" href="#/s:8Flapjack15DataAccessErrorO20localizedDescriptionSSvp">localizedDescription</a>
+                    <a name="/s:8Flapjack8FJLoggerC5debug_9isPrivateys23CustomStringConvertible_p_SbtFZ"></a>
+                    <a name="//apple_ref/swift/Method/debug(_:isPrivate:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack8FJLoggerC5debug_9isPrivateys23CustomStringConvertible_p_SbtFZ">debug(_:<wbr>isPrivate:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -299,19 +301,148 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Convenience function for logging a debugging statement with a logging severity level of <code>.debug</code>.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">localizedDescription</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">debug</span><span class="p">(</span><span class="n">_</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span><span class="p">,</span> <span class="nv">isPrivate</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>object</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The string or string-convertible object to log.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>isPrivate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>If <code>true</code>, the line will be redacted from the log when not attached to Xcode. Defaults to <code>true</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/Types/DataAccessError.swift#L25-L33">Show on GitHub</a>
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/Support/Logger.swift#L64-L66">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack8FJLoggerC4infoyys23CustomStringConvertible_pFZ"></a>
+                    <a name="//apple_ref/swift/Method/info(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack8FJLoggerC4infoyys23CustomStringConvertible_pFZ">info(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Convenience function for logging a debugging statement with a logging severity level of <code>.info</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">info</span><span class="p">(</span><span class="n">_</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>object</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The string or string-convertible object to log.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/Support/Logger.swift#L73-L75">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8Flapjack8FJLoggerC5erroryys23CustomStringConvertible_pFZ"></a>
+                    <a name="//apple_ref/swift/Method/error(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8Flapjack8FJLoggerC5erroryys23CustomStringConvertible_pFZ">error(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Convenience function for logging a debugging statement with a logging severity level of <code>.error</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">error</span><span class="p">(</span><span class="n">_</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>object</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The string or string-convertible object to log.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/oreillymedia/flapjack/tree/master/Sources/Core/Support/Logger.swift#L82-L84">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

@@ -1,908 +1,908 @@
 {
   "warnings": [
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/DataContext.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/DataContext.swift",
       "line": 222,
       "symbol": "DataContext.destroy(object:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/DataContext.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/DataContext.swift",
       "line": 222,
       "symbol": "DataContext.destroy(object:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/DataContext.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/DataContext.swift",
       "line": 222,
       "symbol": "DataContext.destroy(object:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/DataContext.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/DataContext.swift",
       "line": 222,
       "symbol": "DataContext.destroy(object:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/DataContext.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/DataContext.swift",
       "line": 222,
       "symbol": "DataContext.destroy(object:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/DataContext.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/DataContext.swift",
       "line": 222,
       "symbol": "DataContext.destroy(object:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/DataContext.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/DataContext.swift",
       "line": 222,
       "symbol": "DataContext.destroy(object:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/DataContext.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/DataContext.swift",
       "line": 222,
       "symbol": "DataContext.destroy(object:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/DataContext.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/DataContext.swift",
       "line": 222,
       "symbol": "DataContext.destroy(object:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/DataContext.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/DataContext.swift",
       "line": 222,
       "symbol": "DataContext.destroy(object:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/DataContext.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/DataContext.swift",
       "line": 222,
       "symbol": "DataContext.destroy(object:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/DataContext.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/DataContext.swift",
       "line": 222,
       "symbol": "DataContext.destroy(object:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 15,
       "symbol": "LoggerLevel.debug",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 15,
       "symbol": "LoggerLevel.debug",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 15,
       "symbol": "LoggerLevel.debug",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 15,
       "symbol": "LoggerLevel.debug",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 15,
       "symbol": "LoggerLevel.debug",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 15,
       "symbol": "LoggerLevel.debug",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 15,
       "symbol": "LoggerLevel.debug",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 15,
       "symbol": "LoggerLevel.debug",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 15,
       "symbol": "LoggerLevel.debug",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 15,
       "symbol": "LoggerLevel.debug",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 15,
       "symbol": "LoggerLevel.debug",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 15,
       "symbol": "LoggerLevel.debug",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 16,
       "symbol": "LoggerLevel.info",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 16,
       "symbol": "LoggerLevel.info",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 16,
       "symbol": "LoggerLevel.info",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 16,
       "symbol": "LoggerLevel.info",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 16,
       "symbol": "LoggerLevel.info",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 16,
       "symbol": "LoggerLevel.info",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 16,
       "symbol": "LoggerLevel.info",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 16,
       "symbol": "LoggerLevel.info",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 16,
       "symbol": "LoggerLevel.info",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 16,
       "symbol": "LoggerLevel.info",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 16,
       "symbol": "LoggerLevel.info",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 16,
       "symbol": "LoggerLevel.info",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 17,
       "symbol": "LoggerLevel.error",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 17,
       "symbol": "LoggerLevel.error",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 17,
       "symbol": "LoggerLevel.error",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 17,
       "symbol": "LoggerLevel.error",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 17,
       "symbol": "LoggerLevel.error",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 17,
       "symbol": "LoggerLevel.error",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 17,
       "symbol": "LoggerLevel.error",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 17,
       "symbol": "LoggerLevel.error",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 17,
       "symbol": "LoggerLevel.error",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 17,
       "symbol": "LoggerLevel.error",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 17,
       "symbol": "LoggerLevel.error",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Support/Logger.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Support/Logger.swift",
       "line": 17,
       "symbol": "LoggerLevel.error",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Types/DataAccessError.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Types/DataAccessError.swift",
       "line": 25,
       "symbol": "DataAccessError.localizedDescription",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Types/DataAccessError.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Types/DataAccessError.swift",
       "line": 25,
       "symbol": "DataAccessError.localizedDescription",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Types/DataAccessError.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Types/DataAccessError.swift",
       "line": 25,
       "symbol": "DataAccessError.localizedDescription",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Types/DataAccessError.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Types/DataAccessError.swift",
       "line": 25,
       "symbol": "DataAccessError.localizedDescription",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Types/DataAccessError.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Types/DataAccessError.swift",
       "line": 25,
       "symbol": "DataAccessError.localizedDescription",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Types/DataAccessError.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Types/DataAccessError.swift",
       "line": 25,
       "symbol": "DataAccessError.localizedDescription",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Types/DataAccessError.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Types/DataAccessError.swift",
       "line": 25,
       "symbol": "DataAccessError.localizedDescription",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Types/DataAccessError.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Types/DataAccessError.swift",
       "line": 25,
       "symbol": "DataAccessError.localizedDescription",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Types/DataAccessError.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Types/DataAccessError.swift",
       "line": 25,
       "symbol": "DataAccessError.localizedDescription",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Types/DataAccessError.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Types/DataAccessError.swift",
       "line": 25,
       "symbol": "DataAccessError.localizedDescription",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Types/DataAccessError.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Types/DataAccessError.swift",
       "line": 25,
       "symbol": "DataAccessError.localizedDescription",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Types/DataAccessError.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Types/DataAccessError.swift",
       "line": 25,
       "symbol": "DataAccessError.localizedDescription",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Types/DataContextError.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Types/DataContextError.swift",
       "line": 29,
       "symbol": "DataContextError.localizedDescription",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Types/DataContextError.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Types/DataContextError.swift",
       "line": 29,
       "symbol": "DataContextError.localizedDescription",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Types/DataContextError.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Types/DataContextError.swift",
       "line": 29,
       "symbol": "DataContextError.localizedDescription",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Types/DataContextError.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Types/DataContextError.swift",
       "line": 29,
       "symbol": "DataContextError.localizedDescription",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Types/DataContextError.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Types/DataContextError.swift",
       "line": 29,
       "symbol": "DataContextError.localizedDescription",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Types/DataContextError.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Types/DataContextError.swift",
       "line": 29,
       "symbol": "DataContextError.localizedDescription",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Types/DataContextError.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Types/DataContextError.swift",
       "line": 29,
       "symbol": "DataContextError.localizedDescription",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Types/DataContextError.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Types/DataContextError.swift",
       "line": 29,
       "symbol": "DataContextError.localizedDescription",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Types/DataContextError.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Types/DataContextError.swift",
       "line": 29,
       "symbol": "DataContextError.localizedDescription",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Types/DataContextError.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Types/DataContextError.swift",
       "line": 29,
       "symbol": "DataContextError.localizedDescription",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Types/DataContextError.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Types/DataContextError.swift",
       "line": 29,
       "symbol": "DataContextError.localizedDescription",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/Core/Types/DataContextError.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/Core/Types/DataContextError.swift",
       "line": 29,
       "symbol": "DataContextError.localizedDescription",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
       "line": 22,
       "symbol": "CoreDataAccess.didCreateNewMainContextNotification",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
       "line": 22,
       "symbol": "CoreDataAccess.didCreateNewMainContextNotification",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
       "line": 22,
       "symbol": "CoreDataAccess.didCreateNewMainContextNotification",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
       "line": 23,
       "symbol": "CoreDataAccess.willDestroyMainContextNotification",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
       "line": 23,
       "symbol": "CoreDataAccess.willDestroyMainContextNotification",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
       "line": 23,
       "symbol": "CoreDataAccess.willDestroyMainContextNotification",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
       "line": 25,
       "symbol": "CoreDataAccess.StoreType",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
       "line": 25,
       "symbol": "CoreDataAccess.StoreType",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
       "line": 25,
       "symbol": "CoreDataAccess.StoreType",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
       "line": 26,
       "symbol": "CoreDataAccess.StoreType.sql(filename:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
       "line": 26,
       "symbol": "CoreDataAccess.StoreType.sql(filename:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
       "line": 26,
       "symbol": "CoreDataAccess.StoreType.sql(filename:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
       "line": 27,
       "symbol": "CoreDataAccess.StoreType.memory",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
       "line": 27,
       "symbol": "CoreDataAccess.StoreType.memory",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
       "line": 27,
       "symbol": "CoreDataAccess.StoreType.memory",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
       "line": 29,
       "symbol": "CoreDataAccess.StoreType.url",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
       "line": 29,
       "symbol": "CoreDataAccess.StoreType.url",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
       "line": 29,
       "symbol": "CoreDataAccess.StoreType.url",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
       "line": 38,
       "symbol": "CoreDataAccess.StoreType.coreDataType",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
       "line": 38,
       "symbol": "CoreDataAccess.StoreType.coreDataType",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
       "line": 38,
       "symbol": "CoreDataAccess.StoreType.coreDataType",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
       "line": 69,
       "symbol": "CoreDataAccess.managedObjectModel",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
       "line": 69,
       "symbol": "CoreDataAccess.managedObjectModel",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
       "line": 69,
       "symbol": "CoreDataAccess.managedObjectModel",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
       "line": 75,
       "symbol": "CoreDataAccess.persistentStores",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
       "line": 75,
       "symbol": "CoreDataAccess.persistentStores",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
       "line": 75,
       "symbol": "CoreDataAccess.persistentStores",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
       "line": 82,
       "symbol": "CoreDataAccess.init(name:type:model:delegate:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
       "line": 82,
       "symbol": "CoreDataAccess.init(name:type:model:delegate:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataAccess.swift",
       "line": 82,
       "symbol": "CoreDataAccess.init(name:type:model:delegate:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataSource.swift",
-      "line": 181,
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSource.swift",
+      "line": 193,
       "symbol": "CoreDataSource.endListening()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataSource.swift",
-      "line": 181,
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSource.swift",
+      "line": 193,
       "symbol": "CoreDataSource.endListening()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataSource.swift",
-      "line": 181,
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSource.swift",
+      "line": 193,
       "symbol": "CoreDataSource.endListening()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataSource.swift",
-      "line": 338,
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSource.swift",
+      "line": 373,
       "symbol": "CoreDataSource.controllerWillChangeContent(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataSource.swift",
-      "line": 338,
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSource.swift",
+      "line": 373,
       "symbol": "CoreDataSource.controllerWillChangeContent(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataSource.swift",
-      "line": 338,
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSource.swift",
+      "line": 373,
       "symbol": "CoreDataSource.controllerWillChangeContent(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataSource.swift",
-      "line": 346,
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSource.swift",
+      "line": 381,
       "symbol": "CoreDataSource.controller(_:didChange:atSectionIndex:for:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataSource.swift",
-      "line": 346,
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSource.swift",
+      "line": 381,
       "symbol": "CoreDataSource.controller(_:didChange:atSectionIndex:for:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataSource.swift",
-      "line": 346,
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSource.swift",
+      "line": 381,
       "symbol": "CoreDataSource.controller(_:didChange:atSectionIndex:for:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataSource.swift",
-      "line": 359,
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSource.swift",
+      "line": 394,
       "symbol": "CoreDataSource.controller(_:didChange:at:for:newIndexPath:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataSource.swift",
-      "line": 359,
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSource.swift",
+      "line": 394,
       "symbol": "CoreDataSource.controller(_:didChange:at:for:newIndexPath:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataSource.swift",
-      "line": 359,
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSource.swift",
+      "line": 394,
       "symbol": "CoreDataSource.controller(_:didChange:at:for:newIndexPath:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataSource.swift",
-      "line": 381,
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSource.swift",
+      "line": 416,
       "symbol": "CoreDataSource.controllerDidChangeContent(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataSource.swift",
-      "line": 381,
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSource.swift",
+      "line": 416,
       "symbol": "CoreDataSource.controllerDidChangeContent(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataSource.swift",
-      "line": 381,
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSource.swift",
+      "line": 416,
       "symbol": "CoreDataSource.controllerDidChangeContent(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataSourceFactory.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSourceFactory.swift",
       "line": 17,
       "symbol": "CoreDataSourceFactory",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataSourceFactory.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSourceFactory.swift",
       "line": 17,
       "symbol": "CoreDataSourceFactory",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataSourceFactory.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSourceFactory.swift",
       "line": 17,
       "symbol": "CoreDataSourceFactory",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataSourceFactory.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSourceFactory.swift",
       "line": 23,
       "symbol": "CoreDataSourceFactory.init(dataAccess:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataSourceFactory.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSourceFactory.swift",
       "line": 23,
       "symbol": "CoreDataSourceFactory.init(dataAccess:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/CoreDataSourceFactory.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/CoreDataSourceFactory.swift",
       "line": 23,
       "symbol": "CoreDataSourceFactory.init(dataAccess:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/MigrationPolicy.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/MigrationPolicy.swift",
       "line": 23,
       "symbol": "MigrationPolicy.MigrationOperation",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/MigrationPolicy.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/MigrationPolicy.swift",
       "line": 23,
       "symbol": "MigrationPolicy.MigrationOperation",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/MigrationPolicy.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/MigrationPolicy.swift",
       "line": 23,
       "symbol": "MigrationPolicy.MigrationOperation",
       "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/MigrationPolicy.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/MigrationPolicy.swift",
       "line": 26,
       "symbol": "MigrationPolicy.createDestinationInstances(forSource:in:manager:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/MigrationPolicy.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/MigrationPolicy.swift",
       "line": 26,
       "symbol": "MigrationPolicy.createDestinationInstances(forSource:in:manager:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sstarr/flapjack/Flapjack/CoreData/MigrationPolicy.swift",
+      "file": "/Users/bkreeger/src/oreilly/native/flapjack/Flapjack/CoreData/MigrationPolicy.swift",
       "line": 26,
       "symbol": "MigrationPolicy.createDestinationInstances(forSource:in:manager:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     }
   ],
-  "source_directory": "/Users/sstarr/flapjack"
+  "source_directory": "/Users/bkreeger/src/oreilly/native/flapjack"
 }

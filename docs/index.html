@@ -20,20 +20,20 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="index.html">
-          Flapjack 0.7.3 Docs
+          Flapjack 1.0.2 Docs
         </a>
-         (93% documented)
+         (91% documented)
       </p>
     
-      <p class="header-col--secondary">
+      <div class="header-col--secondary">
         <form role="search" action="search.json">
           <input type="text" placeholder="Search documentation" data-typeahead>
         </form>
-      </p>
+      </div>
     
         <p class="header-col header-col--secondary">
           <a class="header-link" href="https://github.com/oreillymedia/flapjack">
-            <img class="header-icon" src="img/gh.png"/>
+            <img class="header-icon" src="img/gh.png" alt="GitHub"/>
             View on GitHub
           </a>
         </p>
@@ -42,7 +42,7 @@
 
     <p class="breadcrumbs">
       <a class="breadcrumb" href="index.html">Flapjack Reference</a>
-      <img class="carat" src="img/carat.png" />
+      <img class="carat" src="img/carat.png" alt=""/>
       Flapjack  Reference
     </p>
 
@@ -65,7 +65,7 @@
                 <a class="nav-group-task-link" href="Classes/CoreDataSourceFactory.html">CoreDataSourceFactory</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/Logger.html">Logger</a>
+                <a class="nav-group-task-link" href="Classes/FJLogger.html">FJLogger</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/MigrationPolicy.html">MigrationPolicy</a>
@@ -117,6 +117,9 @@
                 <a class="nav-group-task-link" href="Extensions.html#/s:s5Int64V">Int64</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/NSCompoundPredicate.html">NSCompoundPredicate</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Extensions/NSFetchedResultsChangeType.html">NSFetchedResultsChangeType</a>
               </li>
               <li class="nav-group-task">
@@ -130,6 +133,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Extensions/NSMigrationManager/Layer.html">– Layer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/NSPredicate.html">NSPredicate</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Extensions/Sequence.html">Sequence</a>
@@ -212,31 +218,27 @@
 
 <p>It lets you <em>skip</em> the boilerplate commonly associated with database layers like Core Data and lets you introduce structured, sane data persistence in your app <em>sooner</em>, letting you spend more of your time creating the app you really want. We use it at <a href="https://oreilly.com">O&#39;Reilly Media</a> for our iOS apps, and if you like what you see, perhaps you will too.</p>
 <h2 id='getting-started' class='heading'>Getting started</h2>
+<h3 id='swift-package-manager' class='heading'>Swift Package Manager</h3>
+
+<p>Swift Package Manager is the preferred way to use Flapjack. Add the following as a dependency to the <code>dependencies</code> array in your <code>Package.swift</code> file:</p>
+<pre class="highlight swift"><code><span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Flapjack"</span><span class="p">,</span> <span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/oreillymedia/flapjack.git"</span><span class="p">,</span> <span class="o">.</span><span class="nf">upToNextMajor</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="s">"0.8.1"</span><span class="p">))</span>
+</code></pre>
+
+<p>Then you&rsquo;ll specify <code>Flapjack</code> as a dependency of the target in which you wish to use it. You can also import <code>FlapjackCoreData</code> and <code>FlapjackUIKit</code>.</p>
+<pre class="highlight swift"><code><span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"FlapjackCoreData"</span><span class="p">,</span> <span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/oreillymedia/flapjack.git"</span><span class="p">,</span> <span class="o">.</span><span class="nf">upToNextMajor</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="s">"0.8.1"</span><span class="p">))</span>
+<span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"FlapjackUIKit"</span><span class="p">,</span> <span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/oreillymedia/flapjack.git"</span><span class="p">,</span> <span class="o">.</span><span class="nf">upToNextMajor</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="s">"0.8.1"</span><span class="p">))</span>
+</code></pre>
 <h3 id='cocoapods' class='heading'>CocoaPods</h3>
 
-<p>Flapjack will soon be available through <a href="https://cocoapods.org">CocoaPods</a>. To install it for now, simply add the following line to your Podfile:</p>
-<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'Flapjack'</span><span class="p">,</span> <span class="ss">git: </span><span class="s1">'https://github.com/oreillymedia/flapjack.git'</span><span class="p">,</span> <span class="ss">tag: </span><span class="s1">'0.7.1'</span>
+<p>Flapjack is also available through <a href="https://cocoapods.org">CocoaPods</a>. To install it, simply add the following line to your Podfile:</p>
+<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'Flapjack'</span><span class="p">,</span> <span class="s1">'0.8.1'</span>
 <span class="c1"># If you're using Core Data...</span>
-<span class="n">pod</span> <span class="s1">'Flapjack/CoreData'</span><span class="p">,</span> <span class="ss">git: </span><span class="s1">'https://github.com/oreillymedia/flapjack.git'</span><span class="p">,</span> <span class="ss">tag: </span><span class="s1">'0.7.1'</span>
+<span class="n">pod</span> <span class="s1">'Flapjack/CoreData'</span><span class="p">,</span> <span class="s1">'0.8.1'</span>
 <span class="c1"># If you're targeting iOS and want some helpers...</span>
-<span class="n">pod</span> <span class="s1">'Flapjack/UIKit'</span><span class="p">,</span> <span class="ss">git: </span><span class="s1">'https://github.com/oreillymedia/flapjack.git'</span><span class="p">,</span> <span class="ss">tag: </span><span class="s1">'0.7.1'</span>
+<span class="n">pod</span> <span class="s1">'Flapjack/UIKit'</span><span class="p">,</span> <span class="s1">'0.8.1'</span>
 </code></pre>
 
 <p>And run <code>pod install</code> at the command line.</p>
-<h3 id='carthage' class='heading'>Carthage</h3>
-
-<p>Make the following entry in your Cartfile:</p>
-<pre class="highlight plaintext"><code>github "oreillymedia/flapjack"
-</code></pre>
-
-<p>Then run <code>carthage update</code>. If this is your first time using Carthage in the project, you&rsquo;ll need to go through some additional steps as explained <a href="https://github.com/Carthage/Carthage#adding-frameworks-to-an-application">over at Carthage</a>. Carthage will build three frameworks: <code>Flapjack</code>, <code>FlapjackCoreData</code>, and <code>FlapjackUIKit</code>. You&rsquo;ll need <code>Flapjack</code> as a base framework, and if you&rsquo;re using it with Core Data and/or UIKit, you&rsquo;ll want to bring in those frameworks as well (and reference those in your import statements where necessary).</p>
-<h3 id='swift-package-manager' class='heading'>Swift Package Manager</h3>
-
-<p>Support for <a href="https://swift.org/package-manager/">Swift Package Manager</a> is in its initial stage; the project does not build with support for Core Data or UIKit, since those frameworks are not packaged or available for Swift Package Manager (since <a href="https://stackoverflow.com/a/34779231/194869">SPM only builds for the host platform</a>, UIKit is currently impossible to use as a dependency for <code>FlapjackUIKit</code>). In order to use <code>Flapjack</code> by itself, add the following as a dependency to the <code>dependencies</code> array in your <code>Package.swift</code> file:</p>
-<pre class="highlight swift"><code><span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/oreillymedia/flapjack.git"</span><span class="p">,</span> <span class="o">.</span><span class="nf">upToNextMajor</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="s">"0.4.5"</span><span class="p">))</span>
-</code></pre>
-
-<p>Then you&rsquo;ll specify <code>Flapjack</code> as a dependency of the target in which you wish to use it.</p>
 <h2 id='usage' class='heading'>Usage</h2>
 
 <p>Full documentation is forthcoming, but here&rsquo;s a good thorough run-through of what Flapjack has to offer.</p>
@@ -355,7 +357,10 @@
 <h2 id='authors' class='heading'>Authors</h2>
 
 <ul>
+<li>Matt Blackmon (<a href="https://github.com/mblackmon">@mblackmon</a>)</li>
+<li>Laura Dickey (<a href="https://github.com/lj-dickey">@lj-dickey</a>)</li>
 <li>Ben Kreeger (<a href="https://github.com/kreeger">@kreeger</a>)</li>
+<li>Scott Starr (<a href="https://github.com/awaltzforvenus">@awaltzforvenus</a>)</li>
 </ul>
 <h2 id='license' class='heading'>License</h2>
 
@@ -368,9 +373,8 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2021 <a class="link" href="https://oreilly.com" target="_blank" rel="external">O&#39;Reilly Media, Inc.</a>. All rights reserved. (Last updated: 2021-03-15)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2023 <a class="link" href="https://oreilly.com" target="_blank" rel="external noopener">O&#39;Reilly Media, Inc.</a>. All rights reserved. (Last updated: 2023-05-18)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
     </section>
   </body>
-</div>
 </html>
