@@ -1,5 +1,5 @@
 //
-//  Logger.swift
+//  FJLogger.swift
 //  Flapjack
 //
 //  Created by Ben Kreeger on 5/17/18.
@@ -36,7 +36,7 @@ public enum LoggerLevel: Int, CustomStringConvertible {
 
 /// A logger object used for printing out relevant statements to `os_log`.
 @available(iOS 10.0, *)
-public final class Logger: NSObject {
+public final class FJLogger: NSObject {
     /// The minimum severity level to log; default is `.info`.
     public static var logLevel: LoggerLevel = .info
     /// The `OSLog` to which statements are delivered.

@@ -40,7 +40,7 @@ class CoreDataMigratorTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        Logger.logLevel = .debug
+        FJLogger.logLevel = .debug
         urlsToCleanup = [URL]()
     }
 

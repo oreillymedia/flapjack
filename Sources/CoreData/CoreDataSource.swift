@@ -185,13 +185,13 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
         NotificationCenter.default.addObserver(self, selector: #selector(contextWillBeDestroyed(_:)), name: CoreDataAccess.willDestroyMainContextNotification, object: nil)
 
         do {
-            Logger.debug("Fetching cache key \"\(cacheKey)\"")
+            FJLogger.debug("Fetching cache key \"\(cacheKey)\"")
             controller.delegate = self
             try controller.performFetch()
             sendCurrentObjects()
             hasExecuted = true
         } catch let error {
-            Logger.error("Error fetching CoreDataSource<\(T.self)>: \(error)")
+            FJLogger.error("Error fetching CoreDataSource<\(T.self)>: \(error)")
         }
     }
 
@@ -230,15 +230,15 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
     public func object(at indexPath: IndexPath) -> T? {
         // controller.object(at: indexPath) is garbage. We do this our way.
         guard let info = sectionInfo(for: indexPath.section) else {
-            Logger.error("Couldn't find section info for section \(indexPath.section).")
+            FJLogger.error("Couldn't find section info for section \(indexPath.section).")
             return nil
         }
         guard let objects = info.objects else {
-            Logger.error("Couldn't find objects for section \(indexPath.section), section info \(info).")
+            FJLogger.error("Couldn't find objects for section \(indexPath.section), section info \(info).")
             return nil
         }
         guard indexPath.item < objects.count else {
-            Logger.error("Couldn't find object at given index \(indexPath.item), section \(indexPath.section) among \(objects.count) objects.")
+            FJLogger.error("Couldn't find object at given index \(indexPath.item), section \(indexPath.section) among \(objects.count) objects.")
             return nil
         }
         return objects[indexPath.item] as? T
@@ -318,7 +318,7 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
             try controller.performFetch()
             sendCurrentObjects()
         } catch let error {
-            Logger.error("Error fetching CoreDataSource<\(T.self)>: \(error)")
+            FJLogger.error("Error fetching CoreDataSource<\(T.self)>: \(error)")
         }
     }
 
@@ -393,9 +393,9 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
             return
         }
 
-        Logger.debug("\(#function): (\(T.self))")
+        FJLogger.debug("\(#function): (\(T.self))")
         guard let change = theType.asDataSourceSectionChange(section: sectionIndex) else {
-            Logger.error("No section change calculated for \(theType), index \(sectionIndex))")
+            FJLogger.error("No section change calculated for \(theType), index \(sectionIndex))")
             return
         }
         pendingSectionChanges.append(change)
@@ -407,7 +407,7 @@ public class CoreDataSource<T: NSManagedObject & DataObject>: NSObject, NSFetche
         }
 
         guard let change = theType.asDataSourceChange(at: indexPath, newPath: newIndexPath) else {
-            Logger.error("No change calculated for \(theType), indexPath \(String(describing: indexPath)), newIndexPath: \(String(describing: newIndexPath))")
+            FJLogger.error("No change calculated for \(theType), indexPath \(String(describing: indexPath)), newIndexPath: \(String(describing: newIndexPath))")
             return
         }
 

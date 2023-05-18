@@ -69,7 +69,7 @@ extension NSManagedObjectContext: DataContext {
         if self.persist() == nil {
             return true
         }
-        Logger.error("Rolling back Core Data store.")
+        FJLogger.error("Rolling back Core Data store.")
         rollback()
         return false
     }
@@ -87,7 +87,7 @@ extension NSManagedObjectContext: DataContext {
             try self.save()
             return nil
         } catch let error {
-            Logger.error("Error saving context \(printableAddress): \(error)")
+            FJLogger.error("Error saving context \(printableAddress): \(error)")
             return .saveError(error)
         }
     }
@@ -111,7 +111,7 @@ extension NSManagedObjectContext: DataContext {
         do {
             return try fetchObjects(ofType: type, predicate: predicate, prefetch: prefetch ?? [], sortBy: sorters, limit: limit)
         } catch let error {
-            Logger.error("Error fetching objects \(type) with predicate \(String(describing: predicate)): \(error.localizedDescription)")
+            FJLogger.error("Error fetching objects \(type) with predicate \(String(describing: predicate)): \(error.localizedDescription)")
             return []
         }
     }
@@ -146,7 +146,7 @@ extension NSManagedObjectContext: DataContext {
         do {
             return try count(for: request)
         } catch {
-            Logger.error("Error fetching count of \(type) with predicate \(String(describing: predicate)): \(error.localizedDescription)")
+            FJLogger.error("Error fetching count of \(type) with predicate \(String(describing: predicate)): \(error.localizedDescription)")
             return 0
         }
     }
@@ -170,7 +170,7 @@ extension NSManagedObjectContext: DataContext {
         do {
             return try fetchObject(ofType: type, predicate: predicate, prefetch: prefetch ?? [], sortBy: sorters)
         } catch let error {
-            Logger.error("Error fetching objects \(type) with predicate \(String(describing: predicate)): \(error.localizedDescription)")
+            FJLogger.error("Error fetching objects \(type) with predicate \(String(describing: predicate)): \(error.localizedDescription)")
             return nil
         }
     }
@@ -197,7 +197,7 @@ extension NSManagedObjectContext: DataContext {
             }
             return found as? T
         } catch let error {
-            Logger.error("Error finding object by ID \(objectID): \(error)")
+            FJLogger.error("Error finding object by ID \(objectID): \(error)")
             return nil
         }
     }

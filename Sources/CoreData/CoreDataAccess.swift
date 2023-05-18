@@ -177,7 +177,7 @@ public final class CoreDataAccess: DataAccess {
                 do {
                     try FileManager.default.removeItem(atPath: storeURL.path)
                 } catch let error {
-                    Logger.error("Error destroying persistent store at \(storeURL): \(error)")
+                    FJLogger.error("Error destroying persistent store at \(storeURL): \(error)")
                 }
             }
             if rebuild {
@@ -195,7 +195,7 @@ public final class CoreDataAccess: DataAccess {
             do {
                 try persistentStoreCoordinator.remove(persistentStore)
             } catch let error {
-                Logger.error("Error removing persistent store #\(idx) \(persistentStore): \(error)")
+                FJLogger.error("Error removing persistent store #\(idx) \(persistentStore): \(error)")
             }
         }
 
@@ -205,7 +205,7 @@ public final class CoreDataAccess: DataAccess {
                 try persistentStoreCoordinator.destroyPersistentStore(at: storeURL, ofType: storeType.coreDataType, options: nil)
                 try FileManager.default.removeItem(atPath: storeURL.path)
             } catch let error {
-                Logger.error("Error destroying persistent store at \(storeURL): \(error)")
+                FJLogger.error("Error destroying persistent store at \(storeURL): \(error)")
             }
         }
 
