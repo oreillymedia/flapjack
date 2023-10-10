@@ -34,6 +34,22 @@ extension NSManagedObjectContext: DataContext {
         self.performAndWait { operation(self) }
     }
 
+    @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+    public func perform<T>(schedule: DataContextScheduledTaskType = .immediate, _ block: @escaping (_ context: DataContext) throws -> T) async rethrows -> T {
+        let mocSchedule: ScheduledTaskType = {
+            switch schedule {
+            case .immediate: return .immediate
+            case .enqueued: return .enqueued
+            }
+        }()
+        return try await self.perform(schedule: mocSchedule) { try block(self) }
+    }
+
+    @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+    public func perform<T>(_ block: @escaping (DataContext) throws -> T) async rethrows -> T {
+        return try await self.perform(schedule: .immediate) { try block(self) }
+    }
+
     /**
      Goes back to this context's backing store to get a new copy of the requested object (which dumps its
      potentially-cached version).

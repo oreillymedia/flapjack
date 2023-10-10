@@ -147,6 +147,14 @@ public final class CoreDataAccess: DataAccess {
         }
     }
 
+    @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+    public func performBackgroundTask<T>(_ block: @escaping (DataContext) throws -> T) async rethrows -> T {
+        return try await container.performBackgroundTask { [defaultContextPolicy] context in
+            context.mergePolicy = defaultContextPolicy
+            return try block(context)
+        }
+    }
+
     /**
      Prepares a background-thread `DataContext` for use, and then returns that context right away on the calling thread.
      It should be the caller's responsibility to use the context responsibly.

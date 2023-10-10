@@ -191,6 +191,9 @@
 		C3F8CCC121C468A300199781 /* TestMigrationModel 3.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = C3F8CCC021C468A300199781 /* TestMigrationModel 3.xcmappingmodel */; };
 		C3F8CCC421C468DC00199781 /* TestMigrationModel 4.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = C3F8CCC321C468DC00199781 /* TestMigrationModel 4.xcmappingmodel */; };
 		C3F8CCCA21C46ADE00199781 /* MockMigrationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F8CCC921C46ADE00199781 /* MockMigrationPolicy.swift */; };
+		E4A6667A2A9671890037D91D /* DataContextScheduledTaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A666792A9671890037D91D /* DataContextScheduledTaskType.swift */; };
+		E4A6667B2A9671890037D91D /* DataContextScheduledTaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A666792A9671890037D91D /* DataContextScheduledTaskType.swift */; };
+		E4A6667C2A9671890037D91D /* DataContextScheduledTaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A666792A9671890037D91D /* DataContextScheduledTaskType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -383,6 +386,7 @@
 		C3F8CCC021C468A300199781 /* TestMigrationModel 3.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = "TestMigrationModel 3.xcmappingmodel"; sourceTree = "<group>"; };
 		C3F8CCC321C468DC00199781 /* TestMigrationModel 4.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = "TestMigrationModel 4.xcmappingmodel"; sourceTree = "<group>"; };
 		C3F8CCC921C46ADE00199781 /* MockMigrationPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMigrationPolicy.swift; sourceTree = "<group>"; };
+		E4A666792A9671890037D91D /* DataContextScheduledTaskType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataContextScheduledTaskType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -663,6 +667,7 @@
 				C34587FE2696192A00817250 /* DataSourceChange.swift */,
 				C34587FF2696192A00817250 /* DataAccessError.swift */,
 				C34588002696192A00817250 /* DataSourceSectionChange.swift */,
+				E4A666792A9671890037D91D /* DataContextScheduledTaskType.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -1395,6 +1400,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C345882C2696193900817250 /* SingleDataSource.swift in Sources */,
+				E4A6667A2A9671890037D91D /* DataContextScheduledTaskType.swift in Sources */,
 				C34588402696194F00817250 /* PrimaryKey.swift in Sources */,
 				C34588282696193900817250 /* DataSource.swift in Sources */,
 				C345883D2696194F00817250 /* DataSourceChange.swift in Sources */,
@@ -1468,6 +1474,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C345883A2696193A00817250 /* SingleDataSource.swift in Sources */,
+				E4A6667C2A9671890037D91D /* DataContextScheduledTaskType.swift in Sources */,
 				C34588562696195000817250 /* PrimaryKey.swift in Sources */,
 				C34588362696193A00817250 /* DataSource.swift in Sources */,
 				C34588532696195000817250 /* DataSourceChange.swift in Sources */,
@@ -1579,6 +1586,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C34588332696193900817250 /* SingleDataSource.swift in Sources */,
+				E4A6667B2A9671890037D91D /* DataContextScheduledTaskType.swift in Sources */,
 				C345884B2696195000817250 /* PrimaryKey.swift in Sources */,
 				C345882F2696193900817250 /* DataSource.swift in Sources */,
 				C34588482696195000817250 /* DataSourceChange.swift in Sources */,
@@ -2009,6 +2017,7 @@
 				DEVELOPMENT_TEAM = 5XJYJPRTH5;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "Tests/Info-iOS.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -2035,6 +2044,7 @@
 				DEVELOPMENT_TEAM = 5XJYJPRTH5;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "Tests/Info-iOS.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "-DCOCOAPODS";

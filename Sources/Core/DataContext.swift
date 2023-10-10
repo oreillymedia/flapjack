@@ -34,6 +34,12 @@ public protocol DataContext {
      */
     func performSync(_ operation: @escaping (_ context: DataContext) -> Void)
 
+    @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+    func perform<T>(schedule: DataContextScheduledTaskType, _ block: @escaping (_ context: DataContext) throws -> T) async rethrows -> T
+
+    @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+    func perform<T>(_ block: @escaping (_ context: DataContext) throws -> T) async rethrows -> T
+
     /**
      Asks the context to go through any unsaved modifications and do anything short of saving them to the disk; this may
      include giving new objects unique identifiers, establishing relationships in an object graph, etc.

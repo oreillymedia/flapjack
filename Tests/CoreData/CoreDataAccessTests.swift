@@ -205,6 +205,19 @@ class CoreDataAccessTests: XCTestCase {
         waitForExpectations(timeout: 1.0) { XCTAssertNil($0) }
     }
 
+    @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+    func testAsyncPerformInBackgroundContext() async throws {
+        let value = await dataAccess.performBackgroundTask { context in
+            guard let mergePolicy = (context as? NSManagedObjectContext)?.mergePolicy as? NSObject else {
+                XCTFail("Couldn't get mergePolicy which is bad.")
+                return ""
+            }
+            XCTAssertEqual(mergePolicy, NSMergeByPropertyStoreTrumpMergePolicy as? NSObject)
+            return "done"
+        }
+        XCTAssertEqual(value, "done")
+    }
+
     func testVendBackgroundContext() {
         guard let context = dataAccess.vendBackgroundContext() as? NSManagedObjectContext else {
             XCTFail("Expected a managed object context.")

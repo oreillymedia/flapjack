@@ -45,6 +45,9 @@ public protocol DataAccess {
      */
     func performInBackground(operation: @escaping (_ context: DataContext) -> Void)
 
+    @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+    func performBackgroundTask<T>(_ block: @escaping (DataContext) throws -> T) async rethrows -> T
+
     /**
      Invoking this method should ask the `DataAccess` object to prepare a background-thread `DataContext` for use, and
      then return that context right away on the calling thread. It should be the caller's responsibility to use the
