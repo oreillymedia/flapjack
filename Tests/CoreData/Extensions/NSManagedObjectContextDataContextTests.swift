@@ -56,6 +56,14 @@ class NSManagedObjectContextDataContextTests: XCTestCase {
         }
     }
 
+    @available(macOS 12.0, iOS 15.0, tvOS 15.0, watchOS 8.0, *)
+    func testAsyncPerformWithBlock() async throws {
+        let val = await context.perform { innerContext in
+            XCTAssertEqual(innerContext as? NSManagedObjectContext, self.context)
+            return "passed"
+        }
+        XCTAssertEqual(val, "passed")
+    }
 
     // MARK: - Persistence calls
 
