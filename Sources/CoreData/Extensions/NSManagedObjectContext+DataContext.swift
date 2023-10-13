@@ -75,6 +75,12 @@ extension NSManagedObjectContext: DataContext {
         return forcePersist()
     }
 
+    public func persistOrThrow() throws {
+        if let err = persist() {
+            throw err
+        }
+    }
+
     /**
      Save any pending changes to our backing store, but if we encounter an error, attempts a rollback and returns
      whether or not the save succeeded.

@@ -64,6 +64,14 @@ public protocol DataContext {
     func persist() -> DataContextError?
 
     /**
+     Asks the context to save any pending changes to its backing store. If no changes are detected, this method should
+     not invoke an unnecessary save.
+
+     - throws: An error if one occurred while saving.
+     */
+    func persistOrThrow() throws
+
+    /**
      Asks the context to save any pending changes to its backing store, but if it encounters an error, it should attempt
      a rollback and return whether or not the save succeeded.
 
