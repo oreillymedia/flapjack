@@ -86,6 +86,30 @@ class NSManagedObjectContextDataContextTests: XCTestCase {
         waitForExpectations(timeout: 1.0) { XCTAssertNil($0) }
     }
 
+    func testPersistOrThrow() throws {
+        expectation(forNotification: .NSManagedObjectContextDidSave, object: context, handler: nil)
+
+        // Without changes, a notification is not fired.
+        try context.persistOrThrow()
+
+        // With invalid changes, a notification is not fired.
+        let mock = context.create(MockEntity.self)
+        mock.someProperty = nil
+        do {
+            try context.persistOrThrow()
+            XCTAssertNotNil(nil)
+        } catch {
+            XCTAssertNotNil(error)
+        }
+
+        // With valid changes, a notification is fired.
+        mock.someProperty = "valid value"
+        try context.persistOrThrow()
+
+        // Thus our expectation should only get called once.
+        waitForExpectations(timeout: 1.0) { XCTAssertNil($0) }
+    }
+
     func testPersistOrRollback() {
         expectation(forNotification: .NSManagedObjectContextDidSave, object: context, handler: nil)
 
