@@ -62,7 +62,7 @@ public final class CoreDataAccess: DataAccess {
     public weak var delegate: DataAccessDelegate?
     public private(set) var isStackReady: Bool = false
     private let storeType: StoreType
-    private let container: NSPersistentContainer
+    public private(set) var container: NSPersistentContainer
     private var defaultContextPolicy: NSMergePolicy
     private var shouldLoadAsynchronously: Bool = false
     private lazy var dispatchQueue = DispatchQueue(label: "com.oreillymedia.flapjack.coreDataAccessQueue")
