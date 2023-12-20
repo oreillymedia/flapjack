@@ -27,7 +27,7 @@ class NSManagedObjectContextDataContextTests: XCTestCase {
 
         let modelFile = try XCTUnwrap(bundle.url(forResource: "TestModel", withExtension: "momd"), "Unable to load TestModel.momd")
         let model = NSManagedObjectModel(contentsOf: modelFile)
-        let dataAccess = CoreDataAccess(name: "TestModel", type: .memory, model: model)
+        let dataAccess = CoreDataAccess(name: "TestModel", type: .memory(storeName: "TestModel"), model: model)
         dataAccess.prepareStack(asynchronously: false) { _ in }
         context = dataAccess.mainContext as? NSManagedObjectContext
     }

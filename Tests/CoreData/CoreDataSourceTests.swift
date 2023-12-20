@@ -34,7 +34,7 @@ class CoreDataSourceTests: XCTestCase {
         try super.setUpWithError()
         let modelFile = try XCTUnwrap(bundle.url(forResource: "TestModel", withExtension: "momd"), "Unable to load TestModel.momd")
         let model = NSManagedObjectModel(contentsOf: modelFile)
-        dataAccess = CoreDataAccess(name: "TestModel", type: .memory, model: model)
+        dataAccess = CoreDataAccess(name: "TestModel", type: .memory(storeName: "TestModel"), model: model)
         dataAccess.prepareStack(asynchronously: false, completion: { _ in })
 
         entityOne = dataAccess.mainContext.create(MockEntity.self, attributes: ["someProperty": "someValue alpha"])

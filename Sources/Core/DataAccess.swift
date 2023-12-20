@@ -65,7 +65,9 @@ public protocol DataAccess {
      - parameter rebuild: If `true`, the data store should be reconstructed after it's deleted.
      - parameter completion: A closure to be called upon completion.
      */
+    @available(*, renamed: "deleteDatabase(rebuild:)")
     func deleteDatabase(rebuild: Bool, completion: @escaping (DataAccessError?) -> Void)
+    func deleteDatabase(rebuild: Bool) async throws
 }
 
 
