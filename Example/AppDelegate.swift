@@ -21,7 +21,7 @@ extension UIApplication {
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    lazy var dataAccess: DataAccess = CoreDataAccess(name: "FlapjackExample", type: .memory)
+    lazy var dataAccess: DataAccess = CoreDataAccess(name: "FlapjackExample", type: .memory(storeName: "FlapjackExample"))
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let window = UIWindow(frame: UIScreen.main.bounds)

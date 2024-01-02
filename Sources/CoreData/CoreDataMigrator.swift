@@ -64,7 +64,7 @@ class CoreDataMigrator: Migrator {
         guard let url = bundle.url(forResource: modelName, withExtension: "momd") else {
             assertionFailure("Unable to load up compiled Core Data model for model name \(modelName)")
             self.compiledModelURL = URL(fileURLWithPath: "")
-            self.storeType = .memory
+            self.storeType = .memory(storeName: "SafariQueue")
             return
         }
 

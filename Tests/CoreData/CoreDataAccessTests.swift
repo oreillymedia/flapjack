@@ -33,7 +33,7 @@ class CoreDataAccessStoreTypeTests: XCTestCase {
     }
 
     func testStoreTypeMemory() {
-        let storeType = CoreDataAccess.StoreType.memory
+        let storeType = CoreDataAccess.StoreType.memory(storeName: "memory")
         XCTAssertNil(storeType.url)
         XCTAssertEqual(storeType.coreDataType, NSInMemoryStoreType)
         XCTAssertEqual(storeType.storeDescription.type, NSInMemoryStoreType)
@@ -59,7 +59,7 @@ class CoreDataAccessTests: XCTestCase {
         delegate = MockDataAccessDelegate()
         let modelPath = try XCTUnwrap(bundle.url(forResource: "TestModel", withExtension: "momd"), "Unable to find TestModel.momd")
         model = NSManagedObjectModel(contentsOf: modelPath)
-        dataAccess = CoreDataAccess(name: "TestModel", type: .memory, model: model, delegate: delegate)
+        dataAccess = CoreDataAccess(name: "TestModel", type: .memory(storeName: "TestModel"), model: model, delegate: delegate)
     }
 
     override func tearDownWithError() throws {
@@ -231,7 +231,7 @@ class CoreDataAccessTests: XCTestCase {
     // MARK: - Context Propagation Testing
 
     func testMainContextGetsCorrectPolicy() {
-        dataAccess = CoreDataAccess(name: "TestModel", type: .memory, model: model, delegate: delegate, defaultPolicy: .rollback)
+        dataAccess = CoreDataAccess(name: "TestModel", type: .memory(storeName: "TestModel"), model: model, delegate: delegate, defaultPolicy: .rollback)
         guard let mergePolicy = (dataAccess.mainContext as? NSManagedObjectContext)?.mergePolicy as? NSObject else {
             XCTFail("Couldn't get mergePolicy which is bad.")
             return
@@ -240,7 +240,7 @@ class CoreDataAccessTests: XCTestCase {
     }
 
     func testVendBackgroundContextGetsCorrectPolicy() {
-        dataAccess = CoreDataAccess(name: "TestModel", type: .memory, model: model, delegate: delegate, defaultPolicy: .overwrite)
+        dataAccess = CoreDataAccess(name: "TestModel", type: .memory(storeName: "TestModel"), model: model, delegate: delegate, defaultPolicy: .overwrite)
         guard let context = dataAccess.vendBackgroundContext() as? NSManagedObjectContext else {
             XCTFail("Expected a managed object context.")
             return
@@ -249,7 +249,7 @@ class CoreDataAccessTests: XCTestCase {
     }
 
     func testPerformInBackgroundContextGetsCorrectPolicy() {
-        dataAccess = CoreDataAccess(name: "TestModel", type: .memory, model: model, delegate: delegate, defaultPolicy: .rollback)
+        dataAccess = CoreDataAccess(name: "TestModel", type: .memory(storeName: "TestModel"), model: model, delegate: delegate, defaultPolicy: .rollback)
         let expect = expectation(description: "operation")
         dataAccess.performInBackground { context in
             defer { expect.fulfill() }

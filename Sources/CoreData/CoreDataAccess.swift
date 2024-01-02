@@ -24,7 +24,7 @@ public final class CoreDataAccess: DataAccess {
 
     public enum StoreType {
         case sql(filename: String)
-        case memory
+        case memory(storeName: String)
 
         public var url: URL? {
             switch self {
@@ -42,6 +42,10 @@ public final class CoreDataAccess: DataAccess {
             }
         }
 
+        public var storeName: String {
+            return filename.components(separatedBy: ".").first ?? filename
+        }
+
         var storeDescription: NSPersistentStoreDescription {
             var description: NSPersistentStoreDescription
             switch self {
@@ -54,6 +58,13 @@ public final class CoreDataAccess: DataAccess {
             return description
         }
 
+        private var filename: String {
+            return switch self {
+            case .sql(let filename): filename
+            case .memory(let storeName): storeName
+            }
+        }
+
         private func storeUrl(for name: String) -> URL {
             return NSPersistentContainer.defaultDirectoryURL().appendingPathComponent(name)
         }
@@ -61,7 +72,7 @@ public final class CoreDataAccess: DataAccess {
 
     public weak var delegate: DataAccessDelegate?
     public private(set) var isStackReady: Bool = false
-    private let storeType: StoreType
+    public let storeType: StoreType
     public private(set) var container: NSPersistentContainer
     private var defaultContextPolicy: NSMergePolicy
     private var shouldLoadAsynchronously: Bool = false
@@ -175,6 +186,7 @@ public final class CoreDataAccess: DataAccess {
      - parameter rebuild: If `true`, the data store will be reconstructed after it's deleted.
      - parameter completion: A closure to be called upon completion.
      */
+    @available(*, renamed: "deleteDatabase(rebuild:)")
     public func deleteDatabase(rebuild: Bool, completion: @escaping (DataAccessError?) -> Void) {
         let fileExistsAtPath = storeType.url.map { FileManager.default.fileExists(atPath: $0.path, isDirectory: nil) } ?? false
 
@@ -224,6 +236,19 @@ public final class CoreDataAccess: DataAccess {
 
         completion(nil)
     }
+    
+    public func deleteDatabase(rebuild: Bool) async throws {
+        return try await withCheckedThrowingContinuation { continuation in
+            deleteDatabase(rebuild: rebuild) { error in
+                if let error = error {
+                    continuation.resume(throwing: error)
+                    return
+                }
+                continuation.resume(returning: ())
+            }
+        }
+    }
+    
 
 
     // MARK: Private functions
