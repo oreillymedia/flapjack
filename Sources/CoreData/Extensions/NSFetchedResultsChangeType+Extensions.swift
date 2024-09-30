@@ -12,7 +12,7 @@ import CoreData
 import Flapjack
 #endif
 
-extension NSFetchedResultsChangeType: CustomStringConvertible {
+extension NSFetchedResultsChangeType: @retroactive CustomStringConvertible {
     public var description: String {
         switch self {
         case .delete:     return "delete"

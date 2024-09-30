@@ -12,7 +12,7 @@ import CoreData
 import Flapjack
 #endif
 
-extension NSManagedObjectContext: DataContext {
+extension NSManagedObjectContext: @retroactive DataContext {
     /**
      Performs an operation against this context on an isolated queue.
 

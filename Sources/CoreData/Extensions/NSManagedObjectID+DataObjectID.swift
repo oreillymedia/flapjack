@@ -12,6 +12,6 @@ import CoreData
 import Flapjack
 #endif
 
-extension NSManagedObjectID: DataObjectID {
+extension NSManagedObjectID: @retroactive DataObjectID {
 
 }
