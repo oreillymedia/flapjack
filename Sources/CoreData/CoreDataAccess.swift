@@ -187,7 +187,10 @@ public final class CoreDataAccess: DataAccess {
      - parameter completion: A closure to be called upon completion.
      */
     @available(*, renamed: "deleteDatabase(rebuild:)")
-    public func deleteDatabase(rebuild: Bool, completion: @escaping (DataAccessError?) -> Void) {
+    public func deleteDatabase(rebuild: Bool, removeObjectsFirst: Bool = false, completion: @escaping (DataAccessError?) -> Void) {
+        if removeObjectsFirst, let x = mainContext as? NSManagedObjectContext {
+            deleteAllObjects(context: x)
+        }
         let fileExistsAtPath = storeType.url.map { FileManager.default.fileExists(atPath: $0.path, isDirectory: nil) } ?? false
 
         // If we've never attached any store, delete any stale file that may be there and add them
@@ -236,7 +239,11 @@ public final class CoreDataAccess: DataAccess {
 
         completion(nil)
     }
-    
+
+    public func deleteDatabase(rebuild: Bool, completion: @escaping (Flapjack.DataAccessError?) -> Void) {
+        deleteDatabase(rebuild: rebuild, removeObjectsFirst: false, completion: completion)
+    }
+
     public func deleteDatabase(rebuild: Bool) async throws {
         return try await withCheckedThrowingContinuation { continuation in
             deleteDatabase(rebuild: rebuild) { error in
@@ -248,7 +255,36 @@ public final class CoreDataAccess: DataAccess {
             }
         }
     }
-    
+
+    func deleteAllObjects(context: NSManagedObjectContext) {
+        // Get all entity names from the managed object model
+        guard let entities = context.persistentStoreCoordinator?.managedObjectModel.entities else {
+            FJLogger.error("Error removing objects from context while deleting since persistentStoreCoordinator is nil")
+            return
+        }
+
+        // Iterate through all entities and delete their objects
+        for entity in entities {
+            guard let entityName = entity.name else { continue }
+
+            let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: entityName)
+            let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+
+            do {
+                try context.execute(batchDeleteRequest)
+            } catch let error as NSError {
+                FJLogger.error("Error deleting entity '\(entityName)': \(error.localizedDescription) while deleting database")
+            }
+        }
+
+        // Save and reset context after all deletions
+        do {
+            try context.save()
+            context.reset()
+        } catch let error as NSError {
+            FJLogger.error("Error saving context: \(error.localizedDescription)")
+        }
+    }
 
 
     // MARK: Private functions

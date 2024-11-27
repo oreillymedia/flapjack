@@ -63,9 +63,11 @@ public protocol DataAccess {
      `prepareStack(asynchronously:completion:)`.
 
      - parameter rebuild: If `true`, the data store should be reconstructed after it's deleted.
+     - parameter removeObjectsFirst: If `true`, the data store's entries are explicitly deleted before the file is removed.  Cannot be used for in-memory stores
      - parameter completion: A closure to be called upon completion.
      */
     @available(*, renamed: "deleteDatabase(rebuild:)")
+    func deleteDatabase(rebuild: Bool, removeObjectsFirst: Bool, completion: @escaping (DataAccessError?) -> Void)
     func deleteDatabase(rebuild: Bool, completion: @escaping (DataAccessError?) -> Void)
     func deleteDatabase(rebuild: Bool) async throws
 }
