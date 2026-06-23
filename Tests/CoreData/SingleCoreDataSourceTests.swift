@@ -174,9 +174,9 @@ class SingleCoreDataSourceTests: XCTestCase {
         XCTAssertEqual(dataSource.object, newEntity)
     }
 
-    func testObjectDidChangeBlockFiresTwiceWhenOldObjectIsDeletedAndNewOneCreated() {
+    func testObjectDidChangeBlockOnlyFiresOnceWhenOldObjectIsDeletedAndNewOneCreated() {
         let expect = expectation(description: "did change block")
-        expect.expectedFulfillmentCount = 3
+        expect.expectedFulfillmentCount = 2
         dataSource.onChange = { _ in
             expect.fulfill()
         }
@@ -188,6 +188,7 @@ class SingleCoreDataSourceTests: XCTestCase {
         dataAccess.mainContext.persist()
 
         waitForExpectations(timeout: 0.5) { XCTAssertNil($0) }
-        XCTAssertEqual(dataSource.object, newEntity)
+        // If the object has been deleted, it should not be returned by the object property
+        XCTAssertNil(dataSource.object)
     }
 }
