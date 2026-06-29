@@ -127,7 +127,10 @@ public class SingleCoreDataSource<T: NSManagedObject & DataObject>: NSObject, Si
             hasFetched = true
             object = nil
             onChange?(nil)
-        } else if let filtered = findObjectFrom(objects: inserts.union(updates).union(refreshes)) {
+        }
+
+        let theRest = inserts.union(updates).union(refreshes)
+        if let filtered = findObjectFrom(objects: theRest) {
             hasFetched = true
             object = filtered
             onChange?(object)
