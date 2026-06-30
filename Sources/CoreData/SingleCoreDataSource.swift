@@ -106,6 +106,7 @@ public class SingleCoreDataSource<T: NSManagedObject & DataObject>: NSObject, Si
         }
 
         object = context.object(ofType: T.self, predicate: predicate, prefetch: prefetch, sortBy: [])
+        hasFetched = true
         onChange?(object)
     }
 
@@ -113,7 +114,7 @@ public class SingleCoreDataSource<T: NSManagedObject & DataObject>: NSObject, Si
     // MARK: Private functions
 
     private func findObjectFrom(objects: Set<T>) -> T? {
-        return (objects as NSSet).filtered(using: predicate).first(where: { $0 is T }) as? T
+        return objects.first { predicate.evaluate(with: $0) }
     }
 
     @objc
@@ -143,6 +144,7 @@ public class SingleCoreDataSource<T: NSManagedObject & DataObject>: NSObject, Si
 
         // Store our newly-minted context, and refetch.
         self.context = newContext
+        isContextAZombie = false
         startListening()
     }
 
