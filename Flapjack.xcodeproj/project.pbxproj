@@ -1252,7 +1252,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  if which swiftlint > /dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint to lint!\"\n  fi\nfi\n";
+			shellScript = "if [ \"${CI_XCODE_CLOUD}\" = \"TRUE\" ]; then\n  exit 0\nfi\nif [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  if which swiftlint > /dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint to lint!\"\n  fi\nfi\n";
 		};
 		C31FD25C21B0A56D007A84F9 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1270,7 +1270,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  if which swiftlint > /dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint to lint!\"\n  fi\nfi\n";
+			shellScript = "if [ \"${CI_XCODE_CLOUD}\" = \"TRUE\" ]; then\n  exit 0\nfi\nif [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  if which swiftlint > /dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint to lint!\"\n  fi\nfi\n";
 		};
 		C37325B92230923D003C9E48 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1288,7 +1288,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  if which swiftlint > /dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint to lint!\"\n  fi\nfi\n";
+			shellScript = "if [ \"${CI_XCODE_CLOUD}\" = \"TRUE\" ]; then\n  exit 0\nfi\nif [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  if which swiftlint > /dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint to lint!\"\n  fi\nfi\n";
 		};
 		C37325D922309245003C9E48 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1306,7 +1306,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  if which swiftlint > /dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint to lint!\"\n  fi\nfi\n";
+			shellScript = "if [ \"${CI_XCODE_CLOUD}\" = \"TRUE\" ]; then\n  exit 0\nfi\nif [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  if which swiftlint > /dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint to lint!\"\n  fi\nfi\n";
 		};
 		C37325F5223092DD003C9E48 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1324,7 +1324,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  if which swiftlint > /dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint to lint!\"\n  fi\nfi\n";
+			shellScript = "if [ \"${CI_XCODE_CLOUD}\" = \"TRUE\" ]; then\n  exit 0\nfi\nif [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  if which swiftlint > /dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint to lint!\"\n  fi\nfi\n";
 		};
 		C3E90CEB22308698001DBF25 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1342,7 +1342,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  if which swiftlint > /dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint to lint!\"\n  fi\nfi\n";
+			shellScript = "if [ \"${CI_XCODE_CLOUD}\" = \"TRUE\" ]; then\n  exit 0\nfi\nif [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  if which swiftlint > /dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint to lint!\"\n  fi\nfi\n";
 		};
 		C3E90D09223086F0001DBF25 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1360,7 +1360,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  if which swiftlint > /dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint to lint!\"\n  fi\nfi\n";
+			shellScript = "if [ \"${CI_XCODE_CLOUD}\" = \"TRUE\" ]; then\n  exit 0\nfi\nif [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  if which swiftlint > /dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint to lint!\"\n  fi\nfi\n";
 		};
 		C3F52F6E21B19AFF00F92897 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1378,7 +1378,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  if which swiftlint > /dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint to lint!\"\n  fi\nfi\n";
+			shellScript = "if [ \"${CI_XCODE_CLOUD}\" = \"TRUE\" ]; then\n  exit 0\nfi\nif [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n  if which swiftlint > /dev/null; then\n    swiftlint\n  else\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint to lint!\"\n  fi\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
